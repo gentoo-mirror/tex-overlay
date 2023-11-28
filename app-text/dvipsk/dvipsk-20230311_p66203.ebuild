@@ -8,7 +8,7 @@ inherit texlive-common
 TL_VERSION=$(ver_cut 1)
 DESCRIPTION="DVI-to-PostScript translator"
 HOMEPAGE="https://tug.org/texlive/"
-SRC_URI="mirror://ctan/Source/texlive-${TL_VERSION}-source.tar.xz"
+SRC_URI="mirror://ctan/systems/texlive/Source/texlive-${TL_VERSION}-source.tar.xz"
 
 DVIPS_REVISION=$(ver_cut 3)
 EXTRA_TL_MODULES="dvips.r${DVIPS_REVISION}"
