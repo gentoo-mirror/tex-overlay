@@ -7,7 +7,7 @@ inherit texlive-common
 
 DESCRIPTION="8-bit Implementation of BibTeX 0.99 with a Very Large Capacity"
 HOMEPAGE="https://tug.org/texlive/"
-SRC_URI="mirror://ctan/Source/texlive-${PV#*_p}-source.tar.xz"
+SRC_URI="mirror://ctan/systems/texlive/Source/texlive-${PV#*_p}-source.tar.xz"
 
 LICENSE="GPL-2"
 SLOT="0"

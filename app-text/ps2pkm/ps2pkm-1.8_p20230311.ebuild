@@ -5,7 +5,7 @@ EAPI=8
 
 DESCRIPTION="Tool that converts a PostScript type1 font into a corresponding TeX PK font"
 HOMEPAGE="https://tug.org/texlive/"
-SRC_URI="mirror://ctan/Source//texlive-${PV#*_p}-source.tar.xz"
+SRC_URI="mirror://ctan/systems/texlive/Source/texlive-${PV#*_p}-source.tar.xz"
 S="${WORKDIR}/texlive-${PV#*_p}-source/texk/ps2pk"
 
 LICENSE="MIT"
