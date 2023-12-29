@@ -441,86 +441,9 @@ src_configure() {
 	# revisit/upstream once we bump to 2022, bug #882245
 	append-cppflags -D_GNU_SOURCE
 
-	tc-export CC CXX AR RANLIB
-	myconf=(
-		--disable-native-texlive-build
-		--enable-shared
-		--disable-static
-		--with-banner-add="/Gentoo Linux"
-
-		--with-system-freetype2
-		--with-system-zlib
-		--with-system-libpng
-		--with-system-teckit
-		--with-teckit-includes="${EPREFIX}"/usr/include/teckit
-		--with-system-kpathsea
-		--with-kpathsea-includes="${EPREFIX}"/usr/include
-		--with-system-icu
-		--with-system-ptexenc
-		--with-system-harfbuzz
-		--with-system-graphite2
-		--with-system-cairo
-		--with-system-pixman
-		--with-system-zziplib
-		--with-system-libpaper
-		--with-system-gmp
-		--with-system-gd
-		--with-system-mpfr
-		--with-system-potrace
-		# --with-system-xpdf
-		--without-texinfo
-		--disable-dialog
-		--disable-multiplatform
-		--enable-chktex
-		--enable-epsfwin
-		--enable-detex
-		--enable-dvi2tty
-		--enable-mftalkwin
-		--enable-regiswin
-		--enable-tektronixwin
-		--enable-unitermwin
-		--enable-vlna
-		--with-ps=gs
-		--disable-psutils
-		--disable-t1utils
-		--enable-ipc
-		--disable-biber
-		--disable-bibtex-x
-		--disable-dvipng
-		--disable-dvipsk
-		--disable-lcdf-typetools
-		--disable-ps2pk
-		--disable-ttf2pk2
-		--disable-tex4htk
-		--disable-cjkutils
-		--disable-xdvik
-		--enable-luatex
-		--disable-dvisvgm
-		--disable-ps2eps
-		--disable-largefile
-		--disable-build-in-source-tree
-		--disable-xindy-docs
-		--disable-xindy-rules
-		"$(use_enable luajittex)"
-		"$(use_enable luajittex luajithbtex)"
-		"$(use_enable luajittex mfluajit)"
-		"$(use_enable xetex)"
-		"$(use_enable cjk dviout-util)"
-		# "$(use_enable cjk ptex)"
-		"$(use_enable cjk eptex)"
-		# "$(use_enable cjk uptex)"
-		"$(use_enable cjk euptex)"
-		"$(use_enable cjk mendexk)"
-		"$(use_enable cjk makejvf)"
-		"$(use_enable cjk pmp)"
-		"$(use_enable cjk upmp)"
-		"$(use_enable tk texdoctk)"
-		"$(use_with X x)"
-		"$(use_enable xindy)"
-
+	local econf_new_2023=(
 		--enable-ptex=no
 		--enable-uptex=no
-
 		--enable-autosp=yes
 		--enable-axodraw2=yes
 		--enable-devnag=yes
@@ -546,16 +469,89 @@ src_configure() {
 		--enable-ttfdump=yes
 		--enable-upmendex=yes
 		--enable-texlive=yes
-
 		--enable-linked-scripts=no
 		# web2c afm2pl chktex detex dtl dvi2tty dvidvi dviljk dviout-util dvipdfm-x dvipos gregorio gsftopk makeindexk makejvf mendexk musixtnt seetexk ttfdump upmendex texlive
 	)
+
+	tc-export CC CXX AR RANLIB
 	cd "${BUILDDIR}" || die
 	ECONF_SOURCE="${S}" \
 		econf -C \
 		--bindir="${EPREFIX}"/usr/bin \
 		--datadir="${BUILDDIR}" \
-		"${myconf[@]}"
+		--with-system-freetype2 \
+		--with-system-zlib \
+		--with-system-libpng \
+		--with-system-teckit \
+		--with-teckit-includes="${EPREFIX}"/usr/include/teckit \
+		--with-system-kpathsea \
+		--with-kpathsea-includes="${EPREFIX}"/usr/include \
+		--with-system-icu \
+		--with-system-ptexenc \
+		--with-system-harfbuzz \
+		--with-system-graphite2 \
+		--with-system-cairo \
+		--with-system-pixman \
+		--with-system-zziplib \
+		--with-system-libpaper \
+		--with-system-gmp \
+		--with-system-gd \
+		--with-system-mpfr \
+		--with-system-potrace \
+		--without-texinfo \
+		--disable-dialog \
+		--disable-multiplatform \
+		--enable-chktex \
+		--enable-epsfwin \
+		--enable-detex \
+		--enable-dvi2tty \
+		--enable-mftalkwin \
+		--enable-regiswin \
+		--enable-shared \
+		--enable-tektronixwin \
+		--enable-unitermwin \
+		--enable-vlna \
+		--with-ps=gs \
+		--disable-psutils \
+		--disable-t1utils \
+		--enable-ipc \
+		--disable-biber \
+		--disable-bibtex-x \
+		--disable-dvipng \
+		--disable-dvipsk \
+		--disable-lcdf-typetools \
+		--disable-ps2pk \
+		--disable-ttf2pk2 \
+		--disable-tex4htk \
+		--disable-cjkutils \
+		--disable-xdvik \
+		--enable-luatex \
+		--disable-dvisvgm \
+		--disable-ps2eps \
+		--disable-static \
+		--disable-native-texlive-build \
+		--disable-largefile \
+		--disable-build-in-source-tree \
+		--disable-xindy-docs \
+		--disable-xindy-rules \
+		--with-banner-add=" Gentoo Linux" \
+		$(use_enable luajittex) \
+		$(use_enable luajittex luajithbtex) \
+		$(use_enable luajittex mfluajit) \
+		$(use_enable xetex) \
+		$(use_enable cjk dviout-util) \
+		$(use_enable cjk ptex) \
+		$(use_enable cjk eptex) \
+		$(use_enable cjk uptex) \
+		$(use_enable cjk euptex) \
+		$(use_enable cjk mendexk) \
+		$(use_enable cjk makejvf) \
+		$(use_enable cjk pmp) \
+		$(use_enable cjk upmp) \
+		$(use_enable tk texdoctk) \
+		$(use_with X x) \
+		$(use_enable xindy) \
+		"${econf_new_2023[@]}"
 }
 
 src_compile() {
@@ -666,9 +662,8 @@ pkg_postinst() {
 
 	local display_migration_hint=false
 	if [[ -n ${REPLACING_VERSIONS} ]]; then
-		local new_texlive_version
+		local new_texlive_version=$(ver_cut 1)
 		local replaced_version
-		new_texlive_version=$(ver_cut 1)
 		for replaced_version in ${REPLACING_VERSIONS}; do
 			replaced_version=$(ver_cut 1 "${replaced_version}")
 			if ver_test "${replaced_version}" -lt "${new_texlive_version}" ; then
