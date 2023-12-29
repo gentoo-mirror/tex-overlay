@@ -394,8 +394,6 @@ RELOC_TARGET=texmf-dist
 src_prepare() {
 	cd "${WORKDIR}" || die
 
-	# mv texlive.tlpdb tlpkg/ || die "failed to move texlive.tlpdb"
-
 	# From texlive-module.eclass.
 	sed -n -e 's:\s*RELOC/::p' tlpkg/tlpobj/* > "${T}/reloclist" || die
 	sed -e 's/\/[^/]*$//' -e "s:^:${RELOC_TARGET}/:" "${T}/reloclist" |
@@ -425,9 +423,6 @@ src_prepare() {
 	default
 
 	elibtoolize
-
-	# Drop this on 2022 bump!
-	"${S}"/reautoconf libs/cairo || die
 }
 
 src_configure() {
