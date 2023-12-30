@@ -453,7 +453,7 @@ src_configure() {
 		--enable-tpic2pdftex=yes
 		--with-clisp-runtime=system
 		--enable-xml2pmx=yes
-		--enable-xpdfopen=yes
+		$(use_enable X xpdfopen)
 		--enable-web2c=yes
 		--enable-afm2pl=yes
 		--enable-dtl=yes
