@@ -1,4 +1,4 @@
-# Copyright 1999-2023 Gentoo Authors
+# Copyright 1999-2024 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=8
@@ -15,10 +15,12 @@ SLOT="0"
 LICENSE="Apache-2.0 Artistic BSD BSD-2 FDL-1.3 GPL-1 GPL-2 GPL-3 GPL-3+ LGPL-3 LPPL-1.0 LPPL-1.2 LPPL-1.3 LPPL-1.3c MIT TeX TeX-other-free public-domain"
 RESTRICT="mirror"
 
+GENTOO_TEX_PATCHES_NUM=2
+
 SRC_URI="
 	mirror://ctan/systems/texlive/Source/${MY_P}.tar.xz
-	https://github.com/Flowdalic/texlive-source/commit/8be4094fa5dfcfbeace5d16a481ae97fdf816727.patch
-		-> texlive-2023-drop-luazlib-version-check.patch
+	https://gitweb.gentoo.org/proj/tex-patches.git/snapshot/tex-patches-${GENTOO_TEX_PATCHES_NUM}.tar.bz2
+		-> gentoo-tex-patches-${GENTOO_TEX_PATCHES_NUM}.tar.bz2
 "
 
 # We ship binextra collection alongside
@@ -411,14 +413,18 @@ src_prepare() {
 		-e "s,/usr/include /usr/local/include.*echo \$KPATHSEA_INCLUDES.*,$(pkg-config kpathsea --variable=includedir)\"," \
 		texk/web2c/configure || die
 
-	# eapply "${WORKDIR}"/patches
-	# eapply "${FILESDIR}"/${P}-cairo-strings.patch
-	# eapply "${FILESDIR}"/${P}-slibtool.patch
-	# eapply "${FILESDIR}"/${P}-clang-16.patch
-	# eapply "${WORKDIR}"/${P}-CVE-2023-32700.patch
-
-	# https://github.com/TeX-Live/texlive-source/pull/62
-	eapply "${DISTDIR}/texlive-2023-drop-luazlib-version-check.patch"
+	local patch_dir="${WORKDIR}/tex-patches-${GENTOO_TEX_PATCHES_NUM}"
+	local drop_patches=(
+		texlive-2021-unbundle-linked_scripts.patch
+		texlive-core-2021-CVE-2023-32700.patch
+		texlive-core-2021-clang-16.patch
+		texlive-core-2021-slibtool.patch
+	)
+	local patch
+	for patch in ${drop_patches[@]}; do
+		rm "${patch_dir}/${patch}" || die "Could not remove ${patch}"
+	done
+	eapply "${patch_dir}"
 
 	default
 
