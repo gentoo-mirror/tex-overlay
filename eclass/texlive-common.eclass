@@ -17,7 +17,6 @@
 case ${EAPI} in
 	7)
 		inherit eapi8-dosym
-		dosym(){ dosym8 "$@"; }
 		;;
 	8) ;;
 	*) die "${ECLASS}: EAPI ${EAPI:-0} not supported" ;;
@@ -58,7 +57,10 @@ texlive-common_handle_config_files() {
 		dodir "/etc/texmf/${rel_dir}.d"
 		einfo "Moving (and symlinking) ${EPREFIX}${texmf_path}/${f} to ${EPREFIX}/etc/texmf/${rel_dir}.d"
 		mv "${ED}/${texmf_path}/${f}" "${ED}/etc/texmf/${rel_dir}.d" || die "mv ${f} failed."
-		dosym -r "/etc/texmf/${rel_dir}.d/$(basename "${f}")" "${texmf_path}/${f}"
+
+		local dosym=dosym
+		[[ ${EAPI} == 7 ]] && dosym=dosym8
+		${dosym} -r "/etc/texmf/${rel_dir}.d/$(basename "${f}")" "${texmf_path}/${f}"
 	done < <(find . -name '*.cnf' -type f -o -name '*.cfg' -type f | sed -e "s:\./::g")
 }
 
