@@ -1,4 +1,4 @@
-# Copyright 1999-2023 Gentoo Authors
+# Copyright 1999-2024 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 # @ECLASS: texlive-module.eclass
@@ -118,7 +118,7 @@ fi
 
 if [[ -n ${TEXLIVE_MODULE_OPTIONAL_ENGINE} ]] ; then
 	for engine in ${TEXLIVE_MODULE_OPTIONAL_ENGINE} ; do
-		IUSE="${IUSE} +${engine}" # TODO
+		IUSE="${IUSE} +${engine}"
 	done
 fi
 
@@ -161,19 +161,19 @@ texlive-module_src_unpack() {
 texlive-module_add_format() {
 	local name engine mode patterns options
 	eval $@
-	einfo "Appending to format.${PN}.cnf for $*"
+	einfo "Appending to format.${PN}.cnf for $@"
 
 	if [[ ! -d texmf-dist/fmtutil ]]; then
 		mkdir -p texmf-dist/fmtutil || die
 	fi
 
-	[[ -f texmf-dist/fmtutil/format.${PN}.cnf ]] || { echo "# Generated for ${PN}	by texlive-module.eclass" > "texmf-dist/fmtutil/format.${PN}.cnf"; }
-	[[ -n ${TEXLIVE_MODULE_OPTIONAL_ENGINE} ]] && has "${engine}" "${TEXLIVE_MODULE_OPTIONAL_ENGINE}" && use "!${engine}" && mode="disabled"
+	[[ -f texmf-dist/fmtutil/format.${PN}.cnf ]] || { echo "# Generated for ${PN}	by texlive-module.eclass" > texmf-dist/fmtutil/format.${PN}.cnf; }
+	[[ -n ${TEXLIVE_MODULE_OPTIONAL_ENGINE} ]] && has ${engine} ${TEXLIVE_MODULE_OPTIONAL_ENGINE} && use !${engine} && mode="disabled"
 	if [[ ${mode} = disabled ]]; then
-		printf "#! " >> "texmf-dist/fmtutil/format.${PN}.cnf" || die
+		printf "#! " >> texmf-dist/fmtutil/format.${PN}.cnf || die
 	fi
 	[[ -z ${patterns} ]] && patterns="-"
-	printf "%s\t%s\t%s\t%s\n" "${name}" "${engine}" "${patterns}" "${options}" >> "texmf-dist/fmtutil/format.${PN}.cnf" || die
+	printf "${name}\t${engine}\t${patterns}\t${options}\n" >> texmf-dist/fmtutil/format.${PN}.cnf || die
 }
 
 # @FUNCTION: texlive-module_make_language_def_lines
@@ -184,14 +184,14 @@ texlive-module_add_format() {
 texlive-module_make_language_def_lines() {
 	local lefthyphenmin righthyphenmin synonyms name file file_patterns file_exceptions luaspecial
 	eval $@
-	einfo "Generating language.def entry for $*"
+	einfo "Generating language.def entry for $@"
 	[[ -z ${lefthyphenmin} ]] && lefthyphenmin="2"
 	[[ -z ${righthyphenmin} ]] && righthyphenmin="3"
-	printf "\\addlanguage{%s}{%s}{}{%s}{%s}" "${name}" "${file}" "${lefthyphenmin}" "${righthyphenmin}" >> "${S}/language.${PN}.def" || die
+	echo "\\addlanguage{$name}{$file}{}{$lefthyphenmin}{$righthyphenmin}" >> "${S}/language.${PN}.def" || die
 	if [[ -n ${synonyms} ]]; then
-		for i in $(echo "${synonyms}" | tr ',' ' ') ; do
-			einfo "Generating language.def synonym ${i} for $*"
-			printf "\\addlanguage{%s}{%s}{}{%s}{%s}" "${i}" "${file}" "${lefthyphenmin}" "${righthyphenmin}" >> "${S}/language.${PN}.def" || die
+		for i in $(echo $synonyms | tr ',' ' ') ; do
+			einfo "Generating language.def synonym $i for $@"
+			echo "\\addlanguage{$i}{$file}{}{$lefthyphenmin}{$righthyphenmin}" >> "${S}/language.${PN}.def" || die
 		done
 	fi
 }
@@ -204,11 +204,11 @@ texlive-module_make_language_def_lines() {
 texlive-module_make_language_dat_lines() {
 	local lefthyphenmin righthyphenmin synonyms name file file_patterns file_exceptions luaspecial
 	eval $@
-	einfo "Generating language.dat entry for $*"
-	echo "${name} ${file}" >> "${S}/language.${PN}.dat" || die
+	einfo "Generating language.dat entry for $@"
+	echo "$name $file" >> "${S}/language.${PN}.dat" || die
 	if [[ -n ${synonyms} ]]; then
-		for i in $(echo "${synonyms}" | tr ',' ' ') ; do
-			einfo "Generating language.dat synonym ${i} for $*"
+		for i in $(echo ${synonyms} | tr ',' ' ') ; do
+			einfo "Generating language.dat synonym ${i} for $@"
 			echo "=${i}" >> "${S}/language.${PN}.dat" || die
 		done
 	fi
@@ -221,8 +221,8 @@ texlive-module_make_language_dat_lines() {
 
 texlive-module_synonyms_to_language_lua_line() {
 	local prev=""
-	for i in $(echo "$@" | tr ',' ' ') ; do
-		printf "${prev} '%s'" "${i}"
+	for i in $(echo $@ | tr ',' ' ') ; do
+		printf "${prev} '%s'" ${i}
 		prev=","
 	done
 }
@@ -240,7 +240,7 @@ texlive-module_make_language_lua_lines() {
 	eval $@
 	[[ -z ${lefthyphenmin}  ]] && lefthyphenmin="2"
 	[[ -z ${righthyphenmin} ]] && righthyphenmin="3"
-	einfo "Generating language.dat.lua entry for $*"
+	einfo "Generating language.dat.lua entry for $@"
 	printf "\t['%s'] = {\n" "${name}"                                                                   >> "${dest}" || die
 	printf "\t\tloader = '%s',\n" "${file}"                                                             >> "${dest}" || die
 	printf "\t\tlefthyphenmin = %s,\n\t\trighthyphenmin = %s,\n" "${lefthyphenmin}" "${righthyphenmin}" >> "${dest}" || die

@@ -1,4 +1,4 @@
-# Copyright 1999-2023 Gentoo Authors
+# Copyright 1999-2024 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 # @ECLASS: texlive-common.eclass
@@ -36,7 +36,7 @@ _TEXLIVE_COMMON_ECLASS=1
 texlive-common_handle_config_files() {
 	local texmf_path
 	# Starting with TeX Live 2023, we install in texmf-dist, where a
-	# distribution provided TeX Live installation is supposed to be,
+	# distribution-provided TeX Live installation is supposed to be,
 	# instead of texmf.
 	if ver_test -ge 2023; then
 		texmf_path=/usr/share/texmf-dist
