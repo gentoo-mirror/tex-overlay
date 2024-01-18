@@ -18,7 +18,7 @@ RESTRICT="mirror"
 GENTOO_TEX_PATCHES_NUM=2
 
 SRC_URI="
-	mirror://ctan/systems/texlive/Source/${MY_P}.tar.xz
+	https://mirrors.ctan.org/systems/texlive/Source/${MY_P}.tar.xz
 	https://gitweb.gentoo.org/proj/tex-patches.git/snapshot/tex-patches-${GENTOO_TEX_PATCHES_NUM}.tar.bz2
 		-> gentoo-tex-patches-${GENTOO_TEX_PATCHES_NUM}.tar.bz2
 "
@@ -302,7 +302,7 @@ texlive-common_append_to_src_uri TL_CORE_EXTRA_DOC_MODULES
 SRC_URI="${SRC_URI} )"
 # SRC_URI="${SRC_URI} source? ( "
 # for i in ${TL_CORE_EXTRA_SRC_MODULES}; do
-# 	SRC_URI="${SRC_URI} mirror://ctan/tlnet/archive/${i}.tar.xz"
+# 	SRC_URI="${SRC_URI} https://mirrors.ctan.org/tlnet/archive/${i}.tar.xz"
 # done
 # SRC_URI="${SRC_URI} )"
 

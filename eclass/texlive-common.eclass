@@ -218,7 +218,7 @@ texlive-common_append_to_src_uri() {
 		done
 	else
 		local texlive_ge_2023_devs=( flow )
-		local tl_mirror="mirror://ctan/systems/texlive/tlnet/archive/"
+		local tl_mirror="https://mirrors.ctan.org/systems/texlive/tlnet/archive/"
 
 		tl_uri=( "${tl_uri[@]/%/.${tl_pkgext}}" )
 		SRC_URI+=" ${tl_uri[*]/#/${tl_mirror}}"
