@@ -25,6 +25,21 @@ esac
 if [[ -z ${_TEXLIVE_COMMON_ECLASS} ]]; then
 _TEXLIVE_COMMON_ECLASS=1
 
+# @ECLASS_VARIABLE: CTAN_MIRROR_URL
+# @USER_VARIABLE
+# @DESCRIPTION:
+# This variable can be used to set the CTAN mirror that will be used to fetch
+# CTAN artifacts. Note that this mirror is usually only used as fallback
+# in case the Gentoo mirrors do not hold the requested files.
+#
+# Only Gentoo TeX developers may want to set this.
+#
+# Example:
+# @CODE
+# CTAN_MIRROR_URL='https://ftp.fau.de/ctan/' emerge -1v app-text/texlive-core
+# @CODE
+: "${CTAN_MIRROR_URL:="https://mirrors.ctan.org"}"
+
 # @FUNCTION: texlive-common_handle_config_files
 # @DESCRIPTION:
 # Has to be called in src_install after having installed the files in ${D}
@@ -218,7 +233,7 @@ texlive-common_append_to_src_uri() {
 		done
 	else
 		local texlive_ge_2023_devs=( flow )
-		local tl_mirror="https://mirrors.ctan.org/systems/texlive/tlnet/archive/"
+		local tl_mirror="${CTAN_MIRROR_URL%/}/systems/texlive/tlnet/archive/"
 
 		tl_uri=( "${tl_uri[@]/%/.${tl_pkgext}}" )
 		SRC_URI+=" ${tl_uri[*]/#/${tl_mirror}}"
