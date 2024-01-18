@@ -17,14 +17,14 @@ HOMEPAGE="
 # TODO: Document how tex4ht-sources-$TEX4HT_SVN_VERSION.tar.xz is generated.
 SRC_URI="
 	https://dev.gentoo.org/~flow/distfiles/texlive/tex4ht-sources-1405.tar.xz
-	mirror://ctan/systems/texlive/tlnet/archive/${MY_P_TEXLIVE}
+	https://mirrors.ctan.org/systems/texlive/tlnet/archive/${MY_P_TEXLIVE}
 	https://dev.gentoo.org/~flow/distfiles/texlive/${MY_P_TEXLIVE}
 	source? (
-		mirror://ctan/systems/texlive/tlnet/archive/${MY_P_TEXLIVE_SRC}
+		https://mirrors.ctan.org/systems/texlive/tlnet/archive/${MY_P_TEXLIVE_SRC}
 		https://dev.gentoo.org/~flow/distfiles/texlive/${MY_P_TEXLIVE_SRC}
 	)
 	doc? (
-		mirror://ctan/systems/texlive/tlnet/archive/${MY_P_TEXLIVE_DOC}
+		https://mirrors.ctan.org/systems/texlive/tlnet/archive/${MY_P_TEXLIVE_DOC}
 		https://dev.gentoo.org/~flow/distfiles/texlive/${MY_P_TEXLIVE_DOC}
 	)
 "

@@ -11,7 +11,7 @@ MY_SOURCE_FILE="texlive-${PV#*_p}-source.tar.xz"
 DESCRIPTION="Path searching library for TeX-related files"
 HOMEPAGE="https://tug.org/texlive/"
 SRC_URI="
-	mirror://ctan/systems/texlive/Source/${MY_SOURCE_FILE}
+	https://mirrors.ctan.org/systems/texlive/Source/${MY_SOURCE_FILE}
 	https://dev.gentoo.org/~flow/distfiles/texlive/${MY_SOURCE_FILE}
 	https://dev.gentoo.org/~sam/distfiles/texlive/${PN}-texmf.d-${TEXMFD_VERSION}.tar.xz
 "
