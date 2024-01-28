@@ -1,4 +1,4 @@
-# Copyright 1999-2023 Gentoo Authors
+# Copyright 1999-2024 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI="8"
@@ -242,7 +242,7 @@ TEXLIVE_MODULE_SRC_CONTENTS="
 	placeat.source.r45145
 	texfindpkg.source.r67027
 "
-inherit texlive-module
+inherit prefix texlive-module
 DESCRIPTION="TeXLive LuaTeX packages"
 RESTRICT="mirror"
 
@@ -261,3 +261,8 @@ TEXLIVE_MODULE_BINSCRIPTS="
 TEXLIVE_MODULE_BINLINKS="
 	luaotfload-tool:mkluatexfontdb
 	"
+
+src_prepare() {
+	default
+	hprefixify texmf-dist/tex/luatex/luaotfload/luaotfload-database.lua
+}
