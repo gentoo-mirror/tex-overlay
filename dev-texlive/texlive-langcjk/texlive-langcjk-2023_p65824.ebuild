@@ -3,7 +3,6 @@
 
 EAPI="8"
 
-TL_PV="2023"
 TEXLIVE_MODULE_CONTENTS="
 	adobemapping.r66552
 	c90.r60830

@@ -3,7 +3,6 @@
 
 EAPI="8"
 
-TL_PV="2023"
 TEXLIVE_MODULE_CONTENTS="
 	2up.r55076
 	a0poster.r54071

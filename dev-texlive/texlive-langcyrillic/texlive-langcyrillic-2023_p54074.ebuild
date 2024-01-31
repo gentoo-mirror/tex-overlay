@@ -3,7 +3,6 @@
 
 EAPI="8"
 
-TL_PV="2023"
 TEXLIVE_MODULE_CONTENTS="
 	babel-belarusian.r49022
 	babel-bulgarian.r31902

@@ -3,7 +3,6 @@
 
 EAPI="8"
 
-TL_PV="2023"
 TEXLIVE_MODULE_CONTENTS="
 	ascmac.r53411
 	asternote.r63838

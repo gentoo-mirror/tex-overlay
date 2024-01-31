@@ -3,7 +3,6 @@
 
 EAPI="8"
 
-TL_PV="2023"
 TEXLIVE_MODULE_CONTENTS="
 	addliga.r50912
 	addtoluatexpath.r67821
@@ -264,5 +263,6 @@ TEXLIVE_MODULE_BINLINKS="
 
 src_prepare() {
 	default
+	# https://bugs.gentoo.org/865203
 	hprefixify texmf-dist/tex/luatex/luaotfload/luaotfload-database.lua
 }
