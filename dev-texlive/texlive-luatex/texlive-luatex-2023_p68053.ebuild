@@ -263,5 +263,6 @@ TEXLIVE_MODULE_BINLINKS="
 
 src_prepare() {
 	default
+	# https://bugs.gentoo.org/865203
 	hprefixify texmf-dist/tex/luatex/luaotfload/luaotfload-database.lua
 }
