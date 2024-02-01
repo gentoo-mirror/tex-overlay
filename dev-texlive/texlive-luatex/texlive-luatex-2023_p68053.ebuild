@@ -257,10 +257,6 @@ TEXLIVE_MODULE_BINSCRIPTS="
 	texmf-dist/scripts/checkcites/checkcites.lua
 	"
 
-TEXLIVE_MODULE_BINLINKS="
-	luaotfload-tool:mkluatexfontdb
-	"
-
 src_prepare() {
 	default
 	# https://bugs.gentoo.org/865203
