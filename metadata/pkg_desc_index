@@ -8,6 +8,7 @@ dev-libs/ptexenc 1.4.3_p20230311: Library for Japanese pTeX providing a better w
 dev-tex/biber 2.19: A BibTeX replacement for users of biblatex
 dev-tex/biblatex 3.19: Reimplementation of the bibliographic facilities provided by LaTeX
 dev-tex/bibtexu 4.00_p20230311: 8-bit Implementation of BibTeX 0.99 with a Very Large Capacity
+dev-tex/glossaries 4.53: Create glossaries and lists of acronyms
 dev-tex/tex4ht 20230311_p68735: Converts (La)TeX to (X)HTML, XML and OO.org
 dev-texlive/texlive-basic 2023_p59159: TeXLive Essential programs and files
 dev-texlive/texlive-bibtexextra 2023_p67386: TeXLive BibTeX additional styles
