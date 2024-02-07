@@ -1,4 +1,4 @@
-# Copyright 1999-2023 Gentoo Authors
+# Copyright 1999-2024 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI="8"
@@ -51,7 +51,7 @@ RDEPEND="${DEPEND}
 		>=${TEXLIVE_CAT}/texlive-fontsextra-${PV}
 		>=${TEXLIVE_CAT}/texlive-formatsextra-${PV}
 		>=${TEXLIVE_CAT}/texlive-latexextra-${PV}
-		>=dev-tex/glossaries-2.07
+		>=dev-tex/glossaries-4.53
 	)
 	xetex? ( >=${TEXLIVE_CAT}/texlive-xetex-${PV} )
 	graphics? ( >=${TEXLIVE_CAT}/texlive-pictures-${PV} )
