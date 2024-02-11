@@ -39,7 +39,6 @@ RDEPEND="${DEPEND}
 	>=${TEXLIVE_CAT}/texlive-latex-${PV}
 	luatex? ( >=${TEXLIVE_CAT}/texlive-luatex-${PV} )
 	>=${TEXLIVE_CAT}/texlive-latexrecommended-${PV}
-	>=dev-tex/latex-beamer-3.36
 	metapost? ( >=${TEXLIVE_CAT}/texlive-metapost-${PV} )
 	>=${TEXLIVE_CAT}/texlive-plaingeneric-${PV}
 	pdfannotextractor? ( dev-tex/pdfannotextractor )
@@ -51,7 +50,6 @@ RDEPEND="${DEPEND}
 		>=${TEXLIVE_CAT}/texlive-fontsextra-${PV}
 		>=${TEXLIVE_CAT}/texlive-formatsextra-${PV}
 		>=${TEXLIVE_CAT}/texlive-latexextra-${PV}
-		>=dev-tex/glossaries-4.53
 	)
 	xetex? ( >=${TEXLIVE_CAT}/texlive-xetex-${PV} )
 	graphics? ( >=${TEXLIVE_CAT}/texlive-pictures-${PV} )
