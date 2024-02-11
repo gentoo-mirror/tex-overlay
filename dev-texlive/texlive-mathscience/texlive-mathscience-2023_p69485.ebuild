@@ -1,9 +1,10 @@
-# Copyright 1999-2023 Gentoo Authors
+# Copyright 1999-2024 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI="8"
 
 TEXLIVE_MODULE_CONTENTS="
+	collection-mathscience.r69485
 	12many.r15878
 	accents.r51497
 	alg.r15878
@@ -25,7 +26,7 @@ TEXLIVE_MODULE_CONTENTS="
 	binomexp.r15878
 	biocon.r15878
 	bitpattern.r39073
-	bodeplot.r68530
+	bodeplot.r69742
 	bohr.r62977
 	boldtensors.r15878
 	bosisio.r16989
@@ -56,8 +57,6 @@ TEXLIVE_MODULE_CONTENTS="
 	clrscode.r51136
 	clrscode3e.r51137
 	codeanatomy.r65648
-	collection-fontsrecommended.r54074
-	collection-latex.r63515
 	commath.r15878
 	commutative-diagrams.r68044
 	complexity.r45322
@@ -73,8 +72,8 @@ TEXLIVE_MODULE_CONTENTS="
 	delim.r23974
 	delimseasy.r39589
 	delimset.r49544
-	derivative.r67735
-	diffcoeff.r66834
+	derivative.r69746
+	diffcoeff.r68838
 	digiconfigs.r15878
 	dijkstra.r64580
 	drawmatrix.r44471
@@ -87,7 +86,7 @@ TEXLIVE_MODULE_CONTENTS="
 	emf.r42023
 	endiagram.r34486
 	engtlc.r28571
-	eolang.r67897
+	eolang.r69391
 	eqexpl.r63629
 	eqnarray.r20641
 	eqnnumwarn.r45511
@@ -96,12 +95,13 @@ TEXLIVE_MODULE_CONTENTS="
 	extpfeil.r16243
 	faktor.r15878
 	fascicules.r54080
-	fitch.r68179
+	fitch.r69160
 	fixdif.r66606
 	fixmath.r64648
 	fnspe.r45360
 	formal-grammar.r61955
 	fouridx.r32214
+	freealign.r69267
 	functan.r15878
 	galois.r15878
 	gastex.r58505
@@ -124,7 +124,7 @@ TEXLIVE_MODULE_CONTENTS="
 	interval.r50265
 	ionumbers.r33457
 	isomath.r27654
-	isphysicalmath.r68312
+	isphysicalmath.r69343
 	jkmath.r47109
 	jupynotex.r56715
 	karnaugh.r21338
@@ -138,7 +138,7 @@ TEXLIVE_MODULE_CONTENTS="
 	lpform.r36918
 	lplfitch.r31077
 	lstbayes.r48160
-	luanumint.r67746
+	luanumint.r68918
 	mathcommand.r59512
 	mathcomp.r15878
 	mathfixs.r49547
@@ -150,27 +150,29 @@ TEXLIVE_MODULE_CONTENTS="
 	matrix-skeleton.r65013
 	mattens.r62326
 	mecaso.r60346
+	medmath.r69510
 	membranecomputing.r64627
 	memorygraphs.r49631
-	messagepassing.r63116
+	messagepassing.r69123
 	mgltex.r63255
-	mhchem.r61456
+	mhchem.r69639
 	mhequ.r64978
 	miller.r18789
-	mismath.r67745
+	mismath.r69169
 	multiobjective.r15878
 	naive-ebnf.r67892
 	namedtensor.r65346
 	natded.r32693
 	nath.r15878
 	nchairx.r60196
-	nicematrix.r68639
+	nicematrix.r69588
 	nuc.r22256
 	nucleardata.r47307
 	numerica.r68021
 	numerica-plus.r68019
 	numerica-tables.r68193
 	objectz.r61719
+	odesandpdes.r69485
 	oplotsymbl.r44951
 	ot-tableau.r67813
 	oubraces.r21833
@@ -180,15 +182,16 @@ TEXLIVE_MODULE_CONTENTS="
 	pfdicons.r60089
 	physconst.r58727
 	physics.r28590
-	physics2.r66742
+	physics2.r69369
 	physunits.r58728
 	pinoutikz.r55966
 	pm-isomath.r60368
+	pmdraw.r69366
 	polexpr.r63337
 	prftree.r54080
 	principia.r66625
 	proba.r15878
-	proof-at-the-end.r64188
+	proof-at-the-end.r69602
 	prooftrees.r67399
 	pseudo.r66638
 	pseudocode.r54080
@@ -212,16 +215,16 @@ TEXLIVE_MODULE_CONTENTS="
 	sesamanuel.r36613
 	sfg.r20209
 	shuffle.r15878
-	simplebnf.r65485
+	simplebnf.r68959
 	simpler-wick.r39074
 	simples-matrices.r63802
 	simplewick.r15878
 	sistyle.r59682
 	siunits.r59702
-	siunitx.r68476
+	siunitx.r69742
 	skmath.r52411
 	spalign.r42225
-	spbmark.r64706
+	spbmark.r69725
 	stanli.r54512
 	statex.r20306
 	statex2.r23961
@@ -247,7 +250,7 @@ TEXLIVE_MODULE_CONTENTS="
 	tex-ewd.r15878
 	textgreek.r44192
 	textopo.r23796
-	thermodynamics.r63188
+	thermodynamics.r69086
 	thmbox.r15878
 	tiscreen.r62602
 	turnstile.r64967
@@ -258,10 +261,9 @@ TEXLIVE_MODULE_CONTENTS="
 	xymtex.r32182
 	yhmath.r54377
 	youngtab.r56500
-	yquant.r66795
+	yquant.r68997
 	ytableau.r59580
-	zx-calculus.r60838
-	collection-mathscience.r68312
+	zx-calculus.r69455
 "
 TEXLIVE_MODULE_DOC_CONTENTS="
 	12many.doc.r15878
@@ -285,7 +287,7 @@ TEXLIVE_MODULE_DOC_CONTENTS="
 	binomexp.doc.r15878
 	biocon.doc.r15878
 	bitpattern.doc.r39073
-	bodeplot.doc.r68530
+	bodeplot.doc.r69742
 	bohr.doc.r62977
 	boldtensors.doc.r15878
 	bosisio.doc.r16989
@@ -331,8 +333,8 @@ TEXLIVE_MODULE_DOC_CONTENTS="
 	delim.doc.r23974
 	delimseasy.doc.r39589
 	delimset.doc.r49544
-	derivative.doc.r67735
-	diffcoeff.doc.r66834
+	derivative.doc.r69746
+	diffcoeff.doc.r68838
 	digiconfigs.doc.r15878
 	dijkstra.doc.r64580
 	drawmatrix.doc.r44471
@@ -345,7 +347,7 @@ TEXLIVE_MODULE_DOC_CONTENTS="
 	emf.doc.r42023
 	endiagram.doc.r34486
 	engtlc.doc.r28571
-	eolang.doc.r67897
+	eolang.doc.r69391
 	eqexpl.doc.r63629
 	eqnarray.doc.r20641
 	eqnnumwarn.doc.r45511
@@ -354,12 +356,13 @@ TEXLIVE_MODULE_DOC_CONTENTS="
 	extpfeil.doc.r16243
 	faktor.doc.r15878
 	fascicules.doc.r54080
-	fitch.doc.r68179
+	fitch.doc.r69160
 	fixdif.doc.r66606
 	fixmath.doc.r64648
 	fnspe.doc.r45360
 	formal-grammar.doc.r61955
 	fouridx.doc.r32214
+	freealign.doc.r69267
 	functan.doc.r15878
 	galois.doc.r15878
 	gastex.doc.r58505
@@ -382,7 +385,7 @@ TEXLIVE_MODULE_DOC_CONTENTS="
 	interval.doc.r50265
 	ionumbers.doc.r33457
 	isomath.doc.r27654
-	isphysicalmath.doc.r68312
+	isphysicalmath.doc.r69343
 	jkmath.doc.r47109
 	jupynotex.doc.r56715
 	karnaugh.doc.r21338
@@ -396,7 +399,7 @@ TEXLIVE_MODULE_DOC_CONTENTS="
 	lpform.doc.r36918
 	lplfitch.doc.r31077
 	lstbayes.doc.r48160
-	luanumint.doc.r67746
+	luanumint.doc.r68918
 	mathcommand.doc.r59512
 	mathcomp.doc.r15878
 	mathfixs.doc.r49547
@@ -407,27 +410,29 @@ TEXLIVE_MODULE_DOC_CONTENTS="
 	matrix-skeleton.doc.r65013
 	mattens.doc.r62326
 	mecaso.doc.r60346
+	medmath.doc.r69510
 	membranecomputing.doc.r64627
 	memorygraphs.doc.r49631
-	messagepassing.doc.r63116
+	messagepassing.doc.r69123
 	mgltex.doc.r63255
-	mhchem.doc.r61456
+	mhchem.doc.r69639
 	mhequ.doc.r64978
 	miller.doc.r18789
-	mismath.doc.r67745
+	mismath.doc.r69169
 	multiobjective.doc.r15878
 	naive-ebnf.doc.r67892
 	namedtensor.doc.r65346
 	natded.doc.r32693
 	nath.doc.r15878
 	nchairx.doc.r60196
-	nicematrix.doc.r68639
+	nicematrix.doc.r69588
 	nuc.doc.r22256
 	nucleardata.doc.r47307
 	numerica.doc.r68021
 	numerica-plus.doc.r68019
 	numerica-tables.doc.r68193
 	objectz.doc.r61719
+	odesandpdes.doc.r69485
 	oplotsymbl.doc.r44951
 	ot-tableau.doc.r67813
 	oubraces.doc.r21833
@@ -437,15 +442,16 @@ TEXLIVE_MODULE_DOC_CONTENTS="
 	pfdicons.doc.r60089
 	physconst.doc.r58727
 	physics.doc.r28590
-	physics2.doc.r66742
+	physics2.doc.r69369
 	physunits.doc.r58728
 	pinoutikz.doc.r55966
 	pm-isomath.doc.r60368
+	pmdraw.doc.r69366
 	polexpr.doc.r63337
 	prftree.doc.r54080
 	principia.doc.r66625
 	proba.doc.r15878
-	proof-at-the-end.doc.r64188
+	proof-at-the-end.doc.r69602
 	prooftrees.doc.r67399
 	pseudo.doc.r66638
 	pseudocode.doc.r54080
@@ -469,16 +475,16 @@ TEXLIVE_MODULE_DOC_CONTENTS="
 	sesamanuel.doc.r36613
 	sfg.doc.r20209
 	shuffle.doc.r15878
-	simplebnf.doc.r65485
+	simplebnf.doc.r68959
 	simpler-wick.doc.r39074
 	simples-matrices.doc.r63802
 	simplewick.doc.r15878
 	sistyle.doc.r59682
 	siunits.doc.r59702
-	siunitx.doc.r68476
+	siunitx.doc.r69742
 	skmath.doc.r52411
 	spalign.doc.r42225
-	spbmark.doc.r64706
+	spbmark.doc.r69725
 	stanli.doc.r54512
 	statex.doc.r20306
 	statex2.doc.r23961
@@ -504,7 +510,7 @@ TEXLIVE_MODULE_DOC_CONTENTS="
 	tex-ewd.doc.r15878
 	textgreek.doc.r44192
 	textopo.doc.r23796
-	thermodynamics.doc.r63188
+	thermodynamics.doc.r69086
 	thmbox.doc.r15878
 	tiscreen.doc.r62602
 	turnstile.doc.r64967
@@ -515,9 +521,9 @@ TEXLIVE_MODULE_DOC_CONTENTS="
 	xymtex.doc.r32182
 	yhmath.doc.r54377
 	youngtab.doc.r56500
-	yquant.doc.r66795
+	yquant.doc.r68997
 	ytableau.doc.r59580
-	zx-calculus.doc.r60838
+	zx-calculus.doc.r69455
 "
 TEXLIVE_MODULE_SRC_CONTENTS="
 	12many.source.r15878
@@ -532,7 +538,7 @@ TEXLIVE_MODULE_SRC_CONTENTS="
 	backnaur.source.r54080
 	binomexp.source.r15878
 	bitpattern.source.r39073
-	bodeplot.source.r68530
+	bodeplot.source.r69742
 	bosisio.source.r16989
 	bpchem.source.r45120
 	bropd.source.r35383
@@ -563,7 +569,7 @@ TEXLIVE_MODULE_SRC_CONTENTS="
 	dyntree.source.r67016
 	easing.source.r59975
 	ebproof.source.r57544
-	eolang.source.r67897
+	eolang.source.r69391
 	eqnarray.source.r20641
 	euclideangeometry.source.r67608
 	extpfeil.source.r16243
@@ -582,7 +588,7 @@ TEXLIVE_MODULE_SRC_CONTENTS="
 	hep-reference.source.r67632
 	ibrackets.source.r67736
 	ionumbers.source.r33457
-	isphysicalmath.source.r68312
+	isphysicalmath.source.r69343
 	karnaugh-map.source.r61614
 	karnaughmap.source.r36989
 	kvmap.source.r67201
@@ -596,22 +602,24 @@ TEXLIVE_MODULE_SRC_CONTENTS="
 	mathpartir.source.r39864
 	matlab-prettifier.source.r34323
 	mattens.source.r62326
-	messagepassing.source.r63116
+	messagepassing.source.r69123
 	mgltex.source.r63255
 	miller.source.r18789
-	mismath.source.r67745
+	mismath.source.r69169
 	multiobjective.source.r15878
 	naive-ebnf.source.r67892
 	nchairx.source.r60196
-	nicematrix.source.r68639
+	nicematrix.source.r69588
 	nucleardata.source.r47307
 	objectz.source.r61719
+	odesandpdes.source.r69485
 	overarrows.source.r65853
 	physconst.source.r58727
+	physics2.source.r69369
 	physunits.source.r58728
 	pm-isomath.source.r60368
 	proba.source.r15878
-	proof-at-the-end.source.r64188
+	proof-at-the-end.source.r69602
 	qsharp.source.r49722
 	rest-api.source.r57068
 	revquantum.source.r43505
@@ -624,7 +632,7 @@ TEXLIVE_MODULE_SRC_CONTENTS="
 	simplewick.source.r15878
 	sistyle.source.r59682
 	siunits.source.r59702
-	siunitx.source.r68476
+	siunitx.source.r69742
 	skmath.source.r52411
 	spalign.source.r42225
 	statistics.source.r67201
@@ -638,7 +646,7 @@ TEXLIVE_MODULE_SRC_CONTENTS="
 	tensor.source.r67667
 	textgreek.source.r44192
 	textopo.source.r23796
-	thermodynamics.source.r63188
+	thermodynamics.source.r69086
 	thmbox.source.r15878
 	turnstile.source.r64967
 	ulqda.source.r26313
@@ -649,20 +657,26 @@ TEXLIVE_MODULE_SRC_CONTENTS="
 	youngtab.source.r56500
 	ytableau.source.r59580
 "
-inherit texlive-module
-DESCRIPTION="TeXLive Mathematics, natural sciences, computer science packages"
-RESTRICT="mirror"
 
-LICENSE="Apache-2.0 BSD BSD-2 CC-BY-4.0 CC-BY-SA-3.0 CC-BY-SA-4.0 GPL-1 GPL-2 GPL-3 GPL-3+ ISC LGPL-2 LGPL-2.1 LPPL-1.0 LPPL-1.2 LPPL-1.3 LPPL-1.3a LPPL-1.3c MIT TeX TeX-other-free public-domain"
-SLOT="0/2023"
-KEYWORDS="~alpha ~amd64 ~arm ~arm64 ~hppa ~ia64 ~loong ~mips ~ppc ~ppc64 ~riscv ~s390 ~sparc ~x86 ~amd64-linux ~x86-linux ~ppc-macos ~x64-macos ~x64-solaris"
-DEPEND="
-	>=dev-texlive/texlive-fontsrecommended-2019
-	>=dev-texlive/texlive-latex-2019
+inherit texlive-module
+
+DESCRIPTION="TeXLive Mathematics, natural sciences, computer science packages"
+
+LICENSE="Apache-2.0 BSD BSD-2 CC-BY-4.0 CC-BY-SA-3.0 CC-BY-SA-4.0 FDL-1.1 GPL-1 GPL-2 GPL-3 GPL-3+ ISC LGPL-2 LGPL-2.1 LPPL-1.2 LPPL-1.3 LPPL-1.3a LPPL-1.3c MIT TeX TeX-other-free public-domain"
+SLOT="0"
+KEYWORDS="~amd64 ~arm64 ~ppc ~riscv ~x86"
+COMMON_DEPEND="
+	>=dev-texlive/texlive-fontsrecommended-2023
+	>=dev-texlive/texlive-latex-2023
 "
 RDEPEND="
-	${DEPEND}
-	dev-texlive/texlive-pstricks
+	${COMMON_DEPEND}
+"
+DEPEND="
+	${COMMON_DEPEND}
 "
 
-TEXLIVE_MODULE_BINSCRIPTS="texmf-dist/scripts/ulqda/ulqda.pl"
+TEXLIVE_MODULE_BINSCRIPTS="
+	texmf-dist/scripts/eolang/eolang.pl
+	texmf-dist/scripts/ulqda/ulqda.pl
+"

@@ -1,22 +1,23 @@
-# Copyright 1999-2023 Gentoo Authors
+# Copyright 1999-2024 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI="8"
 
 TEXLIVE_MODULE_CONTENTS="
+	collection-plaingeneric.r68675
 	abbr.r15878
 	abstyles.r15878
-	advice.r68648
+	advice.r69283
 	apnum.r47510
 	autoaligne.r66655
 	barr.r38479
 	bitelist.r25779
 	borceux.r21047
 	c-pascal.r18337
+	calcfrac.r68684
 	catcodes.r38859
 	chronosys.r26700
-	collargs.r68525
-	collection-basic.r59159
+	collargs.r69284
 	colorsep.r13293
 	compare.r54265
 	crossrefenum.r66014
@@ -45,8 +46,8 @@ TEXLIVE_MODULE_CONTENTS="
 	getoptk.r23567
 	gfnotation.r37156
 	gobble.r64967
-	graphics-pln.r65187
-	gtl.r49527
+	graphics-pln.r68760
+	gtl.r69297
 	hlist.r44983
 	hyplain.r15878
 	inputnormalization.r59850
@@ -85,7 +86,7 @@ TEXLIVE_MODULE_CONTENTS="
 	plstmary.r31088
 	poormanlog.r63400
 	present.r50048
-	pwebmac.r68486
+	pwebmac.r69027
 	random.r54723
 	randomlist.r45281
 	resumemac.r15878
@@ -99,40 +100,36 @@ TEXLIVE_MODULE_CONTENTS="
 	tabto-generic.r15878
 	termmenu.r37700
 	tex-ps.r15878
-	tex4ht.r68652
 	texapi.r54080
 	texdate.r49362
 	texdimens.r61070
 	texinfo.r68342
 	timetable.r15878
 	tracklang.r65263
-	transparent-io.r64113
 	treetex.r28176
 	trigonometry.r43006
 	ulem.r53365
 	upca.r22511
 	varisize.r15878
-	xii.r45804
-	xii-lat.r45805
 	xintsession.r60926
 	xlop.r56910
 	yax.r54080
 	zztex.r55862
-	collection-plaingeneric.r68513
 "
 TEXLIVE_MODULE_DOC_CONTENTS="
 	abbr.doc.r15878
 	abstyles.doc.r15878
-	advice.doc.r68648
+	advice.doc.r69283
 	apnum.doc.r47510
 	autoaligne.doc.r66655
 	barr.doc.r38479
 	bitelist.doc.r25779
 	borceux.doc.r21047
 	c-pascal.doc.r18337
+	calcfrac.doc.r68684
 	catcodes.doc.r38859
 	chronosys.doc.r26700
-	collargs.doc.r68525
+	collargs.doc.r69284
 	crossrefenum.doc.r66014
 	dinat.doc.r15878
 	dirtree.doc.r42428
@@ -155,8 +152,8 @@ TEXLIVE_MODULE_DOC_CONTENTS="
 	getoptk.doc.r23567
 	gfnotation.doc.r37156
 	gobble.doc.r64967
-	graphics-pln.doc.r65187
-	gtl.doc.r49527
+	graphics-pln.doc.r68760
+	gtl.doc.r69297
 	hlist.doc.r44983
 	hyplain.doc.r15878
 	inputnormalization.doc.r59850
@@ -191,7 +188,7 @@ TEXLIVE_MODULE_DOC_CONTENTS="
 	plstmary.doc.r31088
 	poormanlog.doc.r63400
 	present.doc.r50048
-	pwebmac.doc.r68486
+	pwebmac.doc.r69027
 	random.doc.r54723
 	randomlist.doc.r45281
 	resumemac.doc.r15878
@@ -202,7 +199,6 @@ TEXLIVE_MODULE_DOC_CONTENTS="
 	systeme.doc.r66655
 	termmenu.doc.r37700
 	tex-ps.doc.r15878
-	tex4ht.doc.r68652
 	texapi.doc.r54080
 	texdate.doc.r49362
 	texdimens.doc.r61070
@@ -221,17 +217,17 @@ TEXLIVE_MODULE_DOC_CONTENTS="
 	zztex.doc.r55862
 "
 TEXLIVE_MODULE_SRC_CONTENTS="
-	advice.source.r68648
+	advice.source.r69283
 	bitelist.source.r25779
 	catcodes.source.r38859
-	collargs.source.r68525
+	collargs.source.r69284
 	dirtree.source.r42428
 	dowith.source.r38860
 	expex-acro.source.r68046
 	expkv-bundle.source.r65623
 	fltpoint.source.r56594
 	gobble.source.r64967
-	gtl.source.r49527
+	gtl.source.r69297
 	inputnormalization.source.r59850
 	kastrup.source.r15878
 	langcode.source.r27764
@@ -245,20 +241,24 @@ TEXLIVE_MODULE_SRC_CONTENTS="
 	schemata.source.r58020
 	soul.source.r67365
 	termmenu.source.r37700
-	tex4ht.source.r68652
 	texdate.source.r49362
 	tracklang.source.r65263
 "
-inherit texlive-module
-DESCRIPTION="TeXLive Plain (La)TeX packages"
-RESTRICT="mirror"
 
-LICENSE="CC0-1.0 FDL-1.3 GPL-1 GPL-3 GPL-3+ LPPL-1.0 LPPL-1.3 LPPL-1.3c MIT TeX TeX-collection TeX-other-free public-domain"
-SLOT="0/2023"
-KEYWORDS="~alpha ~amd64 ~arm ~arm64 ~hppa ~ia64 ~loong ~mips ~ppc ~ppc64 ~riscv ~s390 ~sparc ~x86 ~amd64-linux ~x86-linux ~ppc-macos ~x64-macos ~x64-solaris"
-DEPEND="
-	>=dev-texlive/texlive-basic-2019
+inherit texlive-module
+
+DESCRIPTION="TeXLive Plain (La)TeX packages"
+
+LICENSE="CC0-1.0 FDL-1.1 GPL-1 GPL-2 GPL-3 GPL-3+ LPPL-1.3 LPPL-1.3c MIT TeX TeX-other-free public-domain"
+SLOT="0"
+KEYWORDS="~amd64 ~arm64 ~ppc ~riscv ~x86"
+COMMON_DEPEND="
+	>=dev-texlive/texlive-basic-2023
 "
 RDEPEND="
-	${DEPEND}
+	${COMMON_DEPEND}
+	>=dev-tex/tex4ht-20230311_p68735
+"
+DEPEND="
+	${COMMON_DEPEND}
 "

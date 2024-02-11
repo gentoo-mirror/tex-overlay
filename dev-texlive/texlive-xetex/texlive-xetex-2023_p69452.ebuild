@@ -1,18 +1,17 @@
-# Copyright 1999-2023 Gentoo Authors
+# Copyright 1999-2024 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI="8"
 
 TEXLIVE_MODULE_CONTENTS="
+	collection-xetex.r69452
 	arabxetex.r38299
-	awesomebox.r57349
 	bidi-atbegshi.r62009
 	bidicontour.r34631
 	bidipagegrid.r34632
 	bidipresentation.r35267
 	bidishadowtext.r34633
 	businesscard-qrcode.r61719
-	collection-basic.r59159
 	cqubeamer.r54512
 	fixlatvian.r21631
 	font-change-xetex.r40404
@@ -47,11 +46,9 @@ TEXLIVE_MODULE_CONTENTS="
 	xetexko.r64894
 	xevlna.r43864
 	zbmath-review-template.r59693
-	collection-xetex.r64951
 "
 TEXLIVE_MODULE_DOC_CONTENTS="
 	arabxetex.doc.r38299
-	awesomebox.doc.r57349
 	bidi-atbegshi.doc.r62009
 	bidicontour.doc.r34631
 	bidipagegrid.doc.r34632
@@ -99,25 +96,29 @@ TEXLIVE_MODULE_SRC_CONTENTS="
 	realscripts.source.r56594
 	xespotcolor.source.r58212
 "
-inherit texlive-module
+
+inherit font texlive-module
+
 DESCRIPTION="TeXLive XeTeX and packages"
-RESTRICT="mirror"
 
 LICENSE="Apache-2.0 CC-BY-4.0 CC-BY-SA-4.0 GPL-1 GPL-3 LGPL-2 LPPL-1.2 LPPL-1.3 LPPL-1.3c MIT TeX-other-free public-domain"
-SLOT="0/2023"
-KEYWORDS="~alpha ~amd64 ~arm ~arm64 ~hppa ~ia64 ~loong ~mips ~ppc ~ppc64 ~riscv ~s390 ~sparc ~x86 ~amd64-linux ~x86-linux ~ppc-macos ~x64-macos ~x64-solaris"
-DEPEND="
-	>=dev-texlive/texlive-basic-2019
-	>=dev-texlive/texlive-latexextra-2010
-	>=app-text/texlive-core-2010[xetex]
-	dev-texlive/texlive-mathscience
-	dev-texlive/texlive-luatex
+SLOT="0"
+KEYWORDS="~amd64 ~arm64 ~ppc ~riscv ~x86"
+COMMON_DEPEND="
+	>=app-text/texlive-core-2023[xetex]
+	>=dev-texlive/texlive-basic-2023
 "
 RDEPEND="
-	${DEPEND}
+	${COMMON_DEPEND}
+"
+DEPEND="
+	${COMMON_DEPEND}
 "
 
-inherit font
+TEXLIVE_MODULE_BINSCRIPTS="
+	texmf-dist/scripts/texlive-extra/xelatex-unsafe.sh
+	texmf-dist/scripts/texlive-extra/xetex-unsafe.sh
+"
 FONT_CONF=( "${FILESDIR}"/09-texlive.conf )
 
 src_install() {

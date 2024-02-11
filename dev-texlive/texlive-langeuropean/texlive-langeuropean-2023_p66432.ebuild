@@ -1,10 +1,11 @@
-# Copyright 1999-2023 Gentoo Authors
+# Copyright 1999-2024 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI="8"
 
 TEXLIVE_MODULE_CONTENTS="
-	armtex.r64182
+	collection-langeuropean.r66432
+	armtex.r69418
 	babel-albanian.r57005
 	babel-bosnian.r38174
 	babel-breton.r30257
@@ -22,20 +23,18 @@ TEXLIVE_MODULE_CONTENTS="
 	babel-latvian.r46681
 	babel-lithuanian.r66513
 	babel-macedonian.r39587
-	babel-norsk.r65093
+	babel-norsk.r69603
 	babel-occitan.r39608
 	babel-piedmontese.r30282
 	babel-romanian.r58776
 	babel-romansh.r30286
-	babel-samin.r30288
-	babel-scottish.r30289
-	babel-slovenian.r57666
+	babel-samin.r69604
+	babel-scottish.r69610
+	babel-slovenian.r69742
 	babel-swedish.r57647
 	babel-turkish.r51560
 	babel-welsh.r38372
-	collection-basic.r59159
 	finbib.r15878
-	gloss-occitan.r52593
 	hrlatex.r18020
 	huaz.r64723
 	hulipsum.r56848
@@ -63,21 +62,14 @@ TEXLIVE_MODULE_CONTENTS="
 	hyphen-turkish.r58652
 	hyphen-uppersorbian.r58609
 	hyphen-welsh.r58652
-	kaytannollista-latexia.r67595
 	lithuanian.r66461
-	lshort-dutch.r15878
-	lshort-estonian.r39323
-	lshort-finnish.r15878
-	lshort-slovenian.r68204
-	lshort-turkish.r15878
 	nevelok.r39029
 	rojud.r56895
 	swebib.r15878
 	turkmen.r17748
-	collection-langeuropean.r66432
 "
 TEXLIVE_MODULE_DOC_CONTENTS="
-	armtex.doc.r64182
+	armtex.doc.r69418
 	babel-albanian.doc.r57005
 	babel-bosnian.doc.r38174
 	babel-breton.doc.r30257
@@ -95,14 +87,14 @@ TEXLIVE_MODULE_DOC_CONTENTS="
 	babel-latvian.doc.r46681
 	babel-lithuanian.doc.r66513
 	babel-macedonian.doc.r39587
-	babel-norsk.doc.r65093
+	babel-norsk.doc.r69603
 	babel-occitan.doc.r39608
 	babel-piedmontese.doc.r30282
 	babel-romanian.doc.r58776
 	babel-romansh.doc.r30286
-	babel-samin.doc.r30288
-	babel-scottish.doc.r30289
-	babel-slovenian.doc.r57666
+	babel-samin.doc.r69604
+	babel-scottish.doc.r69610
+	babel-slovenian.doc.r69742
 	babel-swedish.doc.r57647
 	babel-turkish.doc.r51560
 	babel-welsh.doc.r38372
@@ -111,7 +103,7 @@ TEXLIVE_MODULE_DOC_CONTENTS="
 	huaz.doc.r64723
 	hulipsum.doc.r56848
 	hyphen-hungarian.doc.r58652
-	kaytannollista-latexia.doc.r67595
+	kaytannollista-latexia.doc.r69468
 	lithuanian.doc.r66461
 	lshort-dutch.doc.r15878
 	lshort-estonian.doc.r39323
@@ -140,14 +132,14 @@ TEXLIVE_MODULE_SRC_CONTENTS="
 	babel-latvian.source.r46681
 	babel-lithuanian.source.r66513
 	babel-macedonian.source.r39587
-	babel-norsk.source.r65093
+	babel-norsk.source.r69603
 	babel-occitan.source.r39608
 	babel-piedmontese.source.r30282
 	babel-romanian.source.r58776
 	babel-romansh.source.r30286
-	babel-samin.source.r30288
-	babel-scottish.source.r30289
-	babel-slovenian.source.r57666
+	babel-samin.source.r69604
+	babel-scottish.source.r69610
+	babel-slovenian.source.r69742
 	babel-swedish.source.r57647
 	babel-turkish.source.r51560
 	babel-welsh.source.r38372
@@ -158,16 +150,20 @@ TEXLIVE_MODULE_SRC_CONTENTS="
 	nevelok.source.r39029
 	turkmen.source.r17748
 "
+
 inherit texlive-module
+
 DESCRIPTION="TeXLive Other European languages"
-RESTRICT="mirror"
 
 LICENSE="CC-BY-SA-4.0 GPL-1 GPL-2 LPPL-1.2 LPPL-1.3 LPPL-1.3c TeX-other-free public-domain"
-SLOT="0/2023"
-KEYWORDS="~alpha ~amd64 ~arm ~arm64 ~hppa ~ia64 ~loong ~mips ~ppc ~ppc64 ~riscv ~s390 ~sparc ~x86 ~amd64-linux ~x86-linux ~ppc-macos ~x64-macos ~x64-solaris"
-DEPEND="
-	>=dev-texlive/texlive-basic-2019
+SLOT="0"
+KEYWORDS="~amd64 ~arm64 ~ppc ~riscv ~x86"
+COMMON_DEPEND="
+	>=dev-texlive/texlive-basic-2023
 "
 RDEPEND="
-	${DEPEND}
+	${COMMON_DEPEND}
+"
+DEPEND="
+	${COMMON_DEPEND}
 "

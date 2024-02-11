@@ -1,9 +1,10 @@
-# Copyright 1999-2023 Gentoo Authors
+# Copyright 1999-2024 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI="8"
 
 TEXLIVE_MODULE_CONTENTS="
+	collection-basic.r59159
 	amsfonts.r61937
 	bibtex.r66186
 	cm.r57963
@@ -21,22 +22,19 @@ TEXLIVE_MODULE_CONTENTS="
 	knuth-local.r57963
 	lua-alt-getopt.r56414
 	luahbtex.r66186
-	luatex.r66967
+	luatex.r69182
 	makeindex.r62517
 	metafont.r66186
 	mflogo.r42428
 	mfware.r66186
-	modes.r61719
+	modes.r69113
 	pdftex.r66243
 	plain.r57963
 	tex.r66186
-	tex-ini-files.r40533
-	texlive-common.r68510
-	texlive-en.r67184
-	texlive-msg-translations.r68130
+	tex-ini-files.r68920
+	texlive-msg-translations.r69696
 	tlshell.r66771
 	unicode-data.r68311
-	collection-basic.r59159
 "
 TEXLIVE_MODULE_DOC_CONTENTS="
 	amsfonts.doc.r61937
@@ -53,15 +51,15 @@ TEXLIVE_MODULE_DOC_CONTENTS="
 	iftex.doc.r61910
 	lua-alt-getopt.doc.r56414
 	luahbtex.doc.r66186
-	luatex.doc.r66967
+	luatex.doc.r69182
 	makeindex.doc.r62517
 	metafont.doc.r66186
 	mflogo.doc.r42428
 	mfware.doc.r66186
-	modes.doc.r61719
+	modes.doc.r69113
 	pdftex.doc.r66243
 	tex.doc.r66186
-	tex-ini-files.doc.r40533
+	tex-ini-files.doc.r68920
 	texlive-common.doc.r68510
 	texlive-en.doc.r67184
 	tlshell.doc.r66771
@@ -74,19 +72,28 @@ TEXLIVE_MODULE_SRC_CONTENTS="
 	ifplatform.source.r45533
 	mflogo.source.r42428
 "
-TEXLIVE_MODULE_OPTIONAL_ENGINE="luajittex"
-inherit texlive-module
-DESCRIPTION="TeXLive Essential programs and files"
-RESTRICT="mirror"
 
-LICENSE="GPL-1 GPL-2 LPPL-1.3 LPPL-1.3c MIT OFL TeX TeX-other-free public-domain"
-SLOT="0/2023"
-KEYWORDS="~alpha ~amd64 ~arm ~arm64 ~hppa ~ia64 ~loong ~mips ~ppc ~ppc64 ~riscv ~s390 ~sparc ~x86 ~amd64-linux ~x86-linux ~ppc-macos ~x64-macos ~x64-solaris"
-DEPEND="
-	>=app-text/texlive-core-2020[luajittex?]
+TEXLIVE_MODULE_OPTIONAL_ENGINE="luajittex"
+
+inherit texlive-module
+
+DESCRIPTION="TeXLive Essential programs and files"
+
+LICENSE="GPL-1 GPL-2+ LGPL-2.1 LPPL-1.3 LPPL-1.3c MIT OFL TeX TeX-other-free public-domain"
+SLOT="0"
+KEYWORDS="~amd64 ~arm64 ~ppc ~riscv ~x86"
+COMMON_DEPEND="
+	>=app-text/texlive-core-2023[luajittex?]
 "
 RDEPEND="
-	${DEPEND}
+	${COMMON_DEPEND}
+	>=app-text/xdvik-22.87.06-r1
+"
+DEPEND="
+	${COMMON_DEPEND}
 "
 
-TEXLIVE_MODULE_BINSCRIPTS="texmf-dist/scripts/simpdftex/simpdftex"
+TEXLIVE_MODULE_BINSCRIPTS="
+	texmf-dist/scripts/simpdftex/simpdftex
+	texmf-dist/scripts/tlshell/tlshell.tcl
+"

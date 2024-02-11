@@ -1,14 +1,15 @@
-# Copyright 1999-2023 Gentoo Authors
+# Copyright 1999-2024 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI="8"
 
 TEXLIVE_MODULE_CONTENTS="
+	collection-publishers.r69759
 	aastex.r58057
 	abnt.r55471
 	abntex2.r49248
-	abntexto.r68554
-	acmart.r68628
+	abntexto.r68837
+	acmart.r69721
 	acmconf.r15878
 	active-conf.r15878
 	adfathesis.r26048
@@ -16,8 +17,8 @@ TEXLIVE_MODULE_CONTENTS="
 	afthesis.r15878
 	aguplus.r17156
 	aiaa.r15878
+	amnestyreport.r69439
 	anonymous-acm.r55121
-	anufinalexam.r26053
 	aomart.r63442
 	apa.r54080
 	apa6.r67848
@@ -27,8 +28,8 @@ TEXLIVE_MODULE_CONTENTS="
 	articleingud.r38741
 	asaetr.r15878
 	ascelike.r29129
-	asmeconf.r68593
-	asmejour.r68629
+	asmeconf.r69742
+	asmejour.r69722
 	aucklandthesis.r51323
 	bangorcsthesis.r61770
 	bangorexam.r65140
@@ -36,7 +37,7 @@ TEXLIVE_MODULE_CONTENTS="
 	beamer-fuberlin.r63161
 	beamer-verona.r39180
 	beilstein.r56193
-	bfh-ci.r66461
+	bfh-ci.r68828
 	bgteubner.r54080
 	bjfuthesis.r59809
 	bmstu.r65897
@@ -51,18 +52,19 @@ TEXLIVE_MODULE_CONTENTS="
 	chem-journal.r15878
 	chifoot.r57312
 	chs-physics-report.r54512
-	cje.r46721
+	cidarticle.r68976
+	cje.r68656
+	cjs-rcs-article.r69006
 	classicthesis.r48041
 	cleanthesis.r51472
 	cmpj.r58506
-	collection-latex.r63515
 	confproc.r29349
+	contract.r69759
 	cquthesis.r55643
 	dccpaper.r67890
 	dithesis.r34295
 	ebook.r29466
 	ebsthesis.r15878
-	ecothesis.r48007
 	ejpecp.r60950
 	ekaia.r49594
 	elbioimp.r21758
@@ -93,7 +95,8 @@ TEXLIVE_MODULE_CONTENTS="
 	har2nat.r54080
 	hecthese.r68584
 	hep-paper.r67632
-	hfutexam.r66646
+	heria.r69058
+	hfutexam.r68829
 	hfutthesis.r64025
 	hithesis.r64005
 	hitszbeamer.r54381
@@ -114,11 +117,11 @@ TEXLIVE_MODULE_CONTENTS="
 	iscram.r45801
 	jacow.r63060
 	jmlr.r61957
-	jnuexam.r56867
+	jnuexam.r69161
 	jourcl.r65290
 	jourrr.r68556
 	jpsj.r66115
-	jwjournal.r68608
+	jwjournal.r69162
 	kdgdocs.r24498
 	kdpcover.r65150
 	kfupm-math-exam.r63977
@@ -129,18 +132,18 @@ TEXLIVE_MODULE_CONTENTS="
 	langsci-avm.r66016
 	limecv.r61199
 	lion-msc.r55415
-	llncs.r64299
+	llncs.r69629
 	llncsconf.r63136
-	lni.r58061
+	lni.r69361
 	lps.r21322
 	matc3.r29845
 	matc3mem.r35773
-	mcmthesis.r57333
+	mcmthesis.r69538
 	mentis.r15878
-	mitthesis.r68360
+	mitthesis.r68732
 	mlacls.r67201
 	mluexercise.r56927
-	mnras.r55729
+	mnras.r68878
 	modeles-factures-belges-assocs.r67840
 	msu-thesis.r68480
 	mucproc.r43445
@@ -157,10 +160,10 @@ TEXLIVE_MODULE_CONTENTS="
 	nih.r15878
 	nihbiosketch.r54191
 	njustthesis.r62451
-	njuthesis.r67309
+	njuthesis.r69051
 	njuvisual.r65261
 	nostarch.r67683
-	novel.r68090
+	novel.r69658
 	nrc.r29027
 	nwafuthesis.r66895
 	nwejm.r64462
@@ -180,6 +183,7 @@ TEXLIVE_MODULE_CONTENTS="
 	ptptex.r19440
 	qrbill.r67724
 	quantumarticle.r65242
+	regulatory.r69611
 	resphilosophica.r50935
 	resumecls.r54815
 	revtex.r67271
@@ -192,7 +196,7 @@ TEXLIVE_MODULE_CONTENTS="
 	sapthesis.r63810
 	schule.r68483
 	scientific-thesis-cover.r47923
-	scripture.r65493
+	scripture.r69232
 	scrjrnl.r27810
 	sduthesis.r41401
 	se2thesis.r68255
@@ -206,7 +210,7 @@ TEXLIVE_MODULE_CONTENTS="
 	sphdthesis.r34374
 	spie.r15878
 	sr-vorl.r59333
-	srdp-mathematik.r67032
+	srdp-mathematik.r69288
 	stellenbosch.r68039
 	stellenbosch-2.r68183
 	suftesi.r68204
@@ -228,10 +232,10 @@ TEXLIVE_MODULE_CONTENTS="
 	tlc-article.r51431
 	topletter.r48182
 	toptesi.r56276
-	tuda-ci.r67622
+	tuda-ci.r69351
 	tudscr.r64085
-	tugboat.r67549
-	tugboat-plain.r67347
+	tugboat.r68694
+	tugboat-plain.r68695
 	tui.r27253
 	turabian.r36298
 	uaclasses.r15878
@@ -240,24 +244,24 @@ TEXLIVE_MODULE_CONTENTS="
 	ucalgmthesis.r66602
 	ucbthesis.r51690
 	ucdavisthesis.r40772
-	ucph-revy.r68224
+	ucph-revy.r69750
 	ucsmonograph.r52698
 	ucthesis.r15878
+	udepcolor.r69701
 	udes-genie-these.r68141
 	uestcthesis.r36371
-	ufrgscca.r68361
+	ufrgscca.r69042
 	uhhassignment.r44026
 	uiucredborder.r29974
 	uiucthesis.r15878
-	ukbill.r65485
+	ukbill.r69362
 	ulthese.r60217
 	umbclegislation.r41348
 	umich-thesis.r15878
 	umthesis.r15878
 	unam-thesis.r51207
-	unamth-template.r33625
 	unamthesis.r43639
-	unbtex.r68603
+	unbtex.r69681
 	unifith.r60698
 	unigrazpub.r64797
 	unitn-bimrep.r45581
@@ -287,14 +291,13 @@ TEXLIVE_MODULE_CONTENTS="
 	yazd-thesis.r61719
 	yb-book.r67188
 	york-thesis.r23348
-	collection-publishers.r68224
 "
 TEXLIVE_MODULE_DOC_CONTENTS="
 	aastex.doc.r58057
 	abnt.doc.r55471
 	abntex2.doc.r49248
-	abntexto.doc.r68554
-	acmart.doc.r68628
+	abntexto.doc.r68837
+	acmart.doc.r69721
 	acmconf.doc.r15878
 	active-conf.doc.r15878
 	adfathesis.doc.r26048
@@ -302,6 +305,7 @@ TEXLIVE_MODULE_DOC_CONTENTS="
 	afthesis.doc.r15878
 	aguplus.doc.r17156
 	aiaa.doc.r15878
+	amnestyreport.doc.r69439
 	anonymous-acm.doc.r55121
 	anufinalexam.doc.r26053
 	aomart.doc.r63442
@@ -313,8 +317,8 @@ TEXLIVE_MODULE_DOC_CONTENTS="
 	articleingud.doc.r38741
 	asaetr.doc.r15878
 	ascelike.doc.r29129
-	asmeconf.doc.r68593
-	asmejour.doc.r68629
+	asmeconf.doc.r69742
+	asmejour.doc.r69722
 	aucklandthesis.doc.r51323
 	bangorcsthesis.doc.r61770
 	bangorexam.doc.r65140
@@ -322,7 +326,7 @@ TEXLIVE_MODULE_DOC_CONTENTS="
 	beamer-fuberlin.doc.r63161
 	beamer-verona.doc.r39180
 	beilstein.doc.r56193
-	bfh-ci.doc.r66461
+	bfh-ci.doc.r68828
 	bgteubner.doc.r54080
 	bjfuthesis.doc.r59809
 	bmstu.doc.r65897
@@ -336,11 +340,14 @@ TEXLIVE_MODULE_DOC_CONTENTS="
 	cesenaexam.doc.r44960
 	chifoot.doc.r57312
 	chs-physics-report.doc.r54512
-	cje.doc.r46721
+	cidarticle.doc.r68976
+	cje.doc.r68656
+	cjs-rcs-article.doc.r69006
 	classicthesis.doc.r48041
 	cleanthesis.doc.r51472
 	cmpj.doc.r58506
 	confproc.doc.r29349
+	contract.doc.r69759
 	cquthesis.doc.r55643
 	dccpaper.doc.r67890
 	dithesis.doc.r34295
@@ -377,7 +384,8 @@ TEXLIVE_MODULE_DOC_CONTENTS="
 	har2nat.doc.r54080
 	hecthese.doc.r68584
 	hep-paper.doc.r67632
-	hfutexam.doc.r66646
+	heria.doc.r69058
+	hfutexam.doc.r68829
 	hfutthesis.doc.r64025
 	hithesis.doc.r64005
 	hitszbeamer.doc.r54381
@@ -398,11 +406,11 @@ TEXLIVE_MODULE_DOC_CONTENTS="
 	iscram.doc.r45801
 	jacow.doc.r63060
 	jmlr.doc.r61957
-	jnuexam.doc.r56867
+	jnuexam.doc.r69161
 	jourcl.doc.r65290
 	jourrr.doc.r68556
 	jpsj.doc.r66115
-	jwjournal.doc.r68608
+	jwjournal.doc.r69162
 	kdgdocs.doc.r24498
 	kdpcover.doc.r65150
 	kfupm-math-exam.doc.r63977
@@ -413,18 +421,18 @@ TEXLIVE_MODULE_DOC_CONTENTS="
 	langsci-avm.doc.r66016
 	limecv.doc.r61199
 	lion-msc.doc.r55415
-	llncs.doc.r64299
+	llncs.doc.r69629
 	llncsconf.doc.r63136
-	lni.doc.r58061
+	lni.doc.r69361
 	lps.doc.r21322
 	matc3.doc.r29845
 	matc3mem.doc.r35773
-	mcmthesis.doc.r57333
+	mcmthesis.doc.r69538
 	mentis.doc.r15878
-	mitthesis.doc.r68360
+	mitthesis.doc.r68732
 	mlacls.doc.r67201
 	mluexercise.doc.r56927
-	mnras.doc.r55729
+	mnras.doc.r68878
 	modeles-factures-belges-assocs.doc.r67840
 	msu-thesis.doc.r68480
 	mucproc.doc.r43445
@@ -441,10 +449,10 @@ TEXLIVE_MODULE_DOC_CONTENTS="
 	nih.doc.r15878
 	nihbiosketch.doc.r54191
 	njustthesis.doc.r62451
-	njuthesis.doc.r67309
+	njuthesis.doc.r69051
 	njuvisual.doc.r65261
 	nostarch.doc.r67683
-	novel.doc.r68090
+	novel.doc.r69658
 	nrc.doc.r29027
 	nwafuthesis.doc.r66895
 	nwejm.doc.r64462
@@ -464,6 +472,7 @@ TEXLIVE_MODULE_DOC_CONTENTS="
 	ptptex.doc.r19440
 	qrbill.doc.r67724
 	quantumarticle.doc.r65242
+	regulatory.doc.r69611
 	resphilosophica.doc.r50935
 	resumecls.doc.r54815
 	revtex.doc.r67271
@@ -476,7 +485,7 @@ TEXLIVE_MODULE_DOC_CONTENTS="
 	sapthesis.doc.r63810
 	schule.doc.r68483
 	scientific-thesis-cover.doc.r47923
-	scripture.doc.r65493
+	scripture.doc.r69232
 	scrjrnl.doc.r27810
 	sduthesis.doc.r41401
 	se2thesis.doc.r68255
@@ -490,7 +499,7 @@ TEXLIVE_MODULE_DOC_CONTENTS="
 	sphdthesis.doc.r34374
 	spie.doc.r15878
 	sr-vorl.doc.r59333
-	srdp-mathematik.doc.r67032
+	srdp-mathematik.doc.r69288
 	stellenbosch.doc.r68039
 	stellenbosch-2.doc.r68183
 	suftesi.doc.r68204
@@ -510,10 +519,10 @@ TEXLIVE_MODULE_DOC_CONTENTS="
 	tlc-article.doc.r51431
 	topletter.doc.r48182
 	toptesi.doc.r56276
-	tuda-ci.doc.r67622
+	tuda-ci.doc.r69351
 	tudscr.doc.r64085
-	tugboat.doc.r67549
-	tugboat-plain.doc.r67347
+	tugboat.doc.r68694
+	tugboat-plain.doc.r68695
 	tui.doc.r27253
 	turabian.doc.r36298
 	uaclasses.doc.r15878
@@ -522,24 +531,25 @@ TEXLIVE_MODULE_DOC_CONTENTS="
 	ucalgmthesis.doc.r66602
 	ucbthesis.doc.r51690
 	ucdavisthesis.doc.r40772
-	ucph-revy.doc.r68224
+	ucph-revy.doc.r69750
 	ucsmonograph.doc.r52698
 	ucthesis.doc.r15878
+	udepcolor.doc.r69701
 	udes-genie-these.doc.r68141
 	uestcthesis.doc.r36371
-	ufrgscca.doc.r68361
+	ufrgscca.doc.r69042
 	uhhassignment.doc.r44026
 	uiucredborder.doc.r29974
 	uiucthesis.doc.r15878
-	ukbill.doc.r65485
+	ukbill.doc.r69362
 	ulthese.doc.r60217
 	umbclegislation.doc.r41348
 	umich-thesis.doc.r15878
 	umthesis.doc.r15878
 	unam-thesis.doc.r51207
-	unamth-template.doc.r33625
+	unamth-template.doc.r68681
 	unamthesis.doc.r43639
-	unbtex.doc.r68603
+	unbtex.doc.r69681
 	unifith.doc.r60698
 	unigrazpub.doc.r64797
 	unitn-bimrep.doc.r45581
@@ -571,12 +581,13 @@ TEXLIVE_MODULE_DOC_CONTENTS="
 	york-thesis.doc.r23348
 "
 TEXLIVE_MODULE_SRC_CONTENTS="
-	acmart.source.r68628
+	acmart.source.r69721
 	acmconf.source.r15878
 	active-conf.source.r15878
 	adfathesis.source.r26048
 	afparticle.source.r35900
 	aiaa.source.r15878
+	amnestyreport.source.r69439
 	aomart.source.r63442
 	apa6.source.r67848
 	apa6e.source.r23350
@@ -591,7 +602,10 @@ TEXLIVE_MODULE_SRC_CONTENTS="
 	brandeis-thesis.source.r68092
 	buctthesis.source.r67818
 	cesenaexam.source.r44960
+	cidarticle.source.r68976
+	cjs-rcs-article.source.r69006
 	confproc.source.r29349
+	contract.source.r69759
 	cquthesis.source.r55643
 	dccpaper.source.r67890
 	ebsthesis.source.r15878
@@ -612,6 +626,7 @@ TEXLIVE_MODULE_SRC_CONTENTS="
 	gzt.source.r63591
 	hecthese.source.r68584
 	hep-paper.source.r67632
+	heria.source.r69058
 	hithesis.source.r64005
 	hitszbeamer.source.r54381
 	hitszthesis.source.r61073
@@ -628,11 +643,11 @@ TEXLIVE_MODULE_SRC_CONTENTS="
 	kluwer.source.r54074
 	langsci-avm.source.r66016
 	limecv.source.r61199
-	lni.source.r58061
+	lni.source.r69361
 	lps.source.r21322
 	matc3.source.r29845
 	matc3mem.source.r35773
-	mcmthesis.source.r57333
+	mcmthesis.source.r69538
 	mentis.source.r15878
 	mlacls.source.r67201
 	mluexercise.source.r56927
@@ -644,7 +659,7 @@ TEXLIVE_MODULE_SRC_CONTENTS="
 	navydocs.source.r41643
 	nddiss.source.r45107
 	njustthesis.source.r62451
-	njuthesis.source.r67309
+	njuthesis.source.r69051
 	njuvisual.source.r65261
 	nostarch.source.r67683
 	nrc.source.r29027
@@ -665,7 +680,7 @@ TEXLIVE_MODULE_SRC_CONTENTS="
 	ryethesis.source.r33945
 	sageep.source.r15878
 	scientific-thesis-cover.source.r47923
-	scripture.source.r65493
+	scripture.source.r69232
 	scrjrnl.source.r27810
 	sduthesis.source.r41401
 	se2thesis.source.r68255
@@ -685,11 +700,11 @@ TEXLIVE_MODULE_SRC_CONTENTS="
 	topletter.source.r48182
 	toptesi.source.r56276
 	tudscr.source.r64085
-	tugboat.source.r67549
+	tugboat.source.r68694
 	uaclasses.source.r15878
 	uantwerpendocs.source.r66819
 	ucdavisthesis.source.r40772
-	ucph-revy.source.r68224
+	ucph-revy.source.r69750
 	ucsmonograph.source.r52698
 	udes-genie-these.source.r68141
 	uhhassignment.source.r44026
@@ -712,16 +727,20 @@ TEXLIVE_MODULE_SRC_CONTENTS="
 	yb-book.source.r67188
 	york-thesis.source.r23348
 "
-inherit texlive-module
-DESCRIPTION="TeXLive Publisher styles, theses, etc."
-RESTRICT="mirror"
 
-LICENSE="Apache-2.0 BSD CC-BY-4.0 CC-BY-SA-3.0 CC-BY-SA-4.0 CC0-1.0 FDL-1.3 GPL-1 GPL-2 GPL-3 GPL-3+ LPPL-1.2 LPPL-1.3 LPPL-1.3a LPPL-1.3c MIT OFL TeX-other-free public-domain"
-SLOT="0/2023"
-KEYWORDS="~alpha ~amd64 ~arm ~arm64 ~hppa ~ia64 ~loong ~mips ~ppc ~ppc64 ~riscv ~s390 ~sparc ~x86 ~amd64-linux ~x86-linux ~ppc-macos ~x64-macos ~x64-solaris"
-DEPEND="
-	>=dev-texlive/texlive-latex-2019
+inherit texlive-module
+
+DESCRIPTION="TeXLive Publisher styles, theses, etc."
+
+LICENSE="Apache-2.0 Artistic-2 BSD CC-BY-4.0 CC-BY-SA-3.0 CC-BY-SA-4.0 CC0-1.0 FDL-1.1 GPL-1 GPL-2 GPL-2+ GPL-3 GPL-3+ LPPL-1.2 LPPL-1.3 LPPL-1.3a LPPL-1.3c MIT OFL TeX-other-free public-domain"
+SLOT="0"
+KEYWORDS="~amd64 ~arm64 ~ppc ~riscv ~x86"
+COMMON_DEPEND="
+	>=dev-texlive/texlive-latex-2023
 "
 RDEPEND="
-	${DEPEND}
+	${COMMON_DEPEND}
+"
+DEPEND="
+	${COMMON_DEPEND}
 "

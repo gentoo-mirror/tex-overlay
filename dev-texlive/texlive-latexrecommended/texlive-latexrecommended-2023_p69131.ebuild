@@ -1,17 +1,17 @@
-# Copyright 1999-2023 Gentoo Authors
+# Copyright 1999-2024 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI="8"
 
 TEXLIVE_MODULE_CONTENTS="
+	collection-latexrecommended.r69131
 	anysize.r15878
-	attachfile2.r57959
+	attachfile2.r69505
 	booktabs.r53402
 	breqn.r60881
 	caption.r68425
 	cite.r36428
 	cmap.r57640
-	collection-latex.r63515
 	crop.r55424
 	ctable.r38672
 	eso-pic.r67001
@@ -23,7 +23,7 @@ TEXLIVE_MODULE_CONTENTS="
 	extsizes.r17263
 	fancybox.r18304
 	fancyref.r15878
-	fancyvrb.r65585
+	fancyvrb.r69536
 	filehook.r64822
 	float.r15878
 	fontspec.r63386
@@ -34,16 +34,16 @@ TEXLIVE_MODULE_CONTENTS="
 	index.r24099
 	infwarerr.r53023
 	jknapltx.r19440
-	koma-script.r67573
-	l3experimental.r68507
+	koma-script.r69755
+	l3experimental.r69310
 	latexbug.r63596
 	lineno.r67171
 	listings.r68476
-	lwarp.r68097
+	lwarp.r69724
 	mathspec.r42773
 	mathtools.r63767
 	mdwtools.r15878
-	memoir.r68004
+	memoir.r69600
 	metalogo.r18611
 	microtype.r66587
 	ms.r57473
@@ -52,10 +52,9 @@ TEXLIVE_MODULE_CONTENTS="
 	parskip.r58358
 	pdfcolfoot.r65512
 	pdflscape.r64851
-	pdfmanagement-testphase.r68505
-	pdfpages.r65319
-	pdftexcmds.r55777
-	polyglossia.r68420
+	pdfmanagement-testphase.r69078
+	pdfpages.r69524
+	polyglossia.r69093
 	psfrag.r15878
 	ragged2e.r67441
 	rcs.r15878
@@ -72,15 +71,14 @@ TEXLIVE_MODULE_CONTENTS="
 	ucharcat.r38907
 	underscore.r18261
 	unicode-math.r67919
-	xcolor.r63563
+	xcolor.r68864
 	xkeyval.r63616
 	xltxtra.r56594
 	xunicode.r30466
-	collection-latexrecommended.r65512
 "
 TEXLIVE_MODULE_DOC_CONTENTS="
 	anysize.doc.r15878
-	attachfile2.doc.r57959
+	attachfile2.doc.r69505
 	booktabs.doc.r53402
 	breqn.doc.r60881
 	caption.doc.r68425
@@ -97,7 +95,7 @@ TEXLIVE_MODULE_DOC_CONTENTS="
 	extsizes.doc.r17263
 	fancybox.doc.r18304
 	fancyref.doc.r15878
-	fancyvrb.doc.r65585
+	fancyvrb.doc.r69536
 	filehook.doc.r64822
 	float.doc.r15878
 	fontspec.doc.r63386
@@ -108,15 +106,15 @@ TEXLIVE_MODULE_DOC_CONTENTS="
 	index.doc.r24099
 	infwarerr.doc.r53023
 	jknapltx.doc.r19440
-	l3experimental.doc.r68507
+	l3experimental.doc.r69310
 	latexbug.doc.r63596
 	lineno.doc.r67171
 	listings.doc.r68476
-	lwarp.doc.r68097
+	lwarp.doc.r69724
 	mathspec.doc.r42773
 	mathtools.doc.r63767
 	mdwtools.doc.r15878
-	memoir.doc.r68004
+	memoir.doc.r69600
 	metalogo.doc.r18611
 	microtype.doc.r66587
 	ms.doc.r57473
@@ -125,10 +123,9 @@ TEXLIVE_MODULE_DOC_CONTENTS="
 	parskip.doc.r58358
 	pdfcolfoot.doc.r65512
 	pdflscape.doc.r64851
-	pdfmanagement-testphase.doc.r68505
-	pdfpages.doc.r65319
-	pdftexcmds.doc.r55777
-	polyglossia.doc.r68420
+	pdfmanagement-testphase.doc.r69078
+	pdfpages.doc.r69524
+	polyglossia.doc.r69093
 	psfrag.doc.r15878
 	ragged2e.doc.r67441
 	rcs.doc.r15878
@@ -145,13 +142,13 @@ TEXLIVE_MODULE_DOC_CONTENTS="
 	ucharcat.doc.r38907
 	underscore.doc.r18261
 	unicode-math.doc.r67919
-	xcolor.doc.r63563
+	xcolor.doc.r68864
 	xkeyval.doc.r63616
 	xltxtra.doc.r56594
 	xunicode.doc.r30466
 "
 TEXLIVE_MODULE_SRC_CONTENTS="
-	attachfile2.source.r57959
+	attachfile2.source.r69505
 	booktabs.source.r53402
 	breqn.source.r60881
 	caption.source.r68425
@@ -171,13 +168,13 @@ TEXLIVE_MODULE_SRC_CONTENTS="
 	hologo.source.r61719
 	index.source.r24099
 	infwarerr.source.r53023
-	l3experimental.source.r68507
+	l3experimental.source.r69310
 	latexbug.source.r63596
 	listings.source.r68476
-	lwarp.source.r68097
+	lwarp.source.r69724
 	mathtools.source.r63767
 	mdwtools.source.r15878
-	memoir.source.r68004
+	memoir.source.r69600
 	metalogo.source.r18611
 	microtype.source.r66587
 	ms.source.r57473
@@ -186,10 +183,9 @@ TEXLIVE_MODULE_SRC_CONTENTS="
 	parskip.source.r58358
 	pdfcolfoot.source.r65512
 	pdflscape.source.r64851
-	pdfmanagement-testphase.source.r68505
-	pdfpages.source.r65319
-	pdftexcmds.source.r55777
-	polyglossia.source.r68420
+	pdfmanagement-testphase.source.r69078
+	pdfpages.source.r69524
+	polyglossia.source.r69093
 	psfrag.source.r15878
 	ragged2e.source.r67441
 	rcs.source.r15878
@@ -198,22 +194,27 @@ TEXLIVE_MODULE_SRC_CONTENTS="
 	typehtml.source.r17134
 	ucharcat.source.r38907
 	unicode-math.source.r67919
-	xcolor.source.r63563
+	xcolor.source.r68864
 	xkeyval.source.r63616
 	xltxtra.source.r56594
 "
-inherit texlive-module
-DESCRIPTION="TeXLive LaTeX recommended packages"
-RESTRICT="mirror"
 
-LICENSE="CC0-1.0 GPL-1 LPPL-1.2 LPPL-1.3 LPPL-1.3a LPPL-1.3c MIT TeX-other-free public-domain"
-SLOT="0/2023"
-KEYWORDS="~alpha ~amd64 ~arm ~arm64 ~hppa ~ia64 ~loong ~mips ~ppc ~ppc64 ~riscv ~s390 ~sparc ~x86 ~amd64-linux ~x86-linux ~ppc-macos ~x64-macos ~x64-solaris"
-DEPEND="
-	>=dev-texlive/texlive-latex-2019
+inherit texlive-module
+
+DESCRIPTION="TeXLive LaTeX recommended packages"
+
+LICENSE="CC0-1.0 FDL-1.1 GPL-1 GPL-2 GPL-2+ LPPL-1.2 LPPL-1.3 LPPL-1.3a LPPL-1.3c MIT TeX-other-free public-domain"
+SLOT="0"
+KEYWORDS="~amd64 ~arm64 ~ppc ~riscv ~x86"
+COMMON_DEPEND="
+	>=dev-texlive/texlive-latex-2023
 "
 RDEPEND="
-	${DEPEND}
+	${COMMON_DEPEND}
+	>=dev-tex/latex-beamer-3.71
+"
+DEPEND="
+	${COMMON_DEPEND}
 "
 
 TEXLIVE_MODULE_BINSCRIPTS="
