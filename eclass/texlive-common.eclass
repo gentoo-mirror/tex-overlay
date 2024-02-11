@@ -177,7 +177,7 @@ dobin_texmf_scripts() {
 etexmf-update() {
 	if has_version 'app-text/texlive-core' ; then
 		if [[ -z ${ROOT} && -x "${EPREFIX}"/usr/sbin/texmf-update ]] ; then
-			"${EPREFIX}"/usr/sbin/texmf-update
+			"${EPREFIX}"/usr/sbin/texmf-update || die
 		else
 			ewarn "Cannot run texmf-update for some reason."
 			ewarn "Your texmf tree might be inconsistent with your configuration"
