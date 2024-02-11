@@ -1,9 +1,10 @@
-# Copyright 1999-2023 Gentoo Authors
+# Copyright 1999-2024 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI="8"
 
 TEXLIVE_MODULE_CONTENTS="
+	collection-pictures.r69409
 	adigraph.r49862
 	aobs-tikz.r32662
 	askmaps.r56730
@@ -16,22 +17,22 @@ TEXLIVE_MODULE_CONTENTS="
 	blochsphere.r38388
 	bloques.r22490
 	blox.r57949
-	bodegraph.r61719
+	bodegraph.r68785
 	bondgraph.r21670
 	bondgraphs.r36605
-	braids.r64817
+	braids.r69398
 	bxeepic.r30559
 	byo-twemojis.r58917
 	byrne.r61943
 	cachepic.r26313
 	callouts.r44899
 	celtic.r39797
-	chemfig.r67513
-	circuit-macros.r68264
-	circuitikz.r68502
+	chemfig.r69227
+	circuit-macros.r69263
+	circuitikz.r69757
 	circularglyphs.r68476
 	coffeestains.r59703
-	collection-basic.r59159
+	coloredbelts.r68747
 	combinedgraphics.r27198
 	curve.r20745
 	curve2e.r67599
@@ -39,7 +40,6 @@ TEXLIVE_MODULE_CONTENTS="
 	dcpic.r30206
 	diagmac2.r15878
 	ditaa.r48932
-	doc-pictex.r24927
 	dot2texi.r26237
 	dottex.r15878
 	dpcircling.r54994
@@ -52,11 +52,12 @@ TEXLIVE_MODULE_CONTENTS="
 	egpeirce.r66924
 	ellipse.r39025
 	endofproofwd.r55643
+	epspdf.r66115
 	epspdfconversion.r18703
 	esk.r18115
 	euflag.r55265
 	fast-diagram.r29264
-	fenetrecas.r67362
+	fenetrecas.r68779
 	fig4latex.r26313
 	figchild.r62945
 	figput.r63957
@@ -94,7 +95,7 @@ TEXLIVE_MODULE_CONTENTS="
 	maker.r44823
 	makeshape.r28973
 	mathspic.r31957
-	memoize.r68525
+	memoize.r69522
 	mercatormap.r56060
 	milsymb.r66697
 	miniplot.r17483
@@ -104,7 +105,7 @@ TEXLIVE_MODULE_CONTENTS="
 	nl-interval.r58328
 	nndraw.r59674
 	numericplots.r31729
-	outilsgeomtikz.r68592
+	outilsgeomtikz.r69124
 	papiergurvan.r68239
 	pb-diagram.r15878
 	petri-nets.r39165
@@ -117,6 +118,7 @@ TEXLIVE_MODULE_CONTENTS="
 	pgf-umlcd.r63386
 	pgf-umlsd.r55342
 	pgfgantt.r52662
+	pgfkeysearch.r69385
 	pgfkeyx.r26093
 	pgfmolbio.r35152
 	pgfmorepages.r54770
@@ -131,6 +133,7 @@ TEXLIVE_MODULE_CONTENTS="
 	pixelart.r66012
 	pixelarttikz.r68520
 	pmgraph.r15878
+	polyhedra.r68770
 	postage.r55920
 	postit.r67344
 	prerex.r54512
@@ -206,6 +209,7 @@ TEXLIVE_MODULE_CONTENTS="
 	tikz3d-fr.r67774
 	tikzbricks.r63952
 	tikzcodeblocks.r54758
+	tikzdotncross.r69382
 	tikzducks.r66773
 	tikzfill.r67847
 	tikzinclude.r28715
@@ -219,6 +223,8 @@ TEXLIVE_MODULE_CONTENTS="
 	tikzpfeile.r25777
 	tikzpingus.r68310
 	tikzposter.r32732
+	tikzquads.r69409
+	tikzquests.r69388
 	tikzscale.r30637
 	tikzsymbols.r61300
 	tikztosvg.r60289
@@ -227,11 +233,12 @@ TEXLIVE_MODULE_CONTENTS="
 	tilings.r67292
 	timing-diagrams.r31491
 	tipfr.r38646
-	tkz-base.r66115
+	tkz-base.r69460
 	tkz-berge.r57485
-	tkz-bernoulli.r68503
-	tkz-doc.r66115
-	tkz-euclide.r68604
+	tkz-bernoulli.r68780
+	tkz-doc.r68665
+	tkz-elements.r69715
+	tkz-euclide.r69702
 	tkz-fct.r61949
 	tkz-graph.r57484
 	tkz-orm.r61719
@@ -244,15 +251,14 @@ TEXLIVE_MODULE_CONTENTS="
 	twemojis.r62930
 	tzplot.r64537
 	utfsym.r63076
+	vectorlogos.r69010
 	venndiagram.r47952
-	visualpstricks.r39799
-	wheelchart.r64373
+	wheelchart.r69040
 	wordcloud.r68209
-	worldflags.r59171
+	worldflags.r68827
 	xistercian.r61366
 	xpicture.r28770
 	xypic.r61719
-	collection-pictures.r68515
 "
 TEXLIVE_MODULE_DOC_CONTENTS="
 	adigraph.doc.r49862
@@ -267,21 +273,22 @@ TEXLIVE_MODULE_DOC_CONTENTS="
 	blochsphere.doc.r38388
 	bloques.doc.r22490
 	blox.doc.r57949
-	bodegraph.doc.r61719
+	bodegraph.doc.r68785
 	bondgraph.doc.r21670
 	bondgraphs.doc.r36605
-	braids.doc.r64817
+	braids.doc.r69398
 	bxeepic.doc.r30559
 	byo-twemojis.doc.r58917
 	byrne.doc.r61943
 	cachepic.doc.r26313
 	callouts.doc.r44899
 	celtic.doc.r39797
-	chemfig.doc.r67513
-	circuit-macros.doc.r68264
-	circuitikz.doc.r68502
+	chemfig.doc.r69227
+	circuit-macros.doc.r69263
+	circuitikz.doc.r69757
 	circularglyphs.doc.r68476
 	coffeestains.doc.r59703
+	coloredbelts.doc.r68747
 	combinedgraphics.doc.r27198
 	curve.doc.r20745
 	curve2e.doc.r67599
@@ -302,11 +309,12 @@ TEXLIVE_MODULE_DOC_CONTENTS="
 	egpeirce.doc.r66924
 	ellipse.doc.r39025
 	endofproofwd.doc.r55643
+	epspdf.doc.r66115
 	epspdfconversion.doc.r18703
 	esk.doc.r18115
 	euflag.doc.r55265
 	fast-diagram.doc.r29264
-	fenetrecas.doc.r67362
+	fenetrecas.doc.r68779
 	fig4latex.doc.r26313
 	figchild.doc.r62945
 	figput.doc.r63957
@@ -344,7 +352,7 @@ TEXLIVE_MODULE_DOC_CONTENTS="
 	maker.doc.r44823
 	makeshape.doc.r28973
 	mathspic.doc.r31957
-	memoize.doc.r68525
+	memoize.doc.r69522
 	mercatormap.doc.r56060
 	milsymb.doc.r66697
 	miniplot.doc.r17483
@@ -354,7 +362,7 @@ TEXLIVE_MODULE_DOC_CONTENTS="
 	nl-interval.doc.r58328
 	nndraw.doc.r59674
 	numericplots.doc.r31729
-	outilsgeomtikz.doc.r68592
+	outilsgeomtikz.doc.r69124
 	papiergurvan.doc.r68239
 	pb-diagram.doc.r15878
 	petri-nets.doc.r39165
@@ -367,6 +375,7 @@ TEXLIVE_MODULE_DOC_CONTENTS="
 	pgf-umlcd.doc.r63386
 	pgf-umlsd.doc.r55342
 	pgfgantt.doc.r52662
+	pgfkeysearch.doc.r69385
 	pgfkeyx.doc.r26093
 	pgfmolbio.doc.r35152
 	pgfmorepages.doc.r54770
@@ -380,6 +389,7 @@ TEXLIVE_MODULE_DOC_CONTENTS="
 	pixelart.doc.r66012
 	pixelarttikz.doc.r68520
 	pmgraph.doc.r15878
+	polyhedra.doc.r68770
 	postage.doc.r55920
 	postit.doc.r67344
 	prerex.doc.r54512
@@ -455,6 +465,7 @@ TEXLIVE_MODULE_DOC_CONTENTS="
 	tikz3d-fr.doc.r67774
 	tikzbricks.doc.r63952
 	tikzcodeblocks.doc.r54758
+	tikzdotncross.doc.r69382
 	tikzducks.doc.r66773
 	tikzfill.doc.r67847
 	tikzinclude.doc.r28715
@@ -468,6 +479,8 @@ TEXLIVE_MODULE_DOC_CONTENTS="
 	tikzpfeile.doc.r25777
 	tikzpingus.doc.r68310
 	tikzposter.doc.r32732
+	tikzquads.doc.r69409
+	tikzquests.doc.r69388
 	tikzscale.doc.r30637
 	tikzsymbols.doc.r61300
 	tikztosvg.doc.r60289
@@ -476,11 +489,12 @@ TEXLIVE_MODULE_DOC_CONTENTS="
 	tilings.doc.r67292
 	timing-diagrams.doc.r31491
 	tipfr.doc.r38646
-	tkz-base.doc.r66115
+	tkz-base.doc.r69460
 	tkz-berge.doc.r57485
-	tkz-bernoulli.doc.r68503
-	tkz-doc.doc.r66115
-	tkz-euclide.doc.r68604
+	tkz-bernoulli.doc.r68780
+	tkz-doc.doc.r68665
+	tkz-elements.doc.r69715
+	tkz-euclide.doc.r69702
 	tkz-fct.doc.r61949
 	tkz-graph.doc.r57484
 	tkz-orm.doc.r61719
@@ -492,11 +506,12 @@ TEXLIVE_MODULE_DOC_CONTENTS="
 	twemojis.doc.r62930
 	tzplot.doc.r64537
 	utfsym.doc.r63076
+	vectorlogos.doc.r69010
 	venndiagram.doc.r47952
 	visualpstricks.doc.r39799
-	wheelchart.doc.r64373
+	wheelchart.doc.r69040
 	wordcloud.doc.r68209
-	worldflags.doc.r59171
+	worldflags.doc.r68827
 	xistercian.doc.r61366
 	xpicture.doc.r28770
 	xypic.doc.r61719
@@ -510,7 +525,7 @@ TEXLIVE_MODULE_SRC_CONTENTS="
 	blochsphere.source.r38388
 	blox.source.r57949
 	bondgraphs.source.r36605
-	braids.source.r64817
+	braids.source.r69398
 	byo-twemojis.source.r58917
 	celtic.source.r39797
 	combinedgraphics.source.r27198
@@ -537,7 +552,7 @@ TEXLIVE_MODULE_SRC_CONTENTS="
 	lroundrect.source.r39804
 	luasseq.source.r65511
 	makeshape.source.r28973
-	memoize.source.r68525
+	memoize.source.r69522
 	nndraw.source.r59674
 	pgf-blur.source.r54512
 	pgfgantt.source.r52662
@@ -578,26 +593,37 @@ TEXLIVE_MODULE_SRC_CONTENTS="
 	xistercian.source.r61366
 	xpicture.source.r28770
 "
-inherit texlive-module
-DESCRIPTION="TeXLive Graphics, pictures, diagrams"
-RESTRICT="mirror"
 
-LICENSE="Apache-2.0 BSD-2 CC-BY-4.0 CC-BY-SA-1.0 CC-BY-SA-4.0 CC0-1.0 FDL-1.3 GPL-1 GPL-2 GPL-3 GPL-3+ ISC LPPL-1.0 LPPL-1.2 LPPL-1.3 LPPL-1.3c MIT TeX-other-free public-domain"
-SLOT="0/2023"
-KEYWORDS="~alpha ~amd64 ~arm ~arm64 ~hppa ~ia64 ~loong ~mips ~ppc ~ppc64 ~riscv ~s390 ~sparc ~x86 ~amd64-linux ~x86-linux ~ppc-macos ~x64-macos ~x64-solaris"
-DEPEND="
-	>=dev-texlive/texlive-basic-2019
-	>=dev-tex/pgf-3.0.1
+inherit texlive-module
+
+DESCRIPTION="TeXLive Graphics, pictures, diagrams"
+
+LICENSE="Apache-2.0 BSD-2 CC-BY-3.0 CC-BY-4.0 CC-BY-SA-1.0 CC-BY-SA-3.0 CC-BY-SA-4.0 CC0-1.0 FDL-1.1 GPL-1 GPL-2 GPL-3 GPL-3+ ISC LPPL-1.2 LPPL-1.3 LPPL-1.3c MIT TeX-other-free public-domain"
+SLOT="0"
+KEYWORDS="~amd64 ~arm64 ~ppc ~riscv ~x86"
+COMMON_DEPEND="
+	>=dev-texlive/texlive-basic-2023
 "
 RDEPEND="
-	${DEPEND}
+	${COMMON_DEPEND}
+	>=dev-tex/pgf-3.1.10
+"
+DEPEND="
+	${COMMON_DEPEND}
 "
 
 TEXLIVE_MODULE_BINSCRIPTS="
 	texmf-dist/scripts/cachepic/cachepic.tlu
+	texmf-dist/scripts/epspdf/epspdf.tlu
+	texmf-dist/scripts/epspdf/epspdftk.tcl
 	texmf-dist/scripts/fig4latex/fig4latex
-	texmf-dist/scripts/mathspic/mathspic.pl
-	texmf-dist/scripts/mkpic/mkpic
 	texmf-dist/scripts/getmap/getmapdl.lua
+	texmf-dist/scripts/mathspic/mathspic.pl
+	texmf-dist/scripts/memoize/memoize-clean.pl
+	texmf-dist/scripts/memoize/memoize-clean.py
+	texmf-dist/scripts/memoize/memoize-extract.pl
+	texmf-dist/scripts/memoize/memoize-extract.py
+	texmf-dist/scripts/mkpic/mkpic
 	texmf-dist/scripts/petri-nets/pn2pdf
+	texmf-dist/scripts/tikztosvg/tikztosvg
 "

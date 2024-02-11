@@ -1,14 +1,13 @@
-# Copyright 1999-2023 Gentoo Authors
+# Copyright 1999-2024 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI="8"
 
 TEXLIVE_MODULE_CONTENTS="
+	collection-pstricks.r65367
 	auto-pst-pdf.r56596
-	bclogo.r39364
-	collection-basic.r59159
-	collection-plaingeneric.r68513
-	dsptricks.r34724
+	bclogo.r69578
+	dsptricks.r68753
 	luapstricks.r67207
 	makeplot.r15878
 	pdftricks.r15878
@@ -17,7 +16,7 @@ TEXLIVE_MODULE_CONTENTS="
 	psbao.r55013
 	pst-2dplot.r15878
 	pst-3d.r17257
-	pst-3dplot.r68210
+	pst-3dplot.r68727
 	pst-abspos.r15878
 	pst-am.r19591
 	pst-antiprism.r46643
@@ -66,17 +65,17 @@ TEXLIVE_MODULE_CONTENTS="
 	pst-lens.r15878
 	pst-light3d.r15878
 	pst-lsystem.r49556
-	pst-magneticfield.r63821
+	pst-magneticfield.r69493
 	pst-marble.r50925
 	pst-math.r67535
 	pst-mirror.r60506
 	pst-moire.r60411
 	pst-node.r61838
 	pst-ob3d.r54514
-	pst-ode.r65096
+	pst-ode.r69296
 	pst-optexp.r62977
 	pst-optic.r67052
-	pst-osci.r15878
+	pst-osci.r68781
 	pst-ovl.r54963
 	pst-pad.r15878
 	pst-pdf.r56622
@@ -93,13 +92,12 @@ TEXLIVE_MODULE_CONTENTS="
 	pst-shell.r56070
 	pst-sigsys.r21667
 	pst-slpe.r24391
-	pst-solarsystem.r45097
-	pst-solides3d.r61719
+	pst-solarsystem.r69675
+	pst-solides3d.r68786
 	pst-soroban.r15878
 	pst-spectra.r15878
 	pst-spinner.r66115
 	pst-stru.r38613
-	pst-support.r15878
 	pst-text.r49542
 	pst-thick.r16369
 	pst-tools.r60621
@@ -112,18 +110,16 @@ TEXLIVE_MODULE_CONTENTS="
 	pst-venn.r49316
 	pst-vowel.r25228
 	pst2pdf.r56172
-	pstricks.r66973
+	pstricks.r69674
 	pstricks-add.r66887
-	pstricks_calcnotes.r34363
 	uml.r17476
 	vaucanson-g.r15878
 	vocaltract.r25629
-	collection-pstricks.r65367
 "
 TEXLIVE_MODULE_DOC_CONTENTS="
 	auto-pst-pdf.doc.r56596
-	bclogo.doc.r39364
-	dsptricks.doc.r34724
+	bclogo.doc.r69578
+	dsptricks.doc.r68753
 	luapstricks.doc.r67207
 	makeplot.doc.r15878
 	pdftricks.doc.r15878
@@ -132,7 +128,7 @@ TEXLIVE_MODULE_DOC_CONTENTS="
 	psbao.doc.r55013
 	pst-2dplot.doc.r15878
 	pst-3d.doc.r17257
-	pst-3dplot.doc.r68210
+	pst-3dplot.doc.r68727
 	pst-abspos.doc.r15878
 	pst-am.doc.r19591
 	pst-antiprism.doc.r46643
@@ -181,17 +177,17 @@ TEXLIVE_MODULE_DOC_CONTENTS="
 	pst-lens.doc.r15878
 	pst-light3d.doc.r15878
 	pst-lsystem.doc.r49556
-	pst-magneticfield.doc.r63821
+	pst-magneticfield.doc.r69493
 	pst-marble.doc.r50925
 	pst-math.doc.r67535
 	pst-mirror.doc.r60506
 	pst-moire.doc.r60411
 	pst-node.doc.r61838
 	pst-ob3d.doc.r54514
-	pst-ode.doc.r65096
+	pst-ode.doc.r69296
 	pst-optexp.doc.r62977
 	pst-optic.doc.r67052
-	pst-osci.doc.r15878
+	pst-osci.doc.r68781
 	pst-ovl.doc.r54963
 	pst-pad.doc.r15878
 	pst-pdf.doc.r56622
@@ -208,8 +204,8 @@ TEXLIVE_MODULE_DOC_CONTENTS="
 	pst-shell.doc.r56070
 	pst-sigsys.doc.r21667
 	pst-slpe.doc.r24391
-	pst-solarsystem.doc.r45097
-	pst-solides3d.doc.r61719
+	pst-solarsystem.doc.r69675
+	pst-solides3d.doc.r68786
 	pst-soroban.doc.r15878
 	pst-spectra.doc.r15878
 	pst-spinner.doc.r66115
@@ -227,7 +223,7 @@ TEXLIVE_MODULE_DOC_CONTENTS="
 	pst-venn.doc.r49316
 	pst-vowel.doc.r25228
 	pst2pdf.doc.r56172
-	pstricks.doc.r66973
+	pstricks.doc.r69674
 	pstricks-add.doc.r66887
 	pstricks_calcnotes.doc.r34363
 	uml.doc.r17476
@@ -267,18 +263,27 @@ TEXLIVE_MODULE_SRC_CONTENTS="
 	pst-uml.source.r15878
 	uml.source.r17476
 "
+
 inherit texlive-module
+
 DESCRIPTION="TeXLive PSTricks"
-RESTRICT="mirror"
 
 LICENSE="GPL-1 GPL-2 LGPL-2 LGPL-3 LPPL-1.2 LPPL-1.3 LPPL-1.3c"
-SLOT="0/2023"
-KEYWORDS="~alpha ~amd64 ~arm ~arm64 ~hppa ~ia64 ~loong ~mips ~ppc ~ppc64 ~riscv ~s390 ~sparc ~x86 ~amd64-linux ~x86-linux ~ppc-macos ~x64-macos ~x64-solaris"
+SLOT="0"
+KEYWORDS="~amd64 ~arm64 ~ppc ~riscv ~x86"
+COMMON_DEPEND="
+	>=dev-texlive/texlive-basic-2023
+	>=dev-texlive/texlive-plaingeneric-2023
+"
 RDEPEND="
-	dev-tex/pgf
+	${COMMON_DEPEND}
+"
+DEPEND="
+	${COMMON_DEPEND}
 "
 
 TEXLIVE_MODULE_BINSCRIPTS="
-	texmf-dist/scripts/pst2pdf/pst2pdf.pl
 	texmf-dist/scripts/pedigree-perl/pedigree.pl
+	texmf-dist/scripts/pst-pdf/ps4pdf
+	texmf-dist/scripts/pst2pdf/pst2pdf.pl
 "

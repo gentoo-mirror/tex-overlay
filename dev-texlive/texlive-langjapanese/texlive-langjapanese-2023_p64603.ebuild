@@ -1,9 +1,10 @@
-# Copyright 1999-2023 Gentoo Authors
+# Copyright 1999-2024 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI="8"
 
 TEXLIVE_MODULE_CONTENTS="
+	collection-langjapanese.r64603
 	ascmac.r53411
 	asternote.r63838
 	babel-japanese.r57733
@@ -14,10 +15,9 @@ TEXLIVE_MODULE_CONTENTS="
 	bxjalipsum.r67620
 	bxjaprnind.r59641
 	bxjatoucs.r52509
-	bxjscls.r67657
+	bxjscls.r69637
 	bxorigcapt.r64072
 	bxwareki.r67594
-	collection-langcjk.r65824
 	convbkmk.r49252
 	endnotesj.r47703
 	gckanbun.r61719
@@ -37,21 +37,17 @@ TEXLIVE_MODULE_CONTENTS="
 	jpnedumathsymbols.r63864
 	jsclasses.r66093
 	kanbun.r62026
-	lshort-japanese.r36207
-	luatexja.r68506
+	luatexja.r69245
 	mendex-doc.r62914
 	morisawa.r46946
 	pbibtex-base.r66085
-	pbibtex-manual.r66181
 	platex.r67315
 	platex-tools.r66185
-	platexcheat.r49557
 	plautopatch.r64072
 	ptex.r66186
 	ptex-base.r64072
 	ptex-fontmaps.r65953
 	ptex-fonts.r64330
-	ptex-manual.r68147
 	ptex2pdf.r65953
 	pxbase.r66187
 	pxchfon.r68103
@@ -60,7 +56,6 @@ TEXLIVE_MODULE_CONTENTS="
 	pxjodel.r64072
 	pxrubrica.r66298
 	pxufont.r67573
-	texlive-ja.r66482
 	uplatex.r66186
 	uptex.r66381
 	uptex-base.r68298
@@ -68,7 +63,6 @@ TEXLIVE_MODULE_CONTENTS="
 	wadalab.r42428
 	zxjafbfont.r28539
 	zxjatype.r53500
-	collection-langjapanese.r64603
 "
 TEXLIVE_MODULE_DOC_CONTENTS="
 	ascmac.doc.r53411
@@ -81,7 +75,7 @@ TEXLIVE_MODULE_DOC_CONTENTS="
 	bxjalipsum.doc.r67620
 	bxjaprnind.doc.r59641
 	bxjatoucs.doc.r52509
-	bxjscls.doc.r67657
+	bxjscls.doc.r69637
 	bxorigcapt.doc.r64072
 	bxwareki.doc.r67594
 	convbkmk.doc.r49252
@@ -104,7 +98,7 @@ TEXLIVE_MODULE_DOC_CONTENTS="
 	jsclasses.doc.r66093
 	kanbun.doc.r62026
 	lshort-japanese.doc.r36207
-	luatexja.doc.r68506
+	luatexja.doc.r69245
 	mendex-doc.doc.r62914
 	morisawa.doc.r46946
 	pbibtex-base.doc.r66085
@@ -138,11 +132,11 @@ TEXLIVE_MODULE_DOC_CONTENTS="
 TEXLIVE_MODULE_SRC_CONTENTS="
 	ascmac.source.r53411
 	babel-japanese.source.r57733
-	bxjscls.source.r67657
+	bxjscls.source.r69637
 	japanese-otf.source.r68492
 	jlreq.source.r67400
 	jsclasses.source.r66093
-	luatexja.source.r68506
+	luatexja.source.r69245
 	mendex-doc.source.r62914
 	morisawa.source.r46946
 	platex.source.r67315
@@ -150,26 +144,30 @@ TEXLIVE_MODULE_SRC_CONTENTS="
 	pxrubrica.source.r66298
 	uplatex.source.r66186
 "
+
 inherit texlive-module
+
 DESCRIPTION="TeXLive Japanese"
-RESTRICT="mirror"
 
 LICENSE="BSD BSD-2 GPL-1 GPL-2 GPL-3 LPPL-1.3 LPPL-1.3c MIT OFL TeX TeX-other-free public-domain"
-SLOT="0/2023"
-KEYWORDS="~alpha ~amd64 ~arm ~arm64 ~hppa ~loong ~mips ~ppc ~ppc64 ~riscv ~s390 ~sparc ~x86 ~amd64-linux ~x86-linux ~ppc-macos ~x64-macos ~x64-solaris"
-DEPEND="
-	>=dev-texlive/texlive-langcjk-2019
+SLOT="0"
+KEYWORDS="~amd64 ~arm64 ~ppc ~riscv ~x86"
+COMMON_DEPEND="
+	>=dev-texlive/texlive-langcjk-2023
 "
 RDEPEND="
-	${DEPEND}
+	${COMMON_DEPEND}
 	dev-lang/ruby
+"
+DEPEND="
+	${COMMON_DEPEND}
 "
 
 TEXLIVE_MODULE_BINSCRIPTS="
 	texmf-dist/scripts/convbkmk/convbkmk.rb
-	texmf-dist/scripts/ptex2pdf/ptex2pdf.lua
 	texmf-dist/scripts/ptex-fontmaps/kanji-config-updmap-sys.sh
 	texmf-dist/scripts/ptex-fontmaps/kanji-config-updmap-user.sh
 	texmf-dist/scripts/ptex-fontmaps/kanji-config-updmap.pl
 	texmf-dist/scripts/ptex-fontmaps/kanji-fontmap-creator.pl
+	texmf-dist/scripts/ptex2pdf/ptex2pdf.lua
 "

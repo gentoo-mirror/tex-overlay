@@ -1,15 +1,15 @@
-# Copyright 1999-2023 Gentoo Authors
+# Copyright 1999-2024 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI="8"
 
 TEXLIVE_MODULE_CONTENTS="
+	collection-metapost.r67071
 	automata.r19717
 	bbcard.r19440
 	blockdraw_mp.r15878
 	bpolynomial.r15878
 	cmarrows.r24378
-	collection-basic.r59159
 	drv.r29349
 	dviincl.r29349
 	emp.r23483
@@ -26,7 +26,6 @@ TEXLIVE_MODULE_CONTENTS="
 	hershey-mp.r64878
 	huffman.r67071
 	latexmp.r55643
-	mcf2graph.r67238
 	metago.r15878
 	metaobj.r15878
 	metaplot.r15878
@@ -53,7 +52,6 @@ TEXLIVE_MODULE_CONTENTS="
 	suanpan.r15878
 	textpath.r15878
 	threeddice.r20675
-	collection-metapost.r67071
 "
 TEXLIVE_MODULE_DOC_CONTENTS="
 	automata.doc.r19717
@@ -77,7 +75,7 @@ TEXLIVE_MODULE_DOC_CONTENTS="
 	hershey-mp.doc.r64878
 	huffman.doc.r67071
 	latexmp.doc.r55643
-	mcf2graph.doc.r67238
+	mcf2graph.doc.r69521
 	metago.doc.r15878
 	metaobj.doc.r15878
 	metaplot.doc.r15878
@@ -119,22 +117,20 @@ TEXLIVE_MODULE_SRC_CONTENTS="
 	shapes.source.r42428
 	splines.source.r15878
 "
+
 inherit texlive-module
+
 DESCRIPTION="TeXLive MetaPost and Metafont packages"
-RESTRICT="mirror"
 
-LICENSE="CC-BY-SA-4.0 GPL-1 GPL-2 GPL-3+ LGPL-2 LPPL-1.3 LPPL-1.3c MIT TeX-other-free public-domain"
-SLOT="0/2023"
-KEYWORDS="~alpha ~amd64 ~arm ~arm64 ~hppa ~ia64 ~loong ~mips ~ppc ~ppc64 ~riscv ~s390 ~sparc ~x86 ~amd64-linux ~x86-linux ~ppc-macos ~x64-macos ~x64-solaris"
-
-# This small hack is needed in order to have a sane upgrade path:
-# the new TeX Live 2009 metapost produces this file but it is not recorded in
-# any package; when running fmtutil (like texmf-update does) this file will be
-# created and cause collisions.
-
-pkg_setup() {
-	if [ -f "${ROOT}/${EPREFIX}/var/lib/texmf/web2c/metapost/mplib-luatex.mem" ]; then
-		einfo "Removing ${ROOT}/${EPREFIX}/var/lib/texmf/web2c/metapost/mplib-luatex.mem"
-		rm -f "${ROOT}/${EPREFIX}/var/lib/texmf/web2c/metapost/mplib-luatex.mem"
-	fi
-}
+LICENSE="CC-BY-SA-4.0 GPL-1 GPL-2+ GPL-3+ LGPL-2 LPPL-1.3 LPPL-1.3c MIT TeX-other-free public-domain"
+SLOT="0"
+KEYWORDS="~amd64 ~arm64 ~ppc ~riscv ~x86"
+COMMON_DEPEND="
+	>=dev-texlive/texlive-basic-2023
+"
+RDEPEND="
+	${COMMON_DEPEND}
+"
+DEPEND="
+	${COMMON_DEPEND}
+"

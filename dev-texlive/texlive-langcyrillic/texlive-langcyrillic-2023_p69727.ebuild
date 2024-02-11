@@ -1,9 +1,10 @@
-# Copyright 1999-2023 Gentoo Authors
+# Copyright 1999-2024 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI="8"
 
 TEXLIVE_MODULE_CONTENTS="
+	collection-langcyrillic.r69727
 	babel-belarusian.r49022
 	babel-bulgarian.r31902
 	babel-russian.r57376
@@ -11,9 +12,7 @@ TEXLIVE_MODULE_CONTENTS="
 	babel-serbianc.r64588
 	babel-ukrainian.r56674
 	churchslavonic.r67474
-	cmcyr.r60630
-	collection-basic.r59159
-	collection-latex.r63515
+	cmcyr.r68681
 	cyrillic.r63613
 	cyrillic-bin.r62517
 	cyrplain.r45692
@@ -31,15 +30,10 @@ TEXLIVE_MODULE_CONTENTS="
 	lcyw.r15878
 	lh.r15878
 	lhcyr.r31795
-	lshort-bulgarian.r15878
-	lshort-mongol.r15878
-	lshort-russian.r55643
-	lshort-ukr.r55643
+	mnhyphn.r69727
 	mongolian-babel.r15878
 	montex.r29349
-	mpman-ru.r15878
 	numnameru.r44895
-	pst-eucl-translation-bg.r19296
 	ruhyphen.r21081
 	russ.r25209
 	serbian-apostrophe.r23799
@@ -47,11 +41,8 @@ TEXLIVE_MODULE_CONTENTS="
 	serbian-def-cyr.r23734
 	serbian-lig.r53127
 	t2.r47870
-	texlive-ru.r58426
-	texlive-sr.r54594
 	ukrhyph.r21081
 	xecyrmongolian.r53160
-	collection-langcyrillic.r54074
 "
 TEXLIVE_MODULE_DOC_CONTENTS="
 	babel-belarusian.doc.r49022
@@ -61,7 +52,7 @@ TEXLIVE_MODULE_DOC_CONTENTS="
 	babel-serbianc.doc.r64588
 	babel-ukrainian.doc.r56674
 	churchslavonic.doc.r67474
-	cmcyr.doc.r60630
+	cmcyr.doc.r68681
 	cyrillic.doc.r63613
 	cyrillic-bin.doc.r62517
 	disser.doc.r43417
@@ -74,6 +65,7 @@ TEXLIVE_MODULE_DOC_CONTENTS="
 	lshort-mongol.doc.r15878
 	lshort-russian.doc.r55643
 	lshort-ukr.doc.r55643
+	mnhyphn.doc.r69727
 	mongolian-babel.doc.r15878
 	montex.doc.r29349
 	mpman-ru.doc.r15878
@@ -108,22 +100,26 @@ TEXLIVE_MODULE_SRC_CONTENTS="
 	ruhyphen.source.r21081
 	xecyrmongolian.source.r53160
 "
-inherit texlive-module
-DESCRIPTION="TeXLive Cyrillic"
-RESTRICT="mirror"
 
-LICENSE="GPL-1 GPL-2 LPPL-1.3 LPPL-1.3c MIT TeX-other-free public-domain"
-SLOT="0/2023"
-KEYWORDS="~alpha ~amd64 ~arm ~arm64 ~hppa ~ia64 ~loong ~mips ~ppc ~ppc64 ~riscv ~s390 ~sparc ~x86 ~amd64-linux ~x86-linux ~ppc-macos ~x64-macos ~x64-solaris"
-DEPEND="
-	>=dev-texlive/texlive-basic-2019
-	>=dev-texlive/texlive-latex-2019
+inherit texlive-module
+
+DESCRIPTION="TeXLive Cyrillic"
+
+LICENSE="GPL-1 GPL-2 LPPL-1.3 LPPL-1.3c MIT OFL TeX-other-free public-domain"
+SLOT="0"
+KEYWORDS="~amd64 ~arm64 ~ppc ~riscv ~x86"
+COMMON_DEPEND="
+	>=dev-texlive/texlive-basic-2023
+	>=dev-texlive/texlive-latex-2023
 "
 RDEPEND="
-	${DEPEND}
+	${COMMON_DEPEND}
+"
+DEPEND="
+	${COMMON_DEPEND}
 "
 
 TEXLIVE_MODULE_BINSCRIPTS="
-	texmf-dist/scripts/texlive-extra/rumakeindex.sh
 	texmf-dist/scripts/texlive-extra/rubibtex.sh
-	"
+	texmf-dist/scripts/texlive-extra/rumakeindex.sh
+"

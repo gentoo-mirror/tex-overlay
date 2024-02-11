@@ -1,9 +1,10 @@
-# Copyright 1999-2023 Gentoo Authors
+# Copyright 1999-2024 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI="8"
 
 TEXLIVE_MODULE_CONTENTS="
+	collection-langarabic.r69111
 	alkalami.r44497
 	alpha-persian.r66115
 	amiri.r65191
@@ -14,19 +15,16 @@ TEXLIVE_MODULE_CONTENTS="
 	arabtex.r64260
 	bidi.r67798
 	bidihl.r37795
-	collection-basic.r59159
 	dad.r54191
 	ghab.r29803
 	hvarabic.r59423
-	hyphen-arabic.r54568
-	hyphen-farsi.r54568
 	imsproc.r29803
+	iran-bibtex.r69347
 	khatalmaqala.r68280
 	kurdishlipsum.r47518
-	lshort-persian.r31296
 	luabidi.r68432
 	na-box.r45130
-	parsimatn.r68394
+	parsimatn.r69090
 	parsinevis.r68395
 	persian-bib.r37297
 	quran.r67791
@@ -36,8 +34,6 @@ TEXLIVE_MODULE_CONTENTS="
 	tram.r29803
 	xepersian.r68117
 	xepersian-hm.r56272
-	xindy-persian.r59013
-	collection-langarabic.r68271
 "
 TEXLIVE_MODULE_DOC_CONTENTS="
 	alkalami.doc.r44497
@@ -54,12 +50,13 @@ TEXLIVE_MODULE_DOC_CONTENTS="
 	ghab.doc.r29803
 	hvarabic.doc.r59423
 	imsproc.doc.r29803
+	iran-bibtex.doc.r69347
 	khatalmaqala.doc.r68280
 	kurdishlipsum.doc.r47518
 	lshort-persian.doc.r31296
 	luabidi.doc.r68432
 	na-box.doc.r45130
-	parsimatn.doc.r68394
+	parsimatn.doc.r69090
 	parsinevis.doc.r68395
 	persian-bib.doc.r37297
 	quran.doc.r67791
@@ -78,16 +75,20 @@ TEXLIVE_MODULE_SRC_CONTENTS="
 	xepersian.source.r68117
 	xepersian-hm.source.r56272
 "
+
 inherit texlive-module
+
 DESCRIPTION="TeXLive Arabic"
-RESTRICT="mirror"
 
 LICENSE="CC-BY-SA-4.0 GPL-2 GPL-3+ LPPL-1.3 LPPL-1.3c MIT OFL public-domain"
-SLOT="0/2023"
-KEYWORDS="~alpha ~amd64 ~arm ~arm64 ~hppa ~ia64 ~loong ~mips ~ppc ~ppc64 ~riscv ~s390 ~sparc ~x86 ~amd64-linux ~x86-linux ~ppc-macos ~x64-macos ~x64-solaris"
-DEPEND="
-	>=dev-texlive/texlive-basic-2019
+SLOT="0"
+KEYWORDS="~amd64 ~arm64 ~ppc ~riscv ~x86"
+COMMON_DEPEND="
+	>=dev-texlive/texlive-basic-2023
 "
 RDEPEND="
-	${DEPEND}
+	${COMMON_DEPEND}
+"
+DEPEND="
+	${COMMON_DEPEND}
 "

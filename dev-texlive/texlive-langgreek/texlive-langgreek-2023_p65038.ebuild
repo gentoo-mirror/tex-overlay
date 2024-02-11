@@ -1,18 +1,18 @@
-# Copyright 1999-2023 Gentoo Authors
+# Copyright 1999-2024 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI="8"
 
 TEXLIVE_MODULE_CONTENTS="
+	collection-langgreek.r65038
 	babel-greek.r68532
 	begingreek.r63255
 	betababel.r15878
 	cbfonts.r54080
 	cbfonts-fd.r54080
-	collection-basic.r59159
 	gfsbaskerville.r19440
 	gfsporson.r18651
-	greek-fontenc.r68249
+	greek-fontenc.r68877
 	greek-inputenc.r66634
 	greekdates.r15878
 	greektex.r28327
@@ -28,9 +28,8 @@ TEXLIVE_MODULE_CONTENTS="
 	mkgrkindex.r26313
 	talos.r61820
 	teubner.r68074
-	xgreek.r64300
+	xgreek.r69652
 	yannisgr.r22613
-	collection-langgreek.r65038
 "
 TEXLIVE_MODULE_DOC_CONTENTS="
 	babel-greek.doc.r68532
@@ -40,7 +39,7 @@ TEXLIVE_MODULE_DOC_CONTENTS="
 	cbfonts-fd.doc.r54080
 	gfsbaskerville.doc.r19440
 	gfsporson.doc.r18651
-	greek-fontenc.doc.r68249
+	greek-fontenc.doc.r68877
 	greek-inputenc.doc.r66634
 	greekdates.doc.r15878
 	greektex.doc.r28327
@@ -55,7 +54,7 @@ TEXLIVE_MODULE_DOC_CONTENTS="
 	mkgrkindex.doc.r26313
 	talos.doc.r61820
 	teubner.doc.r68074
-	xgreek.doc.r64300
+	xgreek.doc.r69652
 	yannisgr.doc.r22613
 "
 TEXLIVE_MODULE_SRC_CONTENTS="
@@ -66,20 +65,26 @@ TEXLIVE_MODULE_SRC_CONTENTS="
 	ibycus-babel.source.r15878
 	lgrmath.source.r65038
 	teubner.source.r68074
-	xgreek.source.r64300
+	xgreek.source.r69652
 "
-inherit texlive-module
-DESCRIPTION="TeXLive Greek"
-RESTRICT="mirror"
 
-LICENSE="BSD-2 GFL GPL-1 GPL-2 LGPL-3 LPPL-1.3 LPPL-1.3c TeX-other-free public-domain"
-SLOT="0/2023"
-KEYWORDS="~alpha ~amd64 ~arm ~arm64 ~hppa ~ia64 ~loong ~mips ~ppc ~ppc64 ~riscv ~s390 ~sparc ~x86 ~amd64-linux ~x86-linux ~ppc-macos ~x64-macos ~x64-solaris"
-DEPEND="
-	>=dev-texlive/texlive-basic-2019
+inherit texlive-module
+
+DESCRIPTION="TeXLive Greek"
+
+LICENSE="BSD-2 GPL-1 GPL-2 LGPL-3 LPPL-1.3 LPPL-1.3c TeX-other-free public-domain"
+SLOT="0"
+KEYWORDS="~amd64 ~arm64 ~ppc ~riscv ~x86"
+COMMON_DEPEND="
+	>=dev-texlive/texlive-basic-2023
 "
 RDEPEND="
-	${DEPEND}
+	${COMMON_DEPEND}
+"
+DEPEND="
+	${COMMON_DEPEND}
 "
 
-TEXLIVE_MODULE_BINSCRIPTS="texmf-dist/scripts/mkgrkindex/mkgrkindex"
+TEXLIVE_MODULE_BINSCRIPTS="
+	texmf-dist/scripts/mkgrkindex/mkgrkindex
+"

@@ -1,16 +1,16 @@
-# Copyright 1999-2023 Gentoo Authors
+# Copyright 1999-2024 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI="8"
 
 TEXLIVE_MODULE_CONTENTS="
+	collection-humanities.r68465
 	adtrees.r51618
 	bibleref.r55626
 	bibleref-lds.r25526
 	bibleref-mouth.r25527
 	bibleref-parse.r22054
-	collection-latex.r63515
-	covington.r67472
+	covington.r69091
 	diadia.r37656
 	dramatist.r35866
 	dvgloss.r29103
@@ -19,14 +19,14 @@ TEXLIVE_MODULE_CONTENTS="
 	eledform.r38114
 	eledmac.r45418
 	expex.r44499
-	expex-glossonly.r67958
+	expex-glossonly.r69713
 	gb4e.r19216
 	gmverse.r29803
 	jura.r15878
 	juraabbrev.r15878
 	juramisc.r15878
 	jurarsp.r15878
-	langnames.r65502
+	langnames.r69101
 	ledmac.r41811
 	lexikon.r17364
 	lexref.r36026
@@ -55,11 +55,9 @@ TEXLIVE_MODULE_CONTENTS="
 	stage.r62929
 	textglos.r30788
 	thalie.r65249
-	theatre.r45363
 	tree-dvips.r21751
 	verse.r34017
 	xyling.r15878
-	collection-humanities.r68465
 "
 TEXLIVE_MODULE_DOC_CONTENTS="
 	adtrees.doc.r51618
@@ -67,7 +65,7 @@ TEXLIVE_MODULE_DOC_CONTENTS="
 	bibleref-lds.doc.r25526
 	bibleref-mouth.doc.r25527
 	bibleref-parse.doc.r22054
-	covington.doc.r67472
+	covington.doc.r69091
 	diadia.doc.r37656
 	dramatist.doc.r35866
 	dvgloss.doc.r29103
@@ -76,14 +74,14 @@ TEXLIVE_MODULE_DOC_CONTENTS="
 	eledform.doc.r38114
 	eledmac.doc.r45418
 	expex.doc.r44499
-	expex-glossonly.doc.r67958
+	expex-glossonly.doc.r69713
 	gb4e.doc.r19216
 	gmverse.doc.r29803
 	jura.doc.r15878
 	juraabbrev.doc.r15878
 	juramisc.doc.r15878
 	jurarsp.doc.r15878
-	langnames.doc.r65502
+	langnames.doc.r69101
 	ledmac.doc.r41811
 	lexikon.doc.r17364
 	lexref.doc.r36026
@@ -129,7 +127,7 @@ TEXLIVE_MODULE_SRC_CONTENTS="
 	jura.source.r15878
 	juraabbrev.source.r15878
 	jurarsp.source.r15878
-	langnames.source.r65502
+	langnames.source.r69101
 	ledmac.source.r41811
 	liturg.source.r15878
 	metrix.source.r52323
@@ -148,18 +146,24 @@ TEXLIVE_MODULE_SRC_CONTENTS="
 	textglos.source.r30788
 	verse.source.r34017
 "
-inherit texlive-module
-DESCRIPTION="TeXLive Humanities packages"
-RESTRICT="mirror"
 
-LICENSE="GPL-1 LPPL-1.0 LPPL-1.2 LPPL-1.3 LPPL-1.3c"
-SLOT="0/2023"
-KEYWORDS="~alpha ~amd64 ~arm ~arm64 ~hppa ~ia64 ~loong ~mips ~ppc ~ppc64 ~riscv ~s390 ~sparc ~x86 ~amd64-linux ~x86-linux ~ppc-macos ~x64-macos ~x64-solaris"
-DEPEND="
-	>=dev-texlive/texlive-latex-2019
+inherit texlive-module
+
+DESCRIPTION="TeXLive Humanities packages"
+
+LICENSE="GPL-1 LPPL-1.2 LPPL-1.3 LPPL-1.3c"
+SLOT="0"
+KEYWORDS="~amd64 ~arm64 ~ppc ~riscv ~x86"
+COMMON_DEPEND="
+	>=dev-texlive/texlive-latex-2023
 "
 RDEPEND="
-	${DEPEND}
+	${COMMON_DEPEND}
+"
+DEPEND="
+	${COMMON_DEPEND}
 "
 
-TEXLIVE_MODULE_BINSCRIPTS="texmf-dist/scripts/diadia/diadia.lua"
+TEXLIVE_MODULE_BINSCRIPTS="
+	texmf-dist/scripts/diadia/diadia.lua
+"

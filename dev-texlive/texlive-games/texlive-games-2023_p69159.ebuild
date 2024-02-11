@@ -1,16 +1,16 @@
-# Copyright 1999-2023 Gentoo Authors
+# Copyright 1999-2024 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI="8"
 
 TEXLIVE_MODULE_CONTENTS="
+	collection-games.r69159
 	bartel-chess-fonts.r20619
 	chess.r20582
 	chess-problem-diagrams.r63708
 	chessboard.r56833
 	chessfss.r19440
 	chinesechess.r63276
-	collection-latex.r63515
 	crossword.r64375
 	crosswrd.r16896
 	customdice.r64089
@@ -32,19 +32,19 @@ TEXLIVE_MODULE_CONTENTS="
 	maze.r65508
 	musikui.r47472
 	nimsticks.r64118
-	onedown.r59010
+	onedown.r69067
 	othello.r15878
 	othelloboard.r23714
 	pas-crosswords.r32313
 	playcards.r67342
 	psgo.r15878
-	quizztex.r67950
+	quizztex.r68823
 	realtranspose.r56623
 	reverxii.r63753
 	rouequestions.r67670
 	rubik.r46791
 	schwalbe-chess.r63708
-	scrabble.r65507
+	scrabble.r69599
 	sgame.r30959
 	skak.r61719
 	skaknew.r20031
@@ -52,11 +52,12 @@ TEXLIVE_MODULE_CONTENTS="
 	sudoku.r67189
 	sudokubundle.r15878
 	tangramtikz.r66183
-	wargame.r66713
+	thematicpuzzle.r69356
+	trivialpursuit.r68971
+	wargame.r69692
 	wordle.r68170
 	xq.r35211
 	xskak.r51432
-	collection-games.r67619
 "
 TEXLIVE_MODULE_DOC_CONTENTS="
 	bartel-chess-fonts.doc.r20619
@@ -85,19 +86,19 @@ TEXLIVE_MODULE_DOC_CONTENTS="
 	maze.doc.r65508
 	musikui.doc.r47472
 	nimsticks.doc.r64118
-	onedown.doc.r59010
+	onedown.doc.r69067
 	othello.doc.r15878
 	othelloboard.doc.r23714
 	pas-crosswords.doc.r32313
 	playcards.doc.r67342
 	psgo.doc.r15878
-	quizztex.doc.r67950
+	quizztex.doc.r68823
 	realtranspose.doc.r56623
 	reverxii.doc.r63753
 	rouequestions.doc.r67670
 	rubik.doc.r46791
 	schwalbe-chess.doc.r63708
-	scrabble.doc.r65507
+	scrabble.doc.r69599
 	sgame.doc.r30959
 	skak.doc.r61719
 	skaknew.doc.r20031
@@ -105,7 +106,9 @@ TEXLIVE_MODULE_DOC_CONTENTS="
 	sudoku.doc.r67189
 	sudokubundle.doc.r15878
 	tangramtikz.doc.r66183
-	wargame.doc.r66713
+	thematicpuzzle.doc.r69356
+	trivialpursuit.doc.r68971
+	wargame.doc.r69692
 	wordle.doc.r68170
 	xq.doc.r35211
 	xskak.doc.r51432
@@ -125,7 +128,7 @@ TEXLIVE_MODULE_SRC_CONTENTS="
 	horoscop.source.r56021
 	mahjong.source.r58896
 	nimsticks.source.r64118
-	onedown.source.r59010
+	onedown.source.r69067
 	realtranspose.source.r56623
 	reverxii.source.r63753
 	rubik.source.r46791
@@ -133,21 +136,25 @@ TEXLIVE_MODULE_SRC_CONTENTS="
 	soup.source.r50815
 	sudoku.source.r67189
 	sudokubundle.source.r15878
-	wargame.source.r66713
+	wargame.source.r69692
 	xskak.source.r51432
 "
+
 inherit texlive-module
+
 DESCRIPTION="TeXLive Games typesetting"
-RESTRICT="mirror"
 
 LICENSE="CC-BY-1.0 CC-BY-SA-4.0 GPL-1 LGPL-2.1 LGPL-3 LPPL-1.2 LPPL-1.3 LPPL-1.3c MIT TeX-other-free public-domain"
-SLOT="0/2023"
-KEYWORDS="~alpha ~amd64 ~arm ~arm64 ~hppa ~ia64 ~loong ~mips ~ppc ~ppc64 ~riscv ~s390 ~sparc ~x86 ~amd64-linux ~x86-linux ~ppc-macos ~x64-macos ~x64-solaris"
-DEPEND="
-	>=dev-texlive/texlive-latex-2019
+SLOT="0"
+KEYWORDS="~amd64 ~arm64 ~ppc ~riscv ~x86"
+COMMON_DEPEND="
+	>=dev-texlive/texlive-latex-2023
 "
 RDEPEND="
-	${DEPEND}
+	${COMMON_DEPEND}
+"
+DEPEND="
+	${COMMON_DEPEND}
 "
 
 TEXLIVE_MODULE_BINSCRIPTS="

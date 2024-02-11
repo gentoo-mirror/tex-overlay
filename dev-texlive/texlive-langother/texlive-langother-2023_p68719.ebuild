@@ -1,12 +1,12 @@
-# Copyright 1999-2023 Gentoo Authors
+# Copyright 1999-2024 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI="8"
 
 TEXLIVE_MODULE_CONTENTS="
+	collection-langother.r68719
 	aalok.r61719
 	akshar.r56277
-	amsldoc-vn.r21855
 	aramaic-serto.r30042
 	babel-azerbaijani.r44197
 	babel-esperanto.r30265
@@ -24,7 +24,6 @@ TEXLIVE_MODULE_CONTENTS="
 	burmese.r25185
 	chhaya.r61719
 	cjhebrew.r43444
-	collection-basic.r59159
 	ctib.r15878
 	culmus.r68495
 	ebong.r67933
@@ -33,7 +32,6 @@ TEXLIVE_MODULE_CONTENTS="
 	fc.r32796
 	fonts-tlwg.r60817
 	hebrew-fonts.r68038
-	hindawi-latex-template.r57757
 	hyphen-afrikaans.r58609
 	hyphen-armenian.r58652
 	hyphen-coptic.r58652
@@ -46,15 +44,12 @@ TEXLIVE_MODULE_CONTENTS="
 	hyphen-sanskrit.r58652
 	hyphen-thai.r58652
 	hyphen-turkmen.r58652
-	latex-mr.r55475
 	latexbangla.r55475
-	latino-sine-flexione.r53485
-	lshort-thai.r55643
-	lshort-vietnamese.r55643
+	latino-sine-flexione.r69568
 	marathi.r61719
-	ntheorem-vn.r15878
 	padauk.r42617
 	quran-bn.r68345
+	quran-id.r68747
 	quran-ur.r68314
 	sanskrit.r64502
 	sanskrit-t1.r55475
@@ -66,7 +61,6 @@ TEXLIVE_MODULE_CONTENTS="
 	wnri.r22459
 	wnri-latex.r22338
 	xetex-devanagari.r34296
-	collection-langother.r67960
 "
 TEXLIVE_MODULE_DOC_CONTENTS="
 	aalok.doc.r61719
@@ -101,13 +95,14 @@ TEXLIVE_MODULE_DOC_CONTENTS="
 	hyphen-sanskrit.doc.r58652
 	latex-mr.doc.r55475
 	latexbangla.doc.r55475
-	latino-sine-flexione.doc.r53485
+	latino-sine-flexione.doc.r69568
 	lshort-thai.doc.r55643
 	lshort-vietnamese.doc.r55643
 	marathi.doc.r61719
 	ntheorem-vn.doc.r15878
 	padauk.doc.r42617
 	quran-bn.doc.r68345
+	quran-id.doc.r68747
 	quran-ur.doc.r68314
 	sanskrit.doc.r64502
 	sanskrit-t1.doc.r55475
@@ -149,18 +144,24 @@ TEXLIVE_MODULE_SRC_CONTENTS="
 	vntex.source.r62837
 	wnri-latex.source.r22338
 "
-inherit texlive-module
-DESCRIPTION="TeXLive Other languages"
-RESTRICT="mirror"
 
-LICENSE="CC-BY-SA-4.0 FDL-1.3 GPL-1 GPL-2 GPL-3+ LPPL-1.3 LPPL-1.3c OFL TeX-other-free public-domain"
-SLOT="0/2023"
-KEYWORDS="~alpha ~amd64 ~arm ~arm64 ~hppa ~ia64 ~loong ~mips ~ppc ~ppc64 ~riscv ~s390 ~sparc ~x86 ~amd64-linux ~x86-linux ~ppc-macos ~x64-macos ~x64-solaris"
-DEPEND="
-	>=dev-texlive/texlive-basic-2019
+inherit texlive-module
+
+DESCRIPTION="TeXLive Other languages"
+
+LICENSE="CC-BY-SA-4.0 FDL-1.1 GPL-1 GPL-2 GPL-2+ GPL-3+ LPPL-1.3 LPPL-1.3c OFL TeX-other-free public-domain"
+SLOT="0"
+KEYWORDS="~amd64 ~arm64 ~ppc ~riscv ~x86"
+COMMON_DEPEND="
+	>=dev-texlive/texlive-basic-2023
 "
 RDEPEND="
-	${DEPEND}
+	${COMMON_DEPEND}
+"
+DEPEND="
+	${COMMON_DEPEND}
 "
 
-TEXLIVE_MODULE_BINSCRIPTS="texmf-dist/scripts/ebong/ebong.py"
+TEXLIVE_MODULE_BINSCRIPTS="
+	texmf-dist/scripts/ebong/ebong.py
+"

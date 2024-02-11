@@ -1,20 +1,20 @@
-# Copyright 1999-2023 Gentoo Authors
+# Copyright 1999-2024 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI="8"
 
 TEXLIVE_MODULE_CONTENTS="
-	collection-basic.r59159
-	context.r68525
+	collection-context.r69108
+	context.r69665
 	context-calendar-examples.r66947
-	context-collating-marks.r68624
+	context-collating-marks.r68696
 	context-cyrillicnumbers.r47085
 	context-filter.r62070
 	context-gnuplot.r47085
-	context-handlecsv.r68150
+	context-handlecsv.r69186
+	context-legacy.r69173
 	context-letter.r60787
 	context-mathsets.r47085
-	context-notes-zh-cn.r66725
 	context-pocketdiary.r66953
 	context-simpleslides.r67070
 	context-squares.r68545
@@ -25,16 +25,17 @@ TEXLIVE_MODULE_CONTENTS="
 	context-vim.r62071
 	context-visualcounter.r47085
 	jmn.r45751
-	collection-context.r68545
+	luajittex.r66186
 "
 TEXLIVE_MODULE_DOC_CONTENTS="
-	context.doc.r68525
+	context.doc.r69665
 	context-calendar-examples.doc.r66947
-	context-collating-marks.doc.r68624
+	context-collating-marks.doc.r68696
 	context-cyrillicnumbers.doc.r47085
 	context-filter.doc.r62070
 	context-gnuplot.doc.r47085
-	context-handlecsv.doc.r68150
+	context-handlecsv.doc.r69186
+	context-legacy.doc.r69173
 	context-letter.doc.r60787
 	context-mathsets.doc.r47085
 	context-notes-zh-cn.doc.r66725
@@ -46,46 +47,33 @@ TEXLIVE_MODULE_DOC_CONTENTS="
 	context-typescripts.doc.r60422
 	context-vim.doc.r62071
 	context-visualcounter.doc.r47085
+	luajittex.doc.r66186
 "
 TEXLIVE_MODULE_SRC_CONTENTS="
 	context-visualcounter.source.r47085
 "
-inherit texlive-module
-DESCRIPTION="TeXLive ConTeXt and packages"
-RESTRICT="mirror"
 
-LICENSE="BSD BSD-2 GPL-1 GPL-2 GPL-3 MIT TeX-other-free public-domain"
-SLOT="0/2023"
-KEYWORDS="~alpha ~amd64 ~arm ~arm64 ~hppa ~loong ~mips ~ppc ~ppc64 ~riscv ~s390 ~sparc ~x86 ~amd64-linux ~x86-linux ~ppc-macos ~x64-macos ~x64-solaris"
-DEPEND="
-	>=dev-texlive/texlive-basic-2019
-	>=dev-texlive/texlive-latex-2010
-	>=app-text/texlive-core-2010[xetex]
-	>=dev-texlive/texlive-metapost-2010
+inherit texlive-module
+
+DESCRIPTION="TeXLive ConTeXt and packages"
+
+LICENSE="BSD BSD-2 GPL-1 GPL-2 GPL-3 LGPL-2 LPPL-1.3 LPPL-1.3c MIT TeX TeX-other-free public-domain"
+SLOT="0"
+KEYWORDS="~amd64 ~arm64 ~ppc ~riscv ~x86"
+COMMON_DEPEND="
+	>=dev-texlive/texlive-basic-2023
 "
 RDEPEND="
-	${DEPEND}
+	${COMMON_DEPEND}
 	dev-lang/ruby
 "
-
-# This small hack is needed in order to have a sane upgrade path:
-# the new TeX Live 2009 metapost produces this file but it is not recorded in
-# any package; when running fmtutil (like texmf-update does) this file will be
-# created and cause collisions.
-
-pkg_setup() {
-	if [ -f "${ROOT}/var/lib/texmf/web2c/metapost/metafun.log" ]; then
-		einfo "Removing ${ROOT}/var/lib/texmf/web2c/metapost/metafun.log"
-		rm -f "${ROOT}/var/lib/texmf/web2c/metapost/metafun.log"
-	fi
-}
-
-# These comes without +x bit set...
+DEPEND="
+	${COMMON_DEPEND}
+"
 src_prepare() {
 	default
 	# No need to install these .exe
 	rm -rf texmf-dist/scripts/context/stubs/{mswin,win64} || die
-
 }
 
 TL_MODULE_INFORMATION="For using ConTeXt mkII simply use 'texexec' to generate

@@ -4,7 +4,6 @@
 EAPI=8
 
 TL_SOURCE_VERSION=20230311
-WITH_BINEXTRA=1
 inherit flag-o-matic toolchain-funcs libtool texlive-common
 
 MY_P=${PN%-core}-${TL_SOURCE_VERSION}-source
@@ -24,7 +23,8 @@ SRC_URI="
 "
 
 # We ship binextra collection alongside
-TL_CORE_BINEXTRA_MODULES="
+TL_CORE_BINEXTRA_CONTENTS="
+	collection-binextra.r69527
 	a2ping.r52964
 	adhocfilelist.r29349
 	arara.r68431
@@ -32,16 +32,17 @@ TL_CORE_BINEXTRA_MODULES="
 	bundledoc.r64620
 	checklistings.r38300
 	chklref.r52649
+	chktex.r64797
 	clojure-pamphlet.r67201
-	cluttex.r60964
+	cluttex.r68912
 	ctan-o-mat.r51578
-	ctan_chk.r36304
 	ctanbib.r68650
 	ctanify.r44129
 	ctanupload.r26313
 	ctie.r66186
-	cweb.r68647
+	cweb.r69586
 	de-macro.r66746
+	detex.r66186
 	digestif.r65223
 	dtl.r62387
 	dtxgen.r51663
@@ -59,7 +60,6 @@ TL_CORE_BINEXTRA_MODULES="
 	fragmaster.r26313
 	git-latexdiff.r54732
 	gsftopk.r52851
-	hook-pre-commit-pkg.r41378
 	installfont.r31205
 	ketcindy.r58661
 	lacheck.r66186
@@ -68,13 +68,12 @@ TL_CORE_BINEXTRA_MODULES="
 	latex2man.r64477
 	latex2nemeth.r65269
 	latexfileversion.r29349
-	latexindent.r68533
+	latexindent.r69472
 	latexpand.r66226
 	light-latex-make.r66473
 	listings-ext.r29349
 	ltxfileinfo.r38663
 	ltximg.r59335
-	luajittex.r66186
 	make4ht.r66130
 	match_parens.r66681
 	mflua.r62774
@@ -88,12 +87,13 @@ TL_CORE_BINEXTRA_MODULES="
 	pdftex-quiet.r49169
 	pdftosrc.r66186
 	pdfxup.r59001
-	pfarrei.r31934
+	pfarrei.r68950
 	pkfix.r26032
 	pkfix-helper.r56061
+	ppmcheckpdf.r69527
 	purifyeps.r29725
 	pythontex.r59514
-	runtexshebang.r68269
+	runtexshebang.r68882
 	seetexk.r57972
 	spix.r65050
 	srcredact.r38710
@@ -101,18 +101,19 @@ TL_CORE_BINEXTRA_MODULES="
 	synctex.r66203
 	tex4ebook.r66621
 	texaccents.r64447
+	texblend.r68961
 	texcount.r49013
 	texdef.r64967
 	texdiff.r29752
 	texdirflatten.r55064
-	texdoc.r66227
+	texdoc.r69672
 	texdoctk.r62186
 	texfot.r68110
 	texlive-scripts-extra.r62517
 	texliveonfly.r55777
 	texloganalyser.r54526
 	texlogfilter.r62792
-	texlogsieve.r64301
+	texlogsieve.r69436
 	texosquery.r53676
 	texplate.r67201
 	texware.r66186
@@ -125,9 +126,8 @@ TL_CORE_BINEXTRA_MODULES="
 	xindex.r67771
 	xindy.r65958
 	xpdfopen.r65952
-	collection-binextra.r68514
 "
-TL_CORE_BINEXTRA_DOC_MODULES="
+TL_CORE_BINEXTRA_DOC_CONTENTS="
 	a2ping.doc.r52964
 	adhocfilelist.doc.r29349
 	arara.doc.r68431
@@ -135,16 +135,18 @@ TL_CORE_BINEXTRA_DOC_MODULES="
 	bundledoc.doc.r64620
 	checklistings.doc.r38300
 	chklref.doc.r52649
+	chktex.doc.r64797
 	clojure-pamphlet.doc.r67201
-	cluttex.doc.r60964
+	cluttex.doc.r68912
 	ctan-o-mat.doc.r51578
 	ctan_chk.doc.r36304
 	ctanbib.doc.r68650
 	ctanify.doc.r44129
 	ctanupload.doc.r26313
 	ctie.doc.r66186
-	cweb.doc.r68647
+	cweb.doc.r69586
 	de-macro.doc.r66746
+	detex.doc.r66186
 	digestif.doc.r65223
 	dtl.doc.r62387
 	dtxgen.doc.r51663
@@ -171,13 +173,12 @@ TL_CORE_BINEXTRA_DOC_MODULES="
 	latex2man.doc.r64477
 	latex2nemeth.doc.r65269
 	latexfileversion.doc.r29349
-	latexindent.doc.r68533
+	latexindent.doc.r69472
 	latexpand.doc.r66226
 	light-latex-make.doc.r66473
 	listings-ext.doc.r29349
 	ltxfileinfo.doc.r38663
 	ltximg.doc.r59335
-	luajittex.doc.r66186
 	make4ht.doc.r66130
 	match_parens.doc.r66681
 	mkjobtexmf.doc.r29725
@@ -190,12 +191,13 @@ TL_CORE_BINEXTRA_DOC_MODULES="
 	pdftex-quiet.doc.r49169
 	pdftosrc.doc.r66186
 	pdfxup.doc.r59001
-	pfarrei.doc.r31934
+	pfarrei.doc.r68950
 	pkfix.doc.r26032
 	pkfix-helper.doc.r56061
+	ppmcheckpdf.doc.r69527
 	purifyeps.doc.r29725
 	pythontex.doc.r59514
-	runtexshebang.doc.r68269
+	runtexshebang.doc.r68882
 	seetexk.doc.r57972
 	spix.doc.r65050
 	srcredact.doc.r38710
@@ -203,18 +205,19 @@ TL_CORE_BINEXTRA_DOC_MODULES="
 	synctex.doc.r66203
 	tex4ebook.doc.r66621
 	texaccents.doc.r64447
+	texblend.doc.r68961
 	texcount.doc.r49013
 	texdef.doc.r64967
 	texdiff.doc.r29752
 	texdirflatten.doc.r55064
-	texdoc.doc.r66227
+	texdoc.doc.r69672
 	texdoctk.doc.r62186
 	texfot.doc.r68110
 	texlive-scripts-extra.doc.r62517
 	texliveonfly.doc.r55777
 	texloganalyser.doc.r54526
 	texlogfilter.doc.r62792
-	texlogsieve.doc.r64301
+	texlogsieve.doc.r69436
 	texosquery.doc.r53676
 	texplate.doc.r67201
 	texware.doc.r66186
@@ -228,7 +231,7 @@ TL_CORE_BINEXTRA_DOC_MODULES="
 	xindy.doc.r65958
 	xpdfopen.doc.r65952
 "
-TL_CORE_BINEXTRA_SRC_MODULES="
+TL_CORE_BINEXTRA_SRC_CONTENTS="
 	adhocfilelist.source.r29349
 	arara.source.r68431
 	checklistings.source.r38300
@@ -236,7 +239,7 @@ TL_CORE_BINEXTRA_SRC_MODULES="
 	listings-ext.source.r29349
 	mkjobtexmf.source.r29725
 	optexcount.source.r59817
-	pfarrei.source.r31934
+	pfarrei.source.r68950
 	pythontex.source.r59514
 	texaccents.source.r64447
 	texdef.source.r64967
@@ -244,40 +247,100 @@ TL_CORE_BINEXTRA_SRC_MODULES="
 	texplate.source.r67201
 	tlcockpit.source.r54857
 "
+
 # Macros that are not a part of texlive-sources or collection-binextra but still needed
 # for other packages during installation
-TL_CORE_EXTRA_MODULES="
+TL_CORE_EXTRA_CONTENTS="
 	hyphen-base.r68321
 	gsftopk.r52851
-	texlive.infra.r68562
-	texlive-scripts.r68642
+	texlive.infra.r69740
+	texlive-scripts.r69754
+"
+TL_CORE_EXTRA_DOC_CONTENTS="
+	gsftopk.doc.r52851
+	texlive.infra.doc.r69740
+	texlive-scripts.doc.r69754
 "
 
-TL_CORE_EXTRA_DOC_MODULES="
-	gsftopk.doc.r52851
-	texlive.infra.doc.r68562
-	texlive-scripts.doc.r68642
-"
 TEXLIVE_MODULE_BINSCRIPTS="
+	texmf-dist/scripts/a2ping/a2ping.pl
+	texmf-dist/scripts/adhocfilelist/adhocfilelist.sh
+	texmf-dist/scripts/arara/arara.sh
+	texmf-dist/scripts/bundledoc/arlatex
+	texmf-dist/scripts/bundledoc/bundledoc
+	texmf-dist/scripts/checklistings/checklistings.sh
+	texmf-dist/scripts/chklref/chklref.pl
+	texmf-dist/scripts/clojure-pamphlet/pamphletangler
+	texmf-dist/scripts/cluttex/cluttex.lua
+	texmf-dist/scripts/ctan-o-mat/ctan-o-mat.pl
+	texmf-dist/scripts/ctanbib/ctanbib
+	texmf-dist/scripts/ctanify/ctanify
+	texmf-dist/scripts/ctanupload/ctanupload.pl
+	texmf-dist/scripts/de-macro/de-macro
+	texmf-dist/scripts/digestif/digestif.texlua
+	texmf-dist/scripts/dtxgen/dtxgen
+	texmf-dist/scripts/dviasm/dviasm.py
+	texmf-dist/scripts/dviinfox/dviinfox.pl
+	texmf-dist/scripts/easydtx/edtx2dtx.pl
+	texmf-dist/scripts/findhyph/findhyph
+	texmf-dist/scripts/fragmaster/fragmaster.pl
+	texmf-dist/scripts/git-latexdiff/git-latexdiff
+	texmf-dist/scripts/installfont/installfont-tl
+	texmf-dist/scripts/ketcindy/ketcindy.pl
+	texmf-dist/scripts/latex-git-log/latex-git-log
+	texmf-dist/scripts/latex-papersize/latex-papersize.py
+	texmf-dist/scripts/latex2man/latex2man
+	texmf-dist/scripts/latex2nemeth/latex2nemeth
+	texmf-dist/scripts/latexfileversion/latexfileversion
+	texmf-dist/scripts/latexindent/latexindent.pl
+	texmf-dist/scripts/latexpand/latexpand
+	texmf-dist/scripts/light-latex-make/llmk.lua
+	texmf-dist/scripts/listings-ext/listings-ext.sh
+	texmf-dist/scripts/ltxfileinfo/ltxfileinfo
+	texmf-dist/scripts/ltximg/ltximg.pl
 	texmf-dist/scripts/make4ht/make4ht
-	texmf-dist/scripts/texlive/fmtutil.pl
+	texmf-dist/scripts/match_parens/match_parens
+	texmf-dist/scripts/mkjobtexmf/mkjobtexmf.pl
+	texmf-dist/scripts/optexcount/optexcount
+	texmf-dist/scripts/pdfbook2/pdfbook2
+	texmf-dist/scripts/pdfcrop/pdfcrop.pl
+	texmf-dist/scripts/pdfjam/pdfjam
+	texmf-dist/scripts/pdflatexpicscale/pdflatexpicscale.pl
+	texmf-dist/scripts/pdftex-quiet/pdftex-quiet
+	texmf-dist/scripts/pdfxup/pdfxup
+	texmf-dist/scripts/pfarrei/a5toa4.tlu
+	texmf-dist/scripts/pfarrei/pfarrei.tlu
+	texmf-dist/scripts/pkfix/pkfix.pl
+	texmf-dist/scripts/pkfix-helper/pkfix-helper
+	texmf-dist/scripts/purifyeps/purifyeps
+	texmf-dist/scripts/pythontex/depythontex.py
+	texmf-dist/scripts/pythontex/pythontex.py
+	texmf-dist/scripts/runtexshebang/runtexshebang.lua
+	texmf-dist/scripts/spix/spix.py
+	texmf-dist/scripts/srcredact/srcredact.pl
+	texmf-dist/scripts/sty2dtx/sty2dtx.pl
+	texmf-dist/scripts/tex4ebook/tex4ebook
+	texmf-dist/scripts/texaccents/texaccents.sno
+	texmf-dist/scripts/texblend/texblend
+	texmf-dist/scripts/texcount/texcount.pl
+	texmf-dist/scripts/texdef/texdef.pl
+	texmf-dist/scripts/texdiff/texdiff
+	texmf-dist/scripts/texdirflatten/texdirflatten
+	texmf-dist/scripts/texdoc/texdoc.tlu
+	texmf-dist/scripts/texfot/texfot.pl
 	texmf-dist/scripts/texlive/fmtutil-sys.sh
 	texmf-dist/scripts/texlive/fmtutil-user.sh
+	texmf-dist/scripts/texlive/fmtutil.pl
+	texmf-dist/scripts/texlive/mktexlsr
+	texmf-dist/scripts/texlive/mktexlsr.pl
 	texmf-dist/scripts/texlive/mktexmf
 	texmf-dist/scripts/texlive/mktexpk
 	texmf-dist/scripts/texlive/mktextfm
 	texmf-dist/scripts/texlive/rungs.lua
+	texmf-dist/scripts/texlive/tlmgr.pl
 	texmf-dist/scripts/texlive/updmap-sys.sh
 	texmf-dist/scripts/texlive/updmap-user.sh
 	texmf-dist/scripts/texlive/updmap.pl
-	texmf-dist/scripts/texlive/tlmgr.pl
-	texmf-dist/scripts/texlive/mktexlsr
-"
-TEXLIVE_MODULE_BINLINKS="
-	mktexlsr:texhash
-	fmtutil:mktexfmt
-"
-TEXLIVE_MODULE_BINSCRIPTS+="
 	texmf-dist/scripts/texlive-extra/allcm.sh
 	texmf-dist/scripts/texlive-extra/allneeded.sh
 	texmf-dist/scripts/texlive-extra/dvi2fax.sh
@@ -291,14 +354,37 @@ TEXLIVE_MODULE_BINSCRIPTS+="
 	texmf-dist/scripts/texlive-extra/texconfig-sys.sh
 	texmf-dist/scripts/texlive-extra/texconfig.sh
 	texmf-dist/scripts/texlive-extra/texlinks.sh
+	texmf-dist/scripts/texliveonfly/texliveonfly.py
+	texmf-dist/scripts/texloganalyser/texloganalyser
+	texmf-dist/scripts/texlogfilter/texlogfilter
+	texmf-dist/scripts/texlogsieve/texlogsieve
+	texmf-dist/scripts/texosquery/texosquery-jre5.sh
+	texmf-dist/scripts/texosquery/texosquery-jre8.sh
+	texmf-dist/scripts/texosquery/texosquery.sh
+	texmf-dist/scripts/texplate/texplate.sh
+	texmf-dist/scripts/tlcockpit/tlcockpit.sh
+	texmf-dist/scripts/typeoutfileinfo/typeoutfileinfo.sh
+	texmf-dist/scripts/xindex/xindex.lua
+"
+
+TEXLIVE_MODULE_BINLINKS="
+	cluttex:clxelatex
+	cluttex:cllualatex
+	pdfcrop:rpdfcrop
+	texdef:latexdef
+	fmtutil:mktexfmt
+	mktexlsr:texhash
+	allcm:allec
+	kpsetool:kpsexpand
+	kpsetool:kpsepath
 "
 
 # TL_CORE_EXTRA_SRC_MODULES=""
 
-texlive-common_append_to_src_uri TL_CORE_EXTRA_MODULES
+texlive-common_append_to_src_uri TL_CORE_EXTRA_CONTENTS
 
 SRC_URI="${SRC_URI} doc? ( "
-texlive-common_append_to_src_uri TL_CORE_EXTRA_DOC_MODULES
+texlive-common_append_to_src_uri TL_CORE_EXTRA_DOC_CONTENTS
 SRC_URI="${SRC_URI} )"
 # SRC_URI="${SRC_URI} source? ( "
 # for i in ${TL_CORE_EXTRA_SRC_MODULES}; do
@@ -306,19 +392,17 @@ SRC_URI="${SRC_URI} )"
 # done
 # SRC_URI="${SRC_URI} )"
 
-if [[ $WITH_BINEXTRA -gt 0 ]]; then
-texlive-common_append_to_src_uri TL_CORE_BINEXTRA_MODULES
+texlive-common_append_to_src_uri TL_CORE_BINEXTRA_CONTENTS
 
 SRC_URI="${SRC_URI} doc? ( "
-texlive-common_append_to_src_uri TL_CORE_BINEXTRA_DOC_MODULES
+texlive-common_append_to_src_uri TL_CORE_BINEXTRA_DOC_CONTENTS
 SRC_URI="${SRC_URI} )"
 
 SRC_URI="${SRC_URI} source? ( "
-texlive-common_append_to_src_uri TL_CORE_BINEXTRA_SRC_MODULES
+texlive-common_append_to_src_uri TL_CORE_BINEXTRA_SRC_CONTENTS
 SRC_URI="${SRC_URI} )"
-fi
 
-KEYWORDS="~alpha ~amd64 ~arm ~arm64 ~hppa ~ia64 ~loong ~mips ~ppc ~ppc64 ~riscv ~s390 ~sparc ~x86 ~amd64-linux ~x86-linux"
+KEYWORDS="~amd64 ~arm64 ~ppc ~riscv ~x86"
 IUSE="cjk X doc source tk +luajittex xetex xindy"
 
 TEXMF_PATH=/usr/share/texmf-dist
