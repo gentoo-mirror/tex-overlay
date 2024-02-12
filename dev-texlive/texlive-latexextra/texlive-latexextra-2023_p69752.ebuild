@@ -3961,8 +3961,10 @@ COMMON_DEPEND="
 "
 RDEPEND="
 	${COMMON_DEPEND}
-	>=dev-tex/glossaries-4.53
 	>=dev-tex/minted-2.9
+"
+PDEPEND="
+	>=dev-tex/glossaries-4.53
 "
 DEPEND="
 	${COMMON_DEPEND}
