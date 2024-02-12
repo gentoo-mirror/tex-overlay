@@ -742,6 +742,10 @@ src_install() {
 pkg_postinst() {
 	etexmf-update
 
+	# Note that the fmtutil-sys call has no "|| die" attached to it. We
+	# are here in pkg_postinst where invoking die is not sensible.
+	# TODO: Research the rationale of calling fmtutil-sys here and the
+	# reasons why it fails.
 	einfo "Regenerating TeX formats"
 	fmtutil-sys --all &> /dev/null
 
