@@ -740,14 +740,16 @@ src_install() {
 }
 
 pkg_postinst() {
-	etexmf-update
+	# Note that the etexmf-update and efmtutil-sys use nonfatal. We are
+	# pkg_postinst, so invoking die will merely print an error message
+	# but not abort the installation as it already happened. However,
+	# unlike the texlive modules, we observed fmtutil-sys failures in
+	# texlive-core.
 
-	# Note that the fmtutil-sys call has no "|| die" attached to it. We
-	# are here in pkg_postinst where invoking die is not sensible.
-	# TODO: Research the rationale of calling fmtutil-sys here and the
-	# reasons why it fails.
-	einfo "Regenerating TeX formats"
-	fmtutil-sys --all &> /dev/null
+	# TODO: Research the rationale of calling etexmf-update and
+	# eftmutil-sys here and the reasons why it fails.
+	etexmf-update --ignore-errors
+	efmtutil-sys --ignore-errors
 
 	elog
 	elog "If you have configuration files in ${EPREFIX}/etc/texmf to merge,"
