@@ -374,7 +374,6 @@ COMMON_DEPEND="
 "
 RDEPEND="
 	${COMMON_DEPEND}
-	>=dev-tex/biber-2.19
 "
 PDEPEND="
 	>=dev-tex/biblatex-3.19
