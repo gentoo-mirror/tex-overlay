@@ -87,6 +87,8 @@ COMMON_DEPEND="
 "
 RDEPEND="
 	${COMMON_DEPEND}
+"
+PDEPEND="
 	>=app-text/xdvik-22.87.06-r1
 "
 DEPEND="

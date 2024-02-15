@@ -211,6 +211,8 @@ COMMON_DEPEND="
 "
 RDEPEND="
 	${COMMON_DEPEND}
+"
+PDEPEND="
 	>=dev-tex/latex-beamer-3.71
 "
 DEPEND="
