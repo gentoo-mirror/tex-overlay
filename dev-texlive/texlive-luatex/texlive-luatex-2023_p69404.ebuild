@@ -257,6 +257,7 @@ RDEPEND="
 "
 DEPEND="
 	${COMMON_DEPEND}
+	>=app-text/texlive-core-2023
 "
 
 TEXLIVE_MODULE_BINSCRIPTS="
