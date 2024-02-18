@@ -3968,6 +3968,7 @@ PDEPEND="
 "
 DEPEND="
 	${COMMON_DEPEND}
+	>=dev-texlive/texlive-basic-2023
 "
 
 TEXLIVE_MODULE_BINSCRIPTS="
