@@ -164,6 +164,8 @@ DEPEND="
 	${COMMON_DEPEND}
 "
 
+QA_FLAGS_IGNORED="usr/share/texmf-dist/doc/luatex/opbible/txs-gen/mod2tex"
+
 TEXLIVE_MODULE_BINSCRIPTS="
 	texmf-dist/scripts/diadia/diadia.lua
 "
