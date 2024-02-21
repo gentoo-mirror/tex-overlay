@@ -89,6 +89,7 @@ RDEPEND="
 DEPEND="
 	${COMMON_DEPEND}
 "
+
 # Avoids collision with app-text/ttf2pk2
 src_prepare() {
 	default

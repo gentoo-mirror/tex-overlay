@@ -119,6 +119,7 @@ TEXLIVE_MODULE_BINSCRIPTS="
 	texmf-dist/scripts/texlive-extra/xelatex-unsafe.sh
 	texmf-dist/scripts/texlive-extra/xetex-unsafe.sh
 "
+
 FONT_CONF=( "${FILESDIR}"/09-texlive.conf )
 
 src_install() {

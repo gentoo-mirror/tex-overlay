@@ -265,6 +265,7 @@ TEXLIVE_MODULE_BINSCRIPTS="
 	texmf-dist/scripts/luaotfload/luaotfload-tool.lua
 	texmf-dist/scripts/texfindpkg/texfindpkg.lua
 "
+
 src_prepare() {
 	default
 	# https://bugs.gentoo.org/865203
