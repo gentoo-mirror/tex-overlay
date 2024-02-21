@@ -55,8 +55,7 @@ EOF
 		docinto texdoc
 		# pgfmanual is now split from the main tar archive
 		newdoc "${DISTDIR}/${P}-pgfmanual.pdf" pgfmanual.pdf
-		doins -r images text-en version-*
-		rm version-for-dvisvgm/en/color.cfg || die # bug 700056
+		doins -r images
 
 		dosym "../../../doc/${PF}/texdoc" "${TEXMF}/doc/latex/${PN}"
 		docompress -x "/usr/share/doc/${P}/texdoc/"
