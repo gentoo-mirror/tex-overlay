@@ -69,7 +69,9 @@ RDEPEND="
 "
 DEPEND="
 	${COMMON_DEPEND}
+	>=app-text/texlive-core-2023[xetex]
 "
+
 src_prepare() {
 	default
 	# No need to install these .exe
