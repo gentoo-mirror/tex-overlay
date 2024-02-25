@@ -56,8 +56,8 @@ COMMON_DEPEND="
 "
 RDEPEND="
 	${COMMON_DEPEND}
-	>=app-text/ps2pkm-1.8_p20230211
-	>=app-text/ttf2pk2-2.0_p20230211
+	>=app-text/ps2pkm-1.8_p20230311
+	>=app-text/ttf2pk2-2.0_p20230311
 "
 DEPEND="
 	${COMMON_DEPEND}
