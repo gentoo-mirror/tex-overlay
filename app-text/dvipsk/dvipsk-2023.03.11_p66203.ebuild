@@ -1,16 +1,16 @@
-# Copyright 1999-2023 Gentoo Authors
+# Copyright 1999-2024 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=8
 
 inherit texlive-common
 
-TL_VERSION=$(ver_cut 1)
+TL_VERSION="$(ver_cut 1)$(ver_cut 2)$(ver_cut 3)"
 DESCRIPTION="DVI-to-PostScript translator"
 HOMEPAGE="https://tug.org/texlive/"
 SRC_URI="https://mirrors.ctan.org/systems/texlive/Source/texlive-${TL_VERSION}-source.tar.xz"
 
-DVIPS_REVISION=$(ver_cut 3)
+DVIPS_REVISION=$(ver_cut 5)
 EXTRA_TL_MODULES="dvips.r${DVIPS_REVISION}"
 EXTRA_TL_DOC_MODULES="dvips.doc.r${DVIPS_REVISION}"
 
