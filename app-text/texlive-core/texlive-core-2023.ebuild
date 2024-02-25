@@ -1,7 +1,7 @@
 # Copyright 1999-2024 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
-EAPI=8
+EAPI="8"
 
 TL_SOURCE_VERSION=20230311
 inherit flag-o-matic toolchain-funcs libtool texlive-common
@@ -13,9 +13,7 @@ HOMEPAGE="https://tug.org/texlive/"
 SLOT="0"
 LICENSE="Apache-2.0 Artistic BSD BSD-2 FDL-1.3 GPL-1 GPL-2 GPL-3 GPL-3+ LGPL-3 LPPL-1.0 LPPL-1.2 LPPL-1.3 LPPL-1.3c MIT TeX TeX-other-free public-domain"
 RESTRICT="mirror"
-
 GENTOO_TEX_PATCHES_NUM=2
-
 SRC_URI="
 	https://mirrors.ctan.org/systems/texlive/Source/${MY_P}.tar.xz
 	https://gitweb.gentoo.org/proj/tex-patches.git/snapshot/tex-patches-${GENTOO_TEX_PATCHES_NUM}.tar.bz2
@@ -378,7 +376,6 @@ TEXLIVE_MODULE_BINLINKS="
 	kpsetool:kpsexpand
 	kpsetool:kpsepath
 "
-
 # TL_CORE_EXTRA_SRC_MODULES=""
 
 texlive-common_append_to_src_uri TL_CORE_EXTRA_CONTENTS
@@ -406,7 +403,6 @@ KEYWORDS="~amd64 ~arm64 ~ppc ~riscv ~x86"
 IUSE="cjk X doc source tk +luajittex xetex xindy"
 
 TEXMF_PATH=/usr/share/texmf-dist
-
 MODULAR_X_DEPEND="
 	X? (
 		x11-libs/libX11
@@ -431,13 +427,13 @@ COMMON_DEPEND="
 	dev-libs/mpfr:=
 	>=dev-libs/ptexenc-1.4.3
 	xetex? (
-		>=app-text/teckit-2.5.3
+		>=app-text/teckit-2.5.10
 		media-libs/fontconfig
 	)
 	xindy? ( dev-lisp/clisp:= )
 	media-libs/freetype:2
 	>=dev-libs/icu-50:=
-	>=dev-libs/kpathsea-6.3.2:=
+	>=dev-libs/kpathsea-6.3.5:=
 "
 
 BDEPEND="
@@ -452,9 +448,6 @@ DEPEND="
 
 RDEPEND="
 	${COMMON_DEPEND}
-	>=app-text/ps2pkm-1.8_p20230311
-	>=app-text/dvipsk-2023.1_p20230311
-	>=dev-tex/bibtexu-4.00_p20230311
 	virtual/perl-Getopt-Long
 	dev-perl/File-HomeDir
 	dev-perl/Log-Dispatch
@@ -464,6 +457,12 @@ RDEPEND="
 		dev-lang/tk
 		dev-perl/Tk
 	)
+"
+RDEPEND+="
+	>=app-text/dvisvgm-3.2
+	>=dev-tex/bibtexu-3.72
+	>=dev-tex/latexdiff-1.3.3
+	>=dev-tex/latexmk-4.83
 "
 
 S="${WORKDIR}/${MY_P}"
