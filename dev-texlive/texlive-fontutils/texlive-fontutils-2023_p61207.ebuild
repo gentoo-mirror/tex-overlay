@@ -18,7 +18,6 @@ TEXLIVE_MODULE_CONTENTS="
 	luafindfont.r67468
 	mf2pt1.r61217
 	ps2eps.r62856
-	ps2pk.r66186
 	psutils.r61719
 	t1utils.r57972
 "
@@ -35,7 +34,6 @@ TEXLIVE_MODULE_DOC_CONTENTS="
 	luafindfont.doc.r67468
 	mf2pt1.doc.r61217
 	ps2eps.doc.r62856
-	ps2pk.doc.r66186
 	psutils.doc.r61719
 	t1utils.doc.r57972
 "
@@ -58,7 +56,8 @@ COMMON_DEPEND="
 "
 RDEPEND="
 	${COMMON_DEPEND}
-	>=app-text/ttf2pk2-2.0_p20230311
+	>=app-text/ps2pkm-1.8_p20230211
+	>=app-text/ttf2pk2-2.0_p20230211
 "
 DEPEND="
 	${COMMON_DEPEND}
