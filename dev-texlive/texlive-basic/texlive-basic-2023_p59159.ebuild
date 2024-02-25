@@ -87,6 +87,7 @@ COMMON_DEPEND="
 "
 RDEPEND="
 	${COMMON_DEPEND}
+	>=app-text/dvipsk-2023.03.11_p66203
 "
 PDEPEND="
 	>=app-text/xdvik-22.87.06-r1
