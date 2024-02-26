@@ -20,7 +20,6 @@ SRC_URI="
 		-> gentoo-tex-patches-${GENTOO_TEX_PATCHES_NUM}.tar.bz2
 "
 
-
 # Macros that are not a part of texlive-sources or or pulled in from collection-binextra
 # but still needed for other packages during installation
 TL_CORE_EXTRA_CONTENTS="
