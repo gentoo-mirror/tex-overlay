@@ -43,10 +43,8 @@ RDEPEND="${DEPEND}
 	>=${TEXLIVE_CAT}/texlive-plaingeneric-${PV}
 	pdfannotextractor? ( dev-tex/pdfannotextractor )
 	extra? (
-		app-text/dvisvgm
-		dev-tex/latexdiff
-		dev-tex/latexmk
 		>=${TEXLIVE_CAT}/texlive-bibtexextra-${PV}
+		>=${TEXLIVE_CAT}/texlive-binextra-${PV}
 		>=${TEXLIVE_CAT}/texlive-fontsextra-${PV}
 		>=${TEXLIVE_CAT}/texlive-formatsextra-${PV}
 		>=${TEXLIVE_CAT}/texlive-latexextra-${PV}

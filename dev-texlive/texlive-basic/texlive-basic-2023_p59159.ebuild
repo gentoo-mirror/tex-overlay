@@ -23,7 +23,6 @@ TEXLIVE_MODULE_CONTENTS="
 	lua-alt-getopt.r56414
 	luahbtex.r66186
 	luatex.r69182
-	makeindex.r62517
 	metafont.r66186
 	mflogo.r42428
 	mfware.r66186
@@ -52,7 +51,6 @@ TEXLIVE_MODULE_DOC_CONTENTS="
 	lua-alt-getopt.doc.r56414
 	luahbtex.doc.r66186
 	luatex.doc.r69182
-	makeindex.doc.r62517
 	metafont.doc.r66186
 	mflogo.doc.r42428
 	mfware.doc.r66186

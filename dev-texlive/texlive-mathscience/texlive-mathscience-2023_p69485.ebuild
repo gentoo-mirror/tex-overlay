@@ -20,7 +20,6 @@ TEXLIVE_MODULE_CONTENTS="
 	annotate-equations.r67044
 	apxproof.r64715
 	autobreak.r43337
-	axodraw2.r58155
 	backnaur.r54080
 	begriff.r15878
 	binomexp.r15878
@@ -281,7 +280,6 @@ TEXLIVE_MODULE_DOC_CONTENTS="
 	annotate-equations.doc.r67044
 	apxproof.doc.r64715
 	autobreak.doc.r43337
-	axodraw2.doc.r58155
 	backnaur.doc.r54080
 	begriff.doc.r15878
 	binomexp.doc.r15878
@@ -534,7 +532,6 @@ TEXLIVE_MODULE_SRC_CONTENTS="
 	amscdx.source.r51532
 	apxproof.source.r64715
 	autobreak.source.r43337
-	axodraw2.source.r58155
 	backnaur.source.r54080
 	binomexp.source.r15878
 	bitpattern.source.r39073
