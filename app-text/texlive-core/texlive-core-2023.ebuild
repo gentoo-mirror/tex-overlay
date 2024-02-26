@@ -263,8 +263,8 @@ src_configure() {
 		--enable-web2c=yes
 		--enable-afm2pl=yes
 		--enable-dvidvi=yes
-	    --enable-dviljk=yes
-        $(use_enable cjk dvipdfm-x)
+		--enable-dviljk=yes
+		$(use_enable cjk dvipdfm-x)
 		--enable-dvipos=yes
 		--enable-gregorio=yes
 		--enable-gsftopk=yes
