@@ -14,7 +14,6 @@ TEXLIVE_MODULE_CONTENTS="
 	csplain.r67934
 	hyphen-czech.r58609
 	hyphen-slovak.r58609
-	vlna.r66186
 "
 TEXLIVE_MODULE_DOC_CONTENTS="
 	babel-czech.doc.r30261
@@ -25,7 +24,6 @@ TEXLIVE_MODULE_DOC_CONTENTS="
 	lshort-czech.doc.r55643
 	lshort-slovak.doc.r15878
 	texlive-cz.doc.r62854
-	vlna.doc.r66186
 "
 TEXLIVE_MODULE_SRC_CONTENTS="
 	babel-czech.source.r30261

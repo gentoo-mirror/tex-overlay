@@ -56,7 +56,6 @@ TEXLIVE_MODULE_CONTENTS="
 	thaienum.r44140
 	thaispec.r58019
 	unicode-alphabets.r66225
-	velthuis.r66186
 	vntex.r62837
 	wnri.r22459
 	wnri-latex.r22338
@@ -109,7 +108,6 @@ TEXLIVE_MODULE_DOC_CONTENTS="
 	thaienum.doc.r44140
 	thaispec.doc.r58019
 	unicode-alphabets.doc.r66225
-	velthuis.doc.r66186
 	vntex.doc.r62837
 	wnri.doc.r22459
 	wnri-latex.doc.r22338

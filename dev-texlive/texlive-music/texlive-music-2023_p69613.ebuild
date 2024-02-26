@@ -6,7 +6,6 @@ EAPI="8"
 TEXLIVE_MODULE_CONTENTS="
 	collection-music.r69613
 	abc.r41157
-	autosp.r58211
 	bagpipe.r34393
 	chordbars.r49569
 	chordbox.r51000
@@ -22,7 +21,6 @@ TEXLIVE_MODULE_CONTENTS="
 	leadsheets.r61504
 	lilyglyphs.r56473
 	lyluatex.r66880
-	m-tx.r64182
 	musical.r54758
 	musicography.r68220
 	musixguit.r21649
@@ -31,19 +29,16 @@ TEXLIVE_MODULE_CONTENTS="
 	musixtnt.r69742
 	octave.r66115
 	piano.r21574
-	pmx.r65926
 	pmxchords.r39249
 	recorder-fingering.r68595
 	songbook.r18136
 	songproj.r66704
 	songs.r51494
 	undar-digitacion.r69742
-	xml2pmx.r57972
 	xpiano.r61719
 "
 TEXLIVE_MODULE_DOC_CONTENTS="
 	abc.doc.r41157
-	autosp.doc.r58211
 	bagpipe.doc.r34393
 	chordbars.doc.r49569
 	chordbox.doc.r51000
@@ -60,7 +55,6 @@ TEXLIVE_MODULE_DOC_CONTENTS="
 	leadsheets.doc.r61504
 	lilyglyphs.doc.r56473
 	lyluatex.doc.r66880
-	m-tx.doc.r64182
 	musical.doc.r54758
 	musicography.doc.r68220
 	musixguit.doc.r21649
@@ -69,14 +63,12 @@ TEXLIVE_MODULE_DOC_CONTENTS="
 	musixtnt.doc.r69742
 	octave.doc.r66115
 	piano.doc.r21574
-	pmx.doc.r65926
 	pmxchords.doc.r39249
 	recorder-fingering.doc.r68595
 	songbook.doc.r18136
 	songproj.doc.r66704
 	songs.doc.r51494
 	undar-digitacion.doc.r69742
-	xml2pmx.doc.r57972
 	xpiano.doc.r61719
 "
 TEXLIVE_MODULE_SRC_CONTENTS="
@@ -113,7 +105,6 @@ TEXLIVE_MODULE_BINSCRIPTS="
 	texmf-dist/scripts/lilyglyphs/lily-glyph-commands.py
 	texmf-dist/scripts/lilyglyphs/lily-image-commands.py
 	texmf-dist/scripts/lilyglyphs/lily-rebuild-pdfs.py
-	texmf-dist/scripts/m-tx/m-tx.lua
 	texmf-dist/scripts/musixtex/musixflx.lua
 	texmf-dist/scripts/musixtex/musixtex.lua
 	texmf-dist/scripts/pmxchords/pmxchords.lua
