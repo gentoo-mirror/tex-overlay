@@ -17,6 +17,7 @@ dev-tex/pgf 3.1.10: The TeX Portable Graphic Format
 dev-tex/tex4ht 2023_p68735: Converts (La)TeX to (X)HTML, XML and OO.org
 dev-texlive/texlive-basic 2023_p59159: TeXLive Essential programs and files
 dev-texlive/texlive-bibtexextra 2023_p67386: TeXLive BibTeX additional styles
+dev-texlive/texlive-binextra 2023_p69527: TeXLive TeX auxiliary programs
 dev-texlive/texlive-context 2023_p69108: TeXLive ConTeXt and packages
 dev-texlive/texlive-fontsextra 2023_p69663: TeXLive Additional fonts
 dev-texlive/texlive-fontsrecommended 2023_p54074: TeXLive Recommended fonts
