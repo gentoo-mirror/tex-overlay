@@ -20,7 +20,6 @@ SRC_URI="
 		-> gentoo-tex-patches-${GENTOO_TEX_PATCHES_NUM}.tar.bz2
 "
 
-
 # Macros that are not a part of texlive-sources or or pulled in from collection-binextra
 # but still needed for other packages during installation
 TL_CORE_EXTRA_CONTENTS="
@@ -264,8 +263,8 @@ src_configure() {
 		--enable-web2c=yes
 		--enable-afm2pl=yes
 		--enable-dvidvi=yes
-	    --enable-dviljk=yes
-        $(use_enable cjk dvipdfm-x)
+		--enable-dviljk=yes
+		$(use_enable cjk dvipdfm-x)
 		--enable-dvipos=yes
 		--enable-gregorio=yes
 		--enable-gsftopk=yes
@@ -442,8 +441,6 @@ src_install() {
 	fi
 
 	texlive-common_handle_config_files
-
-	keepdir /usr/share/texmf-site
 
 	# the virtex symlink is not installed
 	# The links has to be relative, since the targets
