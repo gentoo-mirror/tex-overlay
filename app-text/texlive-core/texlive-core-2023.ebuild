@@ -443,8 +443,6 @@ src_install() {
 
 	texlive-common_handle_config_files
 
-	keepdir /usr/share/texmf-site
-
 	# the virtex symlink is not installed
 	# The links has to be relative, since the targets
 	# is not present at this stage and MacOS doesn't
