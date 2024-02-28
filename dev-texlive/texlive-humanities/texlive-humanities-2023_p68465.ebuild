@@ -156,7 +156,7 @@ SLOT="0"
 KEYWORDS="~amd64 ~arm64 ~ppc ~riscv ~x86"
 COMMON_DEPEND="
 	>=dev-texlive/texlive-latex-2023
-	app-text/sword
+	doc? ( app-text/sword )
 "
 RDEPEND="
 	${COMMON_DEPEND}
@@ -169,8 +169,21 @@ TEXLIVE_MODULE_BINSCRIPTS="
 	texmf-dist/scripts/diadia/diadia.lua
 "
 
+src_prepare() {
+	default
+
+	if use doc; then
+		# https://github.com/olsak/OpBible/pull/1
+		eapply "${FILESDIR}"/${PN}-2023-opbible-improve-Makefile-respect-user-flags.patch
+		# Remove the binary, so that it is rebuild.
+		rm texmf-dist/doc/luatex/opbible/txs-gen/mod2tex || die
+	fi
+}
+
 src_compile() {
-	emake -C texmf-dist/doc/luatex/opbible/txs-gen
+	if use doc; then
+		emake -C texmf-dist/doc/luatex/opbible/txs-gen
+	fi
 
 	texlive-module_src_compile
 }
