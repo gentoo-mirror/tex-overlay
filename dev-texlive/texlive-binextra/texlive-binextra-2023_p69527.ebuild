@@ -312,3 +312,8 @@ TEXLIVE_MODULE_BINLINKS="
 	pdfcrop:rpdfcrop
 	texdef:latexdef
 "
+
+src_install() {
+	texlive-module_src_install
+	keepdir /var/lib/texmf/web2c
+}
