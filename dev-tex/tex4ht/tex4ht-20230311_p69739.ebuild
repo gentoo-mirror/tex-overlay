@@ -14,7 +14,7 @@ HOMEPAGE="
 	https://tug.org/tex4ht/
 	https://puszcza.gnu.org.ua/projects/tex4ht/
 "
-# See bootstrap-tex4ht in tex-dev.git on how to create the tex4ht-sources-<NUM>.tar.xz
+# See bootstrap-tex4ht in tex.git on how to create the tex4ht-sources-<NUM>.tar.xz
 SRC_URI="
 	https://dev.gentoo.org/~flow/distfiles/texlive/tex4ht-sources-1477.tar.xz
 	https://mirrors.ctan.org/systems/texlive/tlnet/archive/${MY_P_TEXLIVE}
