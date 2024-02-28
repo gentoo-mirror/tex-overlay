@@ -156,6 +156,7 @@ SLOT="0"
 KEYWORDS="~amd64 ~arm64 ~ppc ~riscv ~x86"
 COMMON_DEPEND="
 	>=dev-texlive/texlive-latex-2023
+	app-text/sword
 "
 RDEPEND="
 	${COMMON_DEPEND}
@@ -168,4 +169,8 @@ TEXLIVE_MODULE_BINSCRIPTS="
 	texmf-dist/scripts/diadia/diadia.lua
 "
 
-QA_FLAGS_IGNORED="usr/share/texmf-dist/doc/luatex/opbible/txs-gen/mod2tex"
+src_compile() {
+	emake -C texmf-dist/doc/luatex/opbible/txs-gen
+
+	texlive-module_src_compile
+}
