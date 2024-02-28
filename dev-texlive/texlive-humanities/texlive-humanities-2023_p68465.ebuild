@@ -181,7 +181,7 @@ src_prepare() {
 		# https://github.com/olsak/OpBible/pull/1
 		eapply "${FILESDIR}"/${PN}-2023-opbible-improve-Makefile-respect-user-flags.patch
 		# Remove the binary, so that it is rebuild.
-		rm texmf-dist/doc/luatex/opbible/txs-gen/mod2tex || die
+		rm txs-gen/mod2tex || die
 
 		popd &> /dev/null || die
 	fi
