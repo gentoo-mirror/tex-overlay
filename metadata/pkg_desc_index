@@ -14,7 +14,7 @@ dev-tex/latex-beamer 3.71: LaTeX class for creating presentations using a video 
 dev-tex/latexmk 4.83: Perl script for automatically building LaTeX documents
 dev-tex/minted 2.9: LaTeX package for source code syntax highlighting
 dev-tex/pgf 3.1.10: The TeX Portable Graphic Format
-dev-tex/tex4ht 20230311_p68735: Converts (La)TeX to (X)HTML, XML and OO.org
+dev-tex/tex4ht 20230311_p69739: Converts (La)TeX to (X)HTML, XML and OO.org
 dev-texlive/texlive-basic 2023_p59159: TeXLive Essential programs and files
 dev-texlive/texlive-bibtexextra 2023_p67386: TeXLive BibTeX additional styles
 dev-texlive/texlive-binextra 2023_p69527: TeXLive TeX auxiliary programs
