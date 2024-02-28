@@ -1,4 +1,4 @@
-From 34552399a8de874344ae095cd5533232449ccc0a Mon Sep 17 00:00:00 2001
+From 2352b7c243be8b816511ff45377da26f7228fa72 Mon Sep 17 00:00:00 2001
 From: Florian Schmaus <flo@geekplace.eu>
 Date: Wed, 28 Feb 2024 20:03:49 +0100
 Subject: [PATCH] opbible: improve Makefile, respect user's CXX, C(P|XX)FLAGS,
@@ -13,8 +13,10 @@ The Makefile not respecting user variables was initially report by
 Gentoo's CI and the following two downstream bugs:
 - https://bugs.gentoo.org/925710
 - https://bugs.gentoo.org/925711
---- a/texmf-dist/doc/luatex/opbible/txs-gen/Makefile
-+++ b/texmf-dist/doc/luatex/opbible/txs-gen/Makefile
+
+Also use pkg-config to determine sword's flags and libraries.
+--- a/txs-gen/Makefile
++++ b/txs-gen/Makefile
 @@ -5,35 +5,19 @@
  
  ## definitions
@@ -24,11 +26,11 @@ Gentoo's CI and the following two downstream bugs:
 -LIBS = -lsword
 -LDFLAGS = $(LIBS)
 -CXXFLAGS = -I/usr/include/sword
-+LDLIBS = -lsword
++LDLIBS = $(shell pkg-config --libs sword)
  
 -target = mod2tex
 -objects = mod2tex.o
-+CXXFLAGS += -I/usr/include/sword
++CXXFLAGS += $(shell pkg-config --cflags sword)
  
  ## static rules
  
