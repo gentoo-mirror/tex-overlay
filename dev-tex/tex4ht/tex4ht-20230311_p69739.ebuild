@@ -1,4 +1,4 @@
-# Copyright 1999-2023 Gentoo Authors
+# Copyright 1999-2024 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=8
@@ -14,9 +14,9 @@ HOMEPAGE="
 	https://tug.org/tex4ht/
 	https://puszcza.gnu.org.ua/projects/tex4ht/
 "
-# TODO: Document how tex4ht-sources-$TEX4HT_SVN_VERSION.tar.xz is generated.
+# See bootstrap-tex4ht in tex-dev.git on how to create the tex4ht-sources-<NUM>.tar.xz
 SRC_URI="
-	https://dev.gentoo.org/~flow/distfiles/texlive/tex4ht-sources-1405.tar.xz
+	https://dev.gentoo.org/~flow/distfiles/texlive/tex4ht-sources-1477.tar.xz
 	https://mirrors.ctan.org/systems/texlive/tlnet/archive/${MY_P_TEXLIVE}
 	https://dev.gentoo.org/~flow/distfiles/texlive/${MY_P_TEXLIVE}
 	source? (
