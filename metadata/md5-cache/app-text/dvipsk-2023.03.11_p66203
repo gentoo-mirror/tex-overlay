@@ -11,5 +11,5 @@ LICENSE=GPL-2
 RDEPEND=>=dev-libs/kpathsea-6.2.1:=
 SLOT=0
 SRC_URI=https://mirrors.ctan.org/systems/texlive/Source/texlive-20230311-source.tar.xz https://mirrors.ctan.org/systems/texlive/tlnet/archive/dvips.r66203.tar.xz https://dev.gentoo.org/~flow/distfiles/texlive/dvips.r66203.tar.xz doc? ( https://mirrors.ctan.org/systems/texlive/tlnet/archive/dvips.doc.r66203.tar.xz https://dev.gentoo.org/~flow/distfiles/texlive/dvips.doc.r66203.tar.xz )
-_eclasses_=texlive-common	2da615c8e776f07eb0b14c9972e247a2
+_eclasses_=texlive-common	d06139f36898470d0b74be3e4a056283
 _md5_=14387b3e5fc4848d257f48c57afda828
