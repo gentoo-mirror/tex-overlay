@@ -86,7 +86,7 @@ HOMEPAGE="https://www.tug.org/texlive/"
 IUSE="doc source"
 
 if [[ -z ${TL_PV} ]] \
-	   && [[ ${EAPI} -ge 8 ]] \
+	   && [[ ${EAPI} != 7 ]] \
 	   && [[ ${CATEGORY} == dev-texlive ]]; then
 	TL_PV=$(ver_cut 1)
 fi
