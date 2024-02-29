@@ -179,7 +179,7 @@ etexmf-update() {
 		if [[ -z ${ROOT} && -x "${EPREFIX}"/usr/sbin/texmf-update ]] ; then
 			"${EPREFIX}"/usr/sbin/texmf-update
 			local res="${?}"
-			if [[ "${?}" -ne 0 ]] && ver_test -ge 2023; then
+			if [[ "${res}" -ne 0 ]] && ver_test -ge 2023; then
 				die -n "texmf-update returned non-zero exit status ${res}"
 			fi
 		else
@@ -200,7 +200,7 @@ efmtutil-sys() {
 		if [[ -z ${ROOT} && -x "${EPREFIX}"/usr/bin/fmtutil-sys ]] ; then
 			einfo "Rebuilding formats"
 			"${EPREFIX}"/usr/bin/fmtutil-sys --all &> /dev/null ||
-				die -n "fmtutil-sys returned non-zero exit status ${res}"
+				die -n "fmtutil-sys returned non-zero exit status ${?}"
 		else
 			ewarn "Cannot run fmtutil-sys for some reason."
 			ewarn "Your formats might be inconsistent with your installed ${PN} version"
