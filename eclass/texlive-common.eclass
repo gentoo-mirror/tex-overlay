@@ -168,13 +168,10 @@ dobin_texmf_scripts() {
 }
 
 # @FUNCTION: etexmf-update
-# @USAGE: [--ignore-errors]
 # @DESCRIPTION:
 # Runs texmf-update if it is available and prints a warning otherwise. This
 # function helps in factorizing some code.  Useful in ebuilds' pkg_postinst and
 # pkg_postrm phases.
-# If --ignore-errors is provided, then a non-zero exit status of texmf-update does not
-# cause die to be invoked.
 # Called by app-text/dvipsk, app-text/texlive-core, dev-libs/kpathsea, and
 # texlive-module.eclass.
 etexmf-update() {
@@ -182,8 +179,8 @@ etexmf-update() {
 		if [[ -z ${ROOT} && -x "${EPREFIX}"/usr/sbin/texmf-update ]] ; then
 			"${EPREFIX}"/usr/sbin/texmf-update
 			local res="${?}"
-			if [[ "${?}" -ne 0 && "${#}" -ne 1 && "${1}" != "--ignore-errors" ]] && ver_test -ge 2023; then
-				die "texmf-update returned non-zero exit status ${res}"
+			if [[ "${?}" -ne 0 ]] && ver_test -ge 2023; then
+				die -n "texmf-update returned non-zero exit status ${res}"
 			fi
 		else
 			ewarn "Cannot run texmf-update for some reason."
@@ -194,22 +191,16 @@ etexmf-update() {
 }
 
 # @FUNCTION: efmtutil-sys
-# @USAGE: [--ignore-errors]
 # @DESCRIPTION:
 # Runs fmtutil-sys if it is available and prints a warning otherwise. This
 # function helps in factorizing some code. Used in ebuilds' pkg_postinst to
 # force a rebuild of TeX formats.
-# If --ignore-errors is provided, then a non-zero exit status of fmtutil-sys does not
-# cause die to be invoked.
 efmtutil-sys() {
 	if has_version 'app-text/texlive-core' ; then
 		if [[ -z ${ROOT} && -x "${EPREFIX}"/usr/bin/fmtutil-sys ]] ; then
 			einfo "Rebuilding formats"
-			"${EPREFIX}"/usr/bin/fmtutil-sys --all &> /dev/null
-			local res="${?}"
-			if [[ "${?}" -ne 0 && "${#}" -ne 1 && "${1}" != "--ignore-errors" ]]; then
-				die "fmtutil-sys returned non-zero exit status ${res}"
-			fi
+			"${EPREFIX}"/usr/bin/fmtutil-sys --all &> /dev/null \
+				|| die -n "fmtutil-sys returned non-zero exit status ${res}"
 		else
 			ewarn "Cannot run fmtutil-sys for some reason."
 			ewarn "Your formats might be inconsistent with your installed ${PN} version"

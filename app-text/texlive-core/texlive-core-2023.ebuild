@@ -460,9 +460,9 @@ pkg_postinst() {
 	# texlive-core.
 
 	# TODO: Research the rationale of calling etexmf-update and
-	# eftmutil-sys here and the reasons why it fails.
-	etexmf-update --ignore-errors
-	efmtutil-sys --ignore-errors
+	# eftmutil-sys here and the reasons why it sometimes fails.
+	nonfatal etexmf-update
+	nonfatal efmtutil-sys
 
 	elog
 	elog "If you have configuration files in ${EPREFIX}/etc/texmf to merge,"
