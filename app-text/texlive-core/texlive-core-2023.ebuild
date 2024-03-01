@@ -13,7 +13,7 @@ HOMEPAGE="https://tug.org/texlive/"
 SLOT="0"
 LICENSE="Apache-2.0 Artistic BSD BSD-2 FDL-1.3 GPL-1 GPL-2 GPL-3 GPL-3+ LGPL-3 LPPL-1.0 LPPL-1.2 LPPL-1.3 LPPL-1.3c MIT TeX TeX-other-free public-domain"
 RESTRICT="mirror"
-GENTOO_TEX_PATCHES_NUM=2
+GENTOO_TEX_PATCHES_NUM=3
 SRC_URI="
 	https://mirrors.ctan.org/systems/texlive/Source/${MY_P}.tar.xz
 	https://gitweb.gentoo.org/proj/tex-patches.git/snapshot/tex-patches-${GENTOO_TEX_PATCHES_NUM}.tar.bz2
@@ -214,16 +214,6 @@ src_prepare() {
 		texk/web2c/configure || die
 
 	local patch_dir="${WORKDIR}/tex-patches-${GENTOO_TEX_PATCHES_NUM}"
-	local drop_patches=(
-		texlive-2021-unbundle-linked_scripts.patch
-		texlive-core-2021-CVE-2023-32700.patch
-		texlive-core-2021-clang-16.patch
-		texlive-core-2021-slibtool.patch
-	)
-	local patch
-	for patch in ${drop_patches[@]}; do
-		rm "${patch_dir}/${patch}" || die "Could not remove ${patch}"
-	done
 	eapply "${patch_dir}"
 
 	default
