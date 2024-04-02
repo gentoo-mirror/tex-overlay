@@ -425,11 +425,11 @@ texlive-module_src_install() {
 # Update the TexLive package database at /usr/share/tlpkg/texlive.tlpdb.
 
 texlive-module_update_tlpdb() {
-	[[ "${TL_PV}" -lt 2023 ]] && return
+	[[ ${TL_PV} -lt 2023 ]] && return
 
 	# If we are updating this package, then there is no need to update
 	# the tlpdb in postrm, as it will be again updated in postinst.
-	[[ -n "${REPLACING_VERSIONS}" && "${EBUILD_PHASE}" == postrm ]] && return
+	[[ -n ${REPLACING_VERSIONS} && ${EBUILD_PHASE} == postrm ]] && return
 
 	local tlpkg="${EROOT}"/usr/share/tlpkg
 	local tlpobj="${tlpkg}"/tlpobj
@@ -441,23 +441,12 @@ texlive-module_update_tlpdb() {
 
 	touch "${new_tlpdb}" || die
 
-	local f
-	local tlpobjs=()
-	for f in $(find "${tlpobj}" -maxdepth 1 -type f -name "*.tlpobj" | sort); do
-		tlpobjs+=( "${f}" )
+	find "${tlpobj}" -maxdepth 1 -type f -name "*.tlpobj" -print0 |
+		sort -z |
+		xargs -0 --no-run-if-empty cat >> "${new_tlpdb}"
+	assert "generating tlpdb failed"
 
-		if [[ ${#tlpobjs[@]} -lt 128 ]]; then
-			continue
-		fi
-
-		cat ${tlpobjs[@]} >> "${new_tlpdb}" || die
-		tlpobjs=()
-	done
-	if [[ ${#tlpobjs[@]} -gt 0 ]]; then
-		cat ${tlpobjs[@]} >> "${new_tlpdb}" || die
-	fi
-
-	if [[ -f "${tlpdb}" ]]; then
+	if [[ -f ${tlpdb} ]]; then
 		cmp -s "${new_tlpdb}" "${tlpdb}"
 		local ret=$?
 		case ${ret} in
@@ -481,7 +470,7 @@ texlive-module_update_tlpdb() {
 	mv "${new_tlpdb}" "${tlpdb}"
 	eend $? "moving tlpdb into position failed (exit status: ${?})" || die
 
-	if [[ ! -s "${tlpdb}" ]]; then
+	if [[ ! -s ${tlpdb} ]]; then
 		rm "${tlpdb}" || die
 	fi
 }
@@ -505,7 +494,7 @@ texlive-module_pkg_postinst() {
 # installed texmf trees.
 
 texlive-module_pkg_postrm() {
-	etexmf-update
+	[[ -z ${REPLACING_VERSIONS} ]] && etexmf-update
 	texlive-module_update_tlpdb
 }
 
