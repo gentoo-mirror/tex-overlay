@@ -420,6 +420,72 @@ texlive-module_src_install() {
 	texlive-common_handle_config_files
 }
 
+# @FUNCTION: texlive-module_update_tlpdb
+# @DESCRIPTION:
+# Update the TexLive package database at /usr/share/tlpkg/texlive.tlpdb.
+
+texlive-module_update_tlpdb() {
+	[[ "${TL_PV}" -lt 2023 ]] && return
+
+	# If we are updating this package, then there is no need to update
+	# the tlpdb in postrm, as it will be again updated in postinst.
+	[[ -n "${REPLACING_VERSIONS}" && "${EBUILD_PHASE}" == postrm ]] && return
+
+	local tlpkg="${EROOT}"/usr/share/tlpkg
+	local tlpobj="${tlpkg}"/tlpobj
+	local tlpdb="${tlpkg}"/texlive.tlpdb
+
+	ebegin "Regenerating TexLive package database (${tlpdb}, ${EBUILD_PHASE})"
+
+	local new_tlpdb="${T}"/texlive.tlpdb
+
+	touch "${new_tlpdb}" || die
+
+	local f
+	local tlpobjs=()
+	for f in $(find "${tlpobj}" -maxdepth 1 -type f -name "*.tlpobj" | sort); do
+		tlpobjs+=( "${f}" )
+
+		if [[ ${#tlpobjs[@]} -lt 128 ]]; then
+			continue
+		fi
+
+		cat ${tlpobjs[@]} >> "${new_tlpdb}" || die
+		tlpobjs=()
+	done
+	if [[ ${#tlpobjs[@]} -gt 0 ]]; then
+		cat ${tlpobjs[@]} >> "${new_tlpdb}" || die
+	fi
+
+	if [[ -f "${tlpdb}" ]]; then
+		cmp -s "${new_tlpdb}" "${tlpdb}"
+		local ret=$?
+		case ${ret} in
+			# content equal
+			0)
+				# Nothing to do, return.
+				eend 0
+				return
+				;;
+			# content differs
+			1)
+				;;
+			# cmp failed with an error
+			*)
+				eend ${ret} "comparing new and existing tlpdb failed (exit status: ${ret})"
+				die
+				;;
+		esac
+	fi
+
+	mv "${new_tlpdb}" "${tlpdb}"
+	eend $? "moving tlpdb into position failed (exit status: ${?})" || die
+
+	if [[ ! -s "${tlpdb}" ]]; then
+		rm "${tlpdb}" || die
+	fi
+}
+
 # @FUNCTION: texlive-module_pkg_postinst
 # @DESCRIPTION:
 # exported function:
@@ -428,6 +494,7 @@ texlive-module_src_install() {
 
 texlive-module_pkg_postinst() {
 	etexmf-update
+	texlive-module_update_tlpdb
 	[[ -n ${TL_MODULE_INFORMATION} ]] && elog "${TL_MODULE_INFORMATION}"
 }
 
@@ -439,6 +506,7 @@ texlive-module_pkg_postinst() {
 
 texlive-module_pkg_postrm() {
 	etexmf-update
+	texlive-module_update_tlpdb
 }
 
 fi
