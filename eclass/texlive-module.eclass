@@ -429,7 +429,7 @@ texlive-module_update_tlpdb() {
 
 	# If we are updating this package, then there is no need to update
 	# the tlpdb in postrm, as it will be again updated in postinst.
-	[[ -n ${REPLACING_VERSIONS} && ${EBUILD_PHASE} == postrm ]] && return
+	[[ ${EBUILD_PHASE} == postrm && -n ${REPLACED_BY_VERSION} ]] && return
 
 	local tlpkg="${EROOT}"/usr/share/tlpkg
 	local tlpobj="${tlpkg}"/tlpobj
@@ -494,7 +494,7 @@ texlive-module_pkg_postinst() {
 # installed texmf trees.
 
 texlive-module_pkg_postrm() {
-	[[ -z ${REPLACING_VERSIONS} ]] && etexmf-update
+	[[ -z ${REPLACED_BY_VERSION} ]] && etexmf-update
 	texlive-module_update_tlpdb
 }
 
