@@ -435,7 +435,7 @@ texlive-module_update_tlpdb() {
 	local tlpobj="${tlpkg}"/tlpobj
 	local tlpdb="${tlpkg}"/texlive.tlpdb
 
-	ebegin "Regenerating TexLive package database (${tlpdb}, ${EBUILD_PHASE})"
+	ebegin "Regenerating TexLive package database"
 
 	local new_tlpdb="${T}"/texlive.tlpdb
 
