@@ -202,7 +202,7 @@ efmtutil-sys() {
 			ebegin "Rebuilding TexLive formats"
 			"${EPREFIX}"/usr/bin/fmtutil-sys --all \
 						> "${T}"/fmutil-sys-all.log \
-						&> "${T}"/fmutil-sys-all.err.log
+						2> "${T}"/fmutil-sys-all.err.log
 			eend $? || die -n "fmtutil-sys returned non-zero exit status ${?}"
 		else
 			ewarn "Cannot run fmtutil-sys for some reason."
