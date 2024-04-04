@@ -12,7 +12,6 @@ DESCRIPTION="A complete TeX distribution"
 HOMEPAGE="https://tug.org/texlive/"
 SLOT="0"
 LICENSE="BSD GPL-1 GPL-2 GPL-2+ GPL-3+ MIT TeX-other-free"
-RESTRICT="mirror"
 GENTOO_TEX_PATCHES_NUM=3
 SRC_URI="
 	https://mirrors.ctan.org/systems/texlive/Source/${MY_P}.tar.xz
@@ -21,7 +20,7 @@ SRC_URI="
 "
 
 # Macros that are not a part of texlive-sources or or pulled in from collection-binextra
-# but still needed for other packages during installation
+# but still needed for other packages during installation.
 TL_CORE_EXTRA_CONTENTS="
 	autosp.r58211
 	axodraw2.r58155
@@ -38,6 +37,7 @@ TL_CORE_EXTRA_CONTENTS="
 	m-tx.r64182
 	makeindex.r62517
 	pmx.r65926
+	texdoctk.r62186
 	texlive-scripts.r69754
 	texlive-scripts-extra.r62517
 	texlive.infra.r69740
@@ -45,6 +45,7 @@ TL_CORE_EXTRA_CONTENTS="
 	upmendex.r66381
 	velthuis.r66186
 	vlna.r66186
+	xindy.r65958
 	xml2pmx.r57972
 "
 TL_CORE_EXTRA_DOC_CONTENTS="
@@ -62,6 +63,7 @@ TL_CORE_EXTRA_DOC_CONTENTS="
 	m-tx.doc.r64182
 	makeindex.doc.r62517
 	pmx.doc.r65926
+	texdoctk.doc.r62186
 	texlive-scripts.doc.r69754
 	texlive-scripts-extra.doc.r62517
 	texlive.infra.doc.r69740
@@ -69,6 +71,7 @@ TL_CORE_EXTRA_DOC_CONTENTS="
 	upmendex.doc.r66381
 	velthuis.doc.r66186
 	vlna.doc.r66186
+	xindy.doc.r65958
 	xml2pmx.doc.r57972
 "
 TL_CORE_EXTRA_SRC_CONTENTS="
@@ -169,6 +172,7 @@ DEPEND="
 	${COMMON_DEPEND}
 "
 
+# !<dev-texlive/texlive-langother-2023 see https://bugs.gentoo.org/928307
 RDEPEND="
 	${COMMON_DEPEND}
 	virtual/perl-Getopt-Long
@@ -180,6 +184,9 @@ RDEPEND="
 		dev-lang/tk
 		dev-perl/Tk
 	)
+	!<dev-texlive/texlive-basic-2023
+	!<dev-texlive/texlive-mathscience-2023
+	!<dev-texlive/texlive-langother-2023
 "
 
 S="${WORKDIR}/${MY_P}"
@@ -209,8 +216,9 @@ src_prepare() {
 
 	cd "${S}" || die
 
+	TL_KPATHSEA_INCLUDES=$($(tc-getPKG_CONFIG) kpathsea --variable=includedir || die "failed to invoke pkg-config")
 	sed -i \
-		-e "s,/usr/include /usr/local/include.*echo \$KPATHSEA_INCLUDES.*,$(pkg-config kpathsea --variable=includedir)\"," \
+		-e "s,/usr/include /usr/local/include.*echo \$KPATHSEA_INCLUDES.*,${TL_KPATHSEA_INCLUDES}\"," \
 		texk/web2c/configure || die
 
 	local patch_dir="${WORKDIR}/tex-patches-${GENTOO_TEX_PATCHES_NUM}"
@@ -219,9 +227,18 @@ src_prepare() {
 	default
 
 	elibtoolize
+
+	# Drop this once cairo's autoconf patches are gone. See
+	# https://bugs.gentoo.org/927714#c4 and https://bugs.gentoo.org/853121.
+	"${S}"/reautoconf libs/cairo || die
 }
 
 src_configure() {
+	# TODO: report upstream
+	# bug #915223
+	append-flags -fno-strict-aliasing
+	filter-lto
+
 	# It fails on alpha without this
 	use alpha && append-ldflags "-Wl,--no-relax"
 
@@ -234,12 +251,76 @@ src_configure() {
 	# Also only pkg-config works for prefix as described in bug #690094
 	export ac_cv_prog_ac_ct_FT2_CONFIG=no
 
-	# revisit/upstream once we bump to 2022, bug #882245
-	append-cppflags -D_GNU_SOURCE
-
-	local econf_new_2023=(
+	local my_conf=(
+		--bindir="${EPREFIX}"/usr/bin
+		--datadir="${BUILDDIR}"
+		--with-system-freetype2
+		--with-system-zlib
+		--with-system-libpng
+		--with-system-teckit
+		--with-system-kpathsea
+		--with-kpathsea-includes="${TL_KPATHSEA_INCLUDES}"
+		--with-system-icu
+		--with-system-ptexenc
+		--with-system-harfbuzz
+		--with-system-graphite2
+		--with-system-cairo
+		--with-system-pixman
+		--with-system-zziplib
+		--with-system-libpaper
+		--with-system-gmp
+		--with-system-gd
+		--with-system-mpfr
+		--with-system-potrace
+		--disable-multiplatform
+		--enable-chktex
+		--enable-epsfwin
+		--enable-detex
+		--enable-dvi2tty
+		--enable-mftalkwin
+		--enable-regiswin
+		--enable-shared
+		--enable-tektronixwin
+		--enable-unitermwin
+		--enable-vlna
+		--disable-psutils
+		--disable-t1utils
+		--enable-ipc
+		--disable-bibtex-x
+		--disable-dvipng
+		--disable-dvipsk
+		--disable-lcdf-typetools
+		--disable-ps2pk
+		--disable-ttf2pk2
+		--disable-tex4htk
+		--disable-cjkutils
+		--disable-xdvik
+		--enable-luatex
+		--disable-dvisvgm
+		--disable-ps2eps
+		--disable-static
+		--disable-native-texlive-build
+		--disable-largefile
+		--disable-xindy-docs
+		--disable-xindy-rules
+		--with-banner-add=" Gentoo Linux"
+		$(use_enable luajittex)
+		$(use_enable luajittex luajithbtex)
+		$(use_enable luajittex mfluajit)
+		$(use_enable xetex)
+		$(use_enable cjk dviout-util)
+		$(use_enable cjk ptex)
+		$(use_enable cjk eptex)
+		$(use_enable cjk uptex)
+		$(use_enable cjk euptex)
+		$(use_enable cjk mendexk)
+		$(use_enable cjk makejvf)
+		$(use_enable cjk pmp)
+		$(use_enable cjk upmp)
+		$(use_enable tk texdoctk)
+		$(use_with X x)
+		$(use_enable xindy)
 		--enable-ptex=no
-		--enable-uptex=no
 		--enable-autosp=yes
 		--enable-axodraw2=yes
 		--enable-devnag=yes
@@ -254,7 +335,7 @@ src_configure() {
 		--enable-afm2pl=yes
 		--enable-dvidvi=yes
 		--enable-dviljk=yes
-		$(use_enable cjk dvipdfm-x)
+		--enable-dvipdfm-x
 		--enable-dvipos=yes
 		--enable-gregorio=yes
 		--enable-gsftopk=yes
@@ -268,85 +349,18 @@ src_configure() {
 		# web2c afm2pl chktex dtl dvi2tty dvidvi dviljk dviout-util dvipdfm-x gregorio
 	)
 
+	# Enable the following on version bumps. While it makes the build
+	# always fail, presumably because texlive passes these configure
+	# options to sub-configures, it still points out dropped
+	# options. See https://bugs.gentoo.org/828591
+	my_conf+=(
+		# --enable-option-checking=fatal
+	)
+
 	tc-export CC CXX AR RANLIB
 	cd "${BUILDDIR}" || die
 	ECONF_SOURCE="${S}" \
-		econf -C \
-		--bindir="${EPREFIX}"/usr/bin \
-		--datadir="${BUILDDIR}" \
-		--with-system-freetype2 \
-		--with-system-zlib \
-		--with-system-libpng \
-		--with-system-teckit \
-		--with-teckit-includes="${EPREFIX}"/usr/include/teckit \
-		--with-system-kpathsea \
-		--with-kpathsea-includes="${EPREFIX}"/usr/include \
-		--with-system-icu \
-		--with-system-ptexenc \
-		--with-system-harfbuzz \
-		--with-system-graphite2 \
-		--with-system-cairo \
-		--with-system-pixman \
-		--with-system-zziplib \
-		--with-system-libpaper \
-		--with-system-gmp \
-		--with-system-gd \
-		--with-system-mpfr \
-		--with-system-potrace \
-		--without-texinfo \
-		--disable-dialog \
-		--disable-multiplatform \
-		--enable-chktex \
-		--enable-epsfwin \
-		--enable-detex \
-		--enable-dvi2tty \
-		--enable-mftalkwin \
-		--enable-regiswin \
-		--enable-shared \
-		--enable-tektronixwin \
-		--enable-unitermwin \
-		--enable-vlna \
-		--with-ps=gs \
-		--disable-psutils \
-		--disable-t1utils \
-		--enable-ipc \
-		--disable-biber \
-		--disable-bibtex-x \
-		--disable-dvipng \
-		--disable-dvipsk \
-		--disable-lcdf-typetools \
-		--disable-ps2pk \
-		--disable-ttf2pk2 \
-		--disable-tex4htk \
-		--disable-cjkutils \
-		--disable-xdvik \
-		--enable-luatex \
-		--disable-dvisvgm \
-		--disable-ps2eps \
-		--disable-static \
-		--disable-native-texlive-build \
-		--disable-largefile \
-		--disable-build-in-source-tree \
-		--disable-xindy-docs \
-		--disable-xindy-rules \
-		--with-banner-add=" Gentoo Linux" \
-		$(use_enable luajittex) \
-		$(use_enable luajittex luajithbtex) \
-		$(use_enable luajittex mfluajit) \
-		$(use_enable xetex) \
-		$(use_enable cjk dviout-util) \
-		$(use_enable cjk ptex) \
-		$(use_enable cjk eptex) \
-		$(use_enable cjk uptex) \
-		$(use_enable cjk euptex) \
-		$(use_enable cjk mendexk) \
-		$(use_enable cjk makejvf) \
-		$(use_enable cjk pmp) \
-		$(use_enable cjk upmp) \
-		$(use_enable tk texdoctk) \
-		$(use_with X x) \
-		$(use_enable xindy) \
-		"${econf_new_2023[@]}"
+		econf -C "${my_conf[@]}"
 }
 
 src_compile() {
@@ -415,20 +429,28 @@ src_install() {
 
 	# Remove fmtutil.cnf, it will be regenerated from /etc/texmf/fmtutil.d files
 	# by texmf-update
-	rm -f "${ED}${TEXMF_PATH}/web2c/fmtutil.cnf" || die
-	# Remove bundled and invalid updmap.cfg
-	rm -f "${ED}/usr/share/texmf-dist/web2c/updmap.cfg" || die
+	rm "${ED}${TEXMF_PATH}/web2c/fmtutil.cnf" || die
 
-	rm -f "${ED}/usr/bin/"{,u}ptex
-
-	[[ -n ${TEXLIVE_MODULE_BINSCRIPTS} ]] && dobin_texmf_scripts ${TEXLIVE_MODULE_BINSCRIPTS}
-	if [[ -n ${TEXLIVE_MODULE_BINLINKS} ]] ; then
-		dodir "/usr/bin"
-		for i in ${TEXLIVE_MODULE_BINLINKS} ; do
-			[[ -f ${ED}/usr/bin/${i%:*} ]] || die "Trying to install an invalid BINLINK ${i%:*}. This should not happen. Please file a bug."
-			dosym "${i%:*}" "/usr/bin/${i#*:}"
-		done
+	if use cjk; then
+		rm "${ED}/usr/bin/"{,u}ptex || die
 	fi
+
+	if ! use xindy; then
+		rm -rf "${ED}{TEXMF_PATH}"/{,scripts,doc}/xindy
+		rm "${ED}"/usr/share/tlpkg/tlpobj/xindy.* || die
+	fi
+
+	dobin_texmf_scripts ${TEXLIVE_MODULE_BINSCRIPTS}
+
+	dodir "/usr/bin"
+	for i in ${TEXLIVE_MODULE_BINLINKS} ; do
+		[[ -f ${ED}/usr/bin/${i%:*} ]] || die "Trying to install an invalid BINLINK ${i%:*}. This should not happen. Please file a bug."
+
+		dosym "${i%:*}" "/usr/bin/${i#*:}"
+	done
+
+	# https://bugs.gentoo.org/832139
+	rm "${ED}"/usr/bin/tlmgr || die
 
 	texlive-common_handle_config_files
 
@@ -454,30 +476,9 @@ pkg_postinst() {
 	nonfatal etexmf-update
 	nonfatal efmtutil-sys
 
-	elog
-	elog "If you have configuration files in ${EPREFIX}/etc/texmf to merge,"
-	elog "please update them and run ${EPREFIX}/usr/sbin/texmf-update."
-	elog
+	texlive-common_update_tlpdb
+}
 
-	local display_migration_hint=false
-	if [[ -n ${REPLACING_VERSIONS} ]]; then
-		local new_texlive_version=$(ver_cut 1)
-		local replaced_version
-		for replaced_version in ${REPLACING_VERSIONS}; do
-			replaced_version=$(ver_cut 1 "${replaced_version}")
-			if ver_test "${replaced_version}" -lt "${new_texlive_version}" ; then
-				display_migration_hint=true
-				break
-			fi
-		done
-	fi
-
-	if ! ${display_migration_hint}; then
-		return
-	fi
-
-	ewarn "If you are migrating from an older TeX distribution"
-	ewarn "Please make sure you have read:"
-	ewarn "https://wiki.gentoo.org/wiki/Project:TeX/Tex_Live_Migration_Guide"
-	ewarn "in order to avoid possible problems"
+pkg_postrm() {
+	texlive-common_update_tlpdb
 }
