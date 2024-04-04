@@ -12,7 +12,6 @@ DESCRIPTION="A complete TeX distribution"
 HOMEPAGE="https://tug.org/texlive/"
 SLOT="0"
 LICENSE="BSD GPL-1 GPL-2 GPL-2+ GPL-3+ MIT TeX-other-free"
-RESTRICT="mirror"
 GENTOO_TEX_PATCHES_NUM=3
 SRC_URI="
 	https://mirrors.ctan.org/systems/texlive/Source/${MY_P}.tar.xz
@@ -38,6 +37,7 @@ TL_CORE_EXTRA_CONTENTS="
 	m-tx.r64182
 	makeindex.r62517
 	pmx.r65926
+	texdoctk.r62186
 	texlive-scripts.r69754
 	texlive-scripts-extra.r62517
 	texlive.infra.r69740
@@ -63,6 +63,7 @@ TL_CORE_EXTRA_DOC_CONTENTS="
 	m-tx.doc.r64182
 	makeindex.doc.r62517
 	pmx.doc.r65926
+	texdoctk.doc.r62186
 	texlive-scripts.doc.r69754
 	texlive-scripts-extra.doc.r62517
 	texlive.infra.doc.r69740
@@ -171,6 +172,7 @@ DEPEND="
 	${COMMON_DEPEND}
 "
 
+# !<dev-texlive/texlive-langother-2023 see https://bugs.gentoo.org/928307
 RDEPEND="
 	${COMMON_DEPEND}
 	virtual/perl-Getopt-Long
@@ -182,6 +184,9 @@ RDEPEND="
 		dev-lang/tk
 		dev-perl/Tk
 	)
+	!<dev-texlive/texlive-basic-2023
+	!<dev-texlive/texlive-mathscience-2023
+	!<dev-texlive/texlive-langother-2023
 "
 
 S="${WORKDIR}/${MY_P}"
@@ -211,8 +216,9 @@ src_prepare() {
 
 	cd "${S}" || die
 
+	TL_KPATHSEA_INCLUDES=$($(tc-getPKG_CONFIG) kpathsea --variable=includedir || die "failed to invoke pkg-config")
 	sed -i \
-		-e "s,/usr/include /usr/local/include.*echo \$KPATHSEA_INCLUDES.*,$(pkg-config kpathsea --variable=includedir)\"," \
+		-e "s,/usr/include /usr/local/include.*echo \$KPATHSEA_INCLUDES.*,${TL_KPATHSEA_INCLUDES}\"," \
 		texk/web2c/configure || die
 
 	local patch_dir="${WORKDIR}/tex-patches-${GENTOO_TEX_PATCHES_NUM}"
@@ -221,9 +227,18 @@ src_prepare() {
 	default
 
 	elibtoolize
+
+	# Drop this once cairo's autoconf patches are gone. See
+	# https://bugs.gentoo.org/927714#c4 and https://bugs.gentoo.org/853121.
+	"${S}"/reautoconf libs/cairo || die
 }
 
 src_configure() {
+	# TODO: report upstream
+	# bug #915223
+	append-flags -fno-strict-aliasing
+	filter-lto
+
 	# It fails on alpha without this
 	use alpha && append-ldflags "-Wl,--no-relax"
 
@@ -244,6 +259,7 @@ src_configure() {
 		--with-system-libpng
 		--with-system-teckit
 		--with-system-kpathsea
+		--with-kpathsea-includes="${TL_KPATHSEA_INCLUDES}"
 		--with-system-icu
 		--with-system-ptexenc
 		--with-system-harfbuzz
@@ -267,7 +283,6 @@ src_configure() {
 		--enable-tektronixwin
 		--enable-unitermwin
 		--enable-vlna
-		--enable-year2038
 		--disable-psutils
 		--disable-t1utils
 		--enable-ipc
@@ -306,7 +321,6 @@ src_configure() {
 		$(use_with X x)
 		$(use_enable xindy)
 		--enable-ptex=no
-		--enable-uptex=no
 		--enable-autosp=yes
 		--enable-axodraw2=yes
 		--enable-devnag=yes
@@ -321,7 +335,7 @@ src_configure() {
 		--enable-afm2pl=yes
 		--enable-dvidvi=yes
 		--enable-dviljk=yes
-		$(use_enable cjk dvipdfm-x)
+		--enable-dvipdfm-x
 		--enable-dvipos=yes
 		--enable-gregorio=yes
 		--enable-gsftopk=yes
@@ -417,10 +431,13 @@ src_install() {
 	# by texmf-update
 	rm "${ED}${TEXMF_PATH}/web2c/fmtutil.cnf" || die
 
-	rm "${ED}/usr/bin/"{,u}ptex || die
+	if use cjk; then
+		rm "${ED}/usr/bin/"{,u}ptex || die
+	fi
 
 	if ! use xindy; then
 		rm -rf "${ED}{TEXMF_PATH}"/{,scripts,doc}/xindy
+		rm "${ED}"/usr/share/tlpkg/tlpobj/xindy.* || die
 	fi
 
 	dobin_texmf_scripts ${TEXLIVE_MODULE_BINSCRIPTS}
@@ -458,4 +475,10 @@ pkg_postinst() {
 	# eftmutil-sys here and the reasons why it sometimes fails.
 	nonfatal etexmf-update
 	nonfatal efmtutil-sys
+
+	texlive-common_update_tlpdb
+}
+
+pkg_postrm() {
+	texlive-common_update_tlpdb
 }
