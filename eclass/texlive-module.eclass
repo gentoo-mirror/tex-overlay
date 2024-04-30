@@ -531,10 +531,12 @@ texlive-module_src_install() {
 				grep_expressions+=(-e "/${f//./\\.}$")
 			done
 
+			ebegin "Installing man pages"
 			find texmf-dist/doc/man -type f -name '*.[0-9n]' -print |
 				grep -v "${grep_expressions[@]}" |
 				xargs -d '\n' --no-run-if-empty doman
-			assert "error installing man pages"
+			nonfatal assert -n
+			eend $? || die "error installing man pages"
 
 			# Delete all man pages under texmf-dist/doc/man
 			find texmf-dist/doc/man -type f -name '*.[0-9n]' -delete ||
