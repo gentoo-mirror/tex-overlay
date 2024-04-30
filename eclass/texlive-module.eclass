@@ -362,11 +362,8 @@ texlive-module_src_install() {
 
 		if ver_test -ge 2023 && [[ ${CATEGORY} == dev-texlive ]]; then
 			eshopts_push -s nullglob
-			local man_page
-			for man_page in texmf-dist/doc/man/man[1-8]/*.[1-8]; do
-				doman "${man_page}"
-				rm "${man_page}" || die
-			done
+			doman texmf-dist/doc/man/man[0-9n]/*.[0-9n]
+			rm texmf-dist/doc/man/man[0-9n]/*.[0-9n] || die
 			eshopts_pop
 		fi
 	else
