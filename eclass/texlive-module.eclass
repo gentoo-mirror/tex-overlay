@@ -79,7 +79,7 @@ esac
 if [[ -z ${_TEXLIVE_MODULE_ECLASS} ]]; then
 _TEXLIVE_MODULE_ECLASS=1
 
-inherit texlive-common
+inherit estack texlive-common
 
 HOMEPAGE="https://www.tug.org/texlive/"
 
@@ -358,6 +358,16 @@ texlive-module_src_install() {
 	if use doc; then
 		if [[ -d texmf-doc ]]; then
 			cp -pR texmf-doc "${ED}/usr/share/" || die
+		fi
+
+		if ver_test -ge 2023 && [[ ${CATEGORY} == dev-texlive ]]; then
+			eshopts_push -s nullglob
+			local man_page
+			for man_page in texmf-dist/doc/man/man[1-8]/*.[1-8]; do
+				doman "${man_page}"
+				rm "${man_page}" || die
+			done
+			eshopts_pop
 		fi
 	else
 		if [[ -d texmf-dist/doc ]]; then
