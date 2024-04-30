@@ -199,11 +199,9 @@ etexmf-update() {
 efmtutil-sys() {
 	if has_version 'app-text/texlive-core' ; then
 		if [[ -z ${ROOT} && -x "${EPREFIX}"/usr/bin/fmtutil-sys ]] ; then
-			ebegin "Rebuilding TexLive formats"
-			"${EPREFIX}"/usr/bin/fmtutil-sys --all \
-						> "${T}"/fmutil-sys-all.log \
-						2> "${T}"/fmutil-sys-all.err.log
-			eend $? || die -n "fmtutil-sys returned non-zero exit status ${?}"
+			einfo "Rebuilding formats"
+			"${EPREFIX}"/usr/bin/fmtutil-sys --all &> /dev/null ||
+				die -n "fmtutil-sys returned non-zero exit status ${?}"
 		else
 			ewarn "Cannot run fmtutil-sys for some reason."
 			ewarn "Your formats might be inconsistent with your installed ${PN} version"
@@ -271,10 +269,14 @@ texlive-common_update_tlpdb() {
 
 	touch "${new_tlpdb}" || die
 
-	find "${tlpobj}" -maxdepth 1 -type f -name "*.tlpobj" -print0 |
-		sort -z |
-		xargs -0 --no-run-if-empty cat >> "${new_tlpdb}"
-	assert "generating tlpdb failed"
+	if [[ -d "${tlpobj}" ]]; then
+		# The "sed -s '$G' below concatenates all tlpobj files separated
+		# by a newline.
+		find "${tlpobj}" -maxdepth 1 -type f -name "*.tlpobj" -print0 |
+			sort -z |
+			xargs -0 --no-run-if-empty sed -s '$G' >> "${new_tlpdb}"
+		assert "generating tlpdb failed"
+	fi
 
 	if [[ -f ${tlpdb} ]]; then
 		cmp -s "${new_tlpdb}" "${tlpdb}"
