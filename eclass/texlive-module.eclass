@@ -523,19 +523,23 @@ texlive-module_src_install() {
 				xetex.1
 				xml2pmx.1
 			)
+			local f
 			local grep_expressions=()
+			# Transform texlive_core_man_pages into grep expressions
+			# that will be used to filter out any man page that is
+			# already installed by app-text/texlive-core.
 			for f in "${texlive_core_man_pages[@]}"; do
 				# Ensure that all dots are escaped so that they are
-				# matched lilterarily. Also wrap the file in '/' and '$'
+				# matched literarily. Also wrap the file in '/' and '$'
 				# within the expression.
-				grep_expressions+=(-e "/${f//./\\.}$")
+				grep_expressions+=(-e "/${f//./\\.}\$")
 			done
 
 			ebegin "Installing man pages"
 			find texmf-dist/doc/man -type f -name '*.[0-9n]' -print |
 				grep -v "${grep_expressions[@]}" |
 				xargs -d '\n' --no-run-if-empty doman
-			nonfatal assert -n
+			[[ "${PIPESTATUS[*]}" =~ ^0(" 0")*$ ]]
 			eend $? || die "error installing man pages"
 
 			# Delete all man pages under texmf-dist/doc/man
