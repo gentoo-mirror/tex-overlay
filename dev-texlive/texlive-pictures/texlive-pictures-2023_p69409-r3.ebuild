@@ -1,7 +1,7 @@
 # Copyright 1999-2024 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
-EAPI="8"
+EAPI=8
 
 TEXLIVE_MODULE_CONTENTS="
 	collection-pictures.r69409
@@ -52,7 +52,6 @@ TEXLIVE_MODULE_CONTENTS="
 	egpeirce.r66924
 	ellipse.r39025
 	endofproofwd.r55643
-	epspdf.r66115
 	epspdfconversion.r18703
 	esk.r18115
 	euflag.r55265
@@ -309,7 +308,6 @@ TEXLIVE_MODULE_DOC_CONTENTS="
 	egpeirce.doc.r66924
 	ellipse.doc.r39025
 	endofproofwd.doc.r55643
-	epspdf.doc.r66115
 	epspdfconversion.doc.r18703
 	esk.doc.r18115
 	euflag.doc.r55265
@@ -598,14 +596,15 @@ inherit texlive-module
 
 DESCRIPTION="TeXLive Graphics, pictures, diagrams"
 
-LICENSE="Apache-2.0 BSD-2 CC-BY-3.0 CC-BY-4.0 CC-BY-SA-1.0 CC-BY-SA-3.0 CC-BY-SA-4.0 CC0-1.0 FDL-1.1 GPL-1 GPL-2 GPL-3 GPL-3+ ISC LPPL-1.0 LPPL-1.2 LPPL-1.3 LPPL-1.3c MIT TeX-other-free public-domain"
+LICENSE="Apache-2.0 BSD-2 CC-BY-3.0 CC-BY-4.0 CC-BY-SA-1.0 CC-BY-SA-3.0 CC-BY-SA-4.0 CC0-1.0 FDL-1.1+ GPL-1+ GPL-2 GPL-3 GPL-3+ ISC LPPL-1.0 LPPL-1.2 LPPL-1.3 LPPL-1.3c MIT TeX-other-free public-domain"
 SLOT="0"
-KEYWORDS="~amd64 ~arm64 ~ppc ~riscv ~x86"
+KEYWORDS="~alpha ~amd64 ~arm ~arm64 ~hppa ~ia64 ~loong ~mips ~ppc ~ppc64 ~riscv ~s390 ~sparc ~x86"
 COMMON_DEPEND="
 	>=dev-texlive/texlive-basic-2023
 "
 RDEPEND="
 	${COMMON_DEPEND}
+	>=app-text/epspdf-0.6.5.1
 	>=dev-tex/pgf-3.1.10
 "
 DEPEND="
@@ -614,8 +613,6 @@ DEPEND="
 
 TEXLIVE_MODULE_BINSCRIPTS="
 	texmf-dist/scripts/cachepic/cachepic.tlu
-	texmf-dist/scripts/epspdf/epspdf.tlu
-	texmf-dist/scripts/epspdf/epspdftk.tcl
 	texmf-dist/scripts/fig4latex/fig4latex
 	texmf-dist/scripts/getmap/getmapdl.lua
 	texmf-dist/scripts/mathspic/mathspic.pl
@@ -626,4 +623,10 @@ TEXLIVE_MODULE_BINSCRIPTS="
 	texmf-dist/scripts/mkpic/mkpic
 	texmf-dist/scripts/petri-nets/pn2pdf
 	texmf-dist/scripts/tikztosvg/tikztosvg
+"
+TEXLIVE_SCRIPTS_W_FILE_EXT="
+	memoize-clean.pl
+	memoize-clean.py
+	memoize-extract.pl
+	memoize-extract.py
 "
