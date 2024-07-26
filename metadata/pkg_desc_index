@@ -2,7 +2,7 @@ app-text/dvipsk 2023.03.11_p66203: DVI-to-PostScript translator
 app-text/dvisvgm 3.2: Converts DVI files to SVG
 app-text/ps2pkm 1.8_p20230311: Tool that converts a PostScript type1 font into a corresponding TeX PK font
 app-text/texlive 2023: A complete TeX distribution
-app-text/texlive-core 2023-r6: A complete TeX distribution
+app-text/texlive-core 2023-r10: A complete TeX distribution
 app-text/ttf2pk2 2.0_p20230311: Freetype 2 based TrueType font to TeX's PK format converter
 dev-libs/kpathsea 6.3.5_p20230311: Path searching library for TeX-related files
 dev-libs/ptexenc 1.4.3_p20230311: Library for Japanese pTeX providing a better way of handling character encodings
@@ -17,7 +17,7 @@ dev-tex/pgf 3.1.10: The TeX Portable Graphic Format
 dev-tex/tex4ht 20230311_p69739: Converts (La)TeX to (X)HTML, XML and OO.org
 dev-texlive/texlive-basic 2023_p59159-r2: TeXLive Essential programs and files
 dev-texlive/texlive-bibtexextra 2023_p67386-r1: TeXLive BibTeX additional styles
-dev-texlive/texlive-binextra 2023_p69527-r2: TeXLive TeX auxiliary programs
+dev-texlive/texlive-binextra 2023_p69527-r5: TeXLive TeX auxiliary programs
 dev-texlive/texlive-context 2023_p69108: TeXLive ConTeXt and packages
 dev-texlive/texlive-fontsextra 2023_p69663-r1: TeXLive Additional fonts
 dev-texlive/texlive-fontsrecommended 2023_p54074: TeXLive Recommended fonts
@@ -49,7 +49,7 @@ dev-texlive/texlive-luatex 2023_p69404: TeXLive LuaTeX packages
 dev-texlive/texlive-mathscience 2023_p69485-r1: TeXLive Mathematics, natural sciences, computer science packages
 dev-texlive/texlive-metapost 2023_p67071: TeXLive MetaPost and Metafont packages
 dev-texlive/texlive-music 2023_p69613: TeXLive Music packages
-dev-texlive/texlive-pictures 2023_p69409-r1: TeXLive Graphics, pictures, diagrams
+dev-texlive/texlive-pictures 2023_p69409-r3: TeXLive Graphics, pictures, diagrams
 dev-texlive/texlive-plaingeneric 2023_p68675-r1: TeXLive Plain (La)TeX packages
 dev-texlive/texlive-pstricks 2023_p65367: TeXLive PSTricks
 dev-texlive/texlive-publishers 2023_p69759: TeXLive Publisher styles, theses, etc.
