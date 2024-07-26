@@ -1,14 +1,13 @@
 # Copyright 1999-2024 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
-EAPI="8"
+EAPI=8
 
 TEXLIVE_MODULE_CONTENTS="
 	collection-binextra.r69527
 	a2ping.r52964
 	adhocfilelist.r29349
 	arara.r68431
-	asymptote.r67300
 	bundledoc.r64620
 	checklistings.r38300
 	chklref.r52649
@@ -28,7 +27,6 @@ TEXLIVE_MODULE_CONTENTS="
 	dvicopy.r66186
 	dviinfox.r59216
 	dviout-util.r66186
-	dvipng.r66203
 	easydtx.r68514
 	findhyph.r47444
 	fragmaster.r26313
@@ -54,7 +52,6 @@ TEXLIVE_MODULE_CONTENTS="
 	patgen.r66186
 	pdfbook2.r53521
 	pdfcrop.r66862
-	pdfjam.r68597
 	pdflatexpicscale.r46617
 	pdftex-quiet.r49169
 	pdftosrc.r66186
@@ -98,7 +95,6 @@ TEXLIVE_MODULE_DOC_CONTENTS="
 	a2ping.doc.r52964
 	adhocfilelist.doc.r29349
 	arara.doc.r68431
-	asymptote.doc.r67300
 	bundledoc.doc.r64620
 	checklistings.doc.r38300
 	chklref.doc.r52649
@@ -119,7 +115,6 @@ TEXLIVE_MODULE_DOC_CONTENTS="
 	dvicopy.doc.r66186
 	dviinfox.doc.r59216
 	dviout-util.doc.r66186
-	dvipng.doc.r66203
 	easydtx.doc.r68514
 	findhyph.doc.r47444
 	fragmaster.doc.r26313
@@ -145,7 +140,6 @@ TEXLIVE_MODULE_DOC_CONTENTS="
 	patgen.doc.r66186
 	pdfbook2.doc.r53521
 	pdfcrop.doc.r66862
-	pdfjam.doc.r68597
 	pdflatexpicscale.doc.r46617
 	pdftex-quiet.doc.r49169
 	pdftosrc.doc.r66186
@@ -206,15 +200,16 @@ inherit texlive-module
 
 DESCRIPTION="TeXLive TeX auxiliary programs"
 
-LICENSE="Apache-2.0 Artistic BSD BSD-2 FDL-1.1 GPL-1 GPL-2 GPL-2+ GPL-3 GPL-3+ LGPL-3 LPPL-1.0 LPPL-1.2 LPPL-1.3 LPPL-1.3c MIT TeX TeX-other-free public-domain"
+LICENSE="Apache-2.0 Artistic BSD BSD-2 FDL-1.1+ GPL-1+ GPL-2 GPL-2+ GPL-3 GPL-3+ LGPL-3 LPPL-1.0 LPPL-1.2 LPPL-1.3 LPPL-1.3c MIT TeX TeX-other-free public-domain"
 SLOT="0"
-KEYWORDS="~amd64 ~arm64 ~ppc ~riscv ~x86"
+KEYWORDS="~alpha ~amd64 ~arm ~arm64 ~hppa ~ia64 ~loong ~mips ~ppc ~ppc64 ~riscv ~s390 ~sparc ~x86"
 COMMON_DEPEND="
 	>=dev-texlive/texlive-basic-2023
 "
 RDEPEND="
 	${COMMON_DEPEND}
 	>=app-text/dvisvgm-3.2
+	>=app-text/pdfjam-3.10
 	>=dev-tex/bibtexu-3.72
 	>=dev-tex/latexdiff-1.3.3
 	>=dev-tex/latexmk-4.83
@@ -263,9 +258,7 @@ TEXLIVE_MODULE_BINSCRIPTS="
 	texmf-dist/scripts/match_parens/match_parens
 	texmf-dist/scripts/mkjobtexmf/mkjobtexmf.pl
 	texmf-dist/scripts/optexcount/optexcount
-	texmf-dist/scripts/pdfbook2/pdfbook2
 	texmf-dist/scripts/pdfcrop/pdfcrop.pl
-	texmf-dist/scripts/pdfjam/pdfjam
 	texmf-dist/scripts/pdflatexpicscale/pdflatexpicscale.pl
 	texmf-dist/scripts/pdftex-quiet/pdftex-quiet
 	texmf-dist/scripts/pdfxup/pdfxup
@@ -300,6 +293,9 @@ TEXLIVE_MODULE_BINSCRIPTS="
 	texmf-dist/scripts/tlcockpit/tlcockpit.sh
 	texmf-dist/scripts/typeoutfileinfo/typeoutfileinfo.sh
 	texmf-dist/scripts/xindex/xindex.lua
+"
+TEXLIVE_SCRIPTS_W_FILE_EXT="
+	listings-ext.sh
 "
 
 TEXLIVE_MODULE_BINLINKS="

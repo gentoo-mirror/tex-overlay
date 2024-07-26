@@ -1,7 +1,7 @@
 # Copyright 1999-2024 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
-EAPI="8"
+EAPI=8
 
 TL_SOURCE_VERSION=20230311
 inherit flag-o-matic toolchain-funcs libtool texlive-common
@@ -10,13 +10,13 @@ MY_P=${PN%-core}-${TL_SOURCE_VERSION}-source
 
 DESCRIPTION="A complete TeX distribution"
 HOMEPAGE="https://tug.org/texlive/"
-SLOT="0"
-LICENSE="BSD GPL-1 GPL-2 GPL-2+ GPL-3+ MIT TeX-other-free"
-GENTOO_TEX_PATCHES_NUM=3
+GENTOO_TEX_PATCHES_NUM=5
 SRC_URI="
 	https://mirrors.ctan.org/systems/texlive/Source/${MY_P}.tar.xz
 	https://gitweb.gentoo.org/proj/tex-patches.git/snapshot/tex-patches-${GENTOO_TEX_PATCHES_NUM}.tar.bz2
 		-> gentoo-tex-patches-${GENTOO_TEX_PATCHES_NUM}.tar.bz2
+	https://raw.githubusercontent.com/debian-tex/texlive-bin/58a00e704a15ec3dd8abbf3826f28207eb095251/debian/patches/1054218.patch
+		-> ${PN}-2023-pdflatex-big-endian-fix.patch
 "
 
 # Macros that are not a part of texlive-sources or or pulled in from collection-binextra
@@ -84,7 +84,6 @@ TEXLIVE_MODULE_BINSCRIPTS="
 	texmf-dist/scripts/texlive/fmtutil-user.sh
 	texmf-dist/scripts/texlive/fmtutil.pl
 	texmf-dist/scripts/texlive/mktexlsr
-	texmf-dist/scripts/texlive/mktexlsr.pl
 	texmf-dist/scripts/texlive/mktexmf
 	texmf-dist/scripts/texlive/mktexpk
 	texmf-dist/scripts/texlive/mktextfm
@@ -125,7 +124,10 @@ SRC_URI+=" source? ( "
 texlive-common_append_to_src_uri TL_CORE_EXTRA_SRC_CONTENTS
 SRC_URI+=" )"
 
-KEYWORDS="~amd64 ~arm64 ~ppc ~riscv ~x86"
+S="${WORKDIR}/${MY_P}"
+LICENSE="BSD GPL-1+ GPL-2 GPL-2+ GPL-3+ MIT TeX-other-free"
+SLOT="0"
+KEYWORDS="~alpha ~amd64 ~arm ~arm64 ~hppa ~loong ~mips ~ppc ~ppc64 ~riscv ~s390 ~sparc ~x86"
 IUSE="cjk X doc source tk +luajittex xetex xindy"
 
 TEXMF_PATH=/usr/share/texmf-dist
@@ -137,8 +139,6 @@ MODULAR_X_DEPEND="
 
 COMMON_DEPEND="
 	${MODULAR_X_DEPEND}
-	!app-text/epspdf
-	!app-text/pdfjam
 	sys-libs/zlib
 	>=media-libs/harfbuzz-1.4.5:=[icu,graphite]
 	>=media-libs/libpng-1.2.43-r2:0=
@@ -187,20 +187,16 @@ RDEPEND="
 	!<dev-texlive/texlive-basic-2023
 	!<dev-texlive/texlive-mathscience-2023
 	!<dev-texlive/texlive-langother-2023
+	!<dev-texlive/texlive-music-2023
 "
 
-S="${WORKDIR}/${MY_P}"
 BUILDDIR="${WORKDIR}/${P}_build"
-
-src_unpack() {
-	default
-
-	mkdir -p "${BUILDDIR}" || die "failed to create build dir"
-}
 
 RELOC_TARGET=texmf-dist
 
 src_prepare() {
+	mkdir "${BUILDDIR}" || die "failed to create build dir"
+
 	cd "${WORKDIR}" || die
 
 	# From texlive-module.eclass.
@@ -223,6 +219,10 @@ src_prepare() {
 
 	local patch_dir="${WORKDIR}/tex-patches-${GENTOO_TEX_PATCHES_NUM}"
 	eapply "${patch_dir}"
+
+	# Can be dropped in texlive 2024
+	# https://git.texlive.info/texlive/commit/?id=c45afdc843154fcb09b583f54a2f802c6069b50e
+	eapply "${DISTDIR}"/texlive-core-2023-pdflatex-big-endian-fix.patch
 
 	default
 
@@ -384,6 +384,22 @@ src_compile() {
 		&& cat "${T}/updmap_update3" > "texmf-dist/web2c/updmap.cfg"
 }
 
+src_test() {
+	cd "${BUILDDIR}" || die
+
+	sed -i \
+		-e 's;uptexdir/nissya.test;;' \
+		-e 's;uptexdir/upbibtex.test;;' \
+		texk/web2c/Makefile || die
+	sed -i \
+		-e 's;dvispc.test;;' \
+		texk/dviout-util/Makefile || die
+
+	# TODO: Drop -j1 when bumping to texlive-2024
+	# https://bugs.gentoo.org/935825
+	emake check -j1
+}
+
 src_install() {
 	cd "${BUILDDIR}" || die
 	dodir ${TEXMF_PATH:-/usr/share/texmf-dist}/web2c
@@ -417,8 +433,10 @@ src_install() {
 
 	use doc || rm -rf "${ED}/usr/share/texmf-dist/doc"
 
-	dodir /etc/env.d
-	echo 'CONFIG_PROTECT_MASK="/etc/texmf/web2c /etc/texmf/language.dat.d /etc/texmf/language.def.d /etc/texmf/updmap.d"' > "${ED}/etc/env.d/98texlive"
+	newenvd - 98texlive <<-EOF
+	CONFIG_PROTECT_MASK="/etc/texmf/web2c /etc/texmf/language.dat.d /etc/texmf/language.def.d /etc/texmf/updmap.d"
+	EOF
+
 	# populate /etc/texmf
 	keepdir /etc/texmf/web2c
 
@@ -444,13 +462,12 @@ src_install() {
 
 	dodir "/usr/bin"
 	for i in ${TEXLIVE_MODULE_BINLINKS} ; do
-		[[ -f ${ED}/usr/bin/${i%:*} ]] || die "Trying to install an invalid BINLINK ${i%:*}. This should not happen. Please file a bug."
+		if [[ ! -f ${ED}/usr/bin/${i%:*} ]]; then
+			die "Trying to install an invalid BINLINK ${i%:*}. This should not happen. Please file a bug."
+		fi
 
 		dosym "${i%:*}" "/usr/bin/${i#*:}"
 	done
-
-	# https://bugs.gentoo.org/832139
-	rm "${ED}"/usr/bin/tlmgr || die
 
 	texlive-common_handle_config_files
 
