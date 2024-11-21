@@ -1,4 +1,4 @@
-# Copyright 1999-2023 Gentoo Authors
+# Copyright 1999-2024 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=8
@@ -16,14 +16,14 @@ SRC_URI="
 	https://dev.gentoo.org/~sam/distfiles/texlive/${PN}-texmf.d-${TEXMFD_VERSION}.tar.xz
 "
 
+S=${WORKDIR}/texlive-${PV#*_p}-source/texk/${PN}
 LICENSE="LGPL-2.1"
 SLOT="0/${PV%_p*}"
-KEYWORDS="~alpha ~amd64 ~arm ~arm64 ~hppa ~ia64 ~loong ~mips ~ppc ~ppc64 ~riscv ~s390 ~sparc ~x86 ~amd64-linux ~x86-linux ~ppc-macos ~x64-macos ~x64-solaris"
+
+KEYWORDS="~alpha ~amd64 ~arm ~arm64 ~hppa ~loong ~mips ~ppc ~ppc64 ~riscv ~s390 ~sparc ~x86 ~amd64-linux ~x86-linux ~ppc-macos ~x64-macos ~x64-solaris"
 IUSE="doc source static-libs"
 
-S=${WORKDIR}/texlive-${PV#*_p}-source/texk/${PN}
-
-TL_REVISION=68516
+TL_REVISION=72376
 EXTRA_TL_MODULES="kpathsea.r${TL_REVISION}"
 EXTRA_TL_DOC_MODULES="kpathsea.doc.r${TL_REVISION}"
 

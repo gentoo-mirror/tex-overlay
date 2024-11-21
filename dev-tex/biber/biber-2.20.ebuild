@@ -1,4 +1,4 @@
-# Copyright 1999-2023 Gentoo Authors
+# Copyright 1999-2024 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=8
@@ -11,7 +11,7 @@ SRC_URI="https://github.com/plk/biber/archive/v${PV}.tar.gz  -> ${P}.tar.gz"
 
 LICENSE="Artistic-2"
 SLOT="0"
-KEYWORDS="~amd64 ~arm ~arm64 ~ppc ~riscv ~x86"
+KEYWORDS="~alpha ~amd64 ~arm ~arm64 ~hppa ~loong ~mips ~ppc ~ppc64 ~riscv ~s390 ~sparc ~x86"
 IUSE="test"
 RESTRICT="!test? ( test )"
 
@@ -77,7 +77,7 @@ mydoc="doc/biber.tex"
 
 src_prepare() {
 	#disable 64-bit only Tests on non 64-bit archs
-	use amd64 || use arm64 || eapply "${FILESDIR}/${P}-disable-64bit-only-tests.patch"
+	use amd64 || use arm64 || eapply "${FILESDIR}/${PN}-2.16-disable-64bit-only-tests.patch"
 
 	default
 }
