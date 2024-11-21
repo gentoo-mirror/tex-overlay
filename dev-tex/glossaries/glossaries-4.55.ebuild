@@ -12,9 +12,12 @@ HOMEPAGE="https://www.ctan.org/pkg/glossaries/"
 # is, unfortunately, unversioned.
 SRC_URI="https://dev.gentoo.org/~flow/distfiles/glossaries/${P}.zip"
 
+S=${WORKDIR}/${PN}
+
 LICENSE="LPPL-1.2"
 SLOT="0"
-KEYWORDS="~alpha ~amd64 ~arm ~arm64 ~hppa ~ia64 ~loong ~ppc ~ppc64 ~riscv ~s390 ~sparc ~x86 ~amd64-linux ~x86-linux ~ppc-macos ~x64-macos"
+KEYWORDS="~alpha amd64 arm arm64 hppa ~loong ~mips ppc ppc64 ~riscv ~s390 sparc x86 ~amd64-linux ~x86-linux ~ppc-macos ~x64-macos"
+
 IUSE="doc examples"
 
 RDEPEND="
@@ -29,7 +32,6 @@ BDEPEND="
 "
 
 TEXMF="/usr/share/texmf-dist"
-S=${WORKDIR}/${PN}
 
 src_install() {
 	latex-package_src_doinstall styles
