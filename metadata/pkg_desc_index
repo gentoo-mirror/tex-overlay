@@ -10,10 +10,11 @@ dev-python/latexrestricted 0.6.0: Library for creating executables compatible wi
 dev-tex/biber 2.19: A BibTeX replacement for users of biblatex
 dev-tex/biblatex 3.19: Reimplementation of the bibliographic facilities provided by LaTeX
 dev-tex/bibtexu 4.00_p20230311: 8-bit Implementation of BibTeX 0.99 with a Very Large Capacity
-dev-tex/glossaries 4.53: Create glossaries and lists of acronyms
+dev-tex/glossaries 4.55: Create glossaries and lists of acronyms
 dev-tex/latex-beamer 3.71: LaTeX class for creating presentations using a video projector
+dev-tex/latex2pydata 0.4.0: Allows LaTeX to save data to files using Python
 dev-tex/latexmk 4.83: Perl script for automatically building LaTeX documents
-dev-tex/minted 2.9: LaTeX package for source code syntax highlighting
+dev-tex/minted 3.4.0: LaTeX package for source code syntax highlighting
 dev-tex/pgf 3.1.10: The TeX Portable Graphic Format
 dev-tex/tex4ht 20240311_p72882: Converts (La)TeX to (X)HTML, XML and OO.org
 dev-texlive/texlive-basic 2023_p59159-r2: TeXLive Essential programs and files
