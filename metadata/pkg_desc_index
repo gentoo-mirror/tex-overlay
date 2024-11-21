@@ -6,6 +6,7 @@ app-text/texlive-core 2023-r10: A complete TeX distribution
 app-text/ttf2pk2 2.0_p20230311 2.0_p20240311: Freetype 2 based TrueType font to TeX's PK format converter
 dev-libs/kpathsea 6.3.5_p20230311: Path searching library for TeX-related files
 dev-libs/ptexenc 1.4.3_p20230311: Library for Japanese pTeX providing a better way of handling character encodings
+dev-python/latexrestricted 0.6.0: Library for creating executables compatible with LaTeX restricted shell escape
 dev-tex/biber 2.19: A BibTeX replacement for users of biblatex
 dev-tex/biblatex 3.19: Reimplementation of the bibliographic facilities provided by LaTeX
 dev-tex/bibtexu 4.00_p20230311: 8-bit Implementation of BibTeX 0.99 with a Very Large Capacity
