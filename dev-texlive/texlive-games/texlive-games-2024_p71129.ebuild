@@ -1,14 +1,14 @@
 # Copyright 1999-2024 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
-EAPI="8"
+EAPI=8
 
 TEXLIVE_MODULE_CONTENTS="
-	collection-games.r69159
+	collection-games.r71129
 	bartel-chess-fonts.r20619
 	chess.r20582
-	chess-problem-diagrams.r63708
-	chessboard.r56833
+	chess-problem-diagrams.r72556
+	chessboard.r72795
 	chessfss.r19440
 	chinesechess.r63276
 	crossword.r64375
@@ -25,7 +25,7 @@ TEXLIVE_MODULE_CONTENTS="
 	hmtrump.r54512
 	horoscop.r56021
 	jeuxcartes.r68266
-	jigsaw.r66009
+	jigsaw.r71923
 	labyrinth.r33454
 	logicpuzzle.r34491
 	mahjong.r58896
@@ -38,10 +38,11 @@ TEXLIVE_MODULE_CONTENTS="
 	pas-crosswords.r32313
 	playcards.r67342
 	psgo.r15878
-	quizztex.r68823
+	quizztex.r72256
 	realtranspose.r56623
 	reverxii.r63753
 	rouequestions.r67670
+	rpgicons.r71994
 	rubik.r46791
 	schwalbe-chess.r63708
 	scrabble.r69599
@@ -53,17 +54,19 @@ TEXLIVE_MODULE_CONTENTS="
 	sudokubundle.r15878
 	tangramtikz.r66183
 	thematicpuzzle.r69356
-	trivialpursuit.r68971
-	wargame.r69692
-	wordle.r68170
+	trivialpursuit.r72615
+	twoxtwogame.r70423
+	wargame.r72903
+	weiqi.r70178
+	wordle.r72059
 	xq.r35211
 	xskak.r51432
 "
 TEXLIVE_MODULE_DOC_CONTENTS="
 	bartel-chess-fonts.doc.r20619
 	chess.doc.r20582
-	chess-problem-diagrams.doc.r63708
-	chessboard.doc.r56833
+	chess-problem-diagrams.doc.r72556
+	chessboard.doc.r72795
 	chessfss.doc.r19440
 	chinesechess.doc.r63276
 	crossword.doc.r64375
@@ -79,7 +82,7 @@ TEXLIVE_MODULE_DOC_CONTENTS="
 	hmtrump.doc.r54512
 	horoscop.doc.r56021
 	jeuxcartes.doc.r68266
-	jigsaw.doc.r66009
+	jigsaw.doc.r71923
 	labyrinth.doc.r33454
 	logicpuzzle.doc.r34491
 	mahjong.doc.r58896
@@ -92,10 +95,11 @@ TEXLIVE_MODULE_DOC_CONTENTS="
 	pas-crosswords.doc.r32313
 	playcards.doc.r67342
 	psgo.doc.r15878
-	quizztex.doc.r68823
+	quizztex.doc.r72256
 	realtranspose.doc.r56623
 	reverxii.doc.r63753
 	rouequestions.doc.r67670
+	rpgicons.doc.r71994
 	rubik.doc.r46791
 	schwalbe-chess.doc.r63708
 	scrabble.doc.r69599
@@ -107,15 +111,17 @@ TEXLIVE_MODULE_DOC_CONTENTS="
 	sudokubundle.doc.r15878
 	tangramtikz.doc.r66183
 	thematicpuzzle.doc.r69356
-	trivialpursuit.doc.r68971
-	wargame.doc.r69692
-	wordle.doc.r68170
+	trivialpursuit.doc.r72615
+	twoxtwogame.doc.r70423
+	wargame.doc.r72903
+	weiqi.doc.r70178
+	wordle.doc.r72059
 	xq.doc.r35211
 	xskak.doc.r51432
 "
 TEXLIVE_MODULE_SRC_CONTENTS="
-	chess-problem-diagrams.source.r63708
-	chessboard.source.r56833
+	chess-problem-diagrams.source.r72556
+	chessboard.source.r72795
 	chessfss.source.r19440
 	crossword.source.r64375
 	crosswrd.source.r16896
@@ -136,7 +142,8 @@ TEXLIVE_MODULE_SRC_CONTENTS="
 	soup.source.r50815
 	sudoku.source.r67189
 	sudokubundle.source.r15878
-	wargame.source.r69692
+	wargame.source.r72903
+	weiqi.source.r70178
 	xskak.source.r51432
 "
 
@@ -144,11 +151,11 @@ inherit texlive-module
 
 DESCRIPTION="TeXLive Games typesetting"
 
-LICENSE="CC-BY-1.0 CC-BY-SA-4.0 GPL-1 LGPL-2.1 LGPL-3 LPPL-1.2 LPPL-1.3 LPPL-1.3c MIT TeX-other-free public-domain"
+LICENSE="Apache-2.0 CC-BY-1.0 CC-BY-4.0 CC-BY-SA-4.0 GPL-1+ LGPL-2.1 LGPL-3 LPPL-1.2 LPPL-1.3 LPPL-1.3c MIT TeX-other-free public-domain"
 SLOT="0"
-KEYWORDS="~amd64 ~arm64 ~ppc ~riscv ~x86"
+KEYWORDS="~alpha ~amd64 ~arm ~arm64 ~hppa ~loong ~ppc ~ppc64 ~riscv ~s390 ~sparc ~x86"
 COMMON_DEPEND="
-	>=dev-texlive/texlive-latex-2023
+	>=dev-texlive/texlive-latex-2024
 "
 RDEPEND="
 	${COMMON_DEPEND}
