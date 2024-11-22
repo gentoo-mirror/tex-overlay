@@ -1,13 +1,13 @@
 # Copyright 1999-2024 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
-EAPI="8"
+EAPI=8
 
 TEXLIVE_MODULE_CONTENTS="
 	collection-music.r69613
 	abc.r41157
 	bagpipe.r34393
-	chordbars.r49569
+	chordbars.r70392
 	chordbox.r51000
 	ddphonism.r52009
 	figbas.r28943
@@ -17,14 +17,14 @@ TEXLIVE_MODULE_CONTENTS="
 	guitar.r32258
 	guitarchordschemes.r54512
 	guitartabs.r48102
-	harmony.r15878
+	harmony.r72045
 	leadsheets.r61504
 	lilyglyphs.r56473
 	lyluatex.r66880
 	musical.r54758
 	musicography.r68220
 	musixguit.r21649
-	musixtex.r69742
+	musixtex.r70804
 	musixtex-fonts.r65517
 	musixtnt.r69742
 	octave.r66115
@@ -40,7 +40,7 @@ TEXLIVE_MODULE_CONTENTS="
 TEXLIVE_MODULE_DOC_CONTENTS="
 	abc.doc.r41157
 	bagpipe.doc.r34393
-	chordbars.doc.r49569
+	chordbars.doc.r70392
 	chordbox.doc.r51000
 	ddphonism.doc.r52009
 	figbas.doc.r28943
@@ -50,7 +50,7 @@ TEXLIVE_MODULE_DOC_CONTENTS="
 	guitar.doc.r32258
 	guitarchordschemes.doc.r54512
 	guitartabs.doc.r48102
-	harmony.doc.r15878
+	harmony.doc.r72045
 	latex4musicians.doc.r49759
 	leadsheets.doc.r61504
 	lilyglyphs.doc.r56473
@@ -58,7 +58,7 @@ TEXLIVE_MODULE_DOC_CONTENTS="
 	musical.doc.r54758
 	musicography.doc.r68220
 	musixguit.doc.r21649
-	musixtex.doc.r69742
+	musixtex.doc.r70804
 	musixtex-fonts.doc.r65517
 	musixtnt.doc.r69742
 	octave.doc.r66115
@@ -76,7 +76,7 @@ TEXLIVE_MODULE_SRC_CONTENTS="
 	gregoriotex.source.r58331
 	guitar.source.r32258
 	lilyglyphs.source.r56473
-	musixtex.source.r69742
+	musixtex.source.r70804
 	songbook.source.r18136
 	songproj.source.r66704
 	songs.source.r51494
@@ -88,11 +88,11 @@ inherit texlive-module
 
 DESCRIPTION="TeXLive Music packages"
 
-LICENSE="BSD CC-BY-SA-4.0 FDL-1.1 GPL-1 GPL-2 GPL-2+ GPL-3 GPL-3+ LGPL-2.1 LPPL-1.2 LPPL-1.3 LPPL-1.3c MIT"
+LICENSE="BSD CC-BY-SA-4.0 FDL-1.1+ GPL-1+ GPL-2 GPL-2+ GPL-3 LGPL-2.1 LPPL-1.2 LPPL-1.3 LPPL-1.3c MIT"
 SLOT="0"
-KEYWORDS="~amd64 ~arm64 ~ppc ~riscv ~x86"
+KEYWORDS="~alpha ~amd64 ~arm ~arm64 ~hppa ~loong ~ppc ~ppc64 ~riscv ~s390 ~sparc ~x86"
 COMMON_DEPEND="
-	>=dev-texlive/texlive-latex-2023
+	>=dev-texlive/texlive-latex-2024
 "
 RDEPEND="
 	${COMMON_DEPEND}
