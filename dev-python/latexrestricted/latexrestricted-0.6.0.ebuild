@@ -15,7 +15,7 @@ HOMEPAGE="
 "
 SRC_URI="
 	https://github.com/gpoore/${PN}/archive/refs/tags/v${PV}.tar.gz
-		-> ${P}.tar.gz
+		-> ${P}.gh.tar.gz
 	https://github.com/gpoore/latexrestricted/commit/ebbb2280db83a859f26a2f2dc0252e4d6e316452.patch
 		-> ${PN}-0.6.0-explicitly-set-build-backend.patch
 "
