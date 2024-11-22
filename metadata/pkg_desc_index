@@ -1,8 +1,8 @@
 app-text/dvipsk 2024.03.11_p70015: DVI-to-PostScript translator
 app-text/dvisvgm 3.2: Converts DVI files to SVG
 app-text/ps2pkm 1.8_p20240311: Tool that converts a PostScript type1 font into a corresponding TeX PK font
-app-text/texlive 2023-r1: A complete TeX distribution
-app-text/texlive-core 2023-r10: A complete TeX distribution
+app-text/texlive 2024: A complete TeX distribution
+app-text/texlive-core 2024: A complete TeX distribution
 app-text/ttf2pk2 2.0_p20230311 2.0_p20240311: Freetype 2 based TrueType font to TeX's PK format converter
 dev-libs/kpathsea 6.4.0_p20240311: Path searching library for TeX-related files
 dev-libs/ptexenc 1.4.6_p20240311: Library for Japanese pTeX providing a better way of handling character encodings
@@ -17,42 +17,42 @@ dev-tex/latexmk 4.85: Perl script for automatically building LaTeX documents
 dev-tex/minted 3.4.0: LaTeX package for source code syntax highlighting
 dev-tex/pgf 3.1.10: The TeX Portable Graphic Format
 dev-tex/tex4ht 20240311_p72882: Converts (La)TeX to (X)HTML, XML and OO.org
-dev-texlive/texlive-basic 2023_p59159-r2: TeXLive Essential programs and files
-dev-texlive/texlive-bibtexextra 2023_p67386-r1: TeXLive BibTeX additional styles
-dev-texlive/texlive-binextra 2023_p69527-r5: TeXLive TeX auxiliary programs
-dev-texlive/texlive-context 2023_p69108: TeXLive ConTeXt and packages
-dev-texlive/texlive-fontsextra 2023_p69663-r1: TeXLive Additional fonts
-dev-texlive/texlive-fontsrecommended 2023_p54074: TeXLive Recommended fonts
-dev-texlive/texlive-fontutils 2023_p61207-r1: TeXLive Graphics and font utilities
-dev-texlive/texlive-formatsextra 2023_p62226: TeXLive Additional formats
-dev-texlive/texlive-games 2023_p69159: TeXLive Games typesetting
-dev-texlive/texlive-humanities 2023_p68465-r1: TeXLive Humanities packages
-dev-texlive/texlive-langarabic 2023_p69111: TeXLive Arabic
-dev-texlive/texlive-langchinese 2023_p63995: TeXLive Chinese
-dev-texlive/texlive-langcjk 2023_p65824: TeXLive Chinese/Japanese/Korean (base)
-dev-texlive/texlive-langcyrillic 2023_p69727: TeXLive Cyrillic
-dev-texlive/texlive-langczechslovak 2023_p54074: TeXLive Czech/Slovak
-dev-texlive/texlive-langenglish 2023_p68790: TeXLive US and UK English
-dev-texlive/texlive-langeuropean 2023_p66432: TeXLive Other European languages
-dev-texlive/texlive-langfrench 2023_p67951-r1: TeXLive French
-dev-texlive/texlive-langgerman 2023_p68711: TeXLive German
-dev-texlive/texlive-langgreek 2023_p65038: TeXLive Greek
-dev-texlive/texlive-langitalian 2023_p55129: TeXLive Italian
-dev-texlive/texlive-langjapanese 2023_p64603: TeXLive Japanese
-dev-texlive/texlive-langkorean 2023_p54074: TeXLive Korean
-dev-texlive/texlive-langother 2023_p68719: TeXLive Other languages
-dev-texlive/texlive-langpolish 2023_p54074: TeXLive Polish
-dev-texlive/texlive-langportuguese 2023_p67125: TeXLive Portuguese
-dev-texlive/texlive-langspanish 2023_p67307-r1: TeXLive Spanish
-dev-texlive/texlive-latex 2023_p69131-r1: TeXLive LaTeX fundamental packages
-dev-texlive/texlive-latexextra 2023_p69752-r1: TeXLive LaTeX additional packages
-dev-texlive/texlive-latexrecommended 2023_p69131: TeXLive LaTeX recommended packages
-dev-texlive/texlive-luatex 2023_p69404: TeXLive LuaTeX packages
-dev-texlive/texlive-mathscience 2023_p69485-r1: TeXLive Mathematics, natural sciences, computer science packages
-dev-texlive/texlive-metapost 2023_p67071: TeXLive MetaPost and Metafont packages
-dev-texlive/texlive-music 2023_p69613: TeXLive Music packages
-dev-texlive/texlive-pictures 2023_p69409-r3: TeXLive Graphics, pictures, diagrams
-dev-texlive/texlive-plaingeneric 2023_p68675-r1: TeXLive Plain (La)TeX packages
-dev-texlive/texlive-pstricks 2023_p65367: TeXLive PSTricks
-dev-texlive/texlive-publishers 2023_p69759: TeXLive Publisher styles, theses, etc.
-dev-texlive/texlive-xetex 2023_p69452: TeXLive XeTeX and packages
+dev-texlive/texlive-basic 2024_p72890: TeXLive Essential programs and files
+dev-texlive/texlive-bibtexextra 2024_p71940: TeXLive BibTeX additional styles
+dev-texlive/texlive-binextra 2024_p72338: TeXLive TeX auxiliary programs
+dev-texlive/texlive-context 2024_p72727: TeXLive ConTeXt and packages
+dev-texlive/texlive-fontsextra 2024_p72727: TeXLive Additional fonts
+dev-texlive/texlive-fontsrecommended 2024_p54074: TeXLive Recommended fonts
+dev-texlive/texlive-fontutils 2024_p61207: TeXLive Graphics and font utilities
+dev-texlive/texlive-formatsextra 2024_p72250: TeXLive Additional formats
+dev-texlive/texlive-games 2024_p71129: TeXLive Games typesetting
+dev-texlive/texlive-humanities 2024_p72692: TeXLive Humanities packages
+dev-texlive/texlive-langarabic 2024_p69111: TeXLive Arabic
+dev-texlive/texlive-langchinese 2024_p72136: TeXLive Chinese
+dev-texlive/texlive-langcjk 2024_p65824: TeXLive Chinese/Japanese/Korean (base)
+dev-texlive/texlive-langcyrillic 2024_p69727: TeXLive Cyrillic
+dev-texlive/texlive-langczechslovak 2024_p54074: TeXLive Czech/Slovak
+dev-texlive/texlive-langenglish 2024_p71835: TeXLive US and UK English
+dev-texlive/texlive-langeuropean 2024_p66432: TeXLive Other European languages
+dev-texlive/texlive-langfrench 2024_p72499: TeXLive French
+dev-texlive/texlive-langgerman 2024_p68711: TeXLive German
+dev-texlive/texlive-langgreek 2024_p65038: TeXLive Greek
+dev-texlive/texlive-langitalian 2024_p55129: TeXLive Italian
+dev-texlive/texlive-langjapanese 2024_p72817: TeXLive Japanese
+dev-texlive/texlive-langkorean 2024_p54074: TeXLive Korean
+dev-texlive/texlive-langother 2024_p68719: TeXLive Other languages
+dev-texlive/texlive-langpolish 2024_p54074: TeXLive Polish
+dev-texlive/texlive-langportuguese 2024_p67125: TeXLive Portuguese
+dev-texlive/texlive-langspanish 2024_p72203: TeXLive Spanish
+dev-texlive/texlive-latex 2024_p71912: TeXLive LaTeX fundamental packages
+dev-texlive/texlive-latexextra 2024_p72895: TeXLive LaTeX additional packages
+dev-texlive/texlive-latexrecommended 2024_p71527: TeXLive LaTeX recommended packages
+dev-texlive/texlive-luatex 2024_p72049: TeXLive LuaTeX packages
+dev-texlive/texlive-mathscience 2024_p72655: TeXLive Mathematics, natural sciences, computer science packages
+dev-texlive/texlive-metapost 2024_p72550: TeXLive MetaPost and Metafont packages
+dev-texlive/texlive-music 2024_p69613: TeXLive Music packages
+dev-texlive/texlive-pictures 2024_p72555: TeXLive Graphics, pictures, diagrams
+dev-texlive/texlive-plaingeneric 2024_p72878: TeXLive Plain (La)TeX packages
+dev-texlive/texlive-pstricks 2024_p65367: TeXLive PSTricks
+dev-texlive/texlive-publishers 2024_p72771: TeXLive Publisher styles, theses, etc.
+dev-texlive/texlive-xetex 2024_p71515: TeXLive XeTeX and packages
