@@ -15,7 +15,7 @@ HOMEPAGE="
 "
 SRC_URI="
 	https://github.com/gpoore/${PN}/archive/refs/tags/latex/v${PV}.tar.gz
-		-> ${P}.tar.gz
+		-> ${P}.gh.tar.gz
 	https://github.com/gpoore/latex2pydata/commit/539ea2c24769a509728ac6ba52a20df588576376.patch
 		-> ${PN}-0.4.0-explicitly-set-build-backend.patch
 "
