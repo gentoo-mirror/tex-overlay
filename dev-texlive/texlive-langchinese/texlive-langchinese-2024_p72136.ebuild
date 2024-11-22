@@ -1,23 +1,25 @@
 # Copyright 1999-2024 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
-EAPI="8"
+EAPI=8
 
 TEXLIVE_MODULE_CONTENTS="
-	collection-langchinese.r63995
+	collection-langchinese.r72136
 	arphic.r15878
 	arphic-ttf.r42675
 	cns.r45677
-	ctex.r66115
-	exam-zh.r67505
+	ctex.r71527
+	exam-zh.r69917
 	fandol.r37889
 	fduthesis.r67231
 	hanzibox.r63062
 	hyphen-chinese.r58652
 	nanicolle.r56224
 	njurepo.r50492
-	pgfornament-han.r68704
+	pgfornament-han.r72640
 	qyxf-book.r56319
+	sjtutex.r72826
+	suanpan-l3.r72540
 	upzhkinsoku.r47354
 	xpinyin.r66115
 	xtuthesis.r47049
@@ -35,21 +37,23 @@ TEXLIVE_MODULE_DOC_CONTENTS="
 	asymptote-faq-zh-cn.doc.r15878
 	asymptote-manual-zh-cn.doc.r15878
 	cns.doc.r45677
-	ctex.doc.r66115
+	ctex.doc.r71527
 	ctex-faq.doc.r15878
-	exam-zh.doc.r67505
+	exam-zh.doc.r69917
 	fandol.doc.r37889
 	fduthesis.doc.r67231
 	hanzibox.doc.r63062
 	impatient-cn.doc.r54080
-	install-latex-guide-zh-cn.doc.r69264
+	install-latex-guide-zh-cn.doc.r72158
 	latex-notes-zh-cn.doc.r15878
 	lshort-chinese.doc.r67025
 	nanicolle.doc.r56224
 	njurepo.doc.r50492
-	pgfornament-han.doc.r68704
+	pgfornament-han.doc.r72640
 	qyxf-book.doc.r56319
-	texlive-zh-cn.doc.r54490
+	sjtutex.doc.r72826
+	suanpan-l3.doc.r72540
+	texlive-zh-cn.doc.r71700
 	texproposal.doc.r43151
 	tlmgr-intro-zh-cn.doc.r59100
 	upzhkinsoku.doc.r47354
@@ -63,10 +67,11 @@ TEXLIVE_MODULE_DOC_CONTENTS="
 	zhspacing.doc.r41145
 "
 TEXLIVE_MODULE_SRC_CONTENTS="
-	ctex.source.r66115
+	ctex.source.r71527
 	fduthesis.source.r67231
 	hanzibox.source.r63062
 	njurepo.source.r50492
+	sjtutex.source.r72826
 	xpinyin.source.r66115
 	zhlipsum.source.r54994
 	zhmetrics.source.r22207
@@ -77,11 +82,11 @@ inherit texlive-module
 
 DESCRIPTION="TeXLive Chinese"
 
-LICENSE="FDL-1.1 GPL-1 GPL-3+ LGPL-2 LPPL-1.3 LPPL-1.3c MIT TeX TeX-other-free"
+LICENSE="FDL-1.1+ GPL-1+ GPL-3+ LGPL-2+ LPPL-1.3 LPPL-1.3c MIT TeX TeX-other-free public-domain"
 SLOT="0"
-KEYWORDS="~amd64 ~arm64 ~ppc ~riscv ~x86"
+KEYWORDS="~alpha ~amd64 ~arm ~arm64 ~hppa ~loong ~ppc ~ppc64 ~riscv ~s390 ~sparc ~x86"
 COMMON_DEPEND="
-	>=dev-texlive/texlive-langcjk-2023
+	>=dev-texlive/texlive-langcjk-2024
 "
 RDEPEND="
 	${COMMON_DEPEND}
