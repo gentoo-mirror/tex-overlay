@@ -3,7 +3,7 @@
 
 EAPI=8
 
-TL_SOURCE_VERSION=20230311
+TL_SOURCE_VERSION=20240311
 inherit flag-o-matic toolchain-funcs libtool texlive-common
 
 MY_P=${PN%-core}-${TL_SOURCE_VERSION}-source
@@ -24,25 +24,25 @@ SRC_URI="
 # Macros that are not a part of texlive-sources or or pulled in from collection-binextra
 # but still needed for other packages during installation.
 TL_CORE_EXTRA_CONTENTS="
-	autosp.r58211
+	autosp.r69814
 	axodraw2.r58155
-	chktex.r64797
-	detex.r66186
+	chktex.r71205
+	detex.r70015
 	dvi2tty.r66186
 	dvidvi.r65952
 	dviljk.r66186
-	dvipdfmx.r69127
+	dvipdfmx.r72890
 	dvipos.r66186
 	gsftopk.r52851
-	hyphen-base.r68321
+	hyphen-base.r70247
 	lacheck.r66186
 	m-tx.r64182
 	makeindex.r62517
 	pmx.r65926
 	texdoctk.r62186
-	texlive-scripts.r69754
-	texlive-scripts-extra.r62517
-	texlive.infra.r69740
+	texlive-scripts.r72904
+	texlive-scripts-extra.r71746
+	texlive.infra.r72854
 	tpic2pdftex.r52851
 	upmendex.r66381
 	velthuis.r66186
@@ -51,14 +51,14 @@ TL_CORE_EXTRA_CONTENTS="
 	xml2pmx.r57972
 "
 TL_CORE_EXTRA_DOC_CONTENTS="
-	autosp.doc.r58211
+	autosp.doc.r69814
 	axodraw2.doc.r58155
-	chktex.doc.r64797
-	detex.doc.r66186
+	chktex.doc.r71205
+	detex.doc.r70015
 	dvi2tty.doc.r66186
 	dvidvi.doc.r65952
 	dviljk.doc.r66186
-	dvipdfmx.doc.r69127
+	dvipdfmx.doc.r72890
 	dvipos.doc.r66186
 	gsftopk.doc.r52851
 	lacheck.doc.r66186
@@ -66,9 +66,9 @@ TL_CORE_EXTRA_DOC_CONTENTS="
 	makeindex.doc.r62517
 	pmx.doc.r65926
 	texdoctk.doc.r62186
-	texlive-scripts.doc.r69754
-	texlive-scripts-extra.doc.r62517
-	texlive.infra.doc.r69740
+	texlive-scripts.doc.r72904
+	texlive-scripts-extra.doc.r71746
+	texlive.infra.doc.r72854
 	tpic2pdftex.doc.r52851
 	upmendex.doc.r66381
 	velthuis.doc.r66186
@@ -82,6 +82,7 @@ TL_CORE_EXTRA_SRC_CONTENTS="
 
 TEXLIVE_MODULE_BINSCRIPTS="
 	texmf-dist/scripts/m-tx/m-tx.lua
+	texmf-dist/scripts/texlive/extractbb.lua
 	texmf-dist/scripts/texlive/fmtutil-sys.sh
 	texmf-dist/scripts/texlive/fmtutil-user.sh
 	texmf-dist/scripts/texlive/fmtutil.pl
@@ -129,7 +130,7 @@ SRC_URI+=" )"
 S="${WORKDIR}/${MY_P}"
 LICENSE="BSD GPL-1+ GPL-2 GPL-2+ GPL-3+ MIT TeX-other-free"
 SLOT="0"
-KEYWORDS="~alpha amd64 arm arm64 ~hppa ~loong ~mips ppc ppc64 ~riscv ~s390 sparc x86"
+KEYWORDS="~alpha ~amd64 ~arm ~arm64 ~hppa ~loong ~ppc ~ppc64 ~riscv ~s390 ~sparc ~x86"
 IUSE="cjk X doc source tk +luajittex xetex xindy"
 
 TEXMF_PATH=/usr/share/texmf-dist
@@ -161,7 +162,7 @@ COMMON_DEPEND="
 	xindy? ( dev-lisp/clisp:= )
 	media-libs/freetype:2
 	>=dev-libs/icu-50:=
-	>=dev-libs/kpathsea-6.3.5:=
+	>=dev-libs/kpathsea-6.4.0:=
 "
 
 BDEPEND="
@@ -220,14 +221,8 @@ src_prepare() {
 		texk/web2c/configure || die
 
 	local patch_dir="${WORKDIR}/tex-patches-${GENTOO_TEX_PATCHES_NUM}"
+	rm "${patch_dir}"/relax-zlib-check-to-just-major-version-following-deb.patch || die
 	eapply "${patch_dir}"
-
-	# Can be dropped in texlive 2024
-	# https://git.texlive.info/texlive/commit/?id=c45afdc843154fcb09b583f54a2f802c6069b50e
-	eapply "${DISTDIR}"/texlive-core-2023-pdflatex-big-endian-fix.patch
-
-	# bug #837875
-	eapply "${DISTDIR}"/texlive-core-2023-mplib-h.patch
 
 	default
 
@@ -236,7 +231,7 @@ src_prepare() {
 	# Drop this once cairo's and mplibdir's (texlive-core-2023-mplib-h.patch)
 	# autoconf patches are gone. See bug #927714#c4, bug #853121 for cairo,
 	# and bug #837875 for mplibdir (in web2c).
-	"${S}"/reautoconf libs/cairo texk/web2c || die
+	"${S}"/reautoconf libs/cairo || die
 }
 
 src_configure() {
