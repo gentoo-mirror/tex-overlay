@@ -1,12 +1,12 @@
 # Copyright 1999-2024 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
-EAPI="8"
+EAPI=8
 
 TEXLIVE_MODULE_CONTENTS="
 	collection-langitalian.r55129
 	antanilipsum.r55250
-	babel-italian.r69298
+	babel-italian.r72520
 	codicefiscaleitaliano.r29803
 	fixltxhyph.r25832
 	frontespizio.r24054
@@ -20,7 +20,7 @@ TEXLIVE_MODULE_DOC_CONTENTS="
 	amsmath-it.doc.r22930
 	amsthdoc-it.doc.r45662
 	antanilipsum.doc.r55250
-	babel-italian.doc.r69298
+	babel-italian.doc.r72520
 	codicefiscaleitaliano.doc.r29803
 	fancyhdr-it.doc.r21912
 	fixltxhyph.doc.r25832
@@ -36,7 +36,7 @@ TEXLIVE_MODULE_DOC_CONTENTS="
 "
 TEXLIVE_MODULE_SRC_CONTENTS="
 	antanilipsum.source.r55250
-	babel-italian.source.r69298
+	babel-italian.source.r72520
 	codicefiscaleitaliano.source.r29803
 	fixltxhyph.source.r25832
 	frontespizio.source.r24054
@@ -49,11 +49,11 @@ inherit texlive-module
 
 DESCRIPTION="TeXLive Italian"
 
-LICENSE="FDL-1.1 GPL-1 LGPL-2 LPPL-1.3 LPPL-1.3c TeX-other-free"
+LICENSE="FDL-1.1+ GPL-1+ LGPL-2+ LPPL-1.3 LPPL-1.3c TeX-other-free"
 SLOT="0"
-KEYWORDS="~amd64 ~arm64 ~ppc ~riscv ~x86"
+KEYWORDS="~alpha ~amd64 ~arm ~arm64 ~hppa ~loong ~ppc ~ppc64 ~riscv ~s390 ~sparc ~x86"
 COMMON_DEPEND="
-	>=dev-texlive/texlive-basic-2023
+	>=dev-texlive/texlive-basic-2024
 "
 RDEPEND="
 	${COMMON_DEPEND}
