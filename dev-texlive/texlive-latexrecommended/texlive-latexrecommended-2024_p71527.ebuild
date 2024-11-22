@@ -1,10 +1,10 @@
 # Copyright 1999-2024 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
-EAPI="8"
+EAPI=8
 
 TEXLIVE_MODULE_CONTENTS="
-	collection-latexrecommended.r69131
+	collection-latexrecommended.r71527
 	anysize.r15878
 	attachfile2.r69505
 	booktabs.r53402
@@ -26,7 +26,7 @@ TEXLIVE_MODULE_CONTENTS="
 	fancyvrb.r69536
 	filehook.r64822
 	float.r15878
-	fontspec.r63386
+	fontspec.r71237
 	footnotehyper.r60374
 	fp.r49719
 	grffile.r52756
@@ -34,27 +34,26 @@ TEXLIVE_MODULE_CONTENTS="
 	index.r24099
 	infwarerr.r53023
 	jknapltx.r19440
-	koma-script.r69755
-	l3experimental.r69310
-	latexbug.r63596
+	koma-script.r72643
+	l3experimental.r71991
+	latexbug.r72762
 	lineno.r67171
-	listings.r68476
-	lwarp.r69724
+	listings.r72368
+	lwarp.r70067
 	mathspec.r42773
-	mathtools.r63767
+	mathtools.r72487
 	mdwtools.r15878
 	memoir.r69600
 	metalogo.r18611
-	microtype.r66587
-	ms.r57473
+	microtype.r70805
 	newfloat.r68434
 	ntgclass.r65522
 	parskip.r58358
 	pdfcolfoot.r65512
 	pdflscape.r64851
-	pdfmanagement-testphase.r69078
-	pdfpages.r69524
-	polyglossia.r69093
+	pdfmanagement-testphase.r72677
+	pdfpages.r72691
+	polyglossia.r72368
 	psfrag.r15878
 	ragged2e.r67441
 	rcs.r15878
@@ -71,7 +70,8 @@ TEXLIVE_MODULE_CONTENTS="
 	ucharcat.r38907
 	underscore.r18261
 	unicode-math.r67919
-	xcolor.r68864
+	xcolor.r72484
+	xfrac.r71430
 	xkeyval.r63616
 	xltxtra.r56594
 	xunicode.r30466
@@ -98,7 +98,7 @@ TEXLIVE_MODULE_DOC_CONTENTS="
 	fancyvrb.doc.r69536
 	filehook.doc.r64822
 	float.doc.r15878
-	fontspec.doc.r63386
+	fontspec.doc.r71237
 	footnotehyper.doc.r60374
 	fp.doc.r49719
 	grffile.doc.r52756
@@ -106,26 +106,25 @@ TEXLIVE_MODULE_DOC_CONTENTS="
 	index.doc.r24099
 	infwarerr.doc.r53023
 	jknapltx.doc.r19440
-	l3experimental.doc.r69310
-	latexbug.doc.r63596
+	l3experimental.doc.r71991
+	latexbug.doc.r72762
 	lineno.doc.r67171
-	listings.doc.r68476
-	lwarp.doc.r69724
+	listings.doc.r72368
+	lwarp.doc.r70067
 	mathspec.doc.r42773
-	mathtools.doc.r63767
+	mathtools.doc.r72487
 	mdwtools.doc.r15878
 	memoir.doc.r69600
 	metalogo.doc.r18611
-	microtype.doc.r66587
-	ms.doc.r57473
+	microtype.doc.r70805
 	newfloat.doc.r68434
 	ntgclass.doc.r65522
 	parskip.doc.r58358
 	pdfcolfoot.doc.r65512
 	pdflscape.doc.r64851
-	pdfmanagement-testphase.doc.r69078
-	pdfpages.doc.r69524
-	polyglossia.doc.r69093
+	pdfmanagement-testphase.doc.r72677
+	pdfpages.doc.r72691
+	polyglossia.doc.r72368
 	psfrag.doc.r15878
 	ragged2e.doc.r67441
 	rcs.doc.r15878
@@ -142,7 +141,8 @@ TEXLIVE_MODULE_DOC_CONTENTS="
 	ucharcat.doc.r38907
 	underscore.doc.r18261
 	unicode-math.doc.r67919
-	xcolor.doc.r68864
+	xcolor.doc.r72484
+	xfrac.doc.r71430
 	xkeyval.doc.r63616
 	xltxtra.doc.r56594
 	xunicode.doc.r30466
@@ -162,30 +162,28 @@ TEXLIVE_MODULE_SRC_CONTENTS="
 	fancyref.source.r15878
 	filehook.source.r64822
 	float.source.r15878
-	fontspec.source.r63386
+	fontspec.source.r71237
 	footnotehyper.source.r60374
 	grffile.source.r52756
 	hologo.source.r61719
 	index.source.r24099
 	infwarerr.source.r53023
-	l3experimental.source.r69310
-	latexbug.source.r63596
-	listings.source.r68476
-	lwarp.source.r69724
-	mathtools.source.r63767
+	l3experimental.source.r71991
+	latexbug.source.r72762
+	listings.source.r72368
+	lwarp.source.r70067
+	mathtools.source.r72487
 	mdwtools.source.r15878
 	memoir.source.r69600
 	metalogo.source.r18611
-	microtype.source.r66587
-	ms.source.r57473
+	microtype.source.r70805
 	newfloat.source.r68434
 	ntgclass.source.r65522
 	parskip.source.r58358
 	pdfcolfoot.source.r65512
 	pdflscape.source.r64851
-	pdfmanagement-testphase.source.r69078
-	pdfpages.source.r69524
-	polyglossia.source.r69093
+	pdfmanagement-testphase.source.r72677
+	pdfpages.source.r72691
 	psfrag.source.r15878
 	ragged2e.source.r67441
 	rcs.source.r15878
@@ -194,7 +192,8 @@ TEXLIVE_MODULE_SRC_CONTENTS="
 	typehtml.source.r17134
 	ucharcat.source.r38907
 	unicode-math.source.r67919
-	xcolor.source.r68864
+	xcolor.source.r72484
+	xfrac.source.r71430
 	xkeyval.source.r63616
 	xltxtra.source.r56594
 "
@@ -203,11 +202,11 @@ inherit texlive-module
 
 DESCRIPTION="TeXLive LaTeX recommended packages"
 
-LICENSE="CC0-1.0 FDL-1.1 GPL-1 GPL-2 GPL-2+ LPPL-1.2 LPPL-1.3 LPPL-1.3a LPPL-1.3c MIT TeX-other-free public-domain"
+LICENSE="CC0-1.0 GPL-1+ LPPL-1.2 LPPL-1.3 LPPL-1.3a LPPL-1.3c MIT TeX-other-free public-domain"
 SLOT="0"
-KEYWORDS="~amd64 ~arm64 ~ppc ~riscv ~x86"
+KEYWORDS="~alpha ~amd64 ~arm ~arm64 ~hppa ~loong ~ppc ~ppc64 ~riscv ~s390 ~sparc ~x86"
 COMMON_DEPEND="
-	>=dev-texlive/texlive-latex-2023
+	>=dev-texlive/texlive-latex-2024
 "
 RDEPEND="
 	${COMMON_DEPEND}
