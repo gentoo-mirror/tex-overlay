@@ -1,13 +1,13 @@
 # Copyright 1999-2024 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
-EAPI="8"
+EAPI=8
 
 TEXLIVE_MODULE_CONTENTS="
 	collection-langother.r68719
 	aalok.r61719
 	akshar.r56277
-	aramaic-serto.r30042
+	aramaic-serto.r71991
 	babel-azerbaijani.r44197
 	babel-esperanto.r30265
 	babel-georgian.r45864
@@ -65,7 +65,7 @@ TEXLIVE_MODULE_DOC_CONTENTS="
 	aalok.doc.r61719
 	akshar.doc.r56277
 	amsldoc-vn.doc.r21855
-	aramaic-serto.doc.r30042
+	aramaic-serto.doc.r71991
 	babel-azerbaijani.doc.r44197
 	babel-esperanto.doc.r30265
 	babel-georgian.doc.r45864
@@ -147,11 +147,11 @@ inherit texlive-module
 
 DESCRIPTION="TeXLive Other languages"
 
-LICENSE="CC-BY-SA-4.0 FDL-1.1 GPL-1 GPL-2 GPL-2+ GPL-3+ LPPL-1.3 LPPL-1.3c OFL TeX-other-free public-domain"
+LICENSE="CC-BY-SA-4.0 FDL-1.1+ GPL-1+ GPL-2 GPL-2+ GPL-3+ LPPL-1.3 LPPL-1.3c OFL-1.1 TeX-other-free public-domain"
 SLOT="0"
-KEYWORDS="~amd64 ~arm64 ~ppc ~riscv ~x86"
+KEYWORDS="~alpha ~amd64 ~arm ~arm64 ~hppa ~loong ~ppc ~ppc64 ~riscv ~s390 ~sparc ~x86"
 COMMON_DEPEND="
-	>=dev-texlive/texlive-basic-2023
+	>=dev-texlive/texlive-basic-2024
 "
 RDEPEND="
 	${COMMON_DEPEND}
