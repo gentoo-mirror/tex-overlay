@@ -1,19 +1,19 @@
 # Copyright 1999-2024 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
-EAPI="8"
+EAPI=8
 
 TEXLIVE_MODULE_CONTENTS="
-	collection-fontsextra.r69663
+	collection-fontsextra.r72727
 	aboensis.r62977
 	academicons.r62622
 	accanthis.r64844
-	adforn.r54512
-	adfsymbols.r54512
+	adforn.r72484
+	adfsymbols.r72458
 	aesupp.r58253
 	alegreya.r64384
 	alfaslabone.r57452
-	algolrevived.r56864
+	algolrevived.r71368
 	allrunes.r42221
 	almendra.r64539
 	almfixed.r35065
@@ -32,14 +32,14 @@ TEXLIVE_MODULE_CONTENTS="
 	ascii-font.r29989
 	aspectratio.r25243
 	astro.r15878
-	atkinson.r64385
+	atkinson.r71048
 	augie.r61719
 	auncial-new.r62977
 	aurical.r15878
 	b1encoding.r21271
 	barcodes.r15878
-	baskervald.r19490
-	baskervaldx.r69273
+	baskervaldadf.r72484
+	baskervaldx.r71145
 	baskervillef.r55475
 	bbding.r17186
 	bbm.r15878
@@ -49,12 +49,13 @@ TEXLIVE_MODULE_CONTENTS="
 	bboldx.r65424
 	belleek.r66115
 	bera.r20031
-	berenisadf.r32215
+	berenisadf.r72484
 	beuron.r46374
 	bguq.r27401
 	bitter.r67598
 	blacklettert1.r15878
 	boisik.r15878
+	bonum-otf.r71894
 	bookhands.r46480
 	boondox.r54512
 	braille.r20655
@@ -67,9 +68,10 @@ TEXLIVE_MODULE_CONTENTS="
 	carlito.r64624
 	carolmin-ps.r15878
 	cascadia-code.r68485
+	cascadiamono-otf.r72257
 	ccicons.r54512
 	cfr-initials.r61719
-	cfr-lm.r36195
+	cfr-lm.r72484
 	charissil.r64998
 	cherokee.r21046
 	chivo.r65029
@@ -87,15 +89,15 @@ TEXLIVE_MODULE_CONTENTS="
 	cmsrb.r54706
 	cmtiup.r39728
 	cmupint.r54735
-	cochineal.r68904
+	cochineal.r70528
 	coelacanth.r64558
 	comfortaa.r54512
 	comicneue.r54891
 	concmath-fonts.r17218
-	concmath-otf.r69479
+	concmath-otf.r72660
 	cookingsymbols.r35929
 	cooperhewitt.r64967
-	cormorantgaramond.r64411
+	cormorantgaramond.r71057
 	countriesofeurope.r54512
 	courier-scaled.r24940
 	courierten.r55436
@@ -104,6 +106,7 @@ TEXLIVE_MODULE_CONTENTS="
 	cryst.r15878
 	cuprum.r49909
 	cyklop.r18651
+	cyrillic-modern.r71183
 	dancers.r13293
 	dantelogo.r38599
 	dejavu.r31771
@@ -122,7 +125,7 @@ TEXLIVE_MODULE_CONTENTS="
 	duerer-latex.r15878
 	dutchcal.r54080
 	ean.r20851
-	ebgaramond.r66604
+	ebgaramond.r71069
 	ebgaramond-maths.r52168
 	ecc.r15878
 	eco.r29349
@@ -130,24 +133,24 @@ TEXLIVE_MODULE_CONTENTS="
 	eiad.r15878
 	eiad-ltx.r15878
 	ektype-tanka.r63255
-	electrum.r19705
+	electrumadf.r72484
 	elvish.r15878
 	epigrafica.r17210
 	epsdice.r15878
-	erewhon.r63312
-	erewhon-math.r69480
+	erewhon.r70759
+	erewhon-math.r70295
 	esrelation.r37236
 	esstix.r22426
 	esvect.r32098
 	etbb.r69098
-	euler-math.r69481
+	euler-math.r70296
 	eulervm.r15878
 	euxm.r54074
 	fbb.r55728
 	fdsymbol.r61719
 	fetamont.r43812
 	feyn.r63945
-	fge.r68353
+	fge.r71737
 	fira.r64422
 	firamath.r56672
 	firamath-otf.r68233
@@ -158,14 +161,15 @@ TEXLIVE_MODULE_CONTENTS="
 	fontmfizz.r43546
 	fonts-churchslavonic.r67473
 	forum.r64566
-	fourier.r61937
+	fourier.r72243
 	fouriernc.r29646
 	frcursive.r24559
 	frederika2016.r42157
 	frimurer.r56704
-	garamond-libre.r64412
+	garamond-libre.r71058
 	garamond-math.r61481
-	gelasio.r66805
+	gelasio.r71047
+	gelasiomath.r71883
 	genealogy.r25112
 	gentium-tug.r63470
 	gfsartemisia.r19469
@@ -194,11 +198,11 @@ TEXLIVE_MODULE_CONTENTS="
 	hfbright.r29349
 	hfoldsty.r29349
 	hindmadurai.r57360
-	ibarra.r66892
+	ibarra.r71059
 	ifsym.r24868
 	imfellenglish.r64568
 	inconsolata.r54512
-	inconsolata-nerd-font.r69061
+	inconsolata-nerd-font.r70871
 	initials.r54080
 	inriafonts.r54512
 	inter.r68966
@@ -207,31 +211,33 @@ TEXLIVE_MODULE_CONTENTS="
 	jablantile.r16364
 	jamtimes.r20408
 	josefin.r64569
-	junicode.r69355
-	junicodevf.r69374
+	junicode.r71871
+	junicodevf.r71920
 	kixfont.r18488
-	kpfonts.r65583
-	kpfonts-otf.r69636
+	kpfonts.r72680
+	kpfonts-otf.r71153
 	kurier.r19612
 	lato.r54512
+	lete-sans-math.r71836
 	lexend.r57564
 	lfb.r15878
-	libertine.r68981
+	libertine.r72795
 	libertinegc.r44616
 	libertinus.r61719
-	libertinus-fonts.r57948
+	libertinus-fonts.r72484
 	libertinus-otf.r68333
-	libertinus-type1.r67450
-	libertinust1math.r69440
+	libertinus-type1.r72354
+	libertinust1math.r71428
 	librebaskerville.r64421
 	librebodoni.r64431
 	librecaslon.r64432
 	librefranklin.r64441
-	libris.r19409
+	libris.r72484
 	lineara.r63169
 	linguisticspro.r64858
 	lobster2.r64442
 	logix.r63688
+	luwiantype.r71820
 	lxfonts.r32354
 	ly1.r63565
 	magra.r57373
@@ -243,6 +249,7 @@ TEXLIVE_MODULE_CONTENTS="
 	mdsymbol.r28399
 	merriweather.r64452
 	metsymb.r68175
+	mfb-oldstyle.r71982
 	miama.r54512
 	mintspirit.r64461
 	missaali.r61719
@@ -251,17 +258,17 @@ TEXLIVE_MODULE_CONTENTS="
 	montserrat.r54512
 	mpfonts.r54512
 	mweights.r53520
-	newcomputermodern.r69379
-	newpx.r69380
-	newtx.r69756
+	newcomputermodern.r72735
+	newpx.r72879
+	newtx.r72368
 	newtxsf.r69597
-	newtxtt.r69451
-	niceframe-type1.r68091
-	nimbus15.r58839
+	newtxtt.r70620
+	niceframe-type1.r71849
+	nimbus15.r72894
 	nkarta.r16437
 	noto.r64351
 	noto-emoji.r62950
-	notomath.r68014
+	notomath.r71429
 	nunito.r57429
 	obnov.r33355
 	ocherokee.r25689
@@ -271,7 +278,7 @@ TEXLIVE_MODULE_CONTENTS="
 	oinuit.r28668
 	old-arrows.r42872
 	oldlatin.r17932
-	oldstandard.r69185
+	oldstandard.r70421
 	opensans.r54512
 	orkhun.r15878
 	oswald.r60784
@@ -299,11 +306,12 @@ TEXLIVE_MODULE_CONTENTS="
 	recycle.r15878
 	rit-fonts.r67659
 	roboto.r64350
-	romande.r19537
+	romandeadf.r72484
 	rosario.r51688
 	rsfso.r60849
+	ruscap.r71123
 	sansmathaccent.r53628
-	sansmathfonts.r68777
+	sansmathfonts.r72563
 	sauter.r13293
 	sauterfonts.r15878
 	schola-otf.r64734
@@ -311,7 +319,7 @@ TEXLIVE_MODULE_CONTENTS="
 	schulschriften.r59388
 	semaphor.r18651
 	shobhika.r50555
-	simpleicons.r69673
+	simpleicons.r72797
 	skull.r51907
 	sourcecodepro.r54512
 	sourcesanspro.r54892
@@ -322,7 +330,7 @@ TEXLIVE_MODULE_CONTENTS="
 	staves.r15878
 	step.r57307
 	stepgreek.r57074
-	stickstoo.r60793
+	stickstoo.r72368
 	stix.r54512
 	stix2-otf.r58735
 	stix2-type1.r57448
@@ -340,7 +348,7 @@ TEXLIVE_MODULE_CONTENTS="
 	tinos.r68950
 	tpslifonts.r42428
 	trajan.r15878
-	twemoji-colr.r64854
+	twemoji-colr.r71991
 	txfontsb.r54512
 	txuprcal.r43327
 	typicons.r37623
@@ -349,28 +357,28 @@ TEXLIVE_MODULE_CONTENTS="
 	universalis.r64505
 	uppunctlm.r42334
 	urwchancal.r21701
-	venturisadf.r19444
+	venturisadf.r72484
 	wsuipa.r25469
-	xcharter.r67742
-	xcharter-math.r69482
+	xcharter.r71564
+	xcharter-math.r72658
 	xits.r55730
 	yfonts.r50755
 	yfonts-otf.r65030
 	yfonts-t1.r36013
 	yinit-otf.r40207
-	ysabeau.r69663
+	ysabeau.r72800
 	zlmtt.r64076
 "
 TEXLIVE_MODULE_DOC_CONTENTS="
 	aboensis.doc.r62977
 	academicons.doc.r62622
 	accanthis.doc.r64844
-	adforn.doc.r54512
-	adfsymbols.doc.r54512
+	adforn.doc.r72484
+	adfsymbols.doc.r72458
 	aesupp.doc.r58253
 	alegreya.doc.r64384
 	alfaslabone.doc.r57452
-	algolrevived.doc.r56864
+	algolrevived.doc.r71368
 	allrunes.doc.r42221
 	almendra.doc.r64539
 	almfixed.doc.r35065
@@ -389,14 +397,14 @@ TEXLIVE_MODULE_DOC_CONTENTS="
 	ascii-font.doc.r29989
 	aspectratio.doc.r25243
 	astro.doc.r15878
-	atkinson.doc.r64385
+	atkinson.doc.r71048
 	augie.doc.r61719
 	auncial-new.doc.r62977
 	aurical.doc.r15878
 	b1encoding.doc.r21271
 	barcodes.doc.r15878
-	baskervald.doc.r19490
-	baskervaldx.doc.r69273
+	baskervaldadf.doc.r72484
+	baskervaldx.doc.r71145
 	baskervillef.doc.r55475
 	bbding.doc.r17186
 	bbm.doc.r15878
@@ -406,12 +414,13 @@ TEXLIVE_MODULE_DOC_CONTENTS="
 	bboldx.doc.r65424
 	belleek.doc.r66115
 	bera.doc.r20031
-	berenisadf.doc.r32215
+	berenisadf.doc.r72484
 	beuron.doc.r46374
 	bguq.doc.r27401
 	bitter.doc.r67598
 	blacklettert1.doc.r15878
 	boisik.doc.r15878
+	bonum-otf.doc.r71894
 	bookhands.doc.r46480
 	boondox.doc.r54512
 	braille.doc.r20655
@@ -424,9 +433,10 @@ TEXLIVE_MODULE_DOC_CONTENTS="
 	carlito.doc.r64624
 	carolmin-ps.doc.r15878
 	cascadia-code.doc.r68485
+	cascadiamono-otf.doc.r72257
 	ccicons.doc.r54512
 	cfr-initials.doc.r61719
-	cfr-lm.doc.r36195
+	cfr-lm.doc.r72484
 	charissil.doc.r64998
 	cherokee.doc.r21046
 	chivo.doc.r65029
@@ -443,15 +453,15 @@ TEXLIVE_MODULE_DOC_CONTENTS="
 	cmsrb.doc.r54706
 	cmtiup.doc.r39728
 	cmupint.doc.r54735
-	cochineal.doc.r68904
+	cochineal.doc.r70528
 	coelacanth.doc.r64558
 	comfortaa.doc.r54512
 	comicneue.doc.r54891
 	concmath-fonts.doc.r17218
-	concmath-otf.doc.r69479
+	concmath-otf.doc.r72660
 	cookingsymbols.doc.r35929
 	cooperhewitt.doc.r64967
-	cormorantgaramond.doc.r64411
+	cormorantgaramond.doc.r71057
 	countriesofeurope.doc.r54512
 	courier-scaled.doc.r24940
 	courierten.doc.r55436
@@ -460,6 +470,7 @@ TEXLIVE_MODULE_DOC_CONTENTS="
 	cryst.doc.r15878
 	cuprum.doc.r49909
 	cyklop.doc.r18651
+	cyrillic-modern.doc.r71183
 	dantelogo.doc.r38599
 	dejavu.doc.r31771
 	dejavu-otf.doc.r45991
@@ -477,7 +488,7 @@ TEXLIVE_MODULE_DOC_CONTENTS="
 	duerer-latex.doc.r15878
 	dutchcal.doc.r54080
 	ean.doc.r20851
-	ebgaramond.doc.r66604
+	ebgaramond.doc.r71069
 	ebgaramond-maths.doc.r52168
 	ecc.doc.r15878
 	eco.doc.r29349
@@ -485,23 +496,23 @@ TEXLIVE_MODULE_DOC_CONTENTS="
 	eiad.doc.r15878
 	eiad-ltx.doc.r15878
 	ektype-tanka.doc.r63255
-	electrum.doc.r19705
+	electrumadf.doc.r72484
 	elvish.doc.r15878
 	epigrafica.doc.r17210
 	epsdice.doc.r15878
-	erewhon.doc.r63312
-	erewhon-math.doc.r69480
+	erewhon.doc.r70759
+	erewhon-math.doc.r70295
 	esrelation.doc.r37236
 	esstix.doc.r22426
 	esvect.doc.r32098
 	etbb.doc.r69098
-	euler-math.doc.r69481
+	euler-math.doc.r70296
 	eulervm.doc.r15878
 	fbb.doc.r55728
 	fdsymbol.doc.r61719
 	fetamont.doc.r43812
 	feyn.doc.r63945
-	fge.doc.r68353
+	fge.doc.r71737
 	fira.doc.r64422
 	firamath.doc.r56672
 	firamath-otf.doc.r68233
@@ -511,15 +522,17 @@ TEXLIVE_MODULE_DOC_CONTENTS="
 	fontawesome5.doc.r63207
 	fontmfizz.doc.r43546
 	fonts-churchslavonic.doc.r67473
+	fontscripts.doc.r72672
 	forum.doc.r64566
-	fourier.doc.r61937
+	fourier.doc.r72243
 	fouriernc.doc.r29646
 	frcursive.doc.r24559
 	frederika2016.doc.r42157
 	frimurer.doc.r56704
-	garamond-libre.doc.r64412
+	garamond-libre.doc.r71058
 	garamond-math.doc.r61481
-	gelasio.doc.r66805
+	gelasio.doc.r71047
+	gelasiomath.doc.r71883
 	genealogy.doc.r25112
 	gentium-tug.doc.r63470
 	gfsartemisia.doc.r19469
@@ -547,11 +560,11 @@ TEXLIVE_MODULE_DOC_CONTENTS="
 	hfbright.doc.r29349
 	hfoldsty.doc.r29349
 	hindmadurai.doc.r57360
-	ibarra.doc.r66892
+	ibarra.doc.r71059
 	ifsym.doc.r24868
 	imfellenglish.doc.r64568
 	inconsolata.doc.r54512
-	inconsolata-nerd-font.doc.r69061
+	inconsolata-nerd-font.doc.r70871
 	initials.doc.r54080
 	inriafonts.doc.r54512
 	inter.doc.r68966
@@ -560,31 +573,33 @@ TEXLIVE_MODULE_DOC_CONTENTS="
 	jablantile.doc.r16364
 	jamtimes.doc.r20408
 	josefin.doc.r64569
-	junicode.doc.r69355
-	junicodevf.doc.r69374
+	junicode.doc.r71871
+	junicodevf.doc.r71920
 	kixfont.doc.r18488
-	kpfonts.doc.r65583
-	kpfonts-otf.doc.r69636
+	kpfonts.doc.r72680
+	kpfonts-otf.doc.r71153
 	kurier.doc.r19612
 	lato.doc.r54512
+	lete-sans-math.doc.r71836
 	lexend.doc.r57564
 	lfb.doc.r15878
-	libertine.doc.r68981
+	libertine.doc.r72795
 	libertinegc.doc.r44616
 	libertinus.doc.r61719
-	libertinus-fonts.doc.r57948
+	libertinus-fonts.doc.r72484
 	libertinus-otf.doc.r68333
-	libertinus-type1.doc.r67450
-	libertinust1math.doc.r69440
+	libertinus-type1.doc.r72354
+	libertinust1math.doc.r71428
 	librebaskerville.doc.r64421
 	librebodoni.doc.r64431
 	librecaslon.doc.r64432
 	librefranklin.doc.r64441
-	libris.doc.r19409
+	libris.doc.r72484
 	lineara.doc.r63169
 	linguisticspro.doc.r64858
 	lobster2.doc.r64442
 	logix.doc.r63688
+	luwiantype.doc.r71820
 	lxfonts.doc.r32354
 	ly1.doc.r63565
 	magra.doc.r57373
@@ -596,6 +611,7 @@ TEXLIVE_MODULE_DOC_CONTENTS="
 	mdsymbol.doc.r28399
 	merriweather.doc.r64452
 	metsymb.doc.r68175
+	mfb-oldstyle.doc.r71982
 	miama.doc.r54512
 	mintspirit.doc.r64461
 	missaali.doc.r61719
@@ -604,17 +620,17 @@ TEXLIVE_MODULE_DOC_CONTENTS="
 	montserrat.doc.r54512
 	mpfonts.doc.r54512
 	mweights.doc.r53520
-	newcomputermodern.doc.r69379
-	newpx.doc.r69380
-	newtx.doc.r69756
+	newcomputermodern.doc.r72735
+	newpx.doc.r72879
+	newtx.doc.r72368
 	newtxsf.doc.r69597
-	newtxtt.doc.r69451
-	niceframe-type1.doc.r68091
-	nimbus15.doc.r58839
+	newtxtt.doc.r70620
+	niceframe-type1.doc.r71849
+	nimbus15.doc.r72894
 	nkarta.doc.r16437
 	noto.doc.r64351
 	noto-emoji.doc.r62950
-	notomath.doc.r68014
+	notomath.doc.r71429
 	nunito.doc.r57429
 	obnov.doc.r33355
 	ocherokee.doc.r25689
@@ -624,7 +640,7 @@ TEXLIVE_MODULE_DOC_CONTENTS="
 	oinuit.doc.r28668
 	old-arrows.doc.r42872
 	oldlatin.doc.r17932
-	oldstandard.doc.r69185
+	oldstandard.doc.r70421
 	opensans.doc.r54512
 	orkhun.doc.r15878
 	oswald.doc.r60784
@@ -652,18 +668,19 @@ TEXLIVE_MODULE_DOC_CONTENTS="
 	recycle.doc.r15878
 	rit-fonts.doc.r67659
 	roboto.doc.r64350
-	romande.doc.r19537
+	romandeadf.doc.r72484
 	rosario.doc.r51688
 	rsfso.doc.r60849
+	ruscap.doc.r71123
 	sansmathaccent.doc.r53628
-	sansmathfonts.doc.r68777
+	sansmathfonts.doc.r72563
 	sauterfonts.doc.r15878
 	schola-otf.doc.r64734
 	scholax.doc.r61836
 	schulschriften.doc.r59388
 	semaphor.doc.r18651
 	shobhika.doc.r50555
-	simpleicons.doc.r69673
+	simpleicons.doc.r72797
 	sourcecodepro.doc.r54512
 	sourcesanspro.doc.r54892
 	sourceserifpro.doc.r54512
@@ -673,7 +690,7 @@ TEXLIVE_MODULE_DOC_CONTENTS="
 	staves.doc.r15878
 	step.doc.r57307
 	stepgreek.doc.r57074
-	stickstoo.doc.r60793
+	stickstoo.doc.r72368
 	stix.doc.r54512
 	stix2-otf.doc.r58735
 	stix2-type1.doc.r57448
@@ -691,7 +708,7 @@ TEXLIVE_MODULE_DOC_CONTENTS="
 	tinos.doc.r68950
 	tpslifonts.doc.r42428
 	trajan.doc.r15878
-	twemoji-colr.doc.r64854
+	twemoji-colr.doc.r71991
 	txfontsb.doc.r54512
 	txuprcal.doc.r43327
 	typicons.doc.r37623
@@ -700,19 +717,21 @@ TEXLIVE_MODULE_DOC_CONTENTS="
 	universalis.doc.r64505
 	uppunctlm.doc.r42334
 	urwchancal.doc.r21701
-	venturisadf.doc.r19444
+	venturisadf.doc.r72484
 	wsuipa.doc.r25469
-	xcharter.doc.r67742
-	xcharter-math.doc.r69482
+	xcharter.doc.r71564
+	xcharter-math.doc.r72658
 	xits.doc.r55730
 	yfonts.doc.r50755
 	yfonts-otf.doc.r65030
 	yfonts-t1.doc.r36013
 	yinit-otf.doc.r40207
-	ysabeau.doc.r69663
+	ysabeau.doc.r72800
 	zlmtt.doc.r64076
 "
 TEXLIVE_MODULE_SRC_CONTENTS="
+	adforn.source.r72484
+	adfsymbols.source.r72458
 	aesupp.source.r58253
 	allrunes.source.r42221
 	anonymouspro.source.r51631
@@ -724,16 +743,17 @@ TEXLIVE_MODULE_SRC_CONTENTS="
 	auncial-new.source.r62977
 	b1encoding.source.r21271
 	barcodes.source.r15878
-	baskervald.source.r19490
+	baskervaldadf.source.r72484
 	bbding.source.r17186
 	bbm-macros.source.r17224
 	bbold.source.r17187
 	belleek.source.r66115
+	berenisadf.source.r72484
 	bguq.source.r27401
 	blacklettert1.source.r15878
 	bookhands.source.r46480
 	ccicons.source.r54512
-	cfr-lm.source.r36195
+	cfr-lm.source.r72484
 	chivo.source.r65029
 	cmbright.source.r21107
 	cmll.source.r17964
@@ -744,7 +764,7 @@ TEXLIVE_MODULE_SRC_CONTENTS="
 	dsserif.source.r60898
 	eco.source.r29349
 	eiad-ltx.source.r15878
-	electrum.source.r19705
+	electrumadf.source.r72484
 	epsdice.source.r15878
 	esrelation.source.r37236
 	esvect.source.r32098
@@ -752,7 +772,8 @@ TEXLIVE_MODULE_SRC_CONTENTS="
 	fdsymbol.source.r61719
 	fetamont.source.r43812
 	feyn.source.r63945
-	fge.source.r68353
+	fge.source.r71737
+	fontscripts.source.r72672
 	frimurer.source.r56704
 	gentium-tug.source.r63470
 	gnu-freefont.source.r68624
@@ -761,22 +782,22 @@ TEXLIVE_MODULE_SRC_CONTENTS="
 	hep-font.source.r67632
 	hep-math-font.source.r67632
 	hfoldsty.source.r29349
-	inconsolata-nerd-font.source.r69061
-	libris.source.r19409
+	inconsolata-nerd-font.source.r70871
+	libris.source.r72484
 	lineara.source.r63169
 	lxfonts.source.r32354
 	mdsymbol.source.r28399
 	metsymb.source.r68175
 	miama.source.r54512
 	mnsymbol.source.r18651
-	newpx.source.r69380
+	newpx.source.r72879
 	nkarta.source.r16437
 	ocr-b-outline.source.r20969
 	oinuit.source.r28668
 	pacioli.source.r24947
 	phaistos.source.r18651
 	plimsoll.source.r56605
-	romande.source.r19537
+	romandeadf.source.r72484
 	rosario.source.r51688
 	sauterfonts.source.r15878
 	skull.source.r51907
@@ -790,7 +811,7 @@ TEXLIVE_MODULE_SRC_CONTENTS="
 	trajan.source.r15878
 	txfontsb.source.r54512
 	universa.source.r51984
-	venturisadf.source.r19444
+	venturisadf.source.r72484
 	yfonts.source.r50755
 "
 
@@ -798,11 +819,11 @@ inherit texlive-module
 
 DESCRIPTION="TeXLive Additional fonts"
 
-LICENSE="Apache-2.0 BSD BSD-2 CC-BY-1.0 CC-BY-4.0 CC-BY-SA-4.0 GPL-1 GPL-2 GPL-2+ GPL-3 GPL-3+ LPPL-1.0 LPPL-1.2 LPPL-1.3 LPPL-1.3c MIT OFL TeX TeX-other-free public-domain"
+LICENSE="Apache-2.0 BSD BSD-2 CC-BY-1.0 CC-BY-4.0 CC-BY-SA-4.0 CC0-1.0 FDL-1.1+ GPL-1+ GPL-2 GPL-2+ GPL-3 GPL-3+ LPPL-1.0 LPPL-1.2 LPPL-1.3 LPPL-1.3c MIT OFL-1.1 TeX TeX-other-free public-domain"
 SLOT="0"
-KEYWORDS="~amd64 ~arm64 ~ppc ~riscv ~x86"
+KEYWORDS="~alpha ~amd64 ~arm ~arm64 ~hppa ~loong ~ppc ~ppc64 ~riscv ~s390 ~sparc ~x86"
 COMMON_DEPEND="
-	>=dev-texlive/texlive-basic-2023
+	>=dev-texlive/texlive-basic-2024
 "
 RDEPEND="
 	${COMMON_DEPEND}
