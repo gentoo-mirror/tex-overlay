@@ -1,7 +1,7 @@
 # Copyright 1999-2024 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
-EAPI="8"
+EAPI=8
 
 TEXLIVE_MODULE_CONTENTS="
 	collection-langeuropean.r66432
@@ -20,10 +20,10 @@ TEXLIVE_MODULE_CONTENTS="
 	babel-irish.r30277
 	babel-kurmanji.r30279
 	babel-latin.r59800
-	babel-latvian.r46681
+	babel-latvian.r71108
 	babel-lithuanian.r66513
 	babel-macedonian.r39587
-	babel-norsk.r69603
+	babel-norsk.r70691
 	babel-occitan.r39608
 	babel-piedmontese.r30282
 	babel-romanian.r58776
@@ -33,16 +33,16 @@ TEXLIVE_MODULE_CONTENTS="
 	babel-slovenian.r69742
 	babel-swedish.r57647
 	babel-turkish.r51560
-	babel-welsh.r38372
+	babel-welsh.r71109
 	finbib.r15878
 	hrlatex.r18020
-	huaz.r64723
-	hulipsum.r56848
+	huaz.r71180
+	hulipsum.r70928
 	hyphen-croatian.r58652
 	hyphen-danish.r58652
 	hyphen-dutch.r58609
 	hyphen-estonian.r58652
-	hyphen-finnish.r58652
+	hyphen-finnish.r71880
 	hyphen-friulan.r58652
 	hyphen-hungarian.r58652
 	hyphen-icelandic.r58652
@@ -84,10 +84,10 @@ TEXLIVE_MODULE_DOC_CONTENTS="
 	babel-irish.doc.r30277
 	babel-kurmanji.doc.r30279
 	babel-latin.doc.r59800
-	babel-latvian.doc.r46681
+	babel-latvian.doc.r71108
 	babel-lithuanian.doc.r66513
 	babel-macedonian.doc.r39587
-	babel-norsk.doc.r69603
+	babel-norsk.doc.r70691
 	babel-occitan.doc.r39608
 	babel-piedmontese.doc.r30282
 	babel-romanian.doc.r58776
@@ -97,13 +97,13 @@ TEXLIVE_MODULE_DOC_CONTENTS="
 	babel-slovenian.doc.r69742
 	babel-swedish.doc.r57647
 	babel-turkish.doc.r51560
-	babel-welsh.doc.r38372
+	babel-welsh.doc.r71109
 	gloss-occitan.doc.r52593
 	hrlatex.doc.r18020
-	huaz.doc.r64723
-	hulipsum.doc.r56848
+	huaz.doc.r71180
+	hulipsum.doc.r70928
 	hyphen-hungarian.doc.r58652
-	kaytannollista-latexia.doc.r69468
+	kaytannollista-latexia.doc.r71784
 	lithuanian.doc.r66461
 	lshort-dutch.doc.r15878
 	lshort-estonian.doc.r39323
@@ -129,10 +129,10 @@ TEXLIVE_MODULE_SRC_CONTENTS="
 	babel-irish.source.r30277
 	babel-kurmanji.source.r30279
 	babel-latin.source.r59800
-	babel-latvian.source.r46681
+	babel-latvian.source.r71108
 	babel-lithuanian.source.r66513
 	babel-macedonian.source.r39587
-	babel-norsk.source.r69603
+	babel-norsk.source.r70691
 	babel-occitan.source.r39608
 	babel-piedmontese.source.r30282
 	babel-romanian.source.r58776
@@ -142,10 +142,10 @@ TEXLIVE_MODULE_SRC_CONTENTS="
 	babel-slovenian.source.r69742
 	babel-swedish.source.r57647
 	babel-turkish.source.r51560
-	babel-welsh.source.r38372
+	babel-welsh.source.r71109
 	gloss-occitan.source.r52593
 	hrlatex.source.r18020
-	hulipsum.source.r56848
+	hulipsum.source.r70928
 	hyphen-turkish.source.r58652
 	nevelok.source.r39029
 	turkmen.source.r17748
@@ -155,11 +155,11 @@ inherit texlive-module
 
 DESCRIPTION="TeXLive Other European languages"
 
-LICENSE="CC-BY-SA-4.0 GPL-1 GPL-2 LPPL-1.2 LPPL-1.3 LPPL-1.3c TeX-other-free public-domain"
+LICENSE="CC-BY-SA-4.0 GPL-1+ GPL-2 LPPL-1.2 LPPL-1.3 LPPL-1.3c TeX-other-free public-domain"
 SLOT="0"
-KEYWORDS="~amd64 ~arm64 ~ppc ~riscv ~x86"
+KEYWORDS="~alpha ~amd64 ~arm ~arm64 ~hppa ~loong ~ppc ~ppc64 ~riscv ~s390 ~sparc ~x86"
 COMMON_DEPEND="
-	>=dev-texlive/texlive-basic-2023
+	>=dev-texlive/texlive-basic-2024
 "
 RDEPEND="
 	${COMMON_DEPEND}
