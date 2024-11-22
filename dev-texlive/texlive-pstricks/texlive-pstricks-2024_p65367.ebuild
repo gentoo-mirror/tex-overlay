@@ -1,7 +1,7 @@
 # Copyright 1999-2024 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
-EAPI="8"
+EAPI=8
 
 TEXLIVE_MODULE_CONTENTS="
 	collection-pstricks.r65367
@@ -30,28 +30,28 @@ TEXLIVE_MODULE_CONTENTS="
 	pst-calculate.r49817
 	pst-calendar.r60480
 	pst-cie.r60959
-	pst-circ.r60464
-	pst-coil.r62977
+	pst-circ.r72519
+	pst-coil.r72030
 	pst-contourplot.r48230
 	pst-cox.r15878
 	pst-dart.r60476
 	pst-dbicons.r17556
-	pst-diffraction.r62977
+	pst-diffraction.r71819
 	pst-electricfield.r29803
 	pst-eps.r15878
 	pst-eucl.r66924
 	pst-exa.r45289
 	pst-feyn.r48781
 	pst-fill.r60671
-	pst-fit.r45109
+	pst-fit.r70686
 	pst-flags.r65501
 	pst-fr3d.r15878
 	pst-fractal.r64714
 	pst-fun.r17909
-	pst-func.r66845
+	pst-func.r70822
 	pst-gantt.r35832
 	pst-geo.r60387
-	pst-geometrictools.r61430
+	pst-geometrictools.r70953
 	pst-gr3d.r15878
 	pst-grad.r15878
 	pst-graphicx.r21717
@@ -68,13 +68,13 @@ TEXLIVE_MODULE_CONTENTS="
 	pst-magneticfield.r69493
 	pst-marble.r50925
 	pst-math.r67535
-	pst-mirror.r60506
+	pst-mirror.r71294
 	pst-moire.r60411
-	pst-node.r61838
+	pst-node.r71773
 	pst-ob3d.r54514
 	pst-ode.r69296
 	pst-optexp.r62977
-	pst-optic.r67052
+	pst-optic.r72694
 	pst-osci.r68781
 	pst-ovl.r54963
 	pst-pad.r15878
@@ -110,7 +110,7 @@ TEXLIVE_MODULE_CONTENTS="
 	pst-venn.r49316
 	pst-vowel.r25228
 	pst2pdf.r56172
-	pstricks.r69674
+	pstricks.r72868
 	pstricks-add.r66887
 	uml.r17476
 	vaucanson-g.r15878
@@ -142,28 +142,28 @@ TEXLIVE_MODULE_DOC_CONTENTS="
 	pst-calculate.doc.r49817
 	pst-calendar.doc.r60480
 	pst-cie.doc.r60959
-	pst-circ.doc.r60464
-	pst-coil.doc.r62977
+	pst-circ.doc.r72519
+	pst-coil.doc.r72030
 	pst-contourplot.doc.r48230
 	pst-cox.doc.r15878
 	pst-dart.doc.r60476
 	pst-dbicons.doc.r17556
-	pst-diffraction.doc.r62977
+	pst-diffraction.doc.r71819
 	pst-electricfield.doc.r29803
 	pst-eps.doc.r15878
 	pst-eucl.doc.r66924
 	pst-exa.doc.r45289
 	pst-feyn.doc.r48781
 	pst-fill.doc.r60671
-	pst-fit.doc.r45109
+	pst-fit.doc.r70686
 	pst-flags.doc.r65501
 	pst-fr3d.doc.r15878
 	pst-fractal.doc.r64714
 	pst-fun.doc.r17909
-	pst-func.doc.r66845
+	pst-func.doc.r70822
 	pst-gantt.doc.r35832
 	pst-geo.doc.r60387
-	pst-geometrictools.doc.r61430
+	pst-geometrictools.doc.r70953
 	pst-gr3d.doc.r15878
 	pst-grad.doc.r15878
 	pst-graphicx.doc.r21717
@@ -180,13 +180,13 @@ TEXLIVE_MODULE_DOC_CONTENTS="
 	pst-magneticfield.doc.r69493
 	pst-marble.doc.r50925
 	pst-math.doc.r67535
-	pst-mirror.doc.r60506
+	pst-mirror.doc.r71294
 	pst-moire.doc.r60411
-	pst-node.doc.r61838
+	pst-node.doc.r71773
 	pst-ob3d.doc.r54514
 	pst-ode.doc.r69296
 	pst-optexp.doc.r62977
-	pst-optic.doc.r67052
+	pst-optic.doc.r72694
 	pst-osci.doc.r68781
 	pst-ovl.doc.r54963
 	pst-pad.doc.r15878
@@ -223,7 +223,7 @@ TEXLIVE_MODULE_DOC_CONTENTS="
 	pst-venn.doc.r49316
 	pst-vowel.doc.r25228
 	pst2pdf.doc.r56172
-	pstricks.doc.r69674
+	pstricks.doc.r72868
 	pstricks-add.doc.r66887
 	pstricks_calcnotes.doc.r34363
 	uml.doc.r17476
@@ -239,7 +239,6 @@ TEXLIVE_MODULE_SRC_CONTENTS="
 	pst-am.source.r19591
 	pst-blur.source.r15878
 	pst-dbicons.source.r17556
-	pst-diffraction.source.r62977
 	pst-electricfield.source.r29803
 	pst-eps.source.r15878
 	pst-fr3d.source.r15878
@@ -268,12 +267,12 @@ inherit texlive-module
 
 DESCRIPTION="TeXLive PSTricks"
 
-LICENSE="GPL-1 GPL-2 LGPL-2 LGPL-3 LPPL-1.2 LPPL-1.3 LPPL-1.3c"
+LICENSE="GPL-1+ GPL-2 LGPL-2+ LGPL-3 LPPL-1.2 LPPL-1.3 LPPL-1.3c"
 SLOT="0"
-KEYWORDS="~amd64 ~arm64 ~ppc ~riscv ~x86"
+KEYWORDS="~alpha ~amd64 ~arm ~arm64 ~hppa ~loong ~ppc ~ppc64 ~riscv ~s390 ~sparc ~x86"
 COMMON_DEPEND="
-	>=dev-texlive/texlive-basic-2023
-	>=dev-texlive/texlive-plaingeneric-2023
+	>=dev-texlive/texlive-basic-2024
+	>=dev-texlive/texlive-plaingeneric-2024
 "
 RDEPEND="
 	${COMMON_DEPEND}
