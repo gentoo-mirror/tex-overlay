@@ -1,48 +1,49 @@
 # Copyright 1999-2024 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
-EAPI="8"
+EAPI=8
 
 TEXLIVE_MODULE_CONTENTS="
-	collection-latex.r69131
+	collection-latex.r71912
 	ae.r15878
 	amscls.r55378
-	amsmath.r68720
+	amsmath.r72779
 	atbegshi.r53051
-	atveryend.r53108
+	atveryend.r72507
 	auxhook.r53173
-	babel.r69742
-	babel-english.r44495
+	babel.r72799
+	babel-english.r70799
 	babelbib.r57349
 	bigintcalc.r53172
 	bitset.r53837
 	bookmark.r69084
 	carlisle.r59577
-	colortbl.r64015
-	epstopdf-pkg.r53546
+	colortbl.r71883
+	epstopdf-pkg.r71084
 	etexcmds.r53171
-	fancyhdr.r64977
-	firstaid.r68720
+	fancyhdr.r71883
+	firstaid.r72739
 	fix2col.r38770
 	geometry.r61719
 	gettitlestring.r53170
-	graphics.r66204
+	graphics.r72739
 	graphics-cfg.r41448
 	grfext.r53024
 	hopatch.r65491
 	hycolor.r53584
-	hyperref.r69523
+	hypcap.r71912
+	hyperref.r72773
 	intcalc.r53168
 	kvdefinekeys.r53193
 	kvoptions.r63622
 	kvsetkeys.r64632
-	l3backend.r69310
-	l3kernel.r69537
-	l3packages.r68507
-	latex.r69443
-	latex-bin.r66186
+	l3backend.r71991
+	l3kernel.r72755
+	l3packages.r72128
+	latex.r72739
+	latex-bin.r71362
 	latex-fonts.r28888
-	latex-lab.r68720
+	latex-lab.r72739
 	latexconfig.r68923
 	letltxmacro.r53022
 	ltxcmds.r69032
@@ -50,7 +51,7 @@ TEXLIVE_MODULE_CONTENTS="
 	mfnfss.r46036
 	mptopdf.r69363
 	natbib.r20668
-	oberdiek.r69038
+	oberdiek.r71916
 	pagesel.r56105
 	pdfescape.r53082
 	pdftexcmds.r55777
@@ -60,55 +61,56 @@ TEXLIVE_MODULE_CONTENTS="
 	refcount.r53164
 	rerunfilecheck.r63869
 	stringenc.r52982
-	tools.r68941
+	tools.r72739
 	uniquecounter.r53162
 	url.r32528
 "
 TEXLIVE_MODULE_DOC_CONTENTS="
 	ae.doc.r15878
 	amscls.doc.r55378
-	amsmath.doc.r68720
+	amsmath.doc.r72779
 	atbegshi.doc.r53051
-	atveryend.doc.r53108
+	atveryend.doc.r72507
 	auxhook.doc.r53173
-	babel.doc.r69742
-	babel-english.doc.r44495
+	babel.doc.r72799
+	babel-english.doc.r70799
 	babelbib.doc.r57349
 	bigintcalc.doc.r53172
 	bitset.doc.r53837
 	bookmark.doc.r69084
 	carlisle.doc.r59577
-	colortbl.doc.r64015
-	epstopdf-pkg.doc.r53546
+	colortbl.doc.r71883
+	epstopdf-pkg.doc.r71084
 	etexcmds.doc.r53171
-	fancyhdr.doc.r64977
-	firstaid.doc.r68720
+	fancyhdr.doc.r71883
+	firstaid.doc.r72739
 	fix2col.doc.r38770
 	geometry.doc.r61719
 	gettitlestring.doc.r53170
-	graphics.doc.r66204
+	graphics.doc.r72739
 	graphics-cfg.doc.r41448
 	grfext.doc.r53024
 	hopatch.doc.r65491
 	hycolor.doc.r53584
-	hyperref.doc.r69523
+	hypcap.doc.r71912
+	hyperref.doc.r72773
 	intcalc.doc.r53168
 	kvdefinekeys.doc.r53193
 	kvoptions.doc.r63622
 	kvsetkeys.doc.r64632
-	l3backend.doc.r69310
-	l3kernel.doc.r69537
-	l3packages.doc.r68507
-	latex.doc.r69443
-	latex-bin.doc.r66186
+	l3backend.doc.r71991
+	l3kernel.doc.r72755
+	l3packages.doc.r72128
+	latex.doc.r72739
+	latex-bin.doc.r71362
 	latex-fonts.doc.r28888
-	latex-lab.doc.r68720
+	latex-lab.doc.r72739
 	letltxmacro.doc.r53022
 	ltxcmds.doc.r69032
 	mfnfss.doc.r46036
 	mptopdf.doc.r69363
 	natbib.doc.r20668
-	oberdiek.doc.r69038
+	oberdiek.doc.r71916
 	pagesel.doc.r56105
 	pdfescape.doc.r53082
 	pdftexcmds.doc.r55777
@@ -117,50 +119,51 @@ TEXLIVE_MODULE_DOC_CONTENTS="
 	refcount.doc.r53164
 	rerunfilecheck.doc.r63869
 	stringenc.doc.r52982
-	tools.doc.r68941
+	tools.doc.r72739
 	uniquecounter.doc.r53162
 	url.doc.r32528
 "
 TEXLIVE_MODULE_SRC_CONTENTS="
 	ae.source.r15878
 	amscls.source.r55378
-	amsmath.source.r68720
+	amsmath.source.r72779
 	atbegshi.source.r53051
-	atveryend.source.r53108
+	atveryend.source.r72507
 	auxhook.source.r53173
-	babel.source.r69742
-	babel-english.source.r44495
+	babel.source.r72799
+	babel-english.source.r70799
 	bigintcalc.source.r53172
 	bitset.source.r53837
 	bookmark.source.r69084
 	carlisle.source.r59577
-	colortbl.source.r64015
-	epstopdf-pkg.source.r53546
+	colortbl.source.r71883
+	epstopdf-pkg.source.r71084
 	etexcmds.source.r53171
-	fancyhdr.source.r64977
-	firstaid.source.r68720
+	fancyhdr.source.r71883
+	firstaid.source.r72739
 	fix2col.source.r38770
 	geometry.source.r61719
 	gettitlestring.source.r53170
-	graphics.source.r66204
+	graphics.source.r72739
 	grfext.source.r53024
 	hopatch.source.r65491
 	hycolor.source.r53584
-	hyperref.source.r69523
+	hypcap.source.r71912
+	hyperref.source.r72773
 	intcalc.source.r53168
 	kvdefinekeys.source.r53193
 	kvoptions.source.r63622
 	kvsetkeys.source.r64632
-	l3backend.source.r69310
-	l3kernel.source.r69537
-	l3packages.source.r68507
-	latex.source.r69443
-	latex-lab.source.r68720
+	l3backend.source.r71991
+	l3kernel.source.r72755
+	l3packages.source.r72128
+	latex.source.r72739
+	latex-lab.source.r72739
 	letltxmacro.source.r53022
 	ltxcmds.source.r69032
 	mfnfss.source.r46036
 	natbib.source.r20668
-	oberdiek.source.r69038
+	oberdiek.source.r71916
 	pagesel.source.r56105
 	pdfescape.source.r53082
 	pdftexcmds.source.r55777
@@ -170,7 +173,7 @@ TEXLIVE_MODULE_SRC_CONTENTS="
 	refcount.source.r53164
 	rerunfilecheck.source.r63869
 	stringenc.source.r52982
-	tools.source.r68941
+	tools.source.r72739
 	uniquecounter.source.r53162
 "
 
@@ -178,14 +181,15 @@ inherit texlive-module
 
 DESCRIPTION="TeXLive LaTeX fundamental packages"
 
-LICENSE="GPL-1 GPL-2 LPPL-1.0 LPPL-1.3 LPPL-1.3c public-domain"
+LICENSE="GPL-2 LPPL-1.0 LPPL-1.3 LPPL-1.3c public-domain"
 SLOT="0"
-KEYWORDS="~amd64 ~arm64 ~ppc ~riscv ~x86"
+KEYWORDS="~alpha ~amd64 ~arm ~arm64 ~hppa ~loong ~ppc ~ppc64 ~riscv ~s390 ~sparc ~x86"
 COMMON_DEPEND="
-	>=dev-texlive/texlive-basic-2023
+	>=dev-texlive/texlive-basic-2024
 "
 RDEPEND="
 	${COMMON_DEPEND}
+	!<dev-texlive/texlive-latexrecommended-2023
 "
 DEPEND="
 	${COMMON_DEPEND}
