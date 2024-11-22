@@ -1,10 +1,10 @@
 # Copyright 1999-2024 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
-EAPI="8"
+EAPI=8
 
 TEXLIVE_MODULE_CONTENTS="
-	collection-humanities.r68465
+	collection-humanities.r72692
 	adtrees.r51618
 	bibleref.r55626
 	bibleref-lds.r25526
@@ -16,12 +16,15 @@ TEXLIVE_MODULE_CONTENTS="
 	dvgloss.r29103
 	ecltree.r15878
 	edfnotes.r21540
+	edmac.r72250
 	eledform.r38114
 	eledmac.r45418
 	expex.r44499
-	expex-glossonly.r69713
+	expex-glossonly.r69914
 	gb4e.r19216
+	gb4e-next.r72692
 	gmverse.r29803
+	interlinear.r72106
 	jura.r15878
 	juraabbrev.r15878
 	juramisc.r15878
@@ -46,7 +49,7 @@ TEXLIVE_MODULE_CONTENTS="
 	poetrytex.r68353
 	qobitree.r15878
 	qtree.r15878
-	reledmac.r68411
+	reledmac.r71890
 	rrgtrees.r27322
 	rtklage.r15878
 	screenplay.r27223
@@ -56,7 +59,7 @@ TEXLIVE_MODULE_CONTENTS="
 	textglos.r30788
 	thalie.r65249
 	tree-dvips.r21751
-	verse.r34017
+	verse.r69835
 	xyling.r15878
 "
 TEXLIVE_MODULE_DOC_CONTENTS="
@@ -71,12 +74,15 @@ TEXLIVE_MODULE_DOC_CONTENTS="
 	dvgloss.doc.r29103
 	ecltree.doc.r15878
 	edfnotes.doc.r21540
+	edmac.doc.r72250
 	eledform.doc.r38114
 	eledmac.doc.r45418
 	expex.doc.r44499
-	expex-glossonly.doc.r69713
+	expex-glossonly.doc.r69914
 	gb4e.doc.r19216
+	gb4e-next.doc.r72692
 	gmverse.doc.r29803
+	interlinear.doc.r72106
 	jura.doc.r15878
 	juraabbrev.doc.r15878
 	juramisc.doc.r15878
@@ -101,7 +107,7 @@ TEXLIVE_MODULE_DOC_CONTENTS="
 	poetrytex.doc.r68353
 	qobitree.doc.r15878
 	qtree.doc.r15878
-	reledmac.doc.r68411
+	reledmac.doc.r71890
 	rrgtrees.doc.r27322
 	rtklage.doc.r15878
 	screenplay.doc.r27223
@@ -112,7 +118,7 @@ TEXLIVE_MODULE_DOC_CONTENTS="
 	thalie.doc.r65249
 	theatre.doc.r45363
 	tree-dvips.doc.r21751
-	verse.doc.r34017
+	verse.doc.r69835
 	xyling.doc.r15878
 "
 TEXLIVE_MODULE_SRC_CONTENTS="
@@ -139,23 +145,23 @@ TEXLIVE_MODULE_SRC_CONTENTS="
 	poemscol.source.r56082
 	poetry.source.r53129
 	poetrytex.source.r68353
-	reledmac.source.r68411
+	reledmac.source.r71890
 	rrgtrees.source.r27322
 	screenplay.source.r27223
 	stage.source.r62929
 	textglos.source.r30788
-	verse.source.r34017
+	verse.source.r69835
 "
 
 inherit texlive-module
 
 DESCRIPTION="TeXLive Humanities packages"
 
-LICENSE="GPL-1 LPPL-1.0 LPPL-1.2 LPPL-1.3 LPPL-1.3c"
+LICENSE="GPL-1+ GPL-2 LPPL-1.0 LPPL-1.2 LPPL-1.3 LPPL-1.3c"
 SLOT="0"
-KEYWORDS="~amd64 ~arm64 ~ppc ~riscv ~x86"
+KEYWORDS="~alpha ~amd64 ~arm ~arm64 ~hppa ~loong ~ppc ~ppc64 ~riscv ~s390 ~sparc ~x86"
 COMMON_DEPEND="
-	>=dev-texlive/texlive-latex-2023
+	>=dev-texlive/texlive-latex-2024
 	doc? ( app-text/sword )
 "
 RDEPEND="
