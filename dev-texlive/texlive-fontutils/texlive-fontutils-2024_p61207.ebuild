@@ -1,44 +1,36 @@
 # Copyright 1999-2024 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
-EAPI="8"
+EAPI=8
 
 TEXLIVE_MODULE_CONTENTS="
 	collection-fontutils.r61207
 	accfonts.r18835
-	afm2pl.r66186
-	albatross.r65647
+	afm2pl.r71515
+	albatross.r69832
 	dosepsbin.r29752
 	dvipsconfig.r13293
-	epstopdf.r68301
+	epstopdf.r71782
 	fontinst.r62517
 	fontools.r69241
-	fontware.r66186
-	lcdftypetools.r52851
-	luafindfont.r67468
-	mf2pt1.r61217
-	ps2eps.r62856
-	psutils.r61719
-	t1utils.r57972
+	fontware.r70015
+	luafindfont.r72111
+	mf2pt1.r71883
 "
 TEXLIVE_MODULE_DOC_CONTENTS="
 	accfonts.doc.r18835
-	afm2pl.doc.r66186
-	albatross.doc.r65647
+	afm2pl.doc.r71515
+	albatross.doc.r69832
 	dosepsbin.doc.r29752
-	epstopdf.doc.r68301
+	epstopdf.doc.r71782
 	fontinst.doc.r62517
 	fontools.doc.r69241
-	fontware.doc.r66186
-	lcdftypetools.doc.r52851
-	luafindfont.doc.r67468
-	mf2pt1.doc.r61217
-	ps2eps.doc.r62856
-	psutils.doc.r61719
-	t1utils.doc.r57972
+	fontware.doc.r70015
+	luafindfont.doc.r72111
+	mf2pt1.doc.r71883
 "
 TEXLIVE_MODULE_SRC_CONTENTS="
-	albatross.source.r65647
+	albatross.source.r69832
 	dosepsbin.source.r29752
 	fontinst.source.r62517
 	metatype1.source.r37105
@@ -48,16 +40,16 @@ inherit texlive-module
 
 DESCRIPTION="TeXLive Graphics and font utilities"
 
-LICENSE="Artistic BSD GPL-1 GPL-2 LPPL-1.3c TeX TeX-other-free public-domain"
+LICENSE="Artistic BSD GPL-1+ GPL-2 LPPL-1.3c TeX TeX-other-free public-domain"
 SLOT="0"
-KEYWORDS="~amd64 ~arm64 ~ppc ~riscv ~x86"
+KEYWORDS="~alpha ~amd64 ~arm ~arm64 ~hppa ~loong ~ppc ~ppc64 ~riscv ~s390 ~sparc ~x86"
 COMMON_DEPEND="
-	>=dev-texlive/texlive-basic-2023
+	>=dev-texlive/texlive-basic-2024
 "
 RDEPEND="
 	${COMMON_DEPEND}
-	>=app-text/ps2pkm-1.8_p20230311
-	>=app-text/ttf2pk2-2.0_p20230311
+	>=app-text/ps2pkm-1.8_p20240311
+	>=app-text/ttf2pk2-2.0_p20240311
 "
 DEPEND="
 	${COMMON_DEPEND}
