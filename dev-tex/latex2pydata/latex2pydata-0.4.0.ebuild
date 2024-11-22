@@ -30,7 +30,7 @@ PATCHES=(
 	"${DISTDIR}"/${PN}-0.4.0-explicitly-set-build-backend.patch
 )
 
-# DEPEND=">=dev-texlive/texlive-latexextra-2024"
+BDEPEND=">=dev-texlive/texlive-latexextra-2024"
 
 src_compile() {
 	pushd python &> /dev/null || die
@@ -43,15 +43,17 @@ src_compile() {
 }
 
 src_install() {
+	dodoc README.md
+
 	pushd python &> /dev/null || die
 	distutils-r1_src_install
 	docinto python
-	dodoc *.md
+	dodoc CHANGELOG.md README.md
 	popd &> /dev/null || die
 
 	pushd latex/latex2pydata &> /dev/null || die
 	latex-package_src_install
 	docinto latex
-	dodoc *.md
+	dodoc CHANGELOG.md README.md
 	popd &> /dev/null || die
 }
