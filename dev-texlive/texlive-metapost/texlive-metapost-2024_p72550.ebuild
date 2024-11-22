@@ -1,10 +1,10 @@
 # Copyright 1999-2024 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
-EAPI="8"
+EAPI=8
 
 TEXLIVE_MODULE_CONTENTS="
-	collection-metapost.r67071
+	collection-metapost.r72550
 	automata.r19717
 	bbcard.r19440
 	blockdraw_mp.r15878
@@ -23,25 +23,27 @@ TEXLIVE_MODULE_CONTENTS="
 	garrigues.r15878
 	gmp.r21691
 	hatching.r23818
-	hershey-mp.r64878
+	hershey-mp.r70885
 	huffman.r67071
 	latexmp.r55643
 	metago.r15878
 	metaobj.r15878
 	metaplot.r15878
-	metapost.r66815
+	metapost.r70041
 	metapost-colorbrewer.r48753
 	metauml.r49923
 	mfpic.r28444
 	mfpic4ode.r17745
-	minim-hatching.r62395
+	minim-hatching.r70885
+	mp-geom2d.r72638
 	mp3d.r29349
 	mparrows.r39729
 	mpattern.r15878
-	mpchess.r67704
+	mpchess.r72664
 	mpcolornames.r23252
 	mpgraphics.r29776
-	mptrees.r66952
+	mpkiviat.r71319
+	mptrees.r70887
 	piechartmp.r19440
 	repere.r66998
 	roex.r45818
@@ -72,26 +74,28 @@ TEXLIVE_MODULE_DOC_CONTENTS="
 	garrigues.doc.r15878
 	gmp.doc.r21691
 	hatching.doc.r23818
-	hershey-mp.doc.r64878
+	hershey-mp.doc.r70885
 	huffman.doc.r67071
 	latexmp.doc.r55643
-	mcf2graph.doc.r69521
+	mcf2graph.doc.r72872
 	metago.doc.r15878
 	metaobj.doc.r15878
 	metaplot.doc.r15878
-	metapost.doc.r66815
+	metapost.doc.r70041
 	metapost-colorbrewer.doc.r48753
 	metauml.doc.r49923
 	mfpic.doc.r28444
 	mfpic4ode.doc.r17745
-	minim-hatching.doc.r62395
+	minim-hatching.doc.r70885
+	mp-geom2d.doc.r72638
 	mp3d.doc.r29349
 	mparrows.doc.r39729
 	mpattern.doc.r15878
-	mpchess.doc.r67704
+	mpchess.doc.r72664
 	mpcolornames.doc.r23252
 	mpgraphics.doc.r29776
-	mptrees.doc.r66952
+	mpkiviat.doc.r71319
+	mptrees.doc.r70887
 	piechartmp.doc.r19440
 	repere.doc.r66998
 	roundrect.doc.r39796
@@ -122,11 +126,11 @@ inherit texlive-module
 
 DESCRIPTION="TeXLive MetaPost and Metafont packages"
 
-LICENSE="CC-BY-SA-4.0 GPL-1 GPL-2+ GPL-3+ LGPL-2 LPPL-1.3 LPPL-1.3c MIT TeX-other-free public-domain"
+LICENSE="CC-BY-SA-4.0 EUPL-1.2 GPL-1+ GPL-2+ GPL-3+ LGPL-2+ LPPL-1.3 LPPL-1.3c MIT TeX-other-free public-domain"
 SLOT="0"
-KEYWORDS="~amd64 ~arm64 ~ppc ~riscv ~x86"
+KEYWORDS="~alpha ~amd64 ~arm ~arm64 ~hppa ~loong ~ppc ~ppc64 ~riscv ~s390 ~sparc ~x86"
 COMMON_DEPEND="
-	>=dev-texlive/texlive-basic-2023
+	>=dev-texlive/texlive-basic-2024
 "
 RDEPEND="
 	${COMMON_DEPEND}
