@@ -1,7 +1,7 @@
 # Copyright 1999-2024 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
-EAPI="8"
+EAPI=8
 
 TEXLIVE_MODULE_CONTENTS="
 	collection-langgerman.r68711
@@ -10,9 +10,9 @@ TEXLIVE_MODULE_CONTENTS="
 	babel-german.r69506
 	bibleref-german.r21923
 	dehyph.r48599
-	dehyph-exptl.r66390
+	dehyph-exptl.r70233
 	dhua.r24035
-	dtk-bibliography.r69155
+	dtk-bibliography.r72281
 	german.r42428
 	germbib.r15878
 	germkorr.r15878
@@ -34,9 +34,9 @@ TEXLIVE_MODULE_DOC_CONTENTS="
 	bibleref-german.doc.r21923
 	booktabs-de.doc.r21907
 	csquotes-de.doc.r23371
-	dehyph-exptl.doc.r66390
+	dehyph-exptl.doc.r70233
 	dhua.doc.r24035
-	dtk-bibliography.doc.r69155
+	dtk-bibliography.doc.r72281
 	etdipa.doc.r36354
 	etoolbox-de.doc.r21906
 	fifinddo-info.doc.r29349
@@ -48,7 +48,7 @@ TEXLIVE_MODULE_DOC_CONTENTS="
 	l2picfaq.doc.r19601
 	l2tabu.doc.r63708
 	latexcheat-de.doc.r35702
-	lshort-german.doc.r55643
+	lshort-german.doc.r70740
 	lualatex-doc-de.doc.r30474
 	microtype-de.doc.r54080
 	milog.doc.r41610
@@ -58,7 +58,7 @@ TEXLIVE_MODULE_DOC_CONTENTS="
 	templates-fenn.doc.r15878
 	templates-sommer.doc.r15878
 	termcal-de.doc.r47111
-	texlive-de.doc.r67108
+	texlive-de.doc.r71542
 	tipa-de.doc.r22005
 	translation-arsclassica-de.doc.r23803
 	translation-biblatex-de.doc.r59382
@@ -88,11 +88,11 @@ inherit texlive-module
 
 DESCRIPTION="TeXLive German"
 
-LICENSE="FDL-1.1 GPL-1 LPPL-1.3 LPPL-1.3c MIT OPL TeX-other-free"
+LICENSE="FDL-1.1+ GPL-1+ LPPL-1.0 LPPL-1.3 LPPL-1.3c MIT OPL TeX-other-free"
 SLOT="0"
-KEYWORDS="~amd64 ~arm64 ~ppc ~riscv ~x86"
+KEYWORDS="~alpha ~amd64 ~arm ~arm64 ~hppa ~loong ~ppc ~ppc64 ~riscv ~s390 ~sparc ~x86"
 COMMON_DEPEND="
-	>=dev-texlive/texlive-basic-2023
+	>=dev-texlive/texlive-basic-2024
 "
 RDEPEND="
 	${COMMON_DEPEND}
