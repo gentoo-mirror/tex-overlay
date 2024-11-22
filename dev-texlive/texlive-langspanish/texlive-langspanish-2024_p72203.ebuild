@@ -1,16 +1,17 @@
 # Copyright 1999-2024 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
-EAPI="8"
+EAPI=8
 
 TEXLIVE_MODULE_CONTENTS="
-	collection-langspanish.r67307
+	collection-langspanish.r72203
 	babel-catalan.r30259
 	babel-galician.r30270
 	babel-spanish.r59367
 	hyphen-catalan.r58609
 	hyphen-galician.r58652
 	hyphen-spanish.r58652
+	quran-es.r72203
 "
 TEXLIVE_MODULE_DOC_CONTENTS="
 	antique-spanish-units.doc.r69568
@@ -23,7 +24,8 @@ TEXLIVE_MODULE_DOC_CONTENTS="
 	latex2e-help-texinfo-spanish.doc.r65614
 	latexcheat-esmx.doc.r36866
 	lshort-spanish.doc.r35050
-	texlive-es.doc.r66059
+	quran-es.doc.r72203
+	texlive-es.doc.r70417
 "
 TEXLIVE_MODULE_SRC_CONTENTS="
 	babel-catalan.source.r30259
@@ -39,9 +41,9 @@ DESCRIPTION="TeXLive Spanish"
 
 LICENSE="CC-BY-4.0 LPPL-1.3 LPPL-1.3c MIT TeX-other-free public-domain"
 SLOT="0"
-KEYWORDS="~amd64 ~arm64 ~ppc ~riscv ~x86"
+KEYWORDS="~alpha ~amd64 ~arm ~arm64 ~hppa ~loong ~ppc ~ppc64 ~riscv ~s390 ~sparc ~x86"
 COMMON_DEPEND="
-	>=dev-texlive/texlive-basic-2023
+	>=dev-texlive/texlive-basic-2024
 "
 RDEPEND="
 	${COMMON_DEPEND}
