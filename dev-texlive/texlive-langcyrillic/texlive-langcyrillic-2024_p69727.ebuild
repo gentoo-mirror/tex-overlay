@@ -1,7 +1,7 @@
 # Copyright 1999-2024 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
-EAPI="8"
+EAPI=8
 
 TEXLIVE_MODULE_CONTENTS="
 	collection-langcyrillic.r69727
@@ -13,7 +13,7 @@ TEXLIVE_MODULE_CONTENTS="
 	babel-ukrainian.r56674
 	churchslavonic.r67474
 	cmcyr.r68681
-	cyrillic.r63613
+	cyrillic.r71408
 	cyrillic-bin.r62517
 	cyrplain.r45692
 	disser.r43417
@@ -53,7 +53,7 @@ TEXLIVE_MODULE_DOC_CONTENTS="
 	babel-ukrainian.doc.r56674
 	churchslavonic.doc.r67474
 	cmcyr.doc.r68681
-	cyrillic.doc.r63613
+	cyrillic.doc.r71408
 	cyrillic-bin.doc.r62517
 	disser.doc.r43417
 	eskd.doc.r15878
@@ -89,7 +89,7 @@ TEXLIVE_MODULE_SRC_CONTENTS="
 	babel-serbian.source.r64571
 	babel-serbianc.source.r64588
 	babel-ukrainian.source.r56674
-	cyrillic.source.r63613
+	cyrillic.source.r71408
 	disser.source.r43417
 	eskd.source.r15878
 	gost.source.r57616
@@ -105,12 +105,12 @@ inherit texlive-module
 
 DESCRIPTION="TeXLive Cyrillic"
 
-LICENSE="GPL-1 GPL-2 LPPL-1.3 LPPL-1.3c MIT OFL TeX-other-free public-domain"
+LICENSE="GPL-1+ GPL-2 LPPL-1.3 LPPL-1.3c MIT TeX-other-free public-domain"
 SLOT="0"
-KEYWORDS="~amd64 ~arm64 ~ppc ~riscv ~x86"
+KEYWORDS="~alpha ~amd64 ~arm ~arm64 ~hppa ~loong ~ppc ~ppc64 ~riscv ~s390 ~sparc ~x86"
 COMMON_DEPEND="
-	>=dev-texlive/texlive-basic-2023
-	>=dev-texlive/texlive-latex-2023
+	>=dev-texlive/texlive-basic-2024
+	>=dev-texlive/texlive-latex-2024
 "
 RDEPEND="
 	${COMMON_DEPEND}
