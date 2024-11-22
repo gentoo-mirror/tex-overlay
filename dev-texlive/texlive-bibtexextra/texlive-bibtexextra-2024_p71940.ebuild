@@ -1,10 +1,10 @@
 # Copyright 1999-2024 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
-EAPI="8"
+EAPI=8
 
 TEXLIVE_MODULE_CONTENTS="
-	collection-bibtexextra.r67386
+	collection-bibtexextra.r71940
 	aaai-named.r52470
 	aichej.r15878
 	ajl.r34016
@@ -15,16 +15,17 @@ TEXLIVE_MODULE_CONTENTS="
 	apalike2.r54080
 	archaeologie.r68476
 	authordate.r52564
-	beebe.r69012
+	beebe.r72450
 	besjournals.r45662
 	bestpapers.r38708
 	bib2gls.r69635
+	bib2qr.r71940
 	bibarts.r67407
-	bibcop.r69467
+	bibcop.r72840
 	biber-ms.r66478
 	bibexport.r50677
 	bibhtml.r31607
-	biblatex-abnt.r49179
+	biblatex-abnt.r72565
 	biblatex-ajc2020unofficial.r54401
 	biblatex-anonymous.r48548
 	biblatex-apa.r66605
@@ -35,20 +36,20 @@ TEXLIVE_MODULE_CONTENTS="
 	biblatex-bookinarticle.r40323
 	biblatex-bookinother.r54015
 	biblatex-bwl.r26556
-	biblatex-caspervector.r64866
+	biblatex-caspervector.r70491
 	biblatex-chem.r57904
-	biblatex-chicago.r65037
+	biblatex-chicago.r70955
 	biblatex-claves.r43723
 	biblatex-cv.r59433
 	biblatex-dw.r66579
 	biblatex-enc.r44627
-	biblatex-ext.r66641
+	biblatex-ext.r70744
 	biblatex-fiwi.r45876
-	biblatex-gb7714-2015.r68240
+	biblatex-gb7714-2015.r72863
 	biblatex-german-legal.r66461
 	biblatex-gost.r66935
 	biblatex-historian.r19787
-	biblatex-ieee.r61243
+	biblatex-ieee.r72873
 	biblatex-ijsra.r41634
 	biblatex-iso690.r62866
 	biblatex-jura2.r64762
@@ -67,13 +68,13 @@ TEXLIVE_MODULE_CONTENTS="
 	biblatex-nejm.r49839
 	biblatex-nottsclassic.r41596
 	biblatex-opcit-booktitle.r48983
-	biblatex-oxref.r68950
+	biblatex-oxref.r72164
 	biblatex-philosophy.r64414
-	biblatex-phys.r55643
-	biblatex-publist.r68476
+	biblatex-phys.r71905
+	biblatex-publist.r72079
 	biblatex-readbbl.r61549
 	biblatex-realauthor.r45865
-	biblatex-sbl.r63639
+	biblatex-sbl.r71470
 	biblatex-science.r48945
 	biblatex-shortfields.r45858
 	biblatex-socialscienceshuberlin.r47839
@@ -88,7 +89,7 @@ TEXLIVE_MODULE_CONTENTS="
 	biblatex-vancouver.r55339
 	biblatex2bibitem.r67201
 	biblist.r17116
-	bibtexperllibs.r68910
+	bibtexperllibs.r72184
 	bibtools.r67386
 	bibtopic.r15878
 	bibtopicprefix.r15878
@@ -102,13 +103,14 @@ TEXLIVE_MODULE_CONTENTS="
 	chicago.r15878
 	chicago-annote.r15878
 	chicagoa.r52567
+	chicagolinks.r70740
 	chscite.r28552
-	citation-style-language.r68454
+	citation-style-language.r72884
 	citeall.r45975
 	citeref.r47407
 	collref.r46358
 	compactbib.r15878
-	crossrefware.r69700
+	crossrefware.r72217
 	custom-bib.r24729
 	din1505.r19441
 	dk-bib.r15878
@@ -119,7 +121,7 @@ TEXLIVE_MODULE_CONTENTS="
 	fbs.r15878
 	figbib.r19388
 	footbib.r17115
-	francais-bst.r68686
+	francais-bst.r69854
 	gbt7714.r64633
 	geschichtsfrkl.r42121
 	harvard.r15878
@@ -146,7 +148,7 @@ TEXLIVE_MODULE_CONTENTS="
 	munich.r15878
 	nar.r38100
 	newcastle-bst.r62856
-	nmbib.r37984
+	nmbib.r71138
 	notes2bib.r52231
 	notex-bst.r42361
 	oscola.r54328
@@ -176,12 +178,13 @@ TEXLIVE_MODULE_DOC_CONTENTS="
 	besjournals.doc.r45662
 	bestpapers.doc.r38708
 	bib2gls.doc.r69635
+	bib2qr.doc.r71940
 	bibarts.doc.r67407
-	bibcop.doc.r69467
+	bibcop.doc.r72840
 	biber-ms.doc.r66478
 	bibexport.doc.r50677
 	bibhtml.doc.r31607
-	biblatex-abnt.doc.r49179
+	biblatex-abnt.doc.r72565
 	biblatex-ajc2020unofficial.doc.r54401
 	biblatex-anonymous.doc.r48548
 	biblatex-apa.doc.r66605
@@ -192,20 +195,20 @@ TEXLIVE_MODULE_DOC_CONTENTS="
 	biblatex-bookinarticle.doc.r40323
 	biblatex-bookinother.doc.r54015
 	biblatex-bwl.doc.r26556
-	biblatex-caspervector.doc.r64866
+	biblatex-caspervector.doc.r70491
 	biblatex-chem.doc.r57904
-	biblatex-chicago.doc.r65037
+	biblatex-chicago.doc.r70955
 	biblatex-claves.doc.r43723
 	biblatex-cv.doc.r59433
 	biblatex-dw.doc.r66579
 	biblatex-enc.doc.r44627
-	biblatex-ext.doc.r66641
+	biblatex-ext.doc.r70744
 	biblatex-fiwi.doc.r45876
-	biblatex-gb7714-2015.doc.r68240
+	biblatex-gb7714-2015.doc.r72863
 	biblatex-german-legal.doc.r66461
 	biblatex-gost.doc.r66935
 	biblatex-historian.doc.r19787
-	biblatex-ieee.doc.r61243
+	biblatex-ieee.doc.r72873
 	biblatex-ijsra.doc.r41634
 	biblatex-iso690.doc.r62866
 	biblatex-jura2.doc.r64762
@@ -224,13 +227,13 @@ TEXLIVE_MODULE_DOC_CONTENTS="
 	biblatex-nejm.doc.r49839
 	biblatex-nottsclassic.doc.r41596
 	biblatex-opcit-booktitle.doc.r48983
-	biblatex-oxref.doc.r68950
+	biblatex-oxref.doc.r72164
 	biblatex-philosophy.doc.r64414
-	biblatex-phys.doc.r55643
-	biblatex-publist.doc.r68476
+	biblatex-phys.doc.r71905
+	biblatex-publist.doc.r72079
 	biblatex-readbbl.doc.r61549
 	biblatex-realauthor.doc.r45865
-	biblatex-sbl.doc.r63639
+	biblatex-sbl.doc.r71470
 	biblatex-science.doc.r48945
 	biblatex-shortfields.doc.r45858
 	biblatex-socialscienceshuberlin.doc.r47839
@@ -245,7 +248,7 @@ TEXLIVE_MODULE_DOC_CONTENTS="
 	biblatex-vancouver.doc.r55339
 	biblatex2bibitem.doc.r67201
 	biblist.doc.r17116
-	bibtexperllibs.doc.r68910
+	bibtexperllibs.doc.r72184
 	bibtopic.doc.r15878
 	bibtopicprefix.doc.r15878
 	bibunits.doc.r15878
@@ -256,12 +259,13 @@ TEXLIVE_MODULE_DOC_CONTENTS="
 	chbibref.doc.r17120
 	chembst.doc.r15878
 	chicago-annote.doc.r15878
+	chicagolinks.doc.r70740
 	chscite.doc.r28552
-	citation-style-language.doc.r68454
+	citation-style-language.doc.r72884
 	citeall.doc.r45975
 	citeref.doc.r47407
 	collref.doc.r46358
-	crossrefware.doc.r69700
+	crossrefware.doc.r72217
 	custom-bib.doc.r24729
 	din1505.doc.r19441
 	dk-bib.doc.r15878
@@ -271,7 +275,7 @@ TEXLIVE_MODULE_DOC_CONTENTS="
 	economic.doc.r32639
 	figbib.doc.r19388
 	footbib.doc.r17115
-	francais-bst.doc.r68686
+	francais-bst.doc.r69854
 	gbt7714.doc.r64633
 	geschichtsfrkl.doc.r42121
 	harvard.doc.r15878
@@ -295,7 +299,7 @@ TEXLIVE_MODULE_DOC_CONTENTS="
 	multibibliography.doc.r30939
 	munich.doc.r15878
 	newcastle-bst.doc.r62856
-	nmbib.doc.r37984
+	nmbib.doc.r71138
 	notes2bib.doc.r52231
 	oscola.doc.r54328
 	perception.doc.r48861
@@ -318,17 +322,18 @@ TEXLIVE_MODULE_SRC_CONTENTS="
 	apacite.source.r54080
 	archaeologie.source.r68476
 	bib2gls.source.r69635
+	bib2qr.source.r71940
 	bibarts.source.r67407
-	bibcop.source.r69467
+	bibcop.source.r72840
 	biber-ms.source.r66478
 	bibexport.source.r50677
 	biblatex-archaeology.source.r53281
 	biblatex-bath.source.r63401
 	biblatex-nejm.source.r49839
-	biblatex-oxref.source.r68950
+	biblatex-oxref.source.r72164
 	biblatex-philosophy.source.r64414
 	biblatex-software.source.r64030
-	bibtexperllibs.source.r68910
+	bibtexperllibs.source.r72184
 	bibtools.source.r67386
 	bibtopic.source.r15878
 	bibtopicprefix.source.r15878
@@ -340,7 +345,7 @@ TEXLIVE_MODULE_SRC_CONTENTS="
 	dk-bib.source.r15878
 	doipubmed.source.r15878
 	footbib.source.r17115
-	francais-bst.source.r68686
+	francais-bst.source.r69854
 	gbt7714.source.r64633
 	geschichtsfrkl.source.r42121
 	harvard.source.r15878
@@ -353,7 +358,7 @@ TEXLIVE_MODULE_SRC_CONTENTS="
 	margbib.source.r15878
 	multibib.source.r15878
 	multibibliography.source.r30939
-	nmbib.source.r37984
+	nmbib.source.r71138
 	notes2bib.source.r52231
 	rsc.source.r41923
 	splitbib.source.r15878
@@ -366,17 +371,17 @@ inherit texlive-module
 
 DESCRIPTION="TeXLive BibTeX additional styles"
 
-LICENSE="Artistic Artistic-2 BSD-4 CC-BY-SA-3.0 CC-BY-SA-4.0 FDL-1.1 GPL-1 GPL-2 GPL-3+ LPPL-1.0 LPPL-1.2 LPPL-1.3 LPPL-1.3c MIT TeX TeX-other-free public-domain"
+LICENSE="Artistic Artistic-2 BSD-4 CC-BY-SA-3.0 CC-BY-SA-4.0 GPL-1 GPL-1+ GPL-2 GPL-3+ LPPL-1.0 LPPL-1.2 LPPL-1.3 LPPL-1.3c MIT TeX TeX-other-free public-domain"
 SLOT="0"
-KEYWORDS="~amd64 ~arm64 ~ppc ~riscv ~x86"
+KEYWORDS="~alpha ~amd64 ~arm ~arm64 ~hppa ~loong ~ppc ~ppc64 ~riscv ~s390 ~sparc ~x86"
 COMMON_DEPEND="
-	>=dev-texlive/texlive-latex-2023
+	>=dev-texlive/texlive-latex-2024
 "
 RDEPEND="
 	${COMMON_DEPEND}
 "
 PDEPEND="
-	>=dev-tex/biblatex-3.19
+	>=dev-tex/biblatex-3.20
 "
 DEPEND="
 	${COMMON_DEPEND}
