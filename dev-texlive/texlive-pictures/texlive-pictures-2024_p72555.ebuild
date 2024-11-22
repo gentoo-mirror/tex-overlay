@@ -4,9 +4,9 @@
 EAPI=8
 
 TEXLIVE_MODULE_CONTENTS="
-	collection-pictures.r69409
-	adigraph.r49862
-	aobs-tikz.r32662
+	collection-pictures.r72555
+	adigraph.r70422
+	aobs-tikz.r70952
 	askmaps.r56730
 	asyfig.r17512
 	asypictureb.r33490
@@ -28,14 +28,14 @@ TEXLIVE_MODULE_CONTENTS="
 	callouts.r44899
 	celtic.r39797
 	chemfig.r69227
-	circuit-macros.r69263
-	circuitikz.r69757
+	circuit-macros.r71389
+	circuitikz.r71968
 	circularglyphs.r68476
 	coffeestains.r59703
-	coloredbelts.r68747
+	coloredbelts.r72782
 	combinedgraphics.r27198
 	curve.r20745
-	curve2e.r67599
+	curve2e.r72842
 	curves.r45255
 	dcpic.r30206
 	diagmac2.r15878
@@ -46,7 +46,7 @@ TEXLIVE_MODULE_CONTENTS="
 	dratex.r15878
 	drs.r19232
 	duotenzor.r18728
-	dynkin-diagrams.r67267
+	dynkin-diagrams.r71883
 	ecgdraw.r41617
 	eepic.r15878
 	egpeirce.r66924
@@ -55,6 +55,7 @@ TEXLIVE_MODULE_CONTENTS="
 	epspdfconversion.r18703
 	esk.r18115
 	euflag.r55265
+	fadingimage.r71190
 	fast-diagram.r29264
 	fenetrecas.r68779
 	fig4latex.r26313
@@ -77,7 +78,7 @@ TEXLIVE_MODULE_CONTENTS="
 	here.r16135
 	hf-tikz.r34733
 	hobby.r68137
-	hvfloat.r68586
+	hvfloat.r72452
 	istgame.r62946
 	kblocks.r57617
 	kinematikz.r61392
@@ -86,7 +87,7 @@ TEXLIVE_MODULE_CONTENTS="
 	ladder.r44394
 	lapdf.r23806
 	latex-make.r60874
-	liftarm.r62981
+	liftarm.r71309
 	lpic.r20843
 	lroundrect.r39804
 	luamesh.r63875
@@ -94,8 +95,8 @@ TEXLIVE_MODULE_CONTENTS="
 	maker.r44823
 	makeshape.r28973
 	mathspic.r31957
-	memoize.r69522
-	mercatormap.r56060
+	memoize.r70841
+	mercatormap.r71976
 	milsymb.r66697
 	miniplot.r17483
 	mkpic.r33700
@@ -104,35 +105,38 @@ TEXLIVE_MODULE_CONTENTS="
 	nl-interval.r58328
 	nndraw.r59674
 	numericplots.r31729
-	outilsgeomtikz.r69124
+	outilsgeomtikz.r72145
 	papiergurvan.r68239
 	pb-diagram.r15878
 	petri-nets.r39165
 	pgf-blur.r54512
 	pgf-interference.r61562
-	pgf-periodictable.r67250
+	pgf-periodictable.r72236
 	pgf-pie.r63603
 	pgf-soroban.r32269
-	pgf-spectra.r66961
+	pgf-spectra.r71883
 	pgf-umlcd.r63386
 	pgf-umlsd.r55342
-	pgfgantt.r52662
+	pgfgantt.r71565
 	pgfkeysearch.r69385
 	pgfkeyx.r26093
-	pgfmolbio.r35152
+	pgfmolbio.r71551
 	pgfmorepages.r54770
 	pgfopts.r56615
-	pgfornament.r55326
+	pgfornament.r72029
 	pgfplots.r61719
+	pgfplotsthemebeamer.r71954
 	picinpar.r65097
 	pict2e.r56504
 	pictex.r59551
 	pictex2.r15878
+	pictochrono.r69855
 	pinlabel.r24769
 	pixelart.r66012
-	pixelarttikz.r68520
+	pixelarttikz.r72726
 	pmgraph.r15878
 	polyhedra.r68770
+	polyomino.r71991
 	postage.r55920
 	postit.r67344
 	prerex.r54512
@@ -161,9 +165,10 @@ TEXLIVE_MODULE_CONTENTS="
 	simplenodes.r62888
 	simpleoptics.r62977
 	smartdiagram.r42781
-	spath3.r64818
+	spath3.r71396
 	spectralsequences.r65667
 	strands.r59906
+	sunpath.r72604
 	swimgraf.r25446
 	syntaxdi.r56685
 	table-fct.r41849
@@ -175,6 +180,7 @@ TEXLIVE_MODULE_CONTENTS="
 	tikz-bayesnet.r38295
 	tikz-bbox.r57444
 	tikz-cd.r59133
+	tikz-decofonts.r72545
 	tikz-dependency.r54512
 	tikz-dimline.r35805
 	tikz-ext.r66737
@@ -205,16 +211,16 @@ TEXLIVE_MODULE_CONTENTS="
 	tikz-trackschematic.r63480
 	tikz-truchet.r50020
 	tikz2d-fr.r67239
-	tikz3d-fr.r67774
-	tikzbricks.r63952
+	tikz3d-fr.r72297
+	tikzbricks.r71933
 	tikzcodeblocks.r54758
-	tikzdotncross.r69382
-	tikzducks.r66773
+	tikzdotncross.r72638
+	tikzducks.r71098
 	tikzfill.r67847
 	tikzinclude.r28715
 	tikzlings.r63628
 	tikzmark.r64819
-	tikzmarmots.r54080
+	tikzmarmots.r71076
 	tikzorbital.r36439
 	tikzpackets.r55827
 	tikzpagenodes.r64967
@@ -222,7 +228,7 @@ TEXLIVE_MODULE_CONTENTS="
 	tikzpfeile.r25777
 	tikzpingus.r68310
 	tikzposter.r32732
-	tikzquads.r69409
+	tikzquads.r72580
 	tikzquests.r69388
 	tikzscale.r30637
 	tikzsymbols.r61300
@@ -236,23 +242,24 @@ TEXLIVE_MODULE_CONTENTS="
 	tkz-berge.r57485
 	tkz-bernoulli.r68780
 	tkz-doc.r68665
-	tkz-elements.r69715
-	tkz-euclide.r69702
+	tkz-elements.r71827
+	tkz-euclide.r71131
 	tkz-fct.r61949
 	tkz-graph.r57484
+	tkz-grapheur.r72701
 	tkz-orm.r61719
 	tkz-tab.r66115
 	tkzexample.r63908
 	tonevalue.r60058
-	tqft.r44455
+	tqft.r71401
 	tsemlines.r23440
 	tufte-latex.r37649
 	twemojis.r62930
 	tzplot.r64537
 	utfsym.r63076
-	vectorlogos.r69010
+	vectorlogos.r70819
 	venndiagram.r47952
-	wheelchart.r69040
+	wheelchart.r71928
 	wordcloud.r68209
 	worldflags.r68827
 	xistercian.r61366
@@ -260,8 +267,8 @@ TEXLIVE_MODULE_CONTENTS="
 	xypic.r61719
 "
 TEXLIVE_MODULE_DOC_CONTENTS="
-	adigraph.doc.r49862
-	aobs-tikz.doc.r32662
+	adigraph.doc.r70422
+	aobs-tikz.doc.r70952
 	askmaps.doc.r56730
 	asyfig.doc.r17512
 	asypictureb.doc.r33490
@@ -283,14 +290,14 @@ TEXLIVE_MODULE_DOC_CONTENTS="
 	callouts.doc.r44899
 	celtic.doc.r39797
 	chemfig.doc.r69227
-	circuit-macros.doc.r69263
-	circuitikz.doc.r69757
+	circuit-macros.doc.r71389
+	circuitikz.doc.r71968
 	circularglyphs.doc.r68476
 	coffeestains.doc.r59703
-	coloredbelts.doc.r68747
+	coloredbelts.doc.r72782
 	combinedgraphics.doc.r27198
 	curve.doc.r20745
-	curve2e.doc.r67599
+	curve2e.doc.r72842
 	curves.doc.r45255
 	dcpic.doc.r30206
 	diagmac2.doc.r15878
@@ -302,7 +309,7 @@ TEXLIVE_MODULE_DOC_CONTENTS="
 	dratex.doc.r15878
 	drs.doc.r19232
 	duotenzor.doc.r18728
-	dynkin-diagrams.doc.r67267
+	dynkin-diagrams.doc.r71883
 	ecgdraw.doc.r41617
 	eepic.doc.r15878
 	egpeirce.doc.r66924
@@ -311,6 +318,7 @@ TEXLIVE_MODULE_DOC_CONTENTS="
 	epspdfconversion.doc.r18703
 	esk.doc.r18115
 	euflag.doc.r55265
+	fadingimage.doc.r71190
 	fast-diagram.doc.r29264
 	fenetrecas.doc.r68779
 	fig4latex.doc.r26313
@@ -333,7 +341,7 @@ TEXLIVE_MODULE_DOC_CONTENTS="
 	here.doc.r16135
 	hf-tikz.doc.r34733
 	hobby.doc.r68137
-	hvfloat.doc.r68586
+	hvfloat.doc.r72452
 	istgame.doc.r62946
 	kblocks.doc.r57617
 	kinematikz.doc.r61392
@@ -342,7 +350,7 @@ TEXLIVE_MODULE_DOC_CONTENTS="
 	ladder.doc.r44394
 	lapdf.doc.r23806
 	latex-make.doc.r60874
-	liftarm.doc.r62981
+	liftarm.doc.r71309
 	lpic.doc.r20843
 	lroundrect.doc.r39804
 	luamesh.doc.r63875
@@ -350,8 +358,8 @@ TEXLIVE_MODULE_DOC_CONTENTS="
 	maker.doc.r44823
 	makeshape.doc.r28973
 	mathspic.doc.r31957
-	memoize.doc.r69522
-	mercatormap.doc.r56060
+	memoize.doc.r70841
+	mercatormap.doc.r71976
 	milsymb.doc.r66697
 	miniplot.doc.r17483
 	mkpic.doc.r33700
@@ -360,34 +368,37 @@ TEXLIVE_MODULE_DOC_CONTENTS="
 	nl-interval.doc.r58328
 	nndraw.doc.r59674
 	numericplots.doc.r31729
-	outilsgeomtikz.doc.r69124
+	outilsgeomtikz.doc.r72145
 	papiergurvan.doc.r68239
 	pb-diagram.doc.r15878
 	petri-nets.doc.r39165
 	pgf-blur.doc.r54512
 	pgf-interference.doc.r61562
-	pgf-periodictable.doc.r67250
+	pgf-periodictable.doc.r72236
 	pgf-pie.doc.r63603
 	pgf-soroban.doc.r32269
-	pgf-spectra.doc.r66961
+	pgf-spectra.doc.r71883
 	pgf-umlcd.doc.r63386
 	pgf-umlsd.doc.r55342
-	pgfgantt.doc.r52662
+	pgfgantt.doc.r71565
 	pgfkeysearch.doc.r69385
 	pgfkeyx.doc.r26093
-	pgfmolbio.doc.r35152
+	pgfmolbio.doc.r71551
 	pgfmorepages.doc.r54770
 	pgfopts.doc.r56615
-	pgfornament.doc.r55326
+	pgfornament.doc.r72029
 	pgfplots.doc.r61719
+	pgfplotsthemebeamer.doc.r71954
 	picinpar.doc.r65097
 	pict2e.doc.r56504
 	pictex.doc.r59551
+	pictochrono.doc.r69855
 	pinlabel.doc.r24769
 	pixelart.doc.r66012
-	pixelarttikz.doc.r68520
+	pixelarttikz.doc.r72726
 	pmgraph.doc.r15878
 	polyhedra.doc.r68770
+	polyomino.doc.r71991
 	postage.doc.r55920
 	postit.doc.r67344
 	prerex.doc.r54512
@@ -416,9 +427,10 @@ TEXLIVE_MODULE_DOC_CONTENTS="
 	simplenodes.doc.r62888
 	simpleoptics.doc.r62977
 	smartdiagram.doc.r42781
-	spath3.doc.r64818
+	spath3.doc.r71396
 	spectralsequences.doc.r65667
 	strands.doc.r59906
+	sunpath.doc.r72604
 	swimgraf.doc.r25446
 	syntaxdi.doc.r56685
 	table-fct.doc.r41849
@@ -430,6 +442,7 @@ TEXLIVE_MODULE_DOC_CONTENTS="
 	tikz-bayesnet.doc.r38295
 	tikz-bbox.doc.r57444
 	tikz-cd.doc.r59133
+	tikz-decofonts.doc.r72545
 	tikz-dependency.doc.r54512
 	tikz-dimline.doc.r35805
 	tikz-ext.doc.r66737
@@ -460,16 +473,16 @@ TEXLIVE_MODULE_DOC_CONTENTS="
 	tikz-trackschematic.doc.r63480
 	tikz-truchet.doc.r50020
 	tikz2d-fr.doc.r67239
-	tikz3d-fr.doc.r67774
-	tikzbricks.doc.r63952
+	tikz3d-fr.doc.r72297
+	tikzbricks.doc.r71933
 	tikzcodeblocks.doc.r54758
-	tikzdotncross.doc.r69382
-	tikzducks.doc.r66773
+	tikzdotncross.doc.r72638
+	tikzducks.doc.r71098
 	tikzfill.doc.r67847
 	tikzinclude.doc.r28715
 	tikzlings.doc.r63628
 	tikzmark.doc.r64819
-	tikzmarmots.doc.r54080
+	tikzmarmots.doc.r71076
 	tikzorbital.doc.r36439
 	tikzpackets.doc.r55827
 	tikzpagenodes.doc.r64967
@@ -477,7 +490,7 @@ TEXLIVE_MODULE_DOC_CONTENTS="
 	tikzpfeile.doc.r25777
 	tikzpingus.doc.r68310
 	tikzposter.doc.r32732
-	tikzquads.doc.r69409
+	tikzquads.doc.r72580
 	tikzquests.doc.r69388
 	tikzscale.doc.r30637
 	tikzsymbols.doc.r61300
@@ -491,23 +504,24 @@ TEXLIVE_MODULE_DOC_CONTENTS="
 	tkz-berge.doc.r57485
 	tkz-bernoulli.doc.r68780
 	tkz-doc.doc.r68665
-	tkz-elements.doc.r69715
-	tkz-euclide.doc.r69702
+	tkz-elements.doc.r71827
+	tkz-euclide.doc.r71131
 	tkz-fct.doc.r61949
 	tkz-graph.doc.r57484
+	tkz-grapheur.doc.r72701
 	tkz-orm.doc.r61719
 	tkz-tab.doc.r66115
 	tkzexample.doc.r63908
 	tonevalue.doc.r60058
-	tqft.doc.r44455
+	tqft.doc.r71401
 	tufte-latex.doc.r37649
 	twemojis.doc.r62930
 	tzplot.doc.r64537
 	utfsym.doc.r63076
-	vectorlogos.doc.r69010
+	vectorlogos.doc.r70819
 	venndiagram.doc.r47952
 	visualpstricks.doc.r39799
-	wheelchart.doc.r69040
+	wheelchart.doc.r71928
 	wordcloud.doc.r68209
 	worldflags.doc.r68827
 	xistercian.doc.r61366
@@ -515,7 +529,7 @@ TEXLIVE_MODULE_DOC_CONTENTS="
 	xypic.doc.r61719
 "
 TEXLIVE_MODULE_SRC_CONTENTS="
-	aobs-tikz.source.r32662
+	aobs-tikz.source.r70952
 	asyfig.source.r17512
 	asypictureb.source.r33490
 	beamerswitch.source.r64182
@@ -528,7 +542,7 @@ TEXLIVE_MODULE_SRC_CONTENTS="
 	celtic.source.r39797
 	combinedgraphics.source.r27198
 	curve.source.r20745
-	curve2e.source.r67599
+	curve2e.source.r72842
 	curves.source.r45255
 	dottex.source.r15878
 	ecgdraw.source.r41617
@@ -550,11 +564,11 @@ TEXLIVE_MODULE_SRC_CONTENTS="
 	lroundrect.source.r39804
 	luasseq.source.r65511
 	makeshape.source.r28973
-	memoize.source.r69522
+	memoize.source.r70841
 	nndraw.source.r59674
 	pgf-blur.source.r54512
-	pgfgantt.source.r52662
-	pgfmolbio.source.r35152
+	pgfgantt.source.r71565
+	pgfmolbio.source.r71551
 	pgfopts.source.r56615
 	pgfplots.source.r61719
 	pict2e.source.r56504
@@ -570,8 +584,9 @@ TEXLIVE_MODULE_SRC_CONTENTS="
 	rviewport.source.r23739
 	signchart.source.r39707
 	smartdiagram.source.r42781
-	spath3.source.r64818
+	spath3.source.r71396
 	strands.source.r59906
+	sunpath.source.r72604
 	tikz-imagelabels.source.r51490
 	tikz-page.source.r42039
 	tikz-timing.source.r64967
@@ -585,7 +600,7 @@ TEXLIVE_MODULE_SRC_CONTENTS="
 	tikzsymbols.source.r61300
 	tile-graphic.source.r55325
 	tilings.source.r67292
-	tqft.source.r44455
+	tqft.source.r71401
 	twemojis.source.r62930
 	venndiagram.source.r47952
 	xistercian.source.r61366
@@ -598,9 +613,9 @@ DESCRIPTION="TeXLive Graphics, pictures, diagrams"
 
 LICENSE="Apache-2.0 BSD-2 CC-BY-3.0 CC-BY-4.0 CC-BY-SA-1.0 CC-BY-SA-3.0 CC-BY-SA-4.0 CC0-1.0 FDL-1.1+ GPL-1+ GPL-2 GPL-3 GPL-3+ ISC LPPL-1.0 LPPL-1.2 LPPL-1.3 LPPL-1.3c MIT TeX-other-free public-domain"
 SLOT="0"
-KEYWORDS="~alpha ~amd64 ~arm ~arm64 ~hppa ~ia64 ~loong ~mips ~ppc ~ppc64 ~riscv ~s390 ~sparc ~x86"
+KEYWORDS="~alpha ~amd64 ~arm ~arm64 ~hppa ~loong ~ppc ~ppc64 ~riscv ~s390 ~sparc ~x86"
 COMMON_DEPEND="
-	>=dev-texlive/texlive-basic-2023
+	>=dev-texlive/texlive-basic-2024
 "
 RDEPEND="
 	${COMMON_DEPEND}
