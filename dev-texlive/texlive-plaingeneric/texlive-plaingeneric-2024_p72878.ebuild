@@ -1,13 +1,13 @@
 # Copyright 1999-2024 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
-EAPI="8"
+EAPI=8
 
 TEXLIVE_MODULE_CONTENTS="
-	collection-plaingeneric.r68675
+	collection-plaingeneric.r72878
 	abbr.r15878
 	abstyles.r15878
-	advice.r69283
+	advice.r70688
 	apnum.r47510
 	autoaligne.r66655
 	barr.r38479
@@ -17,10 +17,10 @@ TEXLIVE_MODULE_CONTENTS="
 	calcfrac.r68684
 	catcodes.r38859
 	chronosys.r26700
-	collargs.r69284
+	collargs.r70689
 	colorsep.r13293
 	compare.r54265
-	crossrefenum.r66014
+	crossrefenum.r70954
 	cweb-old.r49271
 	dinat.r15878
 	dirtree.r42428
@@ -46,10 +46,11 @@ TEXLIVE_MODULE_CONTENTS="
 	getoptk.r23567
 	gfnotation.r37156
 	gobble.r64967
-	graphics-pln.r68760
+	graphics-pln.r71575
 	gtl.r69297
 	hlist.r44983
 	hyplain.r15878
+	ifis-macros.r71220
 	inputnormalization.r59850
 	insbox.r34299
 	js-misc.r16211
@@ -59,7 +60,7 @@ TEXLIVE_MODULE_CONTENTS="
 	lecturer.r23916
 	letterspacing.r54266
 	librarian.r19880
-	listofitems.r66655
+	listofitems.r70579
 	localloc.r56496
 	mathdots.r34301
 	metatex.r15878
@@ -86,7 +87,7 @@ TEXLIVE_MODULE_CONTENTS="
 	plstmary.r31088
 	poormanlog.r63400
 	present.r50048
-	pwebmac.r69027
+	pwebmac.r72015
 	random.r54723
 	randomlist.r45281
 	resumemac.r15878
@@ -103,11 +104,12 @@ TEXLIVE_MODULE_CONTENTS="
 	texapi.r54080
 	texdate.r49362
 	texdimens.r61070
-	texinfo.r68342
+	texinfo.r69809
 	timetable.r15878
 	tracklang.r65263
 	treetex.r28176
 	trigonometry.r43006
+	tuple.r72878
 	ulem.r53365
 	upca.r22511
 	varisize.r15878
@@ -119,7 +121,7 @@ TEXLIVE_MODULE_CONTENTS="
 TEXLIVE_MODULE_DOC_CONTENTS="
 	abbr.doc.r15878
 	abstyles.doc.r15878
-	advice.doc.r69283
+	advice.doc.r70688
 	apnum.doc.r47510
 	autoaligne.doc.r66655
 	barr.doc.r38479
@@ -129,8 +131,8 @@ TEXLIVE_MODULE_DOC_CONTENTS="
 	calcfrac.doc.r68684
 	catcodes.doc.r38859
 	chronosys.doc.r26700
-	collargs.doc.r69284
-	crossrefenum.doc.r66014
+	collargs.doc.r70689
+	crossrefenum.doc.r70954
 	dinat.doc.r15878
 	dirtree.doc.r42428
 	docbytex.doc.r34294
@@ -152,10 +154,11 @@ TEXLIVE_MODULE_DOC_CONTENTS="
 	getoptk.doc.r23567
 	gfnotation.doc.r37156
 	gobble.doc.r64967
-	graphics-pln.doc.r68760
+	graphics-pln.doc.r71575
 	gtl.doc.r69297
 	hlist.doc.r44983
 	hyplain.doc.r15878
+	ifis-macros.doc.r71220
 	inputnormalization.doc.r59850
 	insbox.doc.r34299
 	js-misc.doc.r16211
@@ -164,7 +167,7 @@ TEXLIVE_MODULE_DOC_CONTENTS="
 	langcode.doc.r27764
 	lecturer.doc.r23916
 	librarian.doc.r19880
-	listofitems.doc.r66655
+	listofitems.doc.r70579
 	localloc.doc.r56496
 	mathdots.doc.r34301
 	metatex.doc.r15878
@@ -188,7 +191,7 @@ TEXLIVE_MODULE_DOC_CONTENTS="
 	plstmary.doc.r31088
 	poormanlog.doc.r63400
 	present.doc.r50048
-	pwebmac.doc.r69027
+	pwebmac.doc.r72015
 	random.doc.r54723
 	randomlist.doc.r45281
 	resumemac.doc.r15878
@@ -206,6 +209,7 @@ TEXLIVE_MODULE_DOC_CONTENTS="
 	transparent-io.doc.r64113
 	treetex.doc.r28176
 	trigonometry.doc.r43006
+	tuple.doc.r72878
 	ulem.doc.r53365
 	upca.doc.r22511
 	varisize.doc.r15878
@@ -217,10 +221,10 @@ TEXLIVE_MODULE_DOC_CONTENTS="
 	zztex.doc.r55862
 "
 TEXLIVE_MODULE_SRC_CONTENTS="
-	advice.source.r69283
+	advice.source.r70688
 	bitelist.source.r25779
 	catcodes.source.r38859
-	collargs.source.r69284
+	collargs.source.r70689
 	dirtree.source.r42428
 	dowith.source.r38860
 	expex-acro.source.r68046
@@ -249,11 +253,11 @@ inherit texlive-module
 
 DESCRIPTION="TeXLive Plain (La)TeX packages"
 
-LICENSE="CC0-1.0 FDL-1.1 GPL-1 GPL-2 GPL-3 GPL-3+ LPPL-1.0 LPPL-1.3 LPPL-1.3c MIT TeX TeX-other-free public-domain"
+LICENSE="CC0-1.0 FDL-1.1+ GPL-1+ GPL-2 GPL-3 GPL-3+ LPPL-1.0 LPPL-1.3 LPPL-1.3c MIT TeX TeX-other-free public-domain"
 SLOT="0"
-KEYWORDS="~amd64 ~arm64 ~ppc ~riscv ~x86"
+KEYWORDS="~alpha ~amd64 ~arm ~arm64 ~hppa ~loong ~ppc ~ppc64 ~riscv ~s390 ~sparc ~x86"
 COMMON_DEPEND="
-	>=dev-texlive/texlive-basic-2023
+	>=dev-texlive/texlive-basic-2024
 "
 RDEPEND="
 	${COMMON_DEPEND}
