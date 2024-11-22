@@ -30,7 +30,7 @@ RDEPEND="
 	sys-apps/texinfo
 	app-text/t1utils
 	>=app-text/lcdf-typetools-2.92[kpathsea]
-	truetype? ( >=app-text/ttf2pk2-2.0_p20230311 )
+	truetype? ( >=app-text/ttf2pk2-2.0_p20240311 )
 	app-text/ps2eps
 	png? ( app-text/dvipng )
 	X? ( >=app-text/xdvik-22.87 )
@@ -58,7 +58,7 @@ RDEPEND="
 	context? ( >=${TEXLIVE_CAT}/texlive-context-${PV} )
 	games? ( >=${TEXLIVE_CAT}/texlive-games-${PV} )
 	humanities? ( >=${TEXLIVE_CAT}/texlive-humanities-${PV} )
-	tex4ht? ( >=dev-tex/tex4ht-20230311_p69739 )
+	tex4ht? ( >=dev-tex/tex4ht-20240311_p72882 )
 	xml? ( >=${TEXLIVE_CAT}/texlive-formatsextra-${PV} )
 	l10n_af?    ( >=${TEXLIVE_CAT}/texlive-langother-${PV} )
 	l10n_ar?    ( >=${TEXLIVE_CAT}/texlive-langarabic-${PV} )
