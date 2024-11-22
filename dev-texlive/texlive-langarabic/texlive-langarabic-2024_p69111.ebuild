@@ -1,7 +1,7 @@
 # Copyright 1999-2024 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
-EAPI="8"
+EAPI=8
 
 TEXLIVE_MODULE_CONTENTS="
 	collection-langarabic.r69111
@@ -19,15 +19,15 @@ TEXLIVE_MODULE_CONTENTS="
 	ghab.r29803
 	hvarabic.r59423
 	imsproc.r29803
-	iran-bibtex.r69347
+	iran-bibtex.r71972
 	khatalmaqala.r68280
 	kurdishlipsum.r47518
 	luabidi.r68432
 	na-box.r45130
-	parsimatn.r69090
-	parsinevis.r68395
+	parsimatn.r70775
+	parsinevis.r70776
 	persian-bib.r37297
-	quran.r67791
+	quran.r72223
 	sexam.r46628
 	simurgh.r31719
 	texnegar.r57692
@@ -50,16 +50,16 @@ TEXLIVE_MODULE_DOC_CONTENTS="
 	ghab.doc.r29803
 	hvarabic.doc.r59423
 	imsproc.doc.r29803
-	iran-bibtex.doc.r69347
+	iran-bibtex.doc.r71972
 	khatalmaqala.doc.r68280
 	kurdishlipsum.doc.r47518
 	lshort-persian.doc.r31296
 	luabidi.doc.r68432
 	na-box.doc.r45130
-	parsimatn.doc.r69090
-	parsinevis.doc.r68395
+	parsimatn.doc.r70775
+	parsinevis.doc.r70776
 	persian-bib.doc.r37297
-	quran.doc.r67791
+	quran.doc.r72223
 	sexam.doc.r46628
 	simurgh.doc.r31719
 	texnegar.doc.r57692
@@ -80,11 +80,11 @@ inherit texlive-module
 
 DESCRIPTION="TeXLive Arabic"
 
-LICENSE="CC-BY-SA-4.0 GPL-2 GPL-3+ LPPL-1.3 LPPL-1.3c MIT OFL public-domain"
+LICENSE="CC-BY-SA-4.0 GPL-2 GPL-3+ LPPL-1.3 LPPL-1.3c MIT OFL-1.1 public-domain"
 SLOT="0"
-KEYWORDS="~amd64 ~arm64 ~ppc ~riscv ~x86"
+KEYWORDS="~alpha ~amd64 ~arm ~arm64 ~hppa ~loong ~ppc ~ppc64 ~riscv ~s390 ~sparc ~x86"
 COMMON_DEPEND="
-	>=dev-texlive/texlive-basic-2023
+	>=dev-texlive/texlive-basic-2024
 "
 RDEPEND="
 	${COMMON_DEPEND}
