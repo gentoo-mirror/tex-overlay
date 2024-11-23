@@ -130,7 +130,7 @@ SRC_URI+=" )"
 S="${WORKDIR}/${MY_P}"
 LICENSE="BSD GPL-1+ GPL-2 GPL-2+ GPL-3+ MIT TeX-other-free"
 SLOT="0"
-KEYWORDS="~alpha ~amd64 ~arm ~arm64 ~hppa ~loong ~ppc ~ppc64 ~riscv ~s390 ~sparc ~x86"
+KEYWORDS="~alpha ~amd64 ~arm ~arm64 ~hppa ~loong ~mips ~ppc ~ppc64 ~riscv ~s390 ~sparc ~x86"
 IUSE="cjk X doc source tk +luajittex xetex xindy"
 
 TEXMF_PATH=/usr/share/texmf-dist
@@ -154,7 +154,7 @@ COMMON_DEPEND="
 	app-text/libpaper:=
 	dev-libs/gmp:=
 	dev-libs/mpfr:=
-	>=dev-libs/ptexenc-1.4.3
+	>=dev-libs/ptexenc-1.4.6
 	xetex? (
 		>=app-text/teckit-2.5.10
 		media-libs/fontconfig
