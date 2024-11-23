@@ -154,7 +154,7 @@ COMMON_DEPEND="
 	app-text/libpaper:=
 	dev-libs/gmp:=
 	dev-libs/mpfr:=
-	>=dev-libs/ptexenc-1.4.3
+	>=dev-libs/ptexenc-1.4.6
 	xetex? (
 		>=app-text/teckit-2.5.10
 		media-libs/fontconfig
