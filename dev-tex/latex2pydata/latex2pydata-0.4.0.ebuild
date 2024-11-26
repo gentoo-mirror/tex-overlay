@@ -51,9 +51,12 @@ src_install() {
 	dodoc CHANGELOG.md README.md
 	popd &> /dev/null || die
 
-	pushd latex/latex2pydata &> /dev/null || die
-	latex-package_src_install
+	pushd latex  &> /dev/null || die
 	docinto latex
 	dodoc CHANGELOG.md README.md
+	popd &> /dev/null || die
+
+	pushd latex/latex2pydata &> /dev/null || die
+	latex-package_src_install
 	popd &> /dev/null || die
 }

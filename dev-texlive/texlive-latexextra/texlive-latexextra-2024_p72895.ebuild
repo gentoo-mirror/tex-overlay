@@ -90,7 +90,7 @@ TEXLIVE_MODULE_CONTENTS="
 	beamertheme-detlevcm.r39048
 	beamertheme-epyt.r41404
 	beamertheme-focus.r69742
-	beamertheme-gotham.r72907
+	beamertheme-gotham.r72808
 	beamertheme-light.r49867
 	beamertheme-metropolis.r43031
 	beamertheme-mirage.r72656
@@ -805,7 +805,6 @@ TEXLIVE_MODULE_CONTENTS="
 	latex-lab-dev.r72738
 	latex-tools-dev.r72738
 	latex-uni8.r49729
-	latex2pydata.r72886
 	latexcolors.r49888
 	latexdemo.r67201
 	latexgit.r54811
@@ -1374,7 +1373,7 @@ TEXLIVE_MODULE_CONTENTS="
 	tabulary.r71463
 	tagging.r52064
 	tagpair.r42138
-	tagpdf.r72913
+	tagpdf.r72901
 	talk.r42428
 	tamefloats.r27345
 	tangocolors.r66733
@@ -1668,7 +1667,7 @@ TEXLIVE_MODULE_DOC_CONTENTS="
 	beamertheme-detlevcm.doc.r39048
 	beamertheme-epyt.doc.r41404
 	beamertheme-focus.doc.r69742
-	beamertheme-gotham.doc.r72907
+	beamertheme-gotham.doc.r72808
 	beamertheme-light.doc.r49867
 	beamertheme-metropolis.doc.r43031
 	beamertheme-mirage.doc.r72656
@@ -2380,7 +2379,6 @@ TEXLIVE_MODULE_DOC_CONTENTS="
 	latex-lab-dev.doc.r72738
 	latex-tools-dev.doc.r72738
 	latex-uni8.doc.r49729
-	latex2pydata.doc.r72886
 	latexcolors.doc.r49888
 	latexdemo.doc.r67201
 	latexgit.doc.r54811
@@ -2946,7 +2944,7 @@ TEXLIVE_MODULE_DOC_CONTENTS="
 	tabulary.doc.r71463
 	tagging.doc.r52064
 	tagpair.doc.r42138
-	tagpdf.doc.r72913
+	tagpdf.doc.r72901
 	talk.doc.r42428
 	tamefloats.doc.r27345
 	tangocolors.doc.r66733
@@ -3196,7 +3194,7 @@ TEXLIVE_MODULE_SRC_CONTENTS="
 	beamercolorthemeowl.source.r40105
 	beamersubframe.source.r23510
 	beamertheme-cuerna.source.r42161
-	beamertheme-gotham.source.r72907
+	beamertheme-gotham.source.r72808
 	beamertheme-metropolis.source.r43031
 	beamertheme-saintpetersburg.source.r45877
 	beamertheme-trigon.source.r65985
@@ -3633,7 +3631,6 @@ TEXLIVE_MODULE_SRC_CONTENTS="
 	latex-graphics-dev.source.r72738
 	latex-lab-dev.source.r72738
 	latex-tools-dev.source.r72738
-	latex2pydata.source.r72886
 	latexcolors.source.r49888
 	latexdemo.source.r67201
 	latexgit.source.r54811
@@ -3967,7 +3964,7 @@ TEXLIVE_MODULE_SRC_CONTENTS="
 	tabularborder.source.r17885
 	tabularew.source.r15878
 	tabulary.source.r71463
-	tagpdf.source.r72913
+	tagpdf.source.r72901
 	talk.source.r42428
 	tangocolors.source.r66733
 	tcldoc.source.r22018
