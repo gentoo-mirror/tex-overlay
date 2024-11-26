@@ -10,7 +10,7 @@ MY_P=${PN%-core}-${TL_SOURCE_VERSION}-source
 
 DESCRIPTION="A complete TeX distribution"
 HOMEPAGE="https://tug.org/texlive/"
-GENTOO_TEX_PATCHES_NUM=5
+GENTOO_TEX_PATCHES_NUM=6
 SRC_URI="
 	https://mirrors.ctan.org/systems/texlive/Source/${MY_P}.tar.xz
 	https://gitweb.gentoo.org/proj/tex-patches.git/snapshot/tex-patches-${GENTOO_TEX_PATCHES_NUM}.tar.bz2
@@ -224,7 +224,6 @@ src_prepare() {
 		texk/web2c/configure || die
 
 	local patch_dir="${WORKDIR}/tex-patches-${GENTOO_TEX_PATCHES_NUM}"
-	rm "${patch_dir}"/relax-zlib-check-to-just-major-version-following-deb.patch || die
 	eapply "${patch_dir}"
 
 	default
