@@ -404,10 +404,8 @@ src_test() {
 	sed -i \
 		-e 's;dvispc.test;;' \
 		texk/dviout-util/Makefile || die
-
-	# TODO: Drop -j1 when bumping to texlive-2024
-	# https://bugs.gentoo.org/935825
-	emake check -j1
+	local -x KpsDir="${EROOT}"/usr/bin
+	emake check
 }
 
 src_install() {
