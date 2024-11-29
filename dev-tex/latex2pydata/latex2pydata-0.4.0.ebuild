@@ -33,30 +33,30 @@ PATCHES=(
 BDEPEND=">=dev-texlive/texlive-latexextra-2024"
 
 src_compile() {
-	pushd python &> /dev/null || die
+	pushd python > /dev/null || die
 	distutils-r1_src_compile
-	popd &> /dev/null || die
+	popd > /dev/null || die
 
-	pushd latex/latex2pydata &> /dev/null || die
+	pushd latex/latex2pydata > /dev/null || die
 	latex-package_src_compile
-	popd &> /dev/null || die
+	popd > /dev/null || die
 }
 
 src_install() {
 	dodoc README.md
 
-	pushd python &> /dev/null || die
+	pushd python > /dev/null || die
 	distutils-r1_src_install
 	docinto python
 	dodoc CHANGELOG.md README.md
-	popd &> /dev/null || die
+	popd > /dev/null || die
 
-	pushd latex  &> /dev/null || die
+	pushd latex  > /dev/null || die
 	docinto latex
 	dodoc CHANGELOG.md README.md
-	popd &> /dev/null || die
+	popd > /dev/null || die
 
-	pushd latex/latex2pydata &> /dev/null || die
+	pushd latex/latex2pydata > /dev/null || die
 	latex-package_src_install
-	popd &> /dev/null || die
+	popd > /dev/null || die
 }
