@@ -24,7 +24,6 @@ RDEPEND="
 DEPEND="${RDEPEND}"
 BDEPEND="virtual/pkgconfig"
 
-
 TL_REVISION=66186
 EXTRA_TL_MODULES="bibtex8.r${TL_REVISION} bibtexu.r${TL_REVISION}"
 EXTRA_TL_DOC_MODULES="bibtex8.doc.r${TL_REVISION} bibtexu.doc.r${TL_REVISION}"
