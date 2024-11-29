@@ -8,7 +8,7 @@ dev-libs/ptexenc 1.4.6_p20240311: Library for Japanese pTeX providing a better w
 dev-python/latexrestricted 0.6.0: Library for creating executables compatible with LaTeX restricted shell escape
 dev-tex/biber 2.20: A BibTeX replacement for users of biblatex
 dev-tex/biblatex 3.20: Reimplementation of the bibliographic facilities provided by LaTeX
-dev-tex/bibtexu 4.00_p20230311: 8-bit Implementation of BibTeX 0.99 with a Very Large Capacity
+dev-tex/bibtexu 3.72_p20240311: 8-bit Implementation of BibTeX 0.99 with a Very Large Capacity
 dev-tex/glossaries 4.55: Create glossaries and lists of acronyms
 dev-tex/latex-beamer 3.71: LaTeX class for creating presentations using a video projector
 dev-tex/latex2pydata 0.4.0: Allows LaTeX to save data to files using Python
