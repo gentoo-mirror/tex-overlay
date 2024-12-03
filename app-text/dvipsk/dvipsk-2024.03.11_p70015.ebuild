@@ -3,7 +3,7 @@
 
 EAPI=8
 
-inherit texlive-common
+inherit flag-o-matic texlive-common
 
 TL_VERSION="$(ver_cut 1)$(ver_cut 2)$(ver_cut 3)"
 DESCRIPTION="DVI-to-PostScript translator"
@@ -24,7 +24,7 @@ SRC_URI+=" ) "
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="~alpha ~amd64 ~arm ~arm64 ~hppa ~loong ~ppc ~ppc64 ~riscv ~s390 ~sparc ~x86 ~amd64-linux ~x86-linux ~ppc-macos ~x64-macos ~x64-solaris"
+KEYWORDS="~alpha ~amd64 ~arm ~arm64 ~hppa ~loong ~mips ~ppc ~ppc64 ~riscv ~s390 ~sparc ~x86 ~amd64-linux ~x86-linux ~ppc-macos ~x64-macos ~x64-solaris"
 IUSE="doc source"
 
 DEPEND=">=dev-libs/kpathsea-6.2.1:="
@@ -32,6 +32,9 @@ RDEPEND="${DEPEND}"
 BDEPEND="virtual/pkgconfig"
 
 src_configure() {
+	# bug #943911
+	append-cflags -std=gnu17
+
 	econf --with-system-kpathsea
 }
 
