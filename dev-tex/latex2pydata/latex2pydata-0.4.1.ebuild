@@ -14,21 +14,15 @@ HOMEPAGE="
 	https://pypi.org/project/latex2pydata/
 "
 SRC_URI="
-	https://github.com/gpoore/${PN}/archive/refs/tags/latex/v${PV}.tar.gz
+	https://github.com/gpoore/${PN}/archive/refs/tags/python/v${PV}.tar.gz
 		-> ${P}.gh.tar.gz
-	https://github.com/gpoore/latex2pydata/commit/539ea2c24769a509728ac6ba52a20df588576376.patch
-		-> ${PN}-0.4.0-explicitly-set-build-backend.patch
 "
 
-S="${WORKDIR}/${PN}-latex-v${PV}"
+S="${WORKDIR}/${PN}-python-v${PV}"
 
 LICENSE="LPPL-1.3c"
 SLOT="0"
 KEYWORDS="~amd64"
-
-PATCHES=(
-	"${DISTDIR}"/${PN}-0.4.0-explicitly-set-build-backend.patch
-)
 
 BDEPEND=">=dev-texlive/texlive-latexextra-2024"
 
