@@ -11,7 +11,7 @@ dev-tex/biblatex 3.20: Reimplementation of the bibliographic facilities provided
 dev-tex/bibtexu 3.72_p20240311: 8-bit Implementation of BibTeX 0.99 with a Very Large Capacity
 dev-tex/glossaries 4.55: Create glossaries and lists of acronyms
 dev-tex/latex-beamer 3.71: LaTeX class for creating presentations using a video projector
-dev-tex/latex2pydata 0.4.0: Allows LaTeX to save data to files using Python
+dev-tex/latex2pydata 0.4.1: Allows LaTeX to save data to files using Python
 dev-tex/latexmk 4.85: Perl script for automatically building LaTeX documents
 dev-tex/minted 3.4.0: LaTeX package for source code syntax highlighting
 dev-tex/pgf 3.1.10: The TeX Portable Graphic Format
