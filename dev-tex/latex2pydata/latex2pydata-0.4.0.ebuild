@@ -32,6 +32,8 @@ PATCHES=(
 
 BDEPEND=">=dev-texlive/texlive-latexextra-2024"
 
+distutils_enable_tests pytest
+
 src_compile() {
 	pushd python > /dev/null || die
 	distutils-r1_src_compile
@@ -39,6 +41,12 @@ src_compile() {
 
 	pushd latex/latex2pydata > /dev/null || die
 	latex-package_src_compile
+	popd > /dev/null || die
+}
+
+src_test() {
+	pushd python > /dev/null || die
+	distutils-r1_src_test
 	popd > /dev/null || die
 }
 
