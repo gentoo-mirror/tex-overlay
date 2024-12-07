@@ -1,7 +1,7 @@
 app-text/dvipsk 2024.03.11_p70015: DVI-to-PostScript translator
 app-text/ps2pkm 1.8_p20240311: Tool that converts a PostScript type1 font into a corresponding TeX PK font
 app-text/texlive 2024: A complete TeX distribution
-app-text/texlive-core 2024: A complete TeX distribution
+app-text/texlive-core 2024-r1: A complete TeX distribution
 app-text/ttf2pk2 2.0_p20230311 2.0_p20240311: Freetype 2 based TrueType font to TeX's PK format converter
 dev-libs/kpathsea 6.4.0_p20240311: Path searching library for TeX-related files
 dev-libs/ptexenc 1.4.6_p20240311: Library for Japanese pTeX providing a better way of handling character encodings
