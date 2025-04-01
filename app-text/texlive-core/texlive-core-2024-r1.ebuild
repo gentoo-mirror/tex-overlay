@@ -1,4 +1,4 @@
-# Copyright 1999-2024 Gentoo Authors
+# Copyright 1999-2025 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=8
@@ -246,7 +246,7 @@ src_configure() {
 	filter-lto
 
 	# bug #946142
-	append-flags -std=gnu17
+	append-cflags -std=gnu17
 
 	# Needed for 32bit architectures, bug 928096
 	# This is upstream recommendation for the moment, see also
